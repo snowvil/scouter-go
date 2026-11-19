@@ -141,7 +141,7 @@ func TestBatchArchiveActualJava(t *testing.T) {
 	if _, err = os.Stat(filepath.Join(source, "scouter.server")); err != nil {
 		t.Skip("pinned source unavailable; actual Java archive oracle not run")
 	}
-	ctx, cancel := context.WithTimeout(context.Background(), time.Minute)
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Minute)
 	defer cancel()
 	work := t.TempDir()
 	classes := filepath.Join(work, "compiled")

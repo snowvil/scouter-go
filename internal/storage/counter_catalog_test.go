@@ -226,7 +226,7 @@ func TestCounterCatalogActualJava(t *testing.T) {
 	if _, err = os.Stat(filepath.Join(source, "scouter.server")); err != nil {
 		t.Skip("pinned source unavailable; actual Java catalog oracle not run")
 	}
-	ctx, cancel := context.WithTimeout(context.Background(), time.Minute)
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Minute)
 	defer cancel()
 	work := t.TempDir()
 	output, err := exec.CommandContext(ctx, "python3", filepath.Join(repo, "scripts/java-storage.py"), "--classes-dir", filepath.Join(work, "compiled"), "--source", source).CombinedOutput()

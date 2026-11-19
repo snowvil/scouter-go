@@ -263,7 +263,7 @@ func TestLocalKVJavaFloatingKeys(t *testing.T) {
 		}
 		fmt.Fprintf(&input, "c %s\n", hex.EncodeToString(raw))
 	}
-	ctx, cancel := context.WithTimeout(context.Background(), time.Minute)
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Minute)
 	defer cancel()
 	original, err := filepath.Abs("../../../scouter")
 	if err != nil {

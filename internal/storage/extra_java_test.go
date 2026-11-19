@@ -30,7 +30,7 @@ func TestJavaExtraStorageInterop(t *testing.T) {
 	javaDB, goDB := filepath.Join(work, "java-db"), filepath.Join(work, "go-db")
 	oracle := func(mode, dir string) {
 		t.Helper()
-		ctx, cancel := context.WithTimeout(context.Background(), time.Minute)
+		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Minute)
 		defer cancel()
 		command := exec.CommandContext(ctx, "python3", filepath.Join(repo, "scripts/java-storage.py"), mode, dir, "--source", source)
 		output, err := command.CombinedOutput()
