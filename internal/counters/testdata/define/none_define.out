@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Counters>
+    <Types>
+        <ObjectType disp="My Java" family="javaee" icon="tomcat" name="myjava" sub-object="true"/>
+    </Types>
+    <Familys/>
+</Counters>

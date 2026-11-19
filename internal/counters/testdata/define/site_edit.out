@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Counters>
+    <Types>
+        <ObjectType disp="Edited" family="host" icon="" name="old" sub-object="true"/>
+        <ObjectType disp="" family="host" icon="" name="keep" sub-object=""/>
+    </Types>
+    <Familys>
+        <Family master="a" name="myfam">
+            <Counter all="true" disp="A" icon="" name="a" total="" unit=""/>
+        </Family>
+    </Familys>
+</Counters>
