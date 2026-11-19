@@ -1,0 +1,241 @@
+scouter> help
+	help = Help
+	quit = Quit
+	objtype = ObjType List
+	object = Object List
+	counter [objType] = counter list for the objType
+	visitor [objType] = today visit users for the objType
+	dashboard [objType]  = javaee's dashboard
+	dashboard [objType]  [Counter] = host's dashdoard
+	realtime [objType]  TPS [SUM/AVG] = realtime counter view
+	xlog [objType]
+	xlist [objType] [Time=10:12:23.123] [Count=20000] [minElapsed=0]
+	tagcnt group
+	tagcnt tag [group]
+	tagcnt top100 [objType] [group] [tag] 
+	tagcnt data [objType] [group] [tag] [inx]
+	debug queue
+scouter> HELP me
+	help = Help
+	quit = Quit
+	objtype = ObjType List
+	object = Object List
+	counter [objType] = counter list for the objType
+	visitor [objType] = today visit users for the objType
+	dashboard [objType]  = javaee's dashboard
+	dashboard [objType]  [Counter] = host's dashdoard
+	realtime [objType]  TPS [SUM/AVG] = realtime counter view
+	xlog [objType]
+	xlist [objType] [Time=10:12:23.123] [Count=20000] [minElapsed=0]
+	tagcnt group
+	tagcnt tag [group]
+	tagcnt top100 [objType] [group] [tag] 
+	tagcnt data [objType] [group] [tag] [inx]
+	debug queue
+scouter> unknown words
+	help = Help
+	quit = Quit
+	objtype = ObjType List
+	object = Object List
+	counter [objType] = counter list for the objType
+	visitor [objType] = today visit users for the objType
+	dashboard [objType]  = javaee's dashboard
+	dashboard [objType]  [Counter] = host's dashdoard
+	realtime [objType]  TPS [SUM/AVG] = realtime counter view
+	xlog [objType]
+	xlist [objType] [Time=10:12:23.123] [Count=20000] [minElapsed=0]
+	tagcnt group
+	tagcnt tag [group]
+	tagcnt top100 [objType] [group] [tag] 
+	tagcnt data [objType] [group] [tag] [inx]
+	debug queue
+scouter> 
+scouter>    
+scouter> objtype
+	linux
+	orphan
+	redis
+	tomcat
+scouter> object
+	tomcat              	/host1/tomcat1                	alive
+	tomcat              	/host2/tomcat2                	alive
+	linux               	/host1                        	alive
+	linux               	/host-long-name2              	alive
+	redis               	/r1                           	alive
+	orphan              	/o1                           	alive
+scouter> object tomcat1
+	tomcat              	/host1/tomcat1                	alive
+scouter> OBJECT ,host1
+	tomcat              	/host1/tomcat1                	alive
+	linux               	/host1                        	alive
+scouter> counter
+scouter> counter tomcat
+	ActiveService
+	ElapsedTime
+	ErrorRate
+	GcCount
+	TPS
+	TPS
+scouter> counter nothing
+scouter> counter orphan
+[stderr] counter: object type orphan has no family
+scouter> dashboard
+no object for 
+scouter> dashboard nothing
+no object for nothing
+scouter> dashboard tomcat
+              INST   ACT   TPS RTIME GCCNT
+09:05:07.042     2     5    20   200     1
+scouter> dashboard linux Cpu
+             host-long-name2           host1
+09:05:07.042              88              12
+scouter> dashboard linux
+            
+09:05:07.042
+scouter> dashboard redis
+not supported : redis
+scouter> dashboard orphan
+[stderr] dashboard: object type orphan has no family
+scouter> realtime
+[stderr] realtime: usage: realtime <objType|name|*> <counter> [SUM|AVG]
+scouter> realtime tomcat
+scouter> realtime tomcat TPS
+09:05:07.042 /host1/tomcat1 12
+09:05:07.042 /host2/tomcat2 8
+09:05:07.042 /host3/tomcat3 null
+scouter> realtime * TPS sum
+[stderr] realtime: /host1 has no TPS value
+scouter> realtime tomcat TPS AVG
+[stderr] realtime: /host3/tomcat3 has no TPS value
+scouter> realtime tomcat TPS max
+[stderr] realtime: /host3/tomcat3 has no TPS value
+scouter> realtime host1 Cpu
+09:05:07.042 /host1/tomcat1 null
+09:05:07.042 /host1 12
+scouter> realtime nomatch TPS
+09:05:07.042 ...
+scouter> realtime tomcat Flag
+09:05:07.042 /host1/tomcat1 true
+09:05:07.042 /host2/tomcat2 null
+09:05:07.042 /host3/tomcat3 null
+scouter> realtime tomcat Name
+09:05:07.042 /host1/tomcat1 abc
+09:05:07.042 /host2/tomcat2 null
+09:05:07.042 /host3/tomcat3 null
+scouter> realtime tomcat Flag SUM
+[stderr] realtime: counter Flag value is not a number (true)
+scouter> xlog
+[stderr] xlog: usage: xlog <objType|name|*> [maxSec]
+scouter> xlog tomcat
+09:05:01.005 #____________________________E_____________________________# 10sec 4
+scouter> xlog tomcat
+09:05:07.042 ____________________________________________________________ 10sec 0
+scouter> xlog nomatch
+09:05:07.042 ...
+scouter> xlog * 0
+09:05:07.042 ____________________________________________________________ 0sec 0
+scouter> xlist
+[stderr] xlist: usage: xlist <objType> <HH:mm:ss.SSS> [count] [minElapsed]
+scouter> xlist tomcat
+[stderr] xlist: usage: xlist <objType> <HH:mm:ss.SSS> [count] [minElapsed]
+scouter> xlist tomcat 10:12:23.000
+    1 10:12:23.123 x13tovm16b /host1/tomcat1 10.1.2.3 /index.jsp 1,234ms 
+    2 10:12:24.000 z5 /host2/tomcat2 0.0.0.0 /api/order 5ms sql:3/1,500ms api:1/20ms Mozilla/5.0 
+    3 10:12:25.000 7 null 0.0.0.0 null 0ms null 
+scouter> xlist tomcat 10:12:23.000 2
+    1 10:12:23.123 x13tovm16b /host1/tomcat1 10.1.2.3 /index.jsp 1,234ms 
+    2 10:12:24.000 z5 /host2/tomcat2 0.0.0.0 /api/order 5ms sql:3/1,500ms api:1/20ms Mozilla/5.0 
+scouter> xlist tomcat 10:12:23.000 x
+scouter> xlist tomcat 9:00
+[stderr] xlist: invalid time "9:00" (HH:mm:ss.SSS)
+scouter> xlist tomcat 10:11:83.1000
+    1 10:12:24.000 z5 /host2/tomcat2 0.0.0.0 /api/order 5ms sql:3/1,500ms api:1/20ms Mozilla/5.0 
+    2 10:12:25.000 7 null 0.0.0.0 null 0ms null 
+    3 10:12:26.000 8 /host1/tomcat1 0.0.0.0 /index.jsp 1ms 
+scouter> tagcnt
+[stderr] tagcnt: usage: tagcnt group | tag <group> | top100 <objType> <group> <tag> | data <objType> <group> <tag> [inx]
+scouter> tagcnt group
+	service
+	alert
+scouter> tagcnt tag service
+	apitime-sum
+	service-kbyte-sum
+	@total
+	city
+	sqlcount-sum
+	service-time-sum
+	service
+	nation
+	service-error-sum
+	sqltime-sum
+	referer
+	error
+	login
+	desc
+	apicount-sum
+	group
+	object
+	user-agent
+scouter> tagcnt tag alert
+	@total
+	title
+	level
+	object
+scouter> tagcnt tag none
+scouter> tagcnt tag
+scouter> tagcnt top100 tomcat service error
+	1 java.lang.NullPointerException(1234) 	= 10.0
+	2 null(-2) 	= 4.0
+	3 5 	= 3.0
+	4 KR 	= 0.10000000149011612
+scouter> tagcnt top100 tomcat service
+scouter> tagcnt data tomcat service error 0
+scouter> tagcnt data tomcat service error 3
+[stderr] tagcnt: no minute data for 5
+scouter> tagcnt data tomcat service error x
+[stderr] tagcnt: invalid index "x"
+scouter> tagcnt data tomcat service error
+   H0 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8
+   H1 1.0, 1,234.6, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0
+   H2 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0
+   H3 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2
+   H4 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2
+   H5 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5
+   H6 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5
+   H7 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8
+   H8 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0
+   H9 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0
+  H10 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2
+  H11 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2
+  H12 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5
+  H13 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5
+  H14 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8
+  H15 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0
+  H16 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0
+  H17 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2
+  H18 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2
+  H19 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5
+  H20 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5
+  H21 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8
+  H22 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0
+  H23 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5, 0.0, 0.2, 0.5, 0.8, 1.0
+scouter> visitor tomcat
+	1,234,567
+scouter> visitor host
+	/host1/tomcat1 = 5
+	/host3/tomcat3 = 12,000
+scouter> visitor
+	/host1/tomcat1 = 5
+	/host3/tomcat3 = 12,000
+scouter> visitor nothing
+scouter> debug queue
+Zeta=9
+ingest.completed=1500
+tcp.active=1
+udp.rejected=2
+
+scouter> debug _
+scouter> debug
+[stderr] debug: unknown option "" (debug queue)
+scouter> debug QUEUE
+[stderr] debug: unknown option "QUEUE" (debug queue)

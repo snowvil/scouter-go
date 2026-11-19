@@ -1,0 +1,884 @@
+{
+  "scenario": "manage",
+  "cases": [
+    {
+      "name": "db-delete-day",
+      "command": "SERVER_DB_DELETE",
+      "request": "db-delete-day.request.bin",
+      "request_bytes": 22,
+      "response": "db-delete-day.response.bin",
+      "response_bytes": 13,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "size": {
+              "t": "decimal",
+              "v": 1
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "db-delete-missing-and-file",
+      "command": "SERVER_DB_DELETE",
+      "request": "db-delete-missing-and-file.request.bin",
+      "request_bytes": 51,
+      "response": "db-delete-missing-and-file.response.bin",
+      "response_bytes": 13,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "size": {
+              "t": "decimal",
+              "v": 2
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "db-delete-no-list",
+      "command": "SERVER_DB_DELETE",
+      "request": "db-delete-no-list.request.bin",
+      "request_bytes": 12,
+      "response": "db-delete-no-list.response.bin",
+      "response_bytes": 4,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {}
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "db-delete-empty-list",
+      "command": "SERVER_DB_DELETE",
+      "request": "db-delete-empty-list.request.bin",
+      "request_bytes": 10,
+      "response": "db-delete-empty-list.response.bin",
+      "response_bytes": 12,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "size": {
+              "t": "decimal",
+              "v": 0
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "db-delete-non-text-item",
+      "command": "SERVER_DB_DELETE",
+      "request": "db-delete-non-text-item.request.bin",
+      "request_bytes": 17,
+      "response": "db-delete-non-text-item.response.bin",
+      "response_bytes": 13,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "size": {
+              "t": "decimal",
+              "v": 1
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "db-delete-traversal",
+      "command": "SERVER_DB_DELETE",
+      "request": "db-delete-traversal.request.bin",
+      "request_bytes": 23,
+      "response": "db-delete-traversal.response.bin",
+      "response_bytes": 13,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "size": {
+              "t": "decimal",
+              "v": 1
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "remote-control",
+      "command": "REMOTE_CONTROL",
+      "request": "remote-control.request.bin",
+      "request_bytes": 92,
+      "response": "remote-control.response.bin",
+      "response_bytes": 15,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "success": {
+              "t": "boolean",
+              "v": true
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": [
+        "[REMOTE_CONTROL]POPUP_MESSAGE from 10.0.0.1 to 10.0.0.2 true"
+      ]
+    },
+    {
+      "name": "check-job-102",
+      "command": "CHECK_JOB",
+      "request": "check-job-102.request.bin",
+      "request_bytes": 14,
+      "response": "check-job-102.response.bin",
+      "response_bytes": 115,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "text",
+          "xtype": "",
+          "hash": 0,
+          "text": "POPUP_MESSAGE"
+        },
+        {
+          "pack": "map",
+          "v": {
+            "toSession": {
+              "t": "decimal",
+              "v": 102
+            },
+            "fromSession": {
+              "t": "decimal",
+              "v": 101
+            },
+            "command": {
+              "t": "text",
+              "v": "POPUP_MESSAGE"
+            },
+            "message": {
+              "t": "text",
+              "v": "synthetic hello"
+            },
+            "keeptime": {
+              "t": "decimal",
+              "v": 3000
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "check-job-102-empty",
+      "command": "CHECK_JOB",
+      "request": "check-job-102-empty.request.bin",
+      "request_bytes": 14,
+      "response": "check-job-102-empty.response.bin",
+      "response_bytes": 1,
+      "item_kind": "pack",
+      "items": [],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "remote-control-burst-1",
+      "command": "REMOTE_CONTROL",
+      "request": "remote-control-burst-1.request.bin",
+      "request_bytes": 71,
+      "response": "remote-control-burst-1.response.bin",
+      "response_bytes": 15,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "success": {
+              "t": "boolean",
+              "v": true
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": [
+        "[REMOTE_CONTROL]POPUP_MESSAGE from 10.0.0.1 to 10.0.0.2 true"
+      ]
+    },
+    {
+      "name": "remote-control-burst-2",
+      "command": "REMOTE_CONTROL",
+      "request": "remote-control-burst-2.request.bin",
+      "request_bytes": 71,
+      "response": "remote-control-burst-2.response.bin",
+      "response_bytes": 15,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "success": {
+              "t": "boolean",
+              "v": true
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": [
+        "[REMOTE_CONTROL]POPUP_MESSAGE from 10.0.0.1 to 10.0.0.2 true"
+      ]
+    },
+    {
+      "name": "remote-control-burst-3",
+      "command": "REMOTE_CONTROL",
+      "request": "remote-control-burst-3.request.bin",
+      "request_bytes": 71,
+      "response": "remote-control-burst-3.response.bin",
+      "response_bytes": 15,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "success": {
+              "t": "boolean",
+              "v": true
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": [
+        "[REMOTE_CONTROL]POPUP_MESSAGE from 10.0.0.1 to 10.0.0.2 true"
+      ]
+    },
+    {
+      "name": "remote-control-burst-4",
+      "command": "REMOTE_CONTROL",
+      "request": "remote-control-burst-4.request.bin",
+      "request_bytes": 71,
+      "response": "remote-control-burst-4.response.bin",
+      "response_bytes": 15,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "success": {
+              "t": "boolean",
+              "v": true
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": [
+        "[REMOTE_CONTROL]POPUP_MESSAGE from 10.0.0.1 to 10.0.0.2 true"
+      ]
+    },
+    {
+      "name": "remote-control-burst-5",
+      "command": "REMOTE_CONTROL",
+      "request": "remote-control-burst-5.request.bin",
+      "request_bytes": 71,
+      "response": "remote-control-burst-5.response.bin",
+      "response_bytes": 15,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "success": {
+              "t": "boolean",
+              "v": true
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": [
+        "[REMOTE_CONTROL]POPUP_MESSAGE from 10.0.0.1 to 10.0.0.2 true"
+      ]
+    },
+    {
+      "name": "remote-control-burst-6",
+      "command": "REMOTE_CONTROL",
+      "request": "remote-control-burst-6.request.bin",
+      "request_bytes": 71,
+      "response": "remote-control-burst-6.response.bin",
+      "response_bytes": 15,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "success": {
+              "t": "boolean",
+              "v": false
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": [
+        "[S148] [INFO] RemoteControlManager queue exceeded!command:POPUP_MESSAGE",
+        "[REMOTE_CONTROL]POPUP_MESSAGE from 10.0.0.1 to 10.0.0.2 false"
+      ]
+    },
+    {
+      "name": "remote-control-burst-7",
+      "command": "REMOTE_CONTROL",
+      "request": "remote-control-burst-7.request.bin",
+      "request_bytes": 71,
+      "response": "remote-control-burst-7.response.bin",
+      "response_bytes": 15,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "success": {
+              "t": "boolean",
+              "v": false
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": [
+        "[S148] [INFO] RemoteControlManager queue exceeded!command:POPUP_MESSAGE",
+        "[REMOTE_CONTROL]POPUP_MESSAGE from 10.0.0.1 to 10.0.0.2 false"
+      ]
+    },
+    {
+      "name": "check-job-burst-1",
+      "command": "CHECK_JOB",
+      "request": "check-job-burst-1.request.bin",
+      "request_bytes": 14,
+      "response": "check-job-burst-1.response.bin",
+      "response_bytes": 94,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "text",
+          "xtype": "",
+          "hash": 0,
+          "text": "POPUP_MESSAGE"
+        },
+        {
+          "pack": "map",
+          "v": {
+            "toSession": {
+              "t": "decimal",
+              "v": 102
+            },
+            "fromSession": {
+              "t": "decimal",
+              "v": 101
+            },
+            "command": {
+              "t": "text",
+              "v": "POPUP_MESSAGE"
+            },
+            "message": {
+              "t": "text",
+              "v": "burst 3"
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "check-job-burst-2",
+      "command": "CHECK_JOB",
+      "request": "check-job-burst-2.request.bin",
+      "request_bytes": 14,
+      "response": "check-job-burst-2.response.bin",
+      "response_bytes": 94,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "text",
+          "xtype": "",
+          "hash": 0,
+          "text": "POPUP_MESSAGE"
+        },
+        {
+          "pack": "map",
+          "v": {
+            "toSession": {
+              "t": "decimal",
+              "v": 102
+            },
+            "fromSession": {
+              "t": "decimal",
+              "v": 101
+            },
+            "command": {
+              "t": "text",
+              "v": "POPUP_MESSAGE"
+            },
+            "message": {
+              "t": "text",
+              "v": "burst 4"
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "check-job-burst-3",
+      "command": "CHECK_JOB",
+      "request": "check-job-burst-3.request.bin",
+      "request_bytes": 14,
+      "response": "check-job-burst-3.response.bin",
+      "response_bytes": 94,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "text",
+          "xtype": "",
+          "hash": 0,
+          "text": "POPUP_MESSAGE"
+        },
+        {
+          "pack": "map",
+          "v": {
+            "toSession": {
+              "t": "decimal",
+              "v": 102
+            },
+            "fromSession": {
+              "t": "decimal",
+              "v": 101
+            },
+            "command": {
+              "t": "text",
+              "v": "POPUP_MESSAGE"
+            },
+            "message": {
+              "t": "text",
+              "v": "burst 5"
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "check-job-burst-4",
+      "command": "CHECK_JOB",
+      "request": "check-job-burst-4.request.bin",
+      "request_bytes": 14,
+      "response": "check-job-burst-4.response.bin",
+      "response_bytes": 94,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "text",
+          "xtype": "",
+          "hash": 0,
+          "text": "POPUP_MESSAGE"
+        },
+        {
+          "pack": "map",
+          "v": {
+            "toSession": {
+              "t": "decimal",
+              "v": 102
+            },
+            "fromSession": {
+              "t": "decimal",
+              "v": 101
+            },
+            "command": {
+              "t": "text",
+              "v": "POPUP_MESSAGE"
+            },
+            "message": {
+              "t": "text",
+              "v": "burst 6"
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "check-job-burst-5",
+      "command": "CHECK_JOB",
+      "request": "check-job-burst-5.request.bin",
+      "request_bytes": 14,
+      "response": "check-job-burst-5.response.bin",
+      "response_bytes": 94,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "text",
+          "xtype": "",
+          "hash": 0,
+          "text": "POPUP_MESSAGE"
+        },
+        {
+          "pack": "map",
+          "v": {
+            "toSession": {
+              "t": "decimal",
+              "v": 102
+            },
+            "fromSession": {
+              "t": "decimal",
+              "v": 101
+            },
+            "command": {
+              "t": "text",
+              "v": "POPUP_MESSAGE"
+            },
+            "message": {
+              "t": "text",
+              "v": "burst 7"
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "check-job-burst-6",
+      "command": "CHECK_JOB",
+      "request": "check-job-burst-6.request.bin",
+      "request_bytes": 14,
+      "response": "check-job-burst-6.response.bin",
+      "response_bytes": 1,
+      "item_kind": "pack",
+      "items": [],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "check-job-burst-7",
+      "command": "CHECK_JOB",
+      "request": "check-job-burst-7.request.bin",
+      "request_bytes": 14,
+      "response": "check-job-burst-7.response.bin",
+      "response_bytes": 1,
+      "item_kind": "pack",
+      "items": [],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "remote-control-invalid-to",
+      "command": "REMOTE_CONTROL",
+      "request": "remote-control-invalid-to.request.bin",
+      "request_bytes": 53,
+      "response": "remote-control-invalid-to.response.bin",
+      "response_bytes": 1,
+      "item_kind": "pack",
+      "items": [],
+      "stderr_first_line": "java.lang.NullPointerException",
+      "logs": []
+    },
+    {
+      "name": "check-job-invalid-to",
+      "command": "CHECK_JOB",
+      "request": "check-job-invalid-to.request.bin",
+      "request_bytes": 15,
+      "response": "check-job-invalid-to.response.bin",
+      "response_bytes": 74,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "text",
+          "xtype": "",
+          "hash": 0,
+          "text": "EXIT_CLIENT"
+        },
+        {
+          "pack": "map",
+          "v": {
+            "toSession": {
+              "t": "decimal",
+              "v": 999
+            },
+            "fromSession": {
+              "t": "decimal",
+              "v": 101
+            },
+            "command": {
+              "t": "text",
+              "v": "EXIT_CLIENT"
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "remote-control-invalid-from",
+      "command": "REMOTE_CONTROL",
+      "request": "remote-control-invalid-from.request.bin",
+      "request_bytes": 56,
+      "response": "remote-control-invalid-from.response.bin",
+      "response_bytes": 1,
+      "item_kind": "pack",
+      "items": [],
+      "stderr_first_line": "java.lang.NullPointerException",
+      "logs": []
+    },
+    {
+      "name": "check-job-after-invalid-from",
+      "command": "CHECK_JOB",
+      "request": "check-job-after-invalid-from.request.bin",
+      "request_bytes": 14,
+      "response": "check-job-after-invalid-from.response.bin",
+      "response_bytes": 80,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "text",
+          "xtype": "",
+          "hash": 0,
+          "text": "RESTART_CLIENT"
+        },
+        {
+          "pack": "map",
+          "v": {
+            "toSession": {
+              "t": "decimal",
+              "v": 102
+            },
+            "fromSession": {
+              "t": "decimal",
+              "v": 888
+            },
+            "command": {
+              "t": "text",
+              "v": "RESTART_CLIENT"
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "remote-control-all",
+      "command": "REMOTE_CONTROL_ALL",
+      "request": "remote-control-all.request.bin",
+      "request_bytes": 47,
+      "response": "remote-control-all.response.bin",
+      "response_bytes": 1,
+      "item_kind": "pack",
+      "items": [],
+      "stderr_first_line": null,
+      "logs": [
+        "[REMOTE_CONTROL_ALL]REFETCH_COUNTER_XML from 10.0.0.1"
+      ]
+    },
+    {
+      "name": "check-job-all-101",
+      "command": "CHECK_JOB",
+      "request": "check-job-all-101.request.bin",
+      "request_bytes": 14,
+      "response": "check-job-all-101.response.bin",
+      "response_bytes": 76,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "text",
+          "xtype": "",
+          "hash": 0,
+          "text": "REFETCH_COUNTER_XML"
+        },
+        {
+          "pack": "map",
+          "v": {
+            "fromSession": {
+              "t": "decimal",
+              "v": 101
+            },
+            "command": {
+              "t": "text",
+              "v": "REFETCH_COUNTER_XML"
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "check-job-all-102",
+      "command": "CHECK_JOB",
+      "request": "check-job-all-102.request.bin",
+      "request_bytes": 14,
+      "response": "check-job-all-102.response.bin",
+      "response_bytes": 76,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "text",
+          "xtype": "",
+          "hash": 0,
+          "text": "REFETCH_COUNTER_XML"
+        },
+        {
+          "pack": "map",
+          "v": {
+            "fromSession": {
+              "t": "decimal",
+              "v": 101
+            },
+            "command": {
+              "t": "text",
+              "v": "REFETCH_COUNTER_XML"
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "remote-control-all-invalid-from",
+      "command": "REMOTE_CONTROL_ALL",
+      "request": "remote-control-all-invalid-from.request.bin",
+      "request_bytes": 40,
+      "response": "remote-control-all-invalid-from.response.bin",
+      "response_bytes": 1,
+      "item_kind": "pack",
+      "items": [],
+      "stderr_first_line": "java.lang.NullPointerException",
+      "logs": []
+    },
+    {
+      "name": "check-job-all-invalid-101",
+      "command": "CHECK_JOB",
+      "request": "check-job-all-invalid-101.request.bin",
+      "request_bytes": 14,
+      "response": "check-job-all-invalid-101.response.bin",
+      "response_bytes": 61,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "text",
+          "xtype": "",
+          "hash": 0,
+          "text": "EXIT_CLIENT"
+        },
+        {
+          "pack": "map",
+          "v": {
+            "fromSession": {
+              "t": "decimal",
+              "v": 777
+            },
+            "command": {
+              "t": "text",
+              "v": "EXIT_CLIENT"
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "check-job-unknown",
+      "command": "CHECK_JOB",
+      "request": "check-job-unknown.request.bin",
+      "request_bytes": 16,
+      "response": "check-job-unknown.response.bin",
+      "response_bytes": 1,
+      "item_kind": "pack",
+      "items": [],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "check-job-no-session",
+      "command": "CHECK_JOB",
+      "request": "check-job-no-session.request.bin",
+      "request_bytes": 2,
+      "response": "check-job-no-session.response.bin",
+      "response_bytes": 1,
+      "item_kind": "pack",
+      "items": [],
+      "stderr_first_line": null,
+      "logs": []
+    }
+  ],
+  "facts": {
+    "tree_initial": {
+      "00000000/text/text_service.data": {
+        "bytes": 50,
+        "sha256": "c0644c000eb1c951f5fdabef08e48cb428f4afe831d64a1a21f0a7cc884440df"
+      },
+      "20260101/text/text.data": {
+        "bytes": 42,
+        "sha256": "cc773b13bc6ee779320c01771844d462c9d2f1542a5078c594948ace2991e405"
+      },
+      "20260101/xlog/xlog.data": {
+        "bytes": 42,
+        "sha256": "821f729252710b83de26e12241d65dfa07c27403b4a388e628f6beda9c47bf89"
+      },
+      "20260102/xlog/xlog.data": {
+        "bytes": 42,
+        "sha256": "0b72189553ff1c4c45299447ac6c46051dd994cf1d6a8dcb31858b45af3ba6d6"
+      },
+      "20260103/counter/real.data": {
+        "bytes": 45,
+        "sha256": "3ce6a9e4f93ea8a78d0d9e120720975d08c6011a5d8eabb408fdd53535cacca6"
+      }
+    },
+    "tree_after_deletes": {
+      "00000000/text/text_service.data": {
+        "bytes": 50,
+        "sha256": "c0644c000eb1c951f5fdabef08e48cb428f4afe831d64a1a21f0a7cc884440df"
+      },
+      "20260103/counter/real.data": {
+        "bytes": 45,
+        "sha256": "3ce6a9e4f93ea8a78d0d9e120720975d08c6011a5d8eabb408fdd53535cacca6"
+      }
+    },
+    "victim_after_traversal": {},
+    "victim_dir_exists_after_traversal": false
+  }
+}

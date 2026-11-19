@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Counters>
+  <Familys>
+    <Family name="myfam" master="c1" custom-attr="dropped">
+      <Counter name="c1" disp="C1" unit="cnt" total="true"/>
+      <Counter name="c2" disp="C2" unit="ms" all="false" icon="i"/>
+    </Family>
+    <Family name="myfam" master="c3"><Counter name="c3" disp="C3" unit=""/></Family>
+    <Family name="zws-metric.fam" master="z"><Counter name="z"/></Family>
+    <Family name="afam" master="a1"><Counter name="a1"/></Family>
+  </Familys>
+  <Types>
+    <ObjectType name="t_b" family="myfam" disp="TB" icon="x"><Counter name="own" disp="Own"/></ObjectType>
+    <ObjectType name="t_a" family="afam" sub-object="true"/>
+    <ObjectType name="t_b" family="myfam" disp="TB2"/>
+    <ObjectType name="한글" family="afam" disp="한"/>
+  </Types>
+</Counters>

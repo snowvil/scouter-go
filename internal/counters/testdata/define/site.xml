@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- site -->
+<Counters>
+	<Familys>
+		<Family name="myfam" master="a" x="1"><Counter name="a" disp="A"/></Family>
+	</Familys>
+	<Types>
+		<ObjectType name="old" disp="Old" family="myfam" icon="o" sub-object="false"><Counter name="own"/></ObjectType>
+		<ObjectType name="keep" family="host"/>
+	</Types>
+</Counters>

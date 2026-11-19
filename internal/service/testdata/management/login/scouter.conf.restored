@@ -1,0 +1,2 @@
+tagcnt_enabled=TRUE
+net_tcp_client_so_timeout_ms=-1

@@ -1,0 +1,159 @@
+{
+  "synthetic_only": true,
+  "geoip_api": {
+    "artifact": "com.maxmind.geoip:geoip-api:1.3.1",
+    "sha256": "d4e162e4da56504dce2b5566c304be535298859be7c6235852dbc30ecf56e7fc",
+    "note": "scouter.server pom.xml dependency and the deployed server/lib jar; scouter.deploy/lib/maxmind.geoip.jar (2015, older API) is only used by the boot test build"
+  },
+  "constructor": "new LookupService(file, LookupService.GEOIP_MEMORY_CACHE) then getLocation(InetAddress.getByAddress(4 bytes)) as scouter.server.geoip.GISDataUtil",
+  "runtime_jdk": [
+    "openjdk version \"1.8.0_345\"",
+    "OpenJDK Runtime Environment (Zulu 8.64.0.19-CA-macos-aarch64) (build 1.8.0_345-b01)",
+    "OpenJDK 64-Bit Server VM (Zulu 8.64.0.19-CA-macos-aarch64) (build 25.345-b01, mixed mode)"
+  ],
+  "generator": "python3 -I scripts/java-geoip.py --generate <empty dir>",
+  "check": "python3 -I scripts/java-geoip.py --check",
+  "oracle_source_checksums": [
+    {
+      "path": "tools/java-geoip/GeoipOracle.java",
+      "sha256": "c17ca8db24ac3432f295f802404d555878a8a45601a28ce687327f084cfed389"
+    }
+  ],
+  "files": [
+    {
+      "name": "city_rev0.dat",
+      "bytes": 6552,
+      "sha256": "b35f58c9751e06e6f372bf09035625d8dba6ffcc75fdb0cc5b351b96687086a2"
+    },
+    {
+      "name": "city_rev1.dat",
+      "bytes": 6552,
+      "sha256": "0542d161bd4ee85739ea08bd601e44e71ed0914288ac4ae4995eac071b1e7a6b"
+    },
+    {
+      "name": "city_rev1_cut_nodes.dat",
+      "bytes": 1345,
+      "sha256": "a1ed9bfd1f148e2a6acfb0f9e6814a8fcef34bc26ac0fb271cb1818cd68347dd"
+    },
+    {
+      "name": "city_rev1_cut_records.dat",
+      "bytes": 4584,
+      "sha256": "f13f2004fd12781f74b4aaa2f5f50635c73cd326b59b04fe188dba1214a8ce7d"
+    },
+    {
+      "name": "city_rev1_oldtype.dat",
+      "bytes": 6552,
+      "sha256": "1bd30f90d5febd59e28756f08c662cba797c1789320ed44668e673226cf407fe"
+    },
+    {
+      "name": "city_rev1_seg0.dat",
+      "bytes": 6552,
+      "sha256": "f0c0a0c08bdcee0cabc5ff16db9d616cd42055d58b2ef1d84c0c82632eaae599"
+    },
+    {
+      "name": "city_rev1_segbig.dat",
+      "bytes": 6552,
+      "sha256": "a5110281bc2472c15432efd4f2f93c217881f07feb02fd64fd3ae9ced181c100"
+    },
+    {
+      "name": "city_rev1_segffffff.dat",
+      "bytes": 6552,
+      "sha256": "d25925d4331ded80c6b3163856d5291438868a4c605b0c5b2b5db3aa040818e3"
+    },
+    {
+      "name": "city_rev1_segmax.dat",
+      "bytes": 6552,
+      "sha256": "28d604ad48764b94ae088042fd525474663385bce2f039b92fd069601973f9b4"
+    },
+    {
+      "name": "city_rev1_trunc_half.dat",
+      "bytes": 3276,
+      "sha256": "b9e9b1bbdb6211911b75b900ad739f8855b1e489ee733fd678cc8444ed3a72a2"
+    },
+    {
+      "name": "city_rev1_trunc_trailer.dat",
+      "bytes": 6550,
+      "sha256": "0247fe6ef30b4ce5685ab613508d3b4759883feb69a323c2a78e12d983c085fc"
+    },
+    {
+      "name": "country.dat",
+      "bytes": 313,
+      "sha256": "59bac4fc3814bf4618cd09e608a013fc78cc9ac977f41efccdcd1084c03780ed"
+    },
+    {
+      "name": "country_type106.dat",
+      "bytes": 313,
+      "sha256": "63202e8e8f0222182e54e65e52b073e8c31e098ffcbb566cd0403d59677cd2a4"
+    },
+    {
+      "name": "delim_at_start.dat",
+      "bytes": 7,
+      "sha256": "003c3e396ae267aee55ad8d1ca77af0fcafdb6f7ba401541b85902c4c4fd1e0a"
+    },
+    {
+      "name": "delim_no_type.dat",
+      "bytes": 33,
+      "sha256": "0a2f344db1995914e0c0a6f4c9c30558a8df52104b0e8853f39862fd42b3c3df"
+    },
+    {
+      "name": "delim_short_segment.dat",
+      "bytes": 35,
+      "sha256": "72f3e75a900803e227e3670d4e4451ea59f2ef7d011d9cf94b7648951f195efb"
+    },
+    {
+      "name": "empty.dat",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "golden.json",
+      "bytes": 125568,
+      "sha256": "f69e475e359ca67f26932e96752195015085eb15336551bd8511533b9f7a48f0"
+    },
+    {
+      "name": "negative_type.dat",
+      "bytes": 4299,
+      "sha256": "8dcc01acc3ebdf99fa561e016ee99cdd378b82667a2602acdb35d47bd4ef602b"
+    },
+    {
+      "name": "nodelim_200.dat",
+      "bytes": 200,
+      "sha256": "1de43b33cb2b2b18a7936d18328e9e17a87080970f1b3a4c06e54f3ae9c763e4"
+    },
+    {
+      "name": "nodelim_60.dat",
+      "bytes": 60,
+      "sha256": "14a89af79adb59a7f9fa944837948e28b37d36462fb54ad52700c85da4a96e15"
+    },
+    {
+      "name": "org.dat",
+      "bytes": 190,
+      "sha256": "0d42a60feba185458f747f1d2ccba61beec862ce4fd8a06ee73906dfe563237f"
+    },
+    {
+      "name": "region_rev1.dat",
+      "bytes": 127,
+      "sha256": "cc1e18868ffaaa484343030bec3f312a6453f819d4afd3081a936b2fb4d32c3c"
+    },
+    {
+      "name": "short2.dat",
+      "bytes": 2,
+      "sha256": "ca2fd00fa001190744c15c317643ab092e7048ce086a243e2be9437c898de1bb"
+    },
+    {
+      "name": "spec.txt",
+      "bytes": 9416,
+      "sha256": "6e4bb02f18c7d111474d1e26ca9a7be437e84f307da80bfadd5f554b288626e9"
+    },
+    {
+      "name": "tiny_nodelim.dat",
+      "bytes": 10,
+      "sha256": "7e6ae90af4cc1ba80532e9d3c932c1d1e77f1612f4679ce0212410dd7b7b349f"
+    },
+    {
+      "name": "unknown_type13.dat",
+      "bytes": 4299,
+      "sha256": "8f10a630c7c7a47fefcb1b45e813b3b9c0d654d0ff2868da183a9ab0323d733e"
+    }
+  ]
+}

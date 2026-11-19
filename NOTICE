@@ -1,0 +1,35 @@
+Scouter Go
+
+This project implements compatibility with Scouter.
+Protocol behavior is derived from the Scouter source project:
+https://github.com/scouter-project/scouter
+Copyright 2015 the original Scouter author or authors.
+Scouter is licensed under the Apache License, Version 2.0.
+
+The following files are copied or adapted from the Scouter source and keep
+its license:
+  cmd/scouter-go/counters.xml
+  internal/account/defaults/account.xml
+  internal/account/defaults/account_group.xml
+  internal/server/telegraf-sample.xml
+  internal/service/testdata/management/account/ (the *.default.xml files)
+
+The Java and Scala sources under tools/java-*/seams/ are test seams that
+reproduce or mirror parts of the Scouter classes they replace, and keep its
+license.
+
+internal/storage/visitor_hll.go follows the HyperLogLog implementation of
+stream-lib (Copyright Clearspring Technologies, Apache License, Version 2.0)
+as used by Scouter.
+
+internal/geoip reads the legacy GeoIP database format. It is an independent
+implementation written from the format and from observed behavior of the
+geoip-api library; no code of that library is included. The country code
+table lists public ISO 3166 codes in the order the format defines.
+
+internal/pulse/kafka includes independent implementations of the LZ4 frame
+format and the xxHash32 checksum, written from their public specifications.
+
+Source revisions and design-only references are recorded in
+docs/compatibility/baseline.json and docs/reference-evaluation.md.
+The reference Go server has not been imported wholesale into this project.

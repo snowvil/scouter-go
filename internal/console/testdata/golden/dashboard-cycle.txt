@@ -1,0 +1,34 @@
+scouter> dashboard tomcat
+              INST   ACT   TPS RTIME GCCNT
+09:05:07.042     2     5    20   200     1
+scouter> dashboard tomcat
+09:05:07.042     2     5    20   200     1
+scouter> dashboard tomcat
+09:05:07.042     2     5    20   200     1
+scouter> dashboard tomcat
+09:05:07.042     2     5    20   200     1
+scouter> dashboard tomcat
+09:05:07.042     2     5    20   200     1
+scouter> dashboard tomcat
+09:05:07.042     2     5    20   200     1
+scouter> dashboard tomcat
+09:05:07.042     2     5    20   200     1
+scouter> dashboard tomcat
+09:05:07.042     2     5    20   200     1
+scouter> dashboard tomcat
+09:05:07.042     2     5    20   200     1
+scouter> dashboard tomcat
+09:05:07.042     2     5    20   200     1
+scouter> dashboard tomcat
+09:05:07.042     2     5    20   200     1
+scouter> dashboard tomcat
+              INST   ACT   TPS RTIME GCCNT
+09:05:07.042     2     5    20   200     1
+scouter> dashboard linux Cpu
+             host-long-name2           host1
+09:05:07.042              88              12
+scouter> dashboard linux Cpu
+             host1
+09:05:07.042    12
+scouter> dashboard linux Cpu
+09:05:07.042    12

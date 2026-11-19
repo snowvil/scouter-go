@@ -1,0 +1,5 @@
+server_id=synthetic-server-1
+ext_link_name=paper-synthetic
+ext_link_url_pattern=http://paper.invalid/index.html#/paper?instances=$[objHashes]&from=$[from]&to=$[to]
+tagcnt_enabled=false
+net_tcp_client_so_timeout_ms=5000

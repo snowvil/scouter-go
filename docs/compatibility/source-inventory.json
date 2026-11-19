@@ -1,0 +1,4679 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "https://github.com/snowvil/scouter",
+    "commit": "dee47fb5f4003cecbb146c5acfff8d2ebeaf07f5",
+    "version": "2.21.3",
+    "clean_required": true
+  },
+  "status_policy": "생성 시 모든 서버 명령은 not_implemented. 이 목록은 Go 구현 또는 통합 호환의 증거가 아니다.",
+  "statistics": {
+    "source": {
+      "main_java": {
+        "files": 77,
+        "lines": 11846
+      },
+      "main_scala": {
+        "files": 204,
+        "lines": 26117
+      },
+      "test_java": {
+        "files": 9,
+        "lines": 991
+      }
+    },
+    "service_handler_commands": 229,
+    "service_handler_files": 34
+  },
+  "commands": [
+    {
+      "command_name": "ACTIVESPEED_GROUP_REAL_TIME",
+      "command_literal": "ACTIVESPEED_GROUP_REAL_TIME",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 160,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SpecialCounterService.scala",
+      "line": 83,
+      "handler": "SpecialCounterService.getActiveSpeedGroup",
+      "handler_line": 84,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "ACTIVESPEED_GROUP_REAL_TIME_GROUP",
+      "command_literal": "ACTIVESPEED_GROUP_REAL_TIME_GROUP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 161,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SpecialCounterService.scala",
+      "line": 147,
+      "handler": "SpecialCounterService.getGroupActiveSpeed",
+      "handler_line": 148,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "ACTIVESPEED_REAL_TIME",
+      "command_literal": "ACTIVESPEED_REAL_TIME",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 158,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SpecialCounterService.scala",
+      "line": 56,
+      "handler": "SpecialCounterService.getActiveSpeedAll",
+      "handler_line": 57,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "ACTIVESPEED_REAL_TIME_GROUP",
+      "command_literal": "ACTIVESPEED_REAL_TIME_GROUP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 159,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SpecialCounterService.scala",
+      "line": 110,
+      "handler": "SpecialCounterService.getActiveSpeed",
+      "handler_line": 111,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "ACTIVE_QUERY_LIST",
+      "command_literal": "ACTIVE_QUERY_LIST",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 224,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "line": 41,
+      "handler": "DatabaseService.activeQueryList",
+      "handler_line": 42,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "ADD_ACCOUNT",
+      "command_literal": "ADD_ACCOUNT",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 273,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AccountService.scala",
+      "line": 37,
+      "handler": "AccountService.addAccount",
+      "handler_line": 38,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "ADD_ACCOUNT_GROUP",
+      "command_literal": "ADD_ACCOUNT_GROUP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 280,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AccountService.scala",
+      "line": 127,
+      "handler": "AccountService.addAccountGroup",
+      "handler_line": 128,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "ALERT_LOAD_TIME",
+      "command_literal": "ALERT_LOAD_TIME",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 166,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AlertService.scala",
+      "line": 76,
+      "handler": "AlertService.getAlertHistory",
+      "handler_line": 77,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "ALERT_REAL_TIME",
+      "command_literal": "ALERT_REAL_TIME",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 165,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AlertService.scala",
+      "line": 47,
+      "handler": "AlertService.getRealtime",
+      "handler_line": 48,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "ALERT_TITLE_COUNT",
+      "command_literal": "ALERT_TITLE_COUNT",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 168,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AlertService.scala",
+      "line": 135,
+      "handler": "AlertService.titleAlertCount",
+      "handler_line": 136,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "BATCH_ACTIVE_STACK",
+      "command_literal": "BATCH_ACTIVE_STACK",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 319,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/BatchService.scala",
+      "line": 140,
+      "handler": "BatchService.readActiveStack",
+      "handler_line": 141,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "BATCH_HISTORY_DETAIL",
+      "command_literal": "BATCH_HISTORY_DETAIL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 317,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/BatchService.scala",
+      "line": 68,
+      "handler": "BatchService.readDetail",
+      "handler_line": 69,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "BATCH_HISTORY_LIST",
+      "command_literal": "BATCH_HISTORY_LIST",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 316,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/BatchService.scala",
+      "line": 44,
+      "handler": "BatchService.read",
+      "handler_line": 45,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "BATCH_HISTORY_STACK",
+      "command_literal": "BATCH_HISTORY_STACK",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 318,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/BatchService.scala",
+      "line": 87,
+      "handler": "BatchService.readStack",
+      "handler_line": 88,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "CHECK_ACCOUNT_ID",
+      "command_literal": "CHECK_ACCOUNT_ID",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 274,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AccountService.scala",
+      "line": 75,
+      "handler": "AccountService.checkAccountId",
+      "handler_line": 76,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "CHECK_JOB",
+      "command_literal": "CHECK_JOB",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 109,
+      "source_path": "scouter.server/src/main/java/scouter/server/netio/service/handle/ManageService.java",
+      "line": 113,
+      "handler": "ManageService.checkJob",
+      "handler_line": 114,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "CHECK_LOGIN",
+      "command_literal": "CHECK_LOGIN",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 27,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/LoginService.scala",
+      "line": 130,
+      "handler": "LoginService.checkLogin",
+      "handler_line": 131,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "CHECK_SESSION",
+      "command_literal": "CHECK_SESSION",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 28,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/LoginService.scala",
+      "line": 113,
+      "handler": "LoginService.getSessionCheck",
+      "handler_line": 114,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "CONFIGURE_DESC",
+      "command_literal": "CONFIGURE_DESC",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 194,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "line": 164,
+      "handler": "ConfigureService.getConfigureDesc",
+      "handler_line": 165,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "CONFIGURE_VALUE_TYPE",
+      "command_literal": "CONFIGURE_VALUE_TYPE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 195,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "line": 186,
+      "handler": "ConfigureService.getConfigureValueType",
+      "handler_line": 187,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "CONFIGURE_VALUE_TYPE_DESC",
+      "command_literal": "CONFIGURE_VALUE_TYPE_DESC",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 196,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "line": 208,
+      "handler": "ConfigureService.getConfigureValueTypeDesc",
+      "handler_line": 209,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_MAP_REAL_TIME",
+      "command_literal": "COUNTER_MAP_REAL_TIME",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 163,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SpecialCounterService.scala",
+      "line": 214,
+      "handler": "SpecialCounterService.counterMapRealtime",
+      "handler_line": 215,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_PAST_DATE",
+      "command_literal": "COUNTER_PAST_DATE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 133,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "line": 399,
+      "handler": "DailyCounterService.getPastDate",
+      "handler_line": 400,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_PAST_DATE_ALL",
+      "command_literal": "COUNTER_PAST_DATE_ALL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 134,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "line": 233,
+      "handler": "DailyCounterService.getPastDateAll",
+      "handler_line": 234,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_PAST_DATE_GROUP",
+      "command_literal": "COUNTER_PAST_DATE_GROUP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 136,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "line": 464,
+      "handler": "DailyCounterService.getPastDateGroup",
+      "handler_line": 465,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_PAST_DATE_TOT",
+      "command_literal": "COUNTER_PAST_DATE_TOT",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 135,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "line": 181,
+      "handler": "DailyCounterService.getPastDateTotalCounter",
+      "handler_line": 182,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_PAST_LONGDATE_ALL",
+      "command_literal": "COUNTER_PAST_LONGDATE_ALL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 139,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "line": 269,
+      "handler": "DailyCounterService.getPastLongDateAll",
+      "handler_line": 270,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_PAST_LONGDATE_GROUP",
+      "command_literal": "COUNTER_PAST_LONGDATE_GROUP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 137,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "line": 531,
+      "handler": "DailyCounterService.getPastLongDateGroup",
+      "handler_line": 532,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_PAST_LONGDATE_TOT",
+      "command_literal": "COUNTER_PAST_LONGDATE_TOT",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 140,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "line": 322,
+      "handler": "DailyCounterService.getPastLongDateTot",
+      "handler_line": 323,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_PAST_TIME",
+      "command_literal": "COUNTER_PAST_TIME",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 128,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CounterService.scala",
+      "line": 222,
+      "handler": "CounterService.getPastTime",
+      "handler_line": 223,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_PAST_TIME_ALL",
+      "command_literal": "COUNTER_PAST_TIME_ALL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 129,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CounterService.scala",
+      "line": 260,
+      "handler": "CounterService.getPastTimeAll",
+      "handler_line": 261,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_PAST_TIME_GROUP",
+      "command_literal": "COUNTER_PAST_TIME_GROUP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 131,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CounterService.scala",
+      "line": 420,
+      "handler": "CounterService.getPastTimeGroupAll",
+      "handler_line": 421,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_PAST_TIME_TOT",
+      "command_literal": "COUNTER_PAST_TIME_TOT",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 130,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CounterService.scala",
+      "line": 353,
+      "handler": "CounterService.getPastTimeTotal",
+      "handler_line": 354,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_REAL_TIME",
+      "command_literal": "COUNTER_REAL_TIME",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 142,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CounterService.scala",
+      "line": 39,
+      "handler": "CounterService.getRealTime",
+      "handler_line": 40,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_REAL_TIME_ALL",
+      "command_literal": "COUNTER_REAL_TIME_ALL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 143,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CounterService.scala",
+      "line": 57,
+      "handler": "CounterService.getRealTimeAll",
+      "handler_line": 58,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_REAL_TIME_ALL_MULTI",
+      "command_literal": "COUNTER_REAL_TIME_ALL_MULTI",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 149,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CounterService.scala",
+      "line": 154,
+      "handler": "CounterService.getRealTimeAllMulti",
+      "handler_line": 155,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_REAL_TIME_GROUP",
+      "command_literal": "COUNTER_REAL_TIME_GROUP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 148,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CounterService.scala",
+      "line": 500,
+      "handler": "CounterService.getRealTimeGroupAll",
+      "handler_line": 501,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_REAL_TIME_MULTI",
+      "command_literal": "COUNTER_REAL_TIME_MULTI",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 147,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CounterService.scala",
+      "line": 85,
+      "handler": "CounterService.getRealTimeMulti",
+      "handler_line": 86,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_REAL_TIME_OBJECT_ALL",
+      "command_literal": "COUNTER_REAL_TIME_OBJECT_ALL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 145,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CounterService.scala",
+      "line": 107,
+      "handler": "CounterService.getRealTimeObjectAll",
+      "handler_line": 108,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_REAL_TIME_OBJECT_TYPE_ALL",
+      "command_literal": "COUNTER_REAL_TIME_OBJECT_TYPE_ALL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 146,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CounterService.scala",
+      "line": 128,
+      "handler": "CounterService.getRealTimeObjectTypeAll",
+      "handler_line": 129,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_REAL_TIME_TOT",
+      "command_literal": "COUNTER_REAL_TIME_TOT",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 144,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CounterService.scala",
+      "line": 193,
+      "handler": "CounterService.getRealTimeTotal",
+      "handler_line": 194,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_TODAY",
+      "command_literal": "COUNTER_TODAY",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 153,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "line": 42,
+      "handler": "DailyCounterService.getDailyCounter",
+      "handler_line": 43,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_TODAY_ALL",
+      "command_literal": "COUNTER_TODAY_ALL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 154,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "line": 75,
+      "handler": "DailyCounterService.getDailyCounterAll",
+      "handler_line": 76,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_TODAY_GROUP",
+      "command_literal": "COUNTER_TODAY_GROUP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 156,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "line": 492,
+      "handler": "DailyCounterService.getTodayGroup",
+      "handler_line": 493,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "COUNTER_TODAY_TOT",
+      "command_literal": "COUNTER_TODAY_TOT",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 155,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "line": 124,
+      "handler": "DailyCounterService.getRealDateTotal",
+      "handler_line": 125,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "CUBRID_ACTIVE_DB_LIST",
+      "command_literal": "CUBRID_ACTIVE_DB_LIST",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 325,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CubridService.scala",
+      "line": 106,
+      "handler": "CubridService.realtimeActiveDBList",
+      "handler_line": 107,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "CUBRID_DB_LONG_PERIOD_MULTI_DATA",
+      "command_literal": "CUBRID_DB_LONG_PERIOD_MULTI_DATA",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 328,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CubridService.scala",
+      "line": 264,
+      "handler": "CubridService.getPastLongDateAll",
+      "handler_line": 265,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "CUBRID_DB_LONG_TRANSACTION_DATA",
+      "command_literal": "CUBRID_DB_LONG_TRANSACTION_DATA",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 330,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CubridService.scala",
+      "line": 313,
+      "handler": "CubridService.DbLongTransactionInfo",
+      "handler_line": 314,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "CUBRID_DB_PERIOD_MULTI_DATA",
+      "command_literal": "CUBRID_DB_PERIOD_MULTI_DATA",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 327,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CubridService.scala",
+      "line": 192,
+      "handler": "CubridService.realtimeCouterTest",
+      "handler_line": 193,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "CUBRID_DB_REALTIME_DML",
+      "command_literal": "CUBRID_DB_REALTIME_DML",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 323,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CubridService.scala",
+      "line": 55,
+      "handler": "CubridService.realtimeDML",
+      "handler_line": 56,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "CUBRID_DB_REALTIME_MULTI_DATA",
+      "command_literal": "CUBRID_DB_REALTIME_MULTI_DATA",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 329,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CubridService.scala",
+      "line": 238,
+      "handler": "CubridService.realtimeMultiData",
+      "handler_line": 239,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "CUBRID_DB_REALTIME_STATUS",
+      "command_literal": "CUBRID_DB_REALTIME_STATUS",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 324,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CubridService.scala",
+      "line": 126,
+      "handler": "CubridService.realtimeDMLStatus",
+      "handler_line": 127,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "CUBRID_DB_SERVER_INFO",
+      "command_literal": "CUBRID_DB_SERVER_INFO",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 326,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CubridService.scala",
+      "line": 159,
+      "handler": "CubridService.DbServerInfo",
+      "handler_line": 160,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "CUBRID_GET_ALERT_CONFIGURE",
+      "command_literal": "CUBRID_GET_ALERT_CONFIGURE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 331,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CubridService.scala",
+      "line": 346,
+      "handler": "CubridService.setConfigureAgent",
+      "handler_line": 347,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "CUBRID_SET_ALERT_CONFIGURE",
+      "command_literal": "CUBRID_SET_ALERT_CONFIGURE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 332,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CubridService.scala",
+      "line": 358,
+      "handler": "CubridService.listConfigureWas",
+      "handler_line": 359,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "DB_DAILY_ACTIVITY",
+      "command_literal": "DB_DAILY_ACTIVITY",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 247,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/MariaService.scala",
+      "line": 267,
+      "handler": "MariaService.dailyActivity",
+      "handler_line": 268,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "DB_DAILY_CONNECTIONS",
+      "command_literal": "DB_DAILY_CONNECTIONS",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 250,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/MariaService.scala",
+      "line": 212,
+      "handler": "MariaService.dailyConnections",
+      "handler_line": 213,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "DB_DIGEST_TABLE",
+      "command_literal": "DB_DIGEST_TABLE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 251,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/MariaService.scala",
+      "line": 353,
+      "handler": "MariaService.digestTable",
+      "handler_line": 354,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "DB_EXPLAIN_PLAN",
+      "command_literal": "DB_EXPLAIN_PLAN",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 229,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "line": 118,
+      "handler": "DatabaseService.explainPlan",
+      "handler_line": 119,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "DB_KILL_PROCESS",
+      "command_literal": "DB_KILL_PROCESS",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 232,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "line": 154,
+      "handler": "DatabaseService.killProcess",
+      "handler_line": 155,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "DB_LAST_DIGEST_TABLE",
+      "command_literal": "DB_LAST_DIGEST_TABLE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 254,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/MariaService.scala",
+      "line": 436,
+      "handler": "MariaService.lastDigestTable",
+      "handler_line": 437,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "DB_LOAD_DIGEST_COUNTER",
+      "command_literal": "DB_LOAD_DIGEST_COUNTER",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 253,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/MariaService.scala",
+      "line": 521,
+      "handler": "MariaService.loadDigestCounter",
+      "handler_line": 522,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "DB_MAX_TIMER_WAIT_THREAD",
+      "command_literal": "DB_MAX_TIMER_WAIT_THREAD",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 252,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/MariaService.scala",
+      "line": 467,
+      "handler": "MariaService.maxTimerWaitThread",
+      "handler_line": 468,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "DB_PROCESS_DETAIL",
+      "command_literal": "DB_PROCESS_DETAIL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 228,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "line": 106,
+      "handler": "DatabaseService.processDetail",
+      "handler_line": 107,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "DB_PROCESS_LIST",
+      "command_literal": "DB_PROCESS_LIST",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 230,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "line": 130,
+      "handler": "DatabaseService.processList",
+      "handler_line": 131,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "DB_REALTIME_ACTIVITY",
+      "command_literal": "DB_REALTIME_ACTIVITY",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 246,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/MariaService.scala",
+      "line": 74,
+      "handler": "MariaService.realtimeActivity",
+      "handler_line": 75,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "DB_REALTIME_CONNECTIONS",
+      "command_literal": "DB_REALTIME_CONNECTIONS",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 245,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/MariaService.scala",
+      "line": 45,
+      "handler": "MariaService.realtimeConnections",
+      "handler_line": 46,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "DB_REALTIME_HIT_RATIO",
+      "command_literal": "DB_REALTIME_HIT_RATIO",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 249,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/MariaService.scala",
+      "line": 160,
+      "handler": "MariaService.realtimeHitRatio",
+      "handler_line": 161,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "DB_REALTIME_RESPONSE_TIME",
+      "command_literal": "DB_REALTIME_RESPONSE_TIME",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 248,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/MariaService.scala",
+      "line": 124,
+      "handler": "MariaService.realtimeResponseTime",
+      "handler_line": 125,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "DB_VARIABLES",
+      "command_literal": "DB_VARIABLES",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 231,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "line": 142,
+      "handler": "DatabaseService.variables",
+      "handler_line": 143,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "DEBUG_AGENT",
+      "command_literal": "DEBUG_AGENT",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 265,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ServerDebug.scala",
+      "line": 38,
+      "handler": "ServerDebug.debugAgent",
+      "handler_line": 39,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "DEBUG_SERVER",
+      "command_literal": "DEBUG_SERVER",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 264,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ServerDebug.scala",
+      "line": 52,
+      "handler": "ServerDebug.debugServer",
+      "handler_line": 53,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "DEFINE_OBJECT_TYPE",
+      "command_literal": "DEFINE_OBJECT_TYPE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 283,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "line": 148,
+      "handler": "ConfigureService.defineObjectType",
+      "handler_line": 149,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "DUMP_APACHE_STATUS",
+      "command_literal": "DUMP_APACHE_STATUS",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 260,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DumpService.scala",
+      "line": 141,
+      "handler": "DumpService.dumpApacheStatus",
+      "handler_line": 142,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "EDIT_ACCOUNT",
+      "command_literal": "EDIT_ACCOUNT",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 275,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AccountService.scala",
+      "line": 56,
+      "handler": "AccountService.editAccount",
+      "handler_line": 57,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "EDIT_GROUP_POLICY",
+      "command_literal": "EDIT_GROUP_POLICY",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 279,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AccountService.scala",
+      "line": 119,
+      "handler": "AccountService.editGroupPolicy",
+      "handler_line": 120,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "EDIT_OBJECT_TYPE",
+      "command_literal": "EDIT_OBJECT_TYPE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 284,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "line": 156,
+      "handler": "ConfigureService.editObjectType",
+      "handler_line": 157,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "EXIST_QUERY_LIST",
+      "command_literal": "EXIST_QUERY_LIST",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 225,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "line": 53,
+      "handler": "DatabaseService.existQueryList",
+      "handler_line": 54,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "EXPLAIN_PLAN_FOR_THREAD",
+      "command_literal": "EXPLAIN_PLAN_FOR_THREAD",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 241,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "line": 238,
+      "handler": "DatabaseService.explainPlanForThread",
+      "handler_line": 239,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "EXPORT_OBJECT_REGULAR_COUNTER",
+      "command_literal": "EXPORT_OBJECT_REGULAR_COUNTER",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 216,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ExportService.scala",
+      "line": 93,
+      "handler": "ExportService.exportObjectDateCounter",
+      "handler_line": 94,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "EXPORT_OBJECT_TIME_COUNTER",
+      "command_literal": "EXPORT_OBJECT_TIME_COUNTER",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 215,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ExportService.scala",
+      "line": 47,
+      "handler": "ExportService.exportObjectTimeCounter",
+      "handler_line": 48,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_ALERT_REAL_COUNTER_DESC",
+      "command_literal": "GET_ALERT_REAL_COUNTER_DESC",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 207,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AlertScriptingService.scala",
+      "line": 105,
+      "handler": "AlertScriptingService.getRealCounterDesc",
+      "handler_line": 106,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_ALERT_SCRIPTING_CONFIG_CONTETNS",
+      "command_literal": "GET_ALERT_SCRIPTING_CONFIG_CONTETNS",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 203,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AlertScriptingService.scala",
+      "line": 49,
+      "handler": "AlertScriptingService.getAlertScriptingConfigContents",
+      "handler_line": 50,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_ALERT_SCRIPTING_CONTETNS",
+      "command_literal": "GET_ALERT_SCRIPTING_CONTETNS",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 202,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AlertScriptingService.scala",
+      "line": 38,
+      "handler": "AlertScriptingService.getAlertScriptingContents",
+      "handler_line": 39,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_ALERT_SCRIPT_LOAD_MESSAGE",
+      "command_literal": "GET_ALERT_SCRIPT_LOAD_MESSAGE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 206,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AlertScriptingService.scala",
+      "line": 82,
+      "handler": "AlertScriptingService.getAlertScriptLoadMessage",
+      "handler_line": 83,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_CONFIGURE_COUNTERS_SITE",
+      "command_literal": "GET_CONFIGURE_COUNTERS_SITE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 199,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "line": 247,
+      "handler": "ConfigureService.getConfigureCountersSite",
+      "handler_line": 248,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_CONFIGURE_SERVER",
+      "command_literal": "GET_CONFIGURE_SERVER",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 187,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "line": 46,
+      "handler": "ConfigureService.getConfigureServer",
+      "handler_line": 47,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_CONFIGURE_TELEGRAF",
+      "command_literal": "GET_CONFIGURE_TELEGRAF",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 197,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "line": 224,
+      "handler": "ConfigureService.getConfigureTelegraf",
+      "handler_line": 225,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_CONFIGURE_WAS",
+      "command_literal": "GET_CONFIGURE_WAS",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 190,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "line": 75,
+      "handler": "ConfigureService.getConfigureAgent",
+      "handler_line": 76,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_COUNTER_EXIST_DAYS",
+      "command_literal": "GET_COUNTER_EXIST_DAYS",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 169,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "line": 430,
+      "handler": "DailyCounterService.getCounterExistDays",
+      "handler_line": 431,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_CUSTOM_KV",
+      "command_literal": "GET_CUSTOM_KV",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 179,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/KeyValueStoreService.scala",
+      "line": 139,
+      "handler": "KeyValueStoreService.getTextFromCustomStore",
+      "handler_line": 140,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_CUSTOM_KV_BULK",
+      "command_literal": "GET_CUSTOM_KV_BULK",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 184,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/KeyValueStoreService.scala",
+      "line": 196,
+      "handler": "KeyValueStoreService.getTextBulkFromCustomStore",
+      "handler_line": 197,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_GLOBAL_KV",
+      "command_literal": "GET_GLOBAL_KV",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 176,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/KeyValueStoreService.scala",
+      "line": 40,
+      "handler": "KeyValueStoreService.getText",
+      "handler_line": 41,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_GLOBAL_KV_BULK",
+      "command_literal": "GET_GLOBAL_KV_BULK",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 182,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/KeyValueStoreService.scala",
+      "line": 56,
+      "handler": "KeyValueStoreService.getTextBulk",
+      "handler_line": 57,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_GROUP_POLICY_ALL",
+      "command_literal": "GET_GROUP_POLICY_ALL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 278,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AccountService.scala",
+      "line": 107,
+      "handler": "AccountService.getGroupPolicyAll",
+      "handler_line": 108,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_LOGIN_LIST",
+      "command_literal": "GET_LOGIN_LIST",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 29,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/LoginService.scala",
+      "line": 89,
+      "handler": "LoginService.getLoginList",
+      "handler_line": 90,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_PLUGIN_HELPER_DESC",
+      "command_literal": "GET_PLUGIN_HELPER_DESC",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 209,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AlertScriptingService.scala",
+      "line": 124,
+      "handler": "AlertScriptingService.getPluginHelperDesc",
+      "handler_line": 125,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_QUERY_INTERVAL",
+      "command_literal": "GET_QUERY_INTERVAL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 238,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "line": 166,
+      "handler": "DatabaseService.getIntervalStatusTask",
+      "handler_line": 167,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_STACK_ANALYZER",
+      "command_literal": "GET_STACK_ANALYZER",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 219,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/StackAnalyzerService.scala",
+      "line": 32,
+      "handler": "StackAnalyzerService.read",
+      "handler_line": 33,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_STACK_INDEX",
+      "command_literal": "GET_STACK_INDEX",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 220,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/StackAnalyzerService.scala",
+      "line": 59,
+      "handler": "StackAnalyzerService.readIndex",
+      "handler_line": 60,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_TEXT",
+      "command_literal": "GET_TEXT",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 171,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HashText.scala",
+      "line": 38,
+      "handler": "HashText.getText",
+      "handler_line": 39,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_TEXT_100",
+      "command_literal": "GET_TEXT_100",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 172,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HashText.scala",
+      "line": 63,
+      "handler": "HashText.getText100",
+      "handler_line": 64,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_TEXT_ANY_TYPE",
+      "command_literal": "GET_TEXT_ANY_TYPE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 174,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HashText.scala",
+      "line": 123,
+      "handler": "HashText.getTextAnyType",
+      "handler_line": 124,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_TEXT_PACK",
+      "command_literal": "GET_TEXT_PACK",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 173,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HashText.scala",
+      "line": 95,
+      "handler": "HashText.getTextPack",
+      "handler_line": 96,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "GET_XML_COUNTER",
+      "command_literal": "GET_XML_COUNTER",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 211,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "line": 135,
+      "handler": "ConfigureService.getCounterXml",
+      "handler_line": 136,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "HOST_DISK_USAGE",
+      "command_literal": "HOST_DISK_USAGE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 91,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HostService.scala",
+      "line": 55,
+      "handler": "HostService.diskUsage",
+      "handler_line": 56,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "HOST_MEMINFO",
+      "command_literal": "HOST_MEMINFO",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 94,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HostService.scala",
+      "line": 95,
+      "handler": "HostService.memInfo",
+      "handler_line": 96,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "HOST_NET_STAT",
+      "command_literal": "HOST_NET_STAT",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 92,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HostService.scala",
+      "line": 68,
+      "handler": "HostService.netStat",
+      "handler_line": 69,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "HOST_PROCESS_DETAIL",
+      "command_literal": "HOST_PROCESS_DETAIL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 90,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HostService.scala",
+      "line": 42,
+      "handler": "HostService.processDetail",
+      "handler_line": 43,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "HOST_TOP",
+      "command_literal": "HOST_TOP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 89,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HostService.scala",
+      "line": 29,
+      "handler": "HostService.hostTop",
+      "handler_line": 30,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "HOST_WHO",
+      "command_literal": "HOST_WHO",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 93,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HostService.scala",
+      "line": 82,
+      "handler": "HostService.who",
+      "handler_line": 83,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "INNODB_STATUS",
+      "command_literal": "INNODB_STATUS",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 237,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "line": 214,
+      "handler": "DatabaseService.innodbStatus",
+      "handler_line": 215,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "INTR_COUNTER_REAL_TIME_BY_OBJ",
+      "command_literal": "INTR_COUNTER_REAL_TIME_BY_OBJ",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 151,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/InteractionCounterService.scala",
+      "line": 43,
+      "handler": "InteractionCounterService.getRealTimeByObj",
+      "handler_line": 44,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "LIST_ACCOUNT",
+      "command_literal": "LIST_ACCOUNT",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 272,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AccountService.scala",
+      "line": 86,
+      "handler": "AccountService.listAccount",
+      "handler_line": 87,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "LIST_ACCOUNT_GROUP",
+      "command_literal": "LIST_ACCOUNT_GROUP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 277,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AccountService.scala",
+      "line": 95,
+      "handler": "AccountService.listAccountGroup",
+      "handler_line": 96,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "LIST_CONFIGURE_SERVER",
+      "command_literal": "LIST_CONFIGURE_SERVER",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 189,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "line": 111,
+      "handler": "ConfigureService.listConfigureServer",
+      "handler_line": 112,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "LIST_CONFIGURE_WAS",
+      "command_literal": "LIST_CONFIGURE_WAS",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 192,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "line": 99,
+      "handler": "ConfigureService.listConfigureWas",
+      "handler_line": 100,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "LOAD_ALERT_SUMMARY",
+      "command_literal": "LOAD_ALERT_SUMMARY",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 309,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryService.scala",
+      "line": 347,
+      "handler": "SummaryService.LOAD_ALERT_SUMMARY",
+      "handler_line": 348,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "LOAD_APICALL_SUMMARY",
+      "command_literal": "LOAD_APICALL_SUMMARY",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 305,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryService.scala",
+      "line": 331,
+      "handler": "SummaryService.LOAD_APICALL_SUMMARY",
+      "handler_line": 332,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "LOAD_ENDUSER_AJAX_SUMMARY",
+      "command_literal": "LOAD_ENDUSER_AJAX_SUMMARY",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 312,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryEndUserAjax.scala",
+      "line": 44,
+      "handler": "SummaryEndUserAjax.LOAD_ENDUSER_AJAX_SUMMARY",
+      "handler_line": 45,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "LOAD_ENDUSER_ERROR_SUMMARY",
+      "command_literal": "LOAD_ENDUSER_ERROR_SUMMARY",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 313,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryEndUserError.scala",
+      "line": 48,
+      "handler": "SummaryEndUserError.LOAD_ENDUSER_ERROR_SUMMARY",
+      "handler_line": 49,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "LOAD_ENDUSER_NAV_SUMMARY",
+      "command_literal": "LOAD_ENDUSER_NAV_SUMMARY",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 311,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryEndUserNav.scala",
+      "line": 61,
+      "handler": "SummaryEndUserNav.LOAD_ENDUSER_NAV_SUMMARY",
+      "handler_line": 62,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "LOAD_IP_SUMMARY",
+      "command_literal": "LOAD_IP_SUMMARY",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 306,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryService.scala",
+      "line": 335,
+      "handler": "SummaryService.LOAD_IP_SUMMARY",
+      "handler_line": 336,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "LOAD_QUERY_LIST",
+      "command_literal": "LOAD_QUERY_LIST",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 226,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "line": 75,
+      "handler": "DatabaseService.loadQueryList",
+      "handler_line": 76,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "LOAD_SERVICE_ERROR_SUMMARY",
+      "command_literal": "LOAD_SERVICE_ERROR_SUMMARY",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 308,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryService.scala",
+      "line": 343,
+      "handler": "SummaryService.LOAD_ERROR_SUMMARY",
+      "handler_line": 344,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "LOAD_SERVICE_SUMMARY",
+      "command_literal": "LOAD_SERVICE_SUMMARY",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 303,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryService.scala",
+      "line": 323,
+      "handler": "SummaryService.LOAD_SERVICE_SUMMARY",
+      "handler_line": 324,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "LOAD_SQL_SUMMARY",
+      "command_literal": "LOAD_SQL_SUMMARY",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 304,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryService.scala",
+      "line": 327,
+      "handler": "SummaryService.LOAD_SQL_SUMMARY",
+      "handler_line": 328,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "LOAD_UA_SUMMARY",
+      "command_literal": "LOAD_UA_SUMMARY",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 307,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryService.scala",
+      "line": 339,
+      "handler": "SummaryService.LOAD_UA_SUMMARY",
+      "handler_line": 340,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "LOCK_LIST",
+      "command_literal": "LOCK_LIST",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 227,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "line": 94,
+      "handler": "DatabaseService.lockList",
+      "handler_line": 95,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "LOGIN",
+      "command_literal": "LOGIN",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 25,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/LoginService.scala",
+      "line": 42,
+      "handler": "LoginService.login",
+      "handler_line": 43,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_ACTIVE_SERVICE_LIST",
+      "command_literal": "OBJECT_ACTIVE_SERVICE_LIST",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 44,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ThreadList.scala",
+      "line": 88,
+      "handler": "ThreadList.agentActiveServiceList",
+      "handler_line": 89,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_ACTIVE_SERVICE_LIST_GROUP",
+      "command_literal": "OBJECT_ACTIVE_SERVICE_LIST_GROUP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 45,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ThreadList.scala",
+      "line": 128,
+      "handler": "ThreadList.agentActiveServiceListGroup",
+      "handler_line": 129,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_BATCH_ACTIVE_LIST",
+      "command_literal": "OBJECT_BATCH_ACTIVE_LIST",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 320,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/BatchService.scala",
+      "line": 100,
+      "handler": "BatchService.agentActiveServiceList",
+      "handler_line": 101,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_CALL_BLOCK_PROFILE",
+      "command_literal": "OBJECT_CALL_BLOCK_PROFILE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 73,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HeapDumpService.scala",
+      "line": 85,
+      "handler": "HeapDumpService.callBlockProfile",
+      "handler_line": 86,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_CALL_CPU_PROFILE",
+      "command_literal": "OBJECT_CALL_CPU_PROFILE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 72,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HeapDumpService.scala",
+      "line": 109,
+      "handler": "HeapDumpService.callCpuProfile",
+      "handler_line": 110,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_CALL_HEAP_DUMP",
+      "command_literal": "OBJECT_CALL_HEAP_DUMP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 67,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HeapDumpService.scala",
+      "line": 33,
+      "handler": "HeapDumpService.callHepDump",
+      "handler_line": 34,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_CALL_MUTEX_PROFILE",
+      "command_literal": "OBJECT_CALL_MUTEX_PROFILE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 74,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HeapDumpService.scala",
+      "line": 97,
+      "handler": "HeapDumpService.callMutexProfile",
+      "handler_line": 98,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_CHECK_RESOURCE_FILE",
+      "command_literal": "OBJECT_CHECK_RESOURCE_FILE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 39,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "line": 275,
+      "handler": "AgentInfo.checkJarFile",
+      "handler_line": 276,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_CLASS_DESC",
+      "command_literal": "OBJECT_CLASS_DESC",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 38,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "line": 120,
+      "handler": "AgentInfo.getClassDesc",
+      "handler_line": 121,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_CLASS_LIST",
+      "command_literal": "OBJECT_CLASS_LIST",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 36,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "line": 133,
+      "handler": "AgentInfo.getLoadedClassList",
+      "handler_line": 134,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_DELETE_HEAP_DUMP",
+      "command_literal": "OBJECT_DELETE_HEAP_DUMP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 70,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HeapDumpService.scala",
+      "line": 73,
+      "handler": "HeapDumpService.deleteHepDump",
+      "handler_line": 74,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_DOWNLOAD_HEAP_DUMP",
+      "command_literal": "OBJECT_DOWNLOAD_HEAP_DUMP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 69,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HeapDumpService.scala",
+      "line": 57,
+      "handler": "HeapDumpService.downloadHepDump",
+      "handler_line": 58,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_DOWNLOAD_JAR",
+      "command_literal": "OBJECT_DOWNLOAD_JAR",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 40,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "line": 287,
+      "handler": "AgentInfo.downloadJar",
+      "handler_line": 288,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_DUMP_FILE_DETAIL",
+      "command_literal": "OBJECT_DUMP_FILE_DETAIL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 65,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DumpService.scala",
+      "line": 118,
+      "handler": "DumpService.getDumpFileDetail",
+      "handler_line": 119,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_DUMP_FILE_LIST",
+      "command_literal": "OBJECT_DUMP_FILE_LIST",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 64,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DumpService.scala",
+      "line": 106,
+      "handler": "DumpService.getDumpFileList",
+      "handler_line": 107,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_ENV",
+      "command_literal": "OBJECT_ENV",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 35,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "line": 106,
+      "handler": "AgentInfo.agentEnv",
+      "handler_line": 107,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_FILE_SOCKET",
+      "command_literal": "OBJECT_FILE_SOCKET",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 81,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "line": 223,
+      "handler": "AgentInfo.agentObjectFileSocket",
+      "handler_line": 224,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_HEAPHISTO",
+      "command_literal": "OBJECT_HEAPHISTO",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 48,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "line": 209,
+      "handler": "AgentInfo.agentObjectHeapHisto",
+      "handler_line": 210,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_INFO",
+      "command_literal": "OBJECT_INFO",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 31,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "line": 52,
+      "handler": "AgentInfo.getAgentInfo",
+      "handler_line": 53,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_LIST_HEAP_DUMP",
+      "command_literal": "OBJECT_LIST_HEAP_DUMP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 68,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HeapDumpService.scala",
+      "line": 45,
+      "handler": "HeapDumpService.listHepDump",
+      "handler_line": 46,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_LIST_LOAD_DATE",
+      "command_literal": "OBJECT_LIST_LOAD_DATE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 77,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "line": 65,
+      "handler": "AgentInfo.getAgentOldList",
+      "handler_line": 66,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_LIST_REAL_TIME",
+      "command_literal": "OBJECT_LIST_REAL_TIME",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 76,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "line": 83,
+      "handler": "AgentInfo.agentList",
+      "handler_line": 84,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_LOAD_CLASS_BY_STREAM",
+      "command_literal": "OBJECT_LOAD_CLASS_BY_STREAM",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 37,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "line": 251,
+      "handler": "AgentInfo.loadClassStream",
+      "handler_line": 252,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_REMOVE",
+      "command_literal": "OBJECT_REMOVE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 47,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "line": 158,
+      "handler": "AgentInfo.agentRemove",
+      "handler_line": 159,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_REMOVE_INACTIVE",
+      "command_literal": "OBJECT_REMOVE_INACTIVE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 78,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "line": 47,
+      "handler": "AgentInfo.agentRemoveInactive",
+      "handler_line": 48,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_REMOVE_IN_MEMORY",
+      "command_literal": "OBJECT_REMOVE_IN_MEMORY",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 79,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "line": 196,
+      "handler": "AgentInfo.agentRemoveInMemory",
+      "handler_line": 197,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_RESET_CACHE",
+      "command_literal": "OBJECT_RESET_CACHE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 42,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "line": 147,
+      "handler": "AgentInfo.resetAgentCache",
+      "handler_line": 148,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_SOCKET",
+      "command_literal": "SOCKET",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 82,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "line": 237,
+      "handler": "AgentInfo.agentObjectSocket",
+      "handler_line": 238,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_SYSTEM_GC",
+      "command_literal": "OBJECT_SYSTEM_GC",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 63,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DumpService.scala",
+      "line": 133,
+      "handler": "DumpService.systemGc",
+      "handler_line": 134,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_THREAD_CONTROL",
+      "command_literal": "OBJECT_THREAD_CONTROL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 34,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ThreadList.scala",
+      "line": 162,
+      "handler": "ThreadList.agentThreadControl",
+      "handler_line": 163,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_THREAD_DETAIL",
+      "command_literal": "OBJECT_THREAD_DETAIL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 33,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ThreadList.scala",
+      "line": 60,
+      "handler": "ThreadList.agentThreadDetail",
+      "handler_line": 61,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_THREAD_DUMP",
+      "command_literal": "OBJECT_THREAD_DUMP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 49,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ThreadList.scala",
+      "line": 149,
+      "handler": "ThreadList.agentThreadDump",
+      "handler_line": 150,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_THREAD_LIST",
+      "command_literal": "OBJECT_THREAD_LIST",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 32,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ThreadList.scala",
+      "line": 75,
+      "handler": "ThreadList.agentThreadList",
+      "handler_line": 76,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "OBJECT_TODAY_FULL_LIST",
+      "command_literal": "OBJECT_TODAY_FULL_LIST",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 46,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "line": 171,
+      "handler": "AgentInfo.getFullAgentList",
+      "handler_line": 172,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "PSTACK_ON",
+      "command_literal": "PSTACK_ON",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 221,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/StackAnalyzerService.scala",
+      "line": 87,
+      "handler": "StackAnalyzerService.turnOnStack",
+      "handler_line": 88,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "QUICKSEARCH_XLOG_LIST",
+      "command_literal": "QUICKSEARCH_XLOG_LIST",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 124,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/XLogService.scala",
+      "line": 529,
+      "handler": "XLogService.quickSearchXlogList",
+      "handler_line": 530,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "REALTIME_SERVICE_GROUP",
+      "command_literal": "REALTIME_SERVICE_GROUP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 267,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/GroupService.scala",
+      "line": 41,
+      "handler": "GroupService.realTimeServiceGroup",
+      "handler_line": 42,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "REDEFINE_CLASSES",
+      "command_literal": "REDEFINE_CLASSES",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 193,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "line": 122,
+      "handler": "ConfigureService.applyConfigureAgent",
+      "handler_line": 123,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "REDIS_INFO",
+      "command_literal": "REDIS_INFO",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 262,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "line": 263,
+      "handler": "AgentInfo.redisInfo",
+      "handler_line": 264,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "REMOTE_CONTROL",
+      "command_literal": "REMOTE_CONTROL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 107,
+      "source_path": "scouter.server/src/main/java/scouter/server/netio/service/handle/ManageService.java",
+      "line": 75,
+      "handler": "ManageService.remoteControl",
+      "handler_line": 76,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "REMOTE_CONTROL_ALL",
+      "command_literal": "REMOTE_CONTROL_ALL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 108,
+      "source_path": "scouter.server/src/main/java/scouter/server/netio/service/handle/ManageService.java",
+      "line": 98,
+      "handler": "ManageService.remoteControlAll",
+      "handler_line": 99,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SAVE_ALERT_SCRIPTING_CONFIG_CONTETNS",
+      "command_literal": "SAVE_ALERT_SCRIPTING_CONFIG_CONTETNS",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 205,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AlertScriptingService.scala",
+      "line": 71,
+      "handler": "AlertScriptingService.saveAlertScriptingConfigContents",
+      "handler_line": 72,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SAVE_ALERT_SCRIPTING_CONTETNS",
+      "command_literal": "SAVE_ALERT_SCRIPTING_CONTETNS",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 204,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AlertScriptingService.scala",
+      "line": 60,
+      "handler": "AlertScriptingService.saveAlertScriptingContents",
+      "handler_line": 61,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SCHEMA_SIZE_STATUS",
+      "command_literal": "SCHEMA_SIZE_STATUS",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 235,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "line": 190,
+      "handler": "DatabaseService.schemaSizeStatus",
+      "handler_line": 191,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SEARCH_XLOG_LIST",
+      "command_literal": "SEARCH_XLOG_LIST",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 125,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/XLogService.scala",
+      "line": 566,
+      "handler": "XLogService.searchXlogList",
+      "handler_line": 567,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SERVER_DB_DELETE",
+      "command_literal": "SERVER_DB_DELETE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 106,
+      "source_path": "scouter.server/src/main/java/scouter/server/netio/service/handle/ManageService.java",
+      "line": 57,
+      "handler": "ManageService.deleteDbFiles",
+      "handler_line": 58,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SERVER_DB_LIST",
+      "command_literal": "SERVER_DB_LIST",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 105,
+      "source_path": "scouter.server/src/main/java/scouter/server/netio/service/handle/ManageService.java",
+      "line": 37,
+      "handler": "ManageService.listDbFiles",
+      "handler_line": 38,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SERVER_ENV",
+      "command_literal": "SERVER_ENV",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 102,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ServerInfo.scala",
+      "line": 64,
+      "handler": "ServerInfo.getAgentEnv",
+      "handler_line": 65,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SERVER_LOG_DETAIL",
+      "command_literal": "SERVER_LOG_DETAIL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 86,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ServerInfo.scala",
+      "line": 105,
+      "handler": "ServerInfo.getServerLogDetail",
+      "handler_line": 106,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SERVER_LOG_LIST",
+      "command_literal": "SERVER_LOG_LIST",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 85,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ServerInfo.scala",
+      "line": 84,
+      "handler": "ServerInfo.getServerLogs",
+      "handler_line": 85,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SERVER_STATUS",
+      "command_literal": "SERVER_STATUS",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 103,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ServerInfo.scala",
+      "line": 41,
+      "handler": "ServerInfo.getServerStatus",
+      "handler_line": 42,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SERVER_THREAD_DETAIL",
+      "command_literal": "SERVER_THREAD_DETAIL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 101,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ThreadList.scala",
+      "line": 39,
+      "handler": "ThreadList.serverThreadDetail",
+      "handler_line": 40,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SERVER_THREAD_LIST",
+      "command_literal": "SERVER_THREAD_LIST",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 100,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ThreadList.scala",
+      "line": 50,
+      "handler": "ThreadList.serverThreadList",
+      "handler_line": 51,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SERVER_TIME",
+      "command_literal": "SERVER_TIME",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 104,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ServerInfo.scala",
+      "line": 76,
+      "handler": "ServerInfo.getServerTime",
+      "handler_line": 77,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SERVER_VERSION",
+      "command_literal": "SERVER_VERSION",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 84,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ServerInfo.scala",
+      "line": 54,
+      "handler": "ServerInfo.getServerVersion",
+      "handler_line": 55,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SET_CONFIGURE_COUNTERS_SITE",
+      "command_literal": "SET_CONFIGURE_COUNTERS_SITE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 200,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "line": 256,
+      "handler": "ConfigureService.setConfigureCountersSite",
+      "handler_line": 257,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SET_CONFIGURE_SERVER",
+      "command_literal": "SET_CONFIGURE_SERVER",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 188,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "line": 61,
+      "handler": "ConfigureService.setConfigureServer",
+      "handler_line": 62,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SET_CONFIGURE_TELEGRAF",
+      "command_literal": "SET_CONFIGURE_TELEGRAF",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 198,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "line": 233,
+      "handler": "ConfigureService.setConfigureTelegraf",
+      "handler_line": 234,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SET_CONFIGURE_WAS",
+      "command_literal": "SET_CONFIGURE_WAS",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 191,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "line": 87,
+      "handler": "ConfigureService.setConfigureAgent",
+      "handler_line": 88,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SET_CUSTOM_KV",
+      "command_literal": "SET_CUSTOM_KV",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 180,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/KeyValueStoreService.scala",
+      "line": 157,
+      "handler": "KeyValueStoreService.setTextToCustomStore",
+      "handler_line": 158,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SET_CUSTOM_KV_BULK",
+      "command_literal": "SET_CUSTOM_KV_BULK",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 185,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/KeyValueStoreService.scala",
+      "line": 220,
+      "handler": "KeyValueStoreService.setTextBulkToCustomStore",
+      "handler_line": 221,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SET_CUSTOM_TTL",
+      "command_literal": "SET_CUSTOM_TTL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 181,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/KeyValueStoreService.scala",
+      "line": 177,
+      "handler": "KeyValueStoreService.setTtlToCustomStore",
+      "handler_line": 178,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SET_GLOBAL_KV",
+      "command_literal": "SET_GLOBAL_KV",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 177,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/KeyValueStoreService.scala",
+      "line": 79,
+      "handler": "KeyValueStoreService.setText",
+      "handler_line": 80,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SET_GLOBAL_KV_BULK",
+      "command_literal": "SET_GLOBAL_KV_BULK",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 183,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/KeyValueStoreService.scala",
+      "line": 116,
+      "handler": "KeyValueStoreService.setTextBulk",
+      "handler_line": 117,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SET_GLOBAL_TTL",
+      "command_literal": "SET_GLOBAL_TTL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 178,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/KeyValueStoreService.scala",
+      "line": 98,
+      "handler": "KeyValueStoreService.setTTL",
+      "handler_line": 99,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SET_QUERY_INTERVAL",
+      "command_literal": "SET_QUERY_INTERVAL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 239,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "line": 178,
+      "handler": "DatabaseService.changeIntervalStatusTask",
+      "handler_line": 179,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SHOW_REAL_TIME_STRING",
+      "command_literal": "SHOW_REAL_TIME_STRING",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 162,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SpecialCounterService.scala",
+      "line": 185,
+      "handler": "SpecialCounterService.showRealtimeString",
+      "handler_line": 186,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "SLAVE_STATUS",
+      "command_literal": "SLAVE_STATUS",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 240,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "line": 226,
+      "handler": "DatabaseService.slaveStatus",
+      "handler_line": 227,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "STATUS_AROUND_VALUE",
+      "command_literal": "STATUS_AROUND_VALUE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 269,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/StatusService.scala",
+      "line": 30,
+      "handler": "StatusService.statusAroundValue",
+      "handler_line": 31,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "TABLE_SIZE_STATUS",
+      "command_literal": "TABLE_SIZE_STATUS",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 236,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "line": 202,
+      "handler": "DatabaseService.tableSizeStatus",
+      "handler_line": 203,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "TAGCNT_DIV_NAMES",
+      "command_literal": "TAGCNT_DIV_NAMES",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 287,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/TagCountService.scala",
+      "line": 45,
+      "handler": "TagCountService.getDivNames",
+      "handler_line": 46,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "TAGCNT_TAG_ACTUAL_DATA",
+      "command_literal": "TAGCNT_TAG_ACTUAL_DATA",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 291,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/TagCountService.scala",
+      "line": 131,
+      "handler": "TagCountService.getTagActualData",
+      "handler_line": 132,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "TAGCNT_TAG_NAMES",
+      "command_literal": "TAGCNT_TAG_NAMES",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 288,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/TagCountService.scala",
+      "line": 57,
+      "handler": "TagCountService.getTagNames",
+      "handler_line": 58,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "TAGCNT_TAG_VALUES",
+      "command_literal": "TAGCNT_TAG_VALUES",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 289,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/TagCountService.scala",
+      "line": 70,
+      "handler": "TagCountService.getTagValues",
+      "handler_line": 71,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "TAGCNT_TAG_VALUE_DATA",
+      "command_literal": "TAGCNT_TAG_VALUE_DATA",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 290,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/TagCountService.scala",
+      "line": 106,
+      "handler": "TagCountService.getTagValueCount",
+      "handler_line": 107,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "TRANX_LOAD_TIME_GROUP",
+      "command_literal": "TRANX_LOAD_TIME_GROUP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 122,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/XLogService.scala",
+      "line": 259,
+      "handler": "XLogService.getHistoryPerfGroup",
+      "handler_line": 260,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "TRANX_LOAD_TIME_GROUP_V2",
+      "command_literal": "TRANX_LOAD_TIME_GROUP_V2",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 123,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/XLogService.scala",
+      "line": 314,
+      "handler": "XLogService.getHistoryPerfGroupV2",
+      "handler_line": 315,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "TRANX_PROFILE",
+      "command_literal": "TRANX_PROFILE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 118,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/XLogService.scala",
+      "line": 41,
+      "handler": "XLogService.getProfile",
+      "handler_line": 42,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "TRANX_PROFILE_FULL",
+      "command_literal": "TRANX_PROFILE_FULL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 119,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/XLogService.scala",
+      "line": 73,
+      "handler": "XLogService.getFullProfile",
+      "handler_line": 74,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "TRANX_REAL_TIME_GROUP",
+      "command_literal": "TRANX_REAL_TIME_GROUP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 120,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/XLogService.scala",
+      "line": 171,
+      "handler": "XLogService.getRealtimePerfGroup",
+      "handler_line": 172,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "TRANX_REAL_TIME_GROUP_LATEST",
+      "command_literal": "TRANX_REAL_TIME_GROUP_LATEST",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 121,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/XLogService.scala",
+      "line": 214,
+      "handler": "XLogService.getRealtimePerfGroupLatestCount",
+      "handler_line": 215,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "TRIGGER_ACTIVE_SERVICE_LIST",
+      "command_literal": "TRIGGER_ACTIVE_SERVICE_LIST",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 51,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DumpService.scala",
+      "line": 34,
+      "handler": "DumpService.triggerActiveServiceList",
+      "handler_line": 35,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "TRIGGER_BLOCK_PROFILE",
+      "command_literal": "TRIGGER_BLOCK_PROFILE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 57,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DumpService.scala",
+      "line": 82,
+      "handler": "DumpService.triggerBlockProfile",
+      "handler_line": 83,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "TRIGGER_HEAPHISTO",
+      "command_literal": "TRIGGER_HEAPHISTO",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 55,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DumpService.scala",
+      "line": 46,
+      "handler": "DumpService.triggerHeapHisto",
+      "handler_line": 47,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "TRIGGER_MUTEX_PROFILE",
+      "command_literal": "TRIGGER_MUTEX_PROFILE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 58,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DumpService.scala",
+      "line": 94,
+      "handler": "DumpService.triggerMutexrofile",
+      "handler_line": 95,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "TRIGGER_THREAD_DUMP",
+      "command_literal": "TRIGGER_THREAD_DUMP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 52,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DumpService.scala",
+      "line": 58,
+      "handler": "DumpService.triggerThreadDump",
+      "handler_line": 59,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "TRIGGER_THREAD_LIST",
+      "command_literal": "TRIGGER_THREAD_LIST",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 54,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DumpService.scala",
+      "line": 70,
+      "handler": "DumpService.triggerThreadList",
+      "handler_line": 71,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "USE_DATABASE",
+      "command_literal": "USE_DATABASE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 242,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "line": 250,
+      "handler": "DatabaseService.useDatabase",
+      "handler_line": 251,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "VISITOR_LOADDATE",
+      "command_literal": "VISITOR_LOADDATE",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 297,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/VisitorService.scala",
+      "line": 61,
+      "handler": "VisitorService.visitorLoaddate",
+      "handler_line": 62,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "VISITOR_LOADDATE_GROUP",
+      "command_literal": "VISITOR_LOADDATE_GROUP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 299,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/VisitorService.scala",
+      "line": 81,
+      "handler": "VisitorService.visitorLoaddateGroup",
+      "handler_line": 82,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "VISITOR_LOADDATE_TOTAL",
+      "command_literal": "VISITOR_LOADDATE_TOTAL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 298,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/VisitorService.scala",
+      "line": 71,
+      "handler": "VisitorService.visitorLoaddateTotal",
+      "handler_line": 72,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "VISITOR_LOADHOUR_GROUP",
+      "command_literal": "VISITOR_LOADHOUR_GROUP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 300,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/VisitorService.scala",
+      "line": 101,
+      "handler": "VisitorService.visitorLoadhourGroup",
+      "handler_line": 102,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "VISITOR_REALTIME",
+      "command_literal": "VISITOR_REALTIME",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 294,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/VisitorService.scala",
+      "line": 34,
+      "handler": "VisitorService.visitorRealtime",
+      "handler_line": 35,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "VISITOR_REALTIME_GROUP",
+      "command_literal": "VISITOR_REALTIME_GROUP",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 296,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/VisitorService.scala",
+      "line": 52,
+      "handler": "VisitorService.visitorRealtimeGroup",
+      "handler_line": 53,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "VISITOR_REALTIME_TOTAL",
+      "command_literal": "VISITOR_REALTIME_TOTAL",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 295,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/VisitorService.scala",
+      "line": 43,
+      "handler": "VisitorService.visitorRealtimeTotal",
+      "handler_line": 44,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "XLOG_LOAD_BY_GXID",
+      "command_literal": "XLOG_LOAD_BY_GXID",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 117,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/XLogService.scala",
+      "line": 491,
+      "handler": "XLogService.loadByGxId",
+      "handler_line": 492,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "XLOG_LOAD_BY_TXIDS",
+      "command_literal": "XLOG_LOAD_BY_TXIDS",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 116,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/XLogService.scala",
+      "line": 464,
+      "handler": "XLogService.loadByTxIds",
+      "handler_line": 465,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "XLOG_READ_BY_GXID",
+      "command_literal": "XLOG_READ_BY_GXID",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 115,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/XLogService.scala",
+      "line": 395,
+      "handler": "XLogService.readByGxId",
+      "handler_line": 396,
+      "implementation_status": "not_implemented"
+    },
+    {
+      "command_name": "XLOG_READ_BY_TXID",
+      "command_literal": "XLOG_READ_BY_TXID",
+      "constant_source_path": "scouter.common/src/main/java/scouter/net/RequestCmd.java",
+      "constant_line": 114,
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/XLogService.scala",
+      "line": 413,
+      "handler": "XLogService.readByTxId",
+      "handler_line": 414,
+      "implementation_status": "not_implemented"
+    }
+  ],
+  "pack_types": [
+    {
+      "name": "MAP",
+      "id": 10,
+      "source_path": "scouter.common/src/main/java/scouter/lang/pack/PackEnum.java",
+      "line": 35
+    },
+    {
+      "name": "XLOG",
+      "id": 21,
+      "source_path": "scouter.common/src/main/java/scouter/lang/pack/PackEnum.java",
+      "line": 36
+    },
+    {
+      "name": "DROPPED_XLOG",
+      "id": 22,
+      "source_path": "scouter.common/src/main/java/scouter/lang/pack/PackEnum.java",
+      "line": 37
+    },
+    {
+      "name": "XLOG_PROFILE",
+      "id": 26,
+      "source_path": "scouter.common/src/main/java/scouter/lang/pack/PackEnum.java",
+      "line": 38
+    },
+    {
+      "name": "XLOG_PROFILE2",
+      "id": 27,
+      "source_path": "scouter.common/src/main/java/scouter/lang/pack/PackEnum.java",
+      "line": 39
+    },
+    {
+      "name": "SPAN",
+      "id": 31,
+      "source_path": "scouter.common/src/main/java/scouter/lang/pack/PackEnum.java",
+      "line": 41
+    },
+    {
+      "name": "SPAN_CONTAINER",
+      "id": 32,
+      "source_path": "scouter.common/src/main/java/scouter/lang/pack/PackEnum.java",
+      "line": 42
+    },
+    {
+      "name": "TEXT",
+      "id": 50,
+      "source_path": "scouter.common/src/main/java/scouter/lang/pack/PackEnum.java",
+      "line": 44
+    },
+    {
+      "name": "PERF_COUNTER",
+      "id": 60,
+      "source_path": "scouter.common/src/main/java/scouter/lang/pack/PackEnum.java",
+      "line": 45
+    },
+    {
+      "name": "PERF_STATUS",
+      "id": 61,
+      "source_path": "scouter.common/src/main/java/scouter/lang/pack/PackEnum.java",
+      "line": 46
+    },
+    {
+      "name": "STACK",
+      "id": 62,
+      "source_path": "scouter.common/src/main/java/scouter/lang/pack/PackEnum.java",
+      "line": 47
+    },
+    {
+      "name": "SUMMARY",
+      "id": 63,
+      "source_path": "scouter.common/src/main/java/scouter/lang/pack/PackEnum.java",
+      "line": 48
+    },
+    {
+      "name": "BATCH",
+      "id": 64,
+      "source_path": "scouter.common/src/main/java/scouter/lang/pack/PackEnum.java",
+      "line": 49
+    },
+    {
+      "name": "PERF_INTERACTION_COUNTER",
+      "id": 65,
+      "source_path": "scouter.common/src/main/java/scouter/lang/pack/PackEnum.java",
+      "line": 50
+    },
+    {
+      "name": "ALERT",
+      "id": 70,
+      "source_path": "scouter.common/src/main/java/scouter/lang/pack/PackEnum.java",
+      "line": 52
+    },
+    {
+      "name": "OBJECT",
+      "id": 80,
+      "source_path": "scouter.common/src/main/java/scouter/lang/pack/PackEnum.java",
+      "line": 53
+    }
+  ],
+  "source_files": [
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/Configure.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 1271,
+      "sha256": "c35cda9521e234887dd1837e80ebe02f314791767393c869c6d634387a253998"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/CounterManager.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 644,
+      "sha256": "198f3bedc9c63dc8a0022c6c32a80b3aed64183fa5c5de945816cee23bb1b2ee"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/Main.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 98,
+      "sha256": "9d5a053fcab5d8dca52ccca2216d5ee11ed961fa99c2e0830a066717ce9cce13"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/ScouterTgMtConfig.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 267,
+      "sha256": "b634da09247ce98e15bdcc38fd624fc5e71e796a5fe45d66ca501ecb575349d2"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/core/AutoDeleteScheduler.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 422,
+      "sha256": "399faf9e6e4a169bcd93771759b9b485303d332598432590365169cd2c373788"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/core/ServerStat.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 35,
+      "sha256": "4647786987feefecdb54177724667f5bd01077faad09f390d4352e3b41d8eb39"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/core/app/MeterCounter.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 71,
+      "sha256": "5e5c620c1c141559cbda9b064eae70e959450df88e31d9cf9b95e01d1355d85a"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/core/app/MeterCounterManager.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 71,
+      "sha256": "c9dd1f9b973a1157df0511f8f7ea5128ed63a6278e28afa96cbb732475f51eac"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/core/cache/InteractionCounterCacheKey.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 50,
+      "sha256": "72d9c8b88e2bb928940d0566a22c65a6eb37faded0e5c10eddd488f43280c273"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/core/cache/ProfileDelayingCache.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 177,
+      "sha256": "1d92505644e668c3eed72dba231dbfa891ae15a6ce30ae7b716cf5b7792865fc"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/core/cache/XLogDelayingCache.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 148,
+      "sha256": "c96f94130f9511905bbcf4c991111f9ca7691cd57719be97e86c7812f12409a1"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/core/sqltable/TableFinder.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 389,
+      "sha256": "a3b8691a6e23b502820f385c4f481c849c2bf1e048684b356af62ebf24aeb785"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/core/sqltable/Test.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 51,
+      "sha256": "a86d000241343337686f18fae2981ff55a524eeb39cc4e2d289752fe7c9239bf"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/db/BatchZipDB.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 94,
+      "sha256": "69a61ac94eb79bbb373b34fc80b161a220a75f3a9f919b8d49b1b26a996b376a"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/db/TextDupCheck.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 66,
+      "sha256": "7d8db4416bacf863d1d73421ff6b9c0d5e63e9b993fd31b8922ae9607ea386e8"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/db/io/MemHashBlock.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 121,
+      "sha256": "306b949ba56d4acb481cefca14d1b42bd36bee2d64693a36a838bc034fed4f78"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/db/io/MemTimeBlock.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 128,
+      "sha256": "b28fa87619fce2be18f81fded9e61b61d24a843b26c80a445b324aa727b622ef"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/db/io/zip/BKey.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 59,
+      "sha256": "64f2bc86b490422b1e705e5fb88cf91a360c8ce18cb83b2d674c6a296d9add9b"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/db/io/zip/Block.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 148,
+      "sha256": "8d007fdaf799d15f270e52decc16383289b79defaa263c1831d30a478a55645b"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/db/io/zip/CountBoard.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 79,
+      "sha256": "2b84322b209cdcd0619a27b0bd9a19afaef9d63b8128795ced162aec7b976694"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/db/io/zip/GZipCtr.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 46,
+      "sha256": "cb8415694d9cb6a91f1f616749213093c1e83d359282ed2dffd5eb7e4e8bb73e"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/db/io/zip/GZipStore.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 203,
+      "sha256": "24ebbd553079fbed39379047b3f7d8a6b0feee9938a89ebdee68ed79f36dc17d"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/db/io/zip/IOChannel.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 181,
+      "sha256": "1e7fd046d9658f29ebd3cb0cedfdb7f4adef3e631be08f1bfb4e20704bd95542"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/http/HttpServer.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 146,
+      "sha256": "620772bd46193d85bcb3f118747e1e2bcd2d16b1251597f1e475b95bdaaf26fb"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/http/handler/CounterHandler.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 164,
+      "sha256": "c1c56030b91ae8c9f3f86b5eaaa8077b27034e98183d0a2e9c91b7b13151967d"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/http/handler/RegisterHandler.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 189,
+      "sha256": "d71b089be69f9bbab5d816310b54e02e83ad7bf646575b8d952258c7ab0e03fb"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/http/handler/TelegrafInputHandler.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 266,
+      "sha256": "b071046e2639800c8811b3996467028d363384d13560b90b42d28d96d67054c3"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/http/model/CounterProtocol.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 310,
+      "sha256": "8c3206fa5b1206f56e6e59e1013554a079623924bf58654f0df7e9d69f7614f9"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/http/model/InfluxSingleLine.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 480,
+      "sha256": "533a7c23391cfea3e3c2cef1dfeaa339d8e70dcb2df640529741e938fedd54fa"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/http/model/NumberValueWithTime.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 42,
+      "sha256": "a6de01e1ab3127f038f038b3493f41fbfac43c82e195817d38a90d01b44f6508"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/http/servlet/CounterServlet.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 38,
+      "sha256": "caeb5a1a93a478a080694a24604c5b55b522d2b15321a845243128b4dee6af36"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/http/servlet/RegisterServlet.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 43,
+      "sha256": "446486e7f59967fa6c1bc13de65157ff51e895f9fb9258a5c88e1fb25a488134"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/http/servlet/TelegrafInputServlet.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 37,
+      "sha256": "b1d3f0386d52e53349887bd8f4cff2352296e5fd9a00f1398d89367a01c354e8"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/kube/PodSeqManager.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 163,
+      "sha256": "34d4bdf515658558b44acef6cefb339ef5237a84832f3844601452feb3623a09"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/logs/RequestLogger.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 140,
+      "sha256": "99b82b235e0f08b15c35b6bf8d1fe68f71b655621a9b6bf25293ed5ed071dfd7"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/netio/data/IPackProcessor.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 15,
+      "sha256": "27e6853430e9fcfbe1ed67a89ed1fb85bef39b6221dbcbabd5f36f5eaea03cd3"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/netio/req/net/ReqCommand.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 9,
+      "sha256": "06d4760c1b15cd7fa425ce67d9358c4f3a77c78d719a2a10c91c24cb32989a16"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/netio/req/net/ReqCommandFactory.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 18,
+      "sha256": "4ae5d49486ad29c5863c4950fb2cf2bcb3fdb219643ee4a5c88a5c08d8a50b30"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/netio/req/net/TcpAgentReqWorker.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 44,
+      "sha256": "7678ce22ad1e18cf2d0585809f52d4f1b9b1933b929e340d89a4507cba3898be"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/netio/req/net/TcpSendStack.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 26,
+      "sha256": "f7a0374c77a11e243976efba4924dc9f5ec4baaf998635013f72fc544c605b51"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/netio/service/ServiceHandlingProxy.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 109,
+      "sha256": "dfefc43ea5af9fb000a30e3feec7308e14fdd4fe7ab7c4cfb1afdfdc28c94e4b"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/netio/service/anotation/ServiceHandler.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 26,
+      "sha256": "744e82a755f0589206c02bc8818cb40398c1edcd677a8422c5a92de29abf5e42"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/netio/service/handle/ManageService.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 154,
+      "sha256": "f4a64f9bb99a8e92dab17a7df20ad8bb7f1bf591677ad08825286042acb6c1ed"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/plugin/IAlert.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 25,
+      "sha256": "b95bf37dd70ebf059355a9fa1dd00702874dc6e826c87aff360015c633cd4c6a"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/plugin/ICounter.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 26,
+      "sha256": "c2d2b37073ae09096e4d5103872584acff8a8216eba82ce1045ad197312f7268"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/plugin/IObject.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 25,
+      "sha256": "ec54af1b85ddcbc313670e6352553bea1cfa77ad27dbac2a3c8dee0e1ef8859f"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/plugin/IPlugIn.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 45,
+      "sha256": "b13d85981bf22cb822236df0b0816353ee7b287e32d627369840a7657a757d9c"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/plugin/ISummary.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 25,
+      "sha256": "febac0cb020e693a2cdc58e63eb65fc86c83cfc42cda0c01852aef0ebc310355"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/plugin/IText.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 25,
+      "sha256": "9d9be36263f05c815a567ed6b712404939951252902a07c28c40ba908cabf531"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/plugin/IXLog.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 95,
+      "sha256": "75da4cfba60e784e31e3a0f3d5b4a6b770b719050cc163bf63d81e93a29aebd6"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/plugin/IXLogProfile.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 25,
+      "sha256": "49d4bea411c06882bc624245ddc0340d44968213c0545f04d3f2ded569d89c44"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/plugin/PlugInLoader.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 225,
+      "sha256": "900b70dc172074fd518821347fe098abcdf019f4d52adf2fc21e22f1e415194c"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/plugin/PlugInManager.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 140,
+      "sha256": "8aaba156404cbda33a95458ae6b44d98b134741f28b329f6ff54775a8aa60fb1"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/plugin/PluginHelper.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 746,
+      "sha256": "af00dcc2967c6f1a9c6501e9a686ac9c3053a62ed747d58d7916964844c101b0"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/plugin/alert/AlertConf.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 26,
+      "sha256": "ad046b0021807021fc6dec787c51845afd79623bec1fc315df477af7f5ef8bb2"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/plugin/alert/AlertEngine.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 74,
+      "sha256": "ae3d04dfdeb8dfc65922b66a52a6c1cd1151e0c7264f3d82b8fa6332760190b4"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/plugin/alert/AlertRule.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 36,
+      "sha256": "254ef0b4a6cad1ba64e58d6f75a46c8e2a484420ec1b9dd7563d791ac24f79ef"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/plugin/alert/AlertRuleLoader.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 301,
+      "sha256": "b7db70d1c899afc77b9446dc4a442faf8948bb5a2b4de413796df2f984f35752"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/plugin/alert/AlertUtil.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 25,
+      "sha256": "e0b72d562a5179791f8da567b1e1d6cc00de0ddc6f9c3123084c112f91f57036"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/plugin/alert/RealCounter.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 514,
+      "sha256": "cc33cd7e78ab961577bae47f36e83610c6f87975e69c306ca9353ce734a0fa46"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/plugin/builtin/BuiltInPluginManager.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 76,
+      "sha256": "cf8f543b6e642276e9460b2eb8b0c6a0b13d42001054f12577df84b0564ebe1a"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/plugin/builtin/PluginInvocation.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 30,
+      "sha256": "524022aaf6cb3355252df48cbc312cb4b9d260fcda34b2a15d025a02fbd26ee1"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/plugin/impl/Neighbor.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 7,
+      "sha256": "1affe134422e15bdbbe2b4b72ade248ff9fba2699a89f8e057c83ba4f5b3510c"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/support/telegraf/TgConfig.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 653,
+      "sha256": "b8823a18f15858e8f4c0854f2f817e1fb2b095d5c1400385c7d259bcaec8d215"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/support/telegraf/TgCounterMapping.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 70,
+      "sha256": "ac9d115d8b11ccfc931e9f67ebfec7417b825c96d92608dba7df93b4bfc04419"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/support/telegraf/TgmConfig.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 148,
+      "sha256": "396d248d0c7010bc0fb16a671f19f8595966fb91f4788a41fc380fab7cdf9092"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/tagcnt/core/ValueCount.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 52,
+      "sha256": "93882f5ccbbedd2cd13599eca0142e95aae1750143beacab31861dd4d876ad13"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/term/AnsiPrint.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 64,
+      "sha256": "a449bb4654dc6ac368b1302e824a151f410c5014dbd4702017d28e7e51a301ed"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/term/ScouterHandler.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 25,
+      "sha256": "181a71f06f02624691093bc7c85550cfed5771e4c306107b776a8326dde933b6"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/term/TermMain.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 71,
+      "sha256": "d1a16a293c38f891be37818cff62a5325fb247751b7eb97de4bc468134e9f7e8"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/test/AutoDeleteTest.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 206,
+      "sha256": "f6c6ccad1a997cc3ef7fc410715bc29ae83995296347758c1d485c814ad6c77a"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/test/LoadTest.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 107,
+      "sha256": "59d67adbc7cc412d9cb9250f0dc20dfafaf4dd6f70846e21ba611d24073f295f"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/util/AsyncRun.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 50,
+      "sha256": "c50c6f44c73adf9bbeabead26f9e697c108220f8a8db7978f3e3aa6d5e1eaf99"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/util/cardinality/HyperLogLog.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 279,
+      "sha256": "ea36ff233f6106ae5a7f1e6ba4a878576009ee0d000cf402dd5463e1235aa1fa"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/util/cardinality/MurmurHash.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 227,
+      "sha256": "69cd12fda36843f02ea4cf51a014906da272f2a878a061e4a21d2cf9ca73b1d1"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/util/cardinality/RegisterSet.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 118,
+      "sha256": "bb96b464fee1ab0f7da341dde3636f0dc59336fd494ad326263f5f2e757fe467"
+    },
+    {
+      "source_path": "scouter.server/src/main/java/scouter/server/util/cardinality/TestHLL.java",
+      "scope": "main",
+      "language": "java",
+      "lines": 47,
+      "sha256": "caeb5d5432d4001c15aae12ac8c4df7460da29c3db27d225574b52d2daa3eb9f"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/ConfObserver.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 47,
+      "sha256": "3135cd6df31d570e127864c853a21a7b34030e2987542c587646cde9aac4a6c5"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/Logger.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 234,
+      "sha256": "10ae706791db0c3158d94b6af42c9fc74c2dfed46fb008336e4f2fbe195d0791"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/LoginManager.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 96,
+      "sha256": "6d69590b37cc38289c715cb3fc0ffd76123cdd9cbce404cf31fa4c0ec6feaea3"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/LoginUser.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 30,
+      "sha256": "665427086e46bd4154203c05948de1fea5a82dd1e83b647361ef77fea9be50f2"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/ShutdownManager.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 45,
+      "sha256": "9c9311d7a714e3165fbb8f41e28341d255d8e483ca035f6922eaa4533c73633f"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/account/AccountFileHandler.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 114,
+      "sha256": "6ba41c73b9deffa7bedb0e00c422146ea921c943c9c6161965ffe36c33aec9ed"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/account/AccountManager.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 283,
+      "sha256": "ea957fa5bb80b8a6ec7b33494077ddb0c55a26dcfb59a191d2f43f67207dbcfa"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/account/GroupFileHandler.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 154,
+      "sha256": "cc8b9261a7690a5af466e8bc489d64ca76ccb477d6212d961acbcd1e14cfda2e"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/AgentManager.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 389,
+      "sha256": "d3369ad06bfef5e1da657b398440a0de5d273d6632767deb520196840cff0710"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/AlertCore.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 51,
+      "sha256": "d8ff14a618d87ee3a44da52e746a6a1c0956329971ad6dd494be709b8cd857c7"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/AlertSummary.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 96,
+      "sha256": "c5c8ff851b289d5e6462941393a0eb9514d3b8d9dcd130e0cd997a2728009272"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/Auto5MSampling.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 80,
+      "sha256": "888e58fe69b9547c37a0b011b13bb1db308169fd81a8470215a56e0928d2232d"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/BatchCore.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 46,
+      "sha256": "41fe394bea55defcf5fdb4d252f877487790cf5df8c814aa85b1a3be93df952c"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/CoreRun.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 18,
+      "sha256": "d90bba7f975f0bd25c03d298df8dc8d38e9ee88aef6994cd5092383622be0a4a"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/InteractionPerfCountCore.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 45,
+      "sha256": "cae60aed89635df872819ef3d883d2a3bbdcb9d8435cb53dd2e3f4eeabc425de"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/ObjectMap.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 128,
+      "sha256": "28ae211dbde82df43ff4b4688ce9e1cd3e8a9cdd630da1d78d0fda697c5ed893"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/PerfCountCore.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 80,
+      "sha256": "e1d81047f12528c1d8b128f574fff6aca59b5bc40c4aa87f406a242b540527c9"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/ProfileCore.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 56,
+      "sha256": "d63b6feb44ea0c34558831e01406955cffd292c425d2751971cf4016ecb142c1"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/ProfileDelayingsRecoverCore.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 60,
+      "sha256": "10044647cb44953327abcdcd6628ed3652baec5e45a3a5092a69be946402d09d"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/ProfilePreCore.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 173,
+      "sha256": "4478128819e82264010f5cd28241d40b5779aa3a4e78485dfccc935d0f2f0e23"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/SpanCore.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 61,
+      "sha256": "1168de40126ef31b2aeb81cd047fd82ae5814354d7c4c95b6136355d37a879d1"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/SqlTables.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 125,
+      "sha256": "230fd44f851d04183049e66f74623239fb1e7fdb1e3a9918802a8edbb4c54d5f"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/StackAnalyzerCore.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 47,
+      "sha256": "a8f793e916edd635572ad97da25a16a704b75f6c06d7cae0229904ee7838b3f4"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/StatusCore.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 41,
+      "sha256": "327d1d250db297e61b1b365a13e32a837c01fc5e4c8ed0070e6cc18249a05208"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/SummaryCore.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 41,
+      "sha256": "72a008ecda3720953c8734e6574ab4045a7cca5138aaa3995034cdc5e7aacb1f"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/TextCacheReset.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 55,
+      "sha256": "35b119df606e46746f307dc0010cb96a259d35da862594c3d134e0cb14ed0c4f"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/TextCore.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 53,
+      "sha256": "3f90e01447ec91ad7cec2f430eb2f9cd15eba24b32cce9f5a9b0c6debac29e58"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/VisitorCore.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 79,
+      "sha256": "90e30b51c5d7a658275c075dd0aa21e2654c69e629fc785ef50c0ca95ac324ac"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/XLogCore.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 88,
+      "sha256": "46a145a7b86e5e639cb64a3a8c2661ff59515957852d3262f15078ca5b1725fa"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/XLogDelayingsRecoverCore.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 62,
+      "sha256": "a037c12bb152fb9b152a9ffbde6304c52adc431c921591e68a9001ef3817f765"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/XLogPreCore.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 116,
+      "sha256": "af7056f9b32a8baa6df7b1d2e391dac6ef28f55a740cd570554c00482cf34975"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/app/MeterService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 124,
+      "sha256": "a772be636704c6b059ccdbfca50a2fc9e31b0c4295c6565e401ff03eb3e3d816"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/app/ObjectCpuChecker.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 112,
+      "sha256": "70bae605d2d2ecac4dc09fdb365fadfbebe66daea7a2b598b980fa74f2b76c97"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/app/PerfStat.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 36,
+      "sha256": "6dd064197d8c6b7e1b9eccd9d56d1c9da8c101a09345416b656d6d89c5fe9958"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/app/SpanStepBuilder.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 185,
+      "sha256": "0ca02f07afdb7e419277d52bf74e05e5e929134e5da06c59c981517cdec62954"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/app/XLogGroupPerf.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 193,
+      "sha256": "8fe2d6f51681a17ca6c54907223936ff09aeaf854474212afcb221b0928dd79a"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/app/XLogGroupUtil.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 120,
+      "sha256": "66737a994b2df932d1e37b1764321779c0630f3c82c196250b99cb0365d5ef23"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/cache/AlertCache.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 38,
+      "sha256": "99e915ba4effef4ad26e840764e98940d24c1895bfab89c09c2a4383d8998173"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/cache/AlertScriptLoadMessageCache.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 31,
+      "sha256": "a8bca1f2f6133035b9dd792a12d530ad75c3ec7e383d5495509f6c7ea3e8fece"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/cache/AlertScriptLoadMessageLoopCache.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 82,
+      "sha256": "b7748a9fdc8ae94cca60c4c41a7763ae75770416654eeb0ca2b679b666852b92"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/cache/CacheHelper.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 28,
+      "sha256": "536eeafdfda52bc7b7266ed5a5427945873bcd5c034269f51a542a5a197d056e"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/cache/CacheOut.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 27,
+      "sha256": "57e43ae5bd411a00cd1d6a0abd4923265a4086cb1c29224cc6e6405e6a34a08d"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/cache/CommonCache.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 44,
+      "sha256": "a4e81bea5d2ea70088a4ec1d4fde2d9886e899c7d642431269650af759b0bf83"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/cache/CounterCache.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 89,
+      "sha256": "447fc6df0eee6d22cc30cc4aad7b571d9993d42c43e5e139d92465a0cfc2d92b"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/cache/CounterTimeCache.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 38,
+      "sha256": "762d95884999dcc648bc5f3013fd009908c846a3dedd501556203b060405a386"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/cache/InteractionCounterCache.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 71,
+      "sha256": "6b0b11b17463eb03678132da1b852251063b405f432153754f038793cc0c7d1f"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/cache/LoopCache.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 153,
+      "sha256": "9fb280b412d5673d849e0132229a15b06b597ed3df3f5e9f9495a0b759ffab38"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/cache/StatusCache.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 68,
+      "sha256": "56b6410c0071b00970ef606551959598bd62b259f23e82baa5eafc09c13fea21"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/cache/TextCache.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 57,
+      "sha256": "35d0f7cf8ea2be882a6404409f377d1993a0da135c2e16173ae0ea80fa32fe3d"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/cache/XLogCache.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 48,
+      "sha256": "9784cbc054c5cb2529d3708a9257669b65214a2e92f6bfd1c57789c295591e35"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/core/cache/XLogLoopCache.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 222,
+      "sha256": "f9f54ffbb1ee20f1dc4e1f54949e58ba11703fa89c7d1a7f3ea11759c83c9c5b"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/AlertRD.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 83,
+      "sha256": "59d0c759443935c68e14e3377e435dc437d332a928c41921b627bd688a877f1c"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/AlertWR.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 113,
+      "sha256": "384c634d72c0b2a3b3c29ffdd71c10a730c13153ddaaeae4383ddc03c39dca2d"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/BatchDB.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 200,
+      "sha256": "418001e1f4024217111758c226bbf0e5eaf15657e466fc9024807fad03aa312b"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/DBCtr.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 64,
+      "sha256": "22bbfa7db9b7483f0b734035d5b0b1c94ee4e9767259a82f03062e61555679bb"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/DailyCounterRD.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 96,
+      "sha256": "ace222d86cd6e60d972ffa9837692126d790c4edd0e4134223cab4740438e85c"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/DailyCounterWR.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 142,
+      "sha256": "443234e6272361312eab5e9a2df1915521b8ddccfe8c705a0808aa7762ae4d49"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/KeyValueStoreRW.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 143,
+      "sha256": "1b014b25b0c73387d81303f8fe7ce7337780afb95b3e250972bcb80c8ae74a8f"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/ObjectRD.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 117,
+      "sha256": "fc482b2ad7e01c6a2cc6a17288cf83cc115b0f657805f2a6ddc535473408095d"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/ObjectWR.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 183,
+      "sha256": "bfde504b078cea8f10eaaeb59b503c2f358d6cf483a0748fb31914bed88130bf"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/RealtimeCounterRD.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 117,
+      "sha256": "04ac6a2b02652d980d22a5fe105c00c7e3528acef953e5bd48f439238760222f"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/RealtimeCounterWR.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 79,
+      "sha256": "cffc07ddb4d7218fb1151cea62455e7434f6db6bf11ad481537f0db174588c11"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/StackAnalyzerDB.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 189,
+      "sha256": "9f4a3ab8310dc4e0a20331b164c5746e612377f5e6a1ea77bd0ddd158d6969f1"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/StatusRD.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 81,
+      "sha256": "114cea24e8d2db549099efc9cc228ec0774dcd3b6f0fd95ee010d96aa61104bc"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/StatusWR.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 97,
+      "sha256": "f71aa27c3674ab40668a2c99806dc87081fee945609eed0bf32b3f34f19e783e"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/SummaryRD.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 96,
+      "sha256": "f2a377c7b0009962ddc6b2b8c6f084157e101d8d40591ea325b63ee2d5f674db"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/SummaryWR.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 118,
+      "sha256": "6b1e98d4c1833e9077b3be95a4ebe1b16c807a5eecb3e515b70e293b2f47a653"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/TextPermRD.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 57,
+      "sha256": "5aad201baa2e79b5e1a8aa471d211e634066ace9051edcb25bf6ff3ea9ad85cf"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/TextPermWR.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 128,
+      "sha256": "b73fd750fa3357444a039ec8fdedf661e3ad106dd0912d40afda6dc720125060"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/TextRD.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 54,
+      "sha256": "fa46bbec2f32db9494e831b443f3c3eb9dd4471b24414c15f01158a3a9812480"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/TextWR.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 183,
+      "sha256": "9268ece760ab9334dd05e989674e79bc57b1db99db0b18b98ab02a6cfd4f3a2f"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/VisitorDB.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 187,
+      "sha256": "53791916f38ca4f7a28a54117af29bf00a63527d5f08e0c045152e7b14f1c519"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/VisitorHourlyDB.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 148,
+      "sha256": "c647c1159f8bfbfc0c64742a14fd70ed32a280eedc19558a9db97dd30f8343f6"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/XLogProfileRD.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 167,
+      "sha256": "52af2107e097ed5cf99d0aa8fc464b65349d614c0e9a4438a8afd5dd6e2c59c9"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/XLogProfileWR.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 123,
+      "sha256": "2eef8b8a0e081a3e0596c7ac604747db98a01725c0c3d52e42e7fbebce934768"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/XLogRD.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 246,
+      "sha256": "2cd1034ab63c8e3fcbd3fdbe3ef229e8ec49c17f3ce0fd651f6c85301913731d"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/XLogWR.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 138,
+      "sha256": "015188fb8c24f51ed24730ee42dea3cf3ebfad834403b8ca200d6b6e0a8cbc77"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/ZipkinSpanRD.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 218,
+      "sha256": "9abce30e396e08969de98b5f5140ec19ee0b15e3af3d98e6d071dd6a7547ed09"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/ZipkinSpanWR.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 137,
+      "sha256": "37b56c0a967d5b0025c4ca41aecb1d4915da5d670dddca2477f2be0c0401a9ba"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/alert/AlertIndex.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 87,
+      "sha256": "aa64b32eb9d0f9103623eff32123aceb4d9ee1fd97091e4881dd0dc156456d51"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/alert/AlertReader.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 76,
+      "sha256": "1f3459d9b9f2ea5275ce77a72f12c616587d227093287e63cf1a8512420216fd"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/alert/AlertWriter.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 70,
+      "sha256": "2dbfd9fdf7566cc21fd21a9293c39c8d740dc8e2878b9b209edc76fbcda0e3a7"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/counter/DailyCounterData.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 201,
+      "sha256": "f0167e8afa3e60af2de98d8bd90244620743680e1aa8cb248ddba83361192fa1"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/counter/DailyCounterIndex.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 99,
+      "sha256": "98da6f8480f08eb3c009f66756d80878a2f50d497448a2135aff4b42dca76779"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/counter/DailyCounterUtils.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 79,
+      "sha256": "1eefd49dd931a2924c28b5a03dabc8207276170ec1f2503a44e550305b6b42ca"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/counter/RealtimeCounterDBHeader.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 172,
+      "sha256": "7a6fc6e7d39a17242b3027842bc3e265b46b19cdc8419322d8cf9256676cda55"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/counter/RealtimeCounterDBHelper.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 166,
+      "sha256": "639659ea13cda3b913bb72d723170f4ed09219eecf07dbfd5f71745b65d4e709"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/counter/RealtimeCounterData.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 94,
+      "sha256": "87470c90f7dea26755a97e8bff1ae5da16eb4ec77080a429730aa8bb0cb3228e"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/counter/RealtimeCounterIndex.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 93,
+      "sha256": "be4c942e3b376cfb329ccbf62bbbf86ad7c50866b843538d1c5a8414ce18e141"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/counter/RealtimeCounterKeyFile.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 73,
+      "sha256": "92986102636513df99e832b34d211ff1930fe6f839748f0adf9520568bec8b26"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/io/IndexKeyFile.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 238,
+      "sha256": "71a06716c43e27c29b8d5b96d0030c08ab65cb14a127c4cdce1829a4b89e3c58"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/io/IndexKeyFile2.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 303,
+      "sha256": "08a8a8601a56e2657ed9ac9a482da3d1b2a2712b10457ffd76adb029fd947ee6"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/io/IndexTimeFile.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 341,
+      "sha256": "91f68d9cabb58669e2a859e74308e2e13b1de9c636ba1964935f6d2a2b2ce05d"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/io/RealDataFile.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 78,
+      "sha256": "c628d10c73672dfc382bff3430a629e9386d8967438e17b682e7ac7932250bbd"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/io/RealKeyFile.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 167,
+      "sha256": "757d3a45155570f4ce265562ed3136a178d055f0eefe736f6f3fe37e054614d7"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/io/RealKeyFile2.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 239,
+      "sha256": "6a238e016661a833946fbe4328af50458eb99adaccb50d4e8c7946286e37ab31"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/kv/KeyValueStoreIndex.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 105,
+      "sha256": "412c06df8ac8e422e2a37b802ffbeeed23e795262ed496f08066d25c3ed9c4ab"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/kv/KeyValueStoreReader.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 86,
+      "sha256": "808f71712834432fef83d9bc4324181a2e1b13535a73696d8abb8545d6dd83d3"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/kv/KeyValueStoreWriter.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 81,
+      "sha256": "bb18c70154078dde33e51523625f1f990bafedcd0e36574b723eede2a125edb4"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/obj/ObjectData.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 95,
+      "sha256": "82982b54084e4b17b4632abd65fe1a8b75286aef197cbe048a1e65392445683b"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/obj/ObjectIndex.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 91,
+      "sha256": "1d5554e1edea10badfcae80867276aa7e5b80e496c627b117238b7e7333ee5bb"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/span/ZipkinSpanDataReader.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 87,
+      "sha256": "e137d960b16c48e3ea52bed31466f28714d2cbdd6c7ee100a47d12fdb0e8841e"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/span/ZipkinSpanDataWriter.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 70,
+      "sha256": "b7089b7c87a8ebd0e1680af746e35ae2ea5b562d7b6f6807b2fddf55c86b692a"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/span/ZipkinSpanIndex.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 106,
+      "sha256": "6e4effceec6e381d0fd81d4d21c5598363375b65d72a24dbd1af0dd17e4b4308"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/status/StatusIndex.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 86,
+      "sha256": "ce52664656e16cd24313940d393494bdf00562570fb46aca5097a1f6d8da522e"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/status/StatusReader.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 75,
+      "sha256": "3c6fb7d229e310212f2dcc790851ec8826e1b2452bc63814d01f0e48b1f0566c"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/status/StatusWriter.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 69,
+      "sha256": "285664fb6571dc6f9cd7f4f143436dd68c05dbbb17389e73e52ac8cbc3195f24"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/summary/SummaryIndex.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 86,
+      "sha256": "2deafa867b60c65ccc12cc7d1ec6ded56dc6a649f306fddd64725b465915f21d"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/summary/SummaryReader.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 75,
+      "sha256": "df384445c0206a3ab387573a607518b8a69e3503bd64d8ee678bfe5f5def9c33"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/summary/SummaryWriter.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 69,
+      "sha256": "e2ba97a4df13a9aaa215cacc3912496a83cc69006c02aeb614b777b5a5d532ba"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/text/TextPermData.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 111,
+      "sha256": "f0abc48271a48f2819adafbe1999c3376d0f872e7bd2b583d4831aca4c76519c"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/text/TextPermIndex.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 126,
+      "sha256": "4671286b2cb25ef9095ad8672f3ce47a0df1cfbcc0e979203df2b6cdbefe753a"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/text/TextTable.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 104,
+      "sha256": "463ed0fd83adf219522031783a812a32259e9f75f32f79dbc7552506b06dd695"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/xlog/XLogDataReader.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 96,
+      "sha256": "6624ea65c157db2603261a84cc3810992d14fd4b8fa51107807441bd981f2841"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/xlog/XLogDataWriter.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 95,
+      "sha256": "c2dac55c8008b9e89bb548b182fb28c85ff655421747000fb55fdb4e8b38e9f5"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/xlog/XLogIndex.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 155,
+      "sha256": "e544f1ba5f6a024192a396cd6583c33fc876bbda119e1b4223c350fe2fb237ce"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/xlog/XLogProfileDataReader.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 108,
+      "sha256": "7d7b3edc319c7bb86faace00e1ce56f32b66235ffcbf2391f80d2c11fcd5bfce"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/xlog/XLogProfileDataWriter.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 99,
+      "sha256": "baaa2a7edc447a45deb7265176ff2ff69e7430534de39945580820c98c97f81d"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/db/xlog/XLogProfileIndex.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 106,
+      "sha256": "c34711f41b68cee6ac38298679d945aab603caaad66a6f30230b12e5765d441f"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/geoip/GISDataUtil.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 55,
+      "sha256": "501a6cf78bfbfd8f98018809866250e928b6a59583badbc09055f5574e5572d1"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/geoip/GeoIpUtil.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 71,
+      "sha256": "0e73d199d955118574a32f0dd7b5ba47a4c1c3adfac45524fc7c540cd2b9255d"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/management/RemoteControl.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 32,
+      "sha256": "4d267d4fc5d8ebb7b5ba584edd1f9edb5186027d21dd6f1d55ad894f102f5a60"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/management/RemoteControlManager.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 80,
+      "sha256": "99fe17aa03d0bc39fa396f8593151116750f5ead9472671cd5d94fc52f407814"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/AgentCall.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 93,
+      "sha256": "043779d5f33425808c9d83a01f0d232a392c26f0de6bee9a151d41d689923834"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/data/MultiPacket.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 65,
+      "sha256": "a8ce6dfae7b1ddcfdd1cb31d63499dba08a8300e9f3f4488c59993d201fc442d"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/data/MultiPacketProcessor.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 82,
+      "sha256": "6f4b09147d7f1bb331e53db278fcce8b4992f6223bb1ac24b79184a9cb052a8f"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/data/NetDataProcessor.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 234,
+      "sha256": "b9dfa85630d1164dd83569e4e362ece2845b1ed66645c71b6aa9928c32782bd1"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/data/PackExtProcessChain.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 33,
+      "sha256": "f0091d4ec00b02a8c477d5b52e206d7f7b81bf96ea7721e0e106e49711d6c62f"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/data/net/DataUdpServer.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 84,
+      "sha256": "6c616b128349b2d9b0d1418fc90cfdeb3ab58332fbf006f64f382b2d26dc06fe"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AccountService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 134,
+      "sha256": "8eb282dd609e2ed35c5f38fd77948166afde35f8e82e5adf28302a8296613369"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 298,
+      "sha256": "f4be56dd9a836e064f7edd624e79da3543decaf6266198e2925e81395fbc2f31"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AlertScriptingService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 143,
+      "sha256": "6510becfa8ef5b39f86808c88f64ee0689ab51d255f04a74b9137ca02132b71f"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AlertService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 176,
+      "sha256": "af2097908e95958b7e853f6790e29042e41a1c2dd41b11317b25c6556d6c86ff"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/BatchService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 151,
+      "sha256": "15d20b0c6275e1f29964e25346bc729c2f67e9bb9631b5123b6bb01ec47d7c19"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 269,
+      "sha256": "894d4a8857379b1e454f4a64517cbc5208bacd73a0ecf6a802e002e14d54ea7a"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CounterService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 522,
+      "sha256": "2c54ee6720443ad651fb8119dcc12d662cf15b5538e77b42a5f2388322fd10af"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CubridService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 372,
+      "sha256": "267958544080d6c494d5b048acebb705806a9fbbcdfc44feffbf04c243b1c4ed"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 577,
+      "sha256": "f8bc9e995dfa1513eecd327fad9e7f31927b678f292c756ba16a78f1709cdeef"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 261,
+      "sha256": "4712f3a38f163fad29717ed9971581b5a2a271738ab768a8e91fdd2bb7f895c9"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DumpService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 152,
+      "sha256": "32e6795d32d633c9f1f988b7ee8967388e9e402080a29cb72ab15976bfb2c7de"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ExportService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 151,
+      "sha256": "2569d0421c6dce83f077dda22770604e0bf9e9cc826d280ce2859fcb5f63c0c7"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/GroupService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 74,
+      "sha256": "69fc596168b1b9f6b6d9b8bf8de75d370f8975310c71059d1e884a3e5acb5aa1"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HashText.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 151,
+      "sha256": "bf547151f2ff5a8face07ed069e0e978c31c64738d9eb510e1f14cfbb272d717"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HeapDumpService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 121,
+      "sha256": "b133819d77ff6ad7358a68e4845e583f551b97b75b56b403437d20d06885f67a"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HostService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 107,
+      "sha256": "94bdb4da3af00223b0b7d131b7dec37b530032b5e15d1a4b3e4a8da8ef1cf054"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/InteractionCounterService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 69,
+      "sha256": "86279e8e13bba9e1eb2eaac2cbd7de7c70b4d9aeae3dc8d9fd6ec5dd99ed5041"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/KeyValueStoreService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 239,
+      "sha256": "cfc4f409ff10c139e7549a95670b5369ab3b13f4e7a3ff87c871e9a13156651b"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/LoginService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 145,
+      "sha256": "fb2dcb061db6709d2e0e842ee4dbe65efbad8bbd255f91b9209a411d331ce09e"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/MariaService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 570,
+      "sha256": "5a9b2d40d31319bf6a10726224929baab2c4abe8e6a532a243c6f32885cbf720"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ServerDebug.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 68,
+      "sha256": "31ec4357fa93d1c0bb6217db34c6eccbe8bb5ad2e996af5bc1bdb6c8a91c25d2"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ServerInfo.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 117,
+      "sha256": "7040e76084264c3af07de55aeb7bc4777b2d676dff7605fa0376b42e0625788e"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SpecialCounterService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 229,
+      "sha256": "835155103d325920c45010ec36f9bc48b5c20555f3c8fbcd05cb626e653ba318"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/StackAnalyzerService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 98,
+      "sha256": "491c5fd94383af25e4bb657d904768974ca28e4491f9745ad4dd014fcc12be07"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/StatusService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 49,
+      "sha256": "9dab0fba4b144c51e6eabb3de9b752a39898313c7253e6a9c1a022c6a817ad0f"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryEndUserAjax.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 114,
+      "sha256": "6a53b45fa939e8794518a81b98fcd9bf3049360c3bf1cec33325c0d20046c0e5"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryEndUserError.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 128,
+      "sha256": "fe228f522bb054474037ddbdcc5a8b449a3ab26dce50c2af2cad7e2fed7a407c"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryEndUserNav.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 194,
+      "sha256": "25018e702b8246b940e6e960cee4ea6a56624fac952d9dc5a2205f15d16b000a"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 351,
+      "sha256": "23fd47393d53a98186fa2226575a07971ed1476b8b1dd4a43a4cba89a945e4a8"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/TagCountService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 364,
+      "sha256": "3c3571df4f9ef6acc9dac527a7ad5e77d5ddc227894548ed02d0ba8110fbc74a"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ThreadList.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 174,
+      "sha256": "dc9d9677cf7cc92f29bc05252c2d1d4f5a30e55cd84933ccd4d03ef72380c052"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/VisitorService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 129,
+      "sha256": "9c3a5dae7611626c896beed408a863819b8b021d96bb9e90e39d3c4cba23bcdf"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/XLogService.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 690,
+      "sha256": "b0844e87023bbe85748c70d96fb44349dae46a46617c60634b9599fbe434162b"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/net/TcpAgentManager.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 73,
+      "sha256": "101dac0c57f8ba2935bac0420bdfdff3415fed68b31956c3e2dec07916939e38"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/net/TcpAgentWorker.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 114,
+      "sha256": "ea924de1a76e39d80bc05978ddb08853923a6122b2b354c329a69163a4bc8394"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/net/TcpServer.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 57,
+      "sha256": "b3beea1f6d8fc81e30f0c7bb0e5f1f893b4a50836a9ad432fc0ef6a6a738f006"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/net/TcpServiceWorker.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 160,
+      "sha256": "e3cdec6e79caa787fa9b9d92c4a5f7c7eeecf8b9ea35db0b54e08ac5fc3ace5d"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/net/Test.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 15,
+      "sha256": "3a4937d380694fa8c11099ffa33594df387e9556dbe9fded7109c6cc81d080b6"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/tagcnt/AlertTagCount.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 64,
+      "sha256": "2690914bdcaa5c8ff838f4716bcde012180d5e4ebc20bb3fab9ccce1fe69d181"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/tagcnt/TagCountConfig.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 111,
+      "sha256": "b9555c0c36bc2803999b92238d9a3fe075a3f5e0a409b76179e3367ff7a0777e"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/tagcnt/TagCountProxy.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 132,
+      "sha256": "a29ec64ef5b9503b13b83fe58163ca3a36aa11dd862ceb8f217e7101710ddae1"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/tagcnt/XLogTagCount.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 148,
+      "sha256": "cfee9976a501727e8a6354eae38ad0e74ac030b12cad111ac906292605adb632"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/tagcnt/core/CountEnv.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 54,
+      "sha256": "d1e7ff1c49f1b3d96667709e89e7f9b58d7fe2529a49b33d07bd94ed2c21ca48"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/tagcnt/core/DBKey.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 41,
+      "sha256": "fdc6b94927610b9e684baee7b2ddb42dbb112f62fb1234417e2622ed70d4adb4"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/tagcnt/core/MoveToNextCollector.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 85,
+      "sha256": "00a734f39784559eedc3b094f5f406a8f7da8aba97ba490f22a27f4f7872c215"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/tagcnt/core/NextTagCountData.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 44,
+      "sha256": "2f792e4cb2bf61511d2f02430822878f6445060adb5bba02150d19d2e7a323ad"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/tagcnt/core/TagCountUtil.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 58,
+      "sha256": "7176c3c1476ccc551a1a6b85c89d20903ec780c526f9036cd78f29040054aa45"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/tagcnt/core/Top100FileCache.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 227,
+      "sha256": "5b2f2ffa3db91598b3b8d367e2b3d3fabe429e4be8c6bf52888a9f81ce19aa46"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/tagcnt/core/ValueCountTotal.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 72,
+      "sha256": "433df074261d4daa897338ef2f3cfb249110a2a48d0f10cb4b88b071389dfad0"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/tagcnt/first/FirstTCData.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 28,
+      "sha256": "987e6f191e9a5c3eb8edb3130f70f8b14f25440cb3d90028655580b3ecc995de"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/tagcnt/first/FirstTagCountDB.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 255,
+      "sha256": "c1e4ec38e1132ca3e149dbfab4025fd2503da72b06712239509c37dc14eafe7d"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/tagcnt/first/IndexFile.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 345,
+      "sha256": "7ee9694c22edc97e7534aa2efc0f123ca5e87c700ad36adb34fded9b8d16e502"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/tagcnt/first/KeyDataFile.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 206,
+      "sha256": "0eb1af864dcc55dda3aba3013fff5b14e332fb19430413b55ee7188d0b1056d7"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/tagcnt/first/TagValueEntry.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 206,
+      "sha256": "727475c472b2f8bea97850bad965d20118b690936f82cc201db874cfc869846f"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/tagcnt/first/WorkDB.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 41,
+      "sha256": "a103f6b42d1cb39a5c430f772c169dcecd75ef692e103312667190feb4129b4e"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/tagcnt/next/DataFile.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 98,
+      "sha256": "d4371785c16bd8fd048fd29f4b52427aa89d469218be025de3af57c332b9586e"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/tagcnt/next/IndexFile.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 241,
+      "sha256": "240c05b173f3ceffd48f72df3c658a8e0ae6e3db14d468fe6a57bd58a23afb84"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/tagcnt/next/KeyFile.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 157,
+      "sha256": "ed6cb9dc4f77c376f2d4990e51f860d8effa84218569f8268ed04ec4c96ba6cd"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/tagcnt/next/NextTagCountDB.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 205,
+      "sha256": "bc228208e87b2d9785c501a1a8e437b86b0faf02036e121e0caf9ebb1b801cbb"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/tagcnt/next/WorkDB.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 38,
+      "sha256": "f58121bb6cfd586e1e0ede5b6bbeee2a08bd869c564943f39cc87dd293114bc4"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/term/handler/DEBUG.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 56,
+      "sha256": "6639b44270be964bb21f8f9269f368579d260e1deef60df86275cfc52a520a25"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/term/handler/Dashboard.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 134,
+      "sha256": "4891075f87a93112b2e4de34cd10fecb6ae2fd05ed8399d217846b65f2fe538d"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/term/handler/Help.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 63,
+      "sha256": "ad1929297a61dac3c15c5d829f271b2d75b1fb43af94ef8a570f1f549bce578e"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/term/handler/ProcessMain.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 100,
+      "sha256": "5e2177065fdf6e8ec61a5d1c9c446fa763d48e408976f61c1caf3ec5cf0bb342"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/term/handler/REALTIME.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 107,
+      "sha256": "477652998dc31394f3e870db508a9cccb30f06ed7c9ea180bf69a773da05b88f"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/term/handler/TAGCNT.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 130,
+      "sha256": "e3d4ca24e5fb2ab466432e021e04aee1224a58eeca5db1461a025966e0baf73f"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/term/handler/VISITOR.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 60,
+      "sha256": "57540c4256e48a2c58c761da6a3c59744bec2a1575a8061c0cb3d49a342257c8"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/term/handler/XLIST.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 93,
+      "sha256": "0f7ff8a4e6b3ec62d8c78c14d79a8a94c26770ed23d264cf96c592ae1dc6999b"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/term/handler/XLOG.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 101,
+      "sha256": "816578d54ada6aba647e5870672e3b37c9b9868012f682266dda7371b3b6a4b6"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/util/BinSearch.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 81,
+      "sha256": "1379bafae48694920156b366c7a5a0f11b6bda6adf917507c280ade4a81ec28b"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/util/EnumerScala.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 129,
+      "sha256": "dfda1cb1a4a1f18258a09d2ae04263d1010460eb1ac857096f7edfc7ecc01a22"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/util/OftenAction.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 55,
+      "sha256": "81998ab12967c75007ca7fc1a745226bc61afb61325560b3df58379f41b3eb7b"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/util/ThreadScala.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 131,
+      "sha256": "90cedcc6d8fad10c25b6d4aeaebe37845d4dcf8e2803dc02587a35497e9c3fb4"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/util/TimedSeries.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 121,
+      "sha256": "baa6509c928daa91fee390e15808cc92b5a8bbc0cbd3cfa926f8e262645ebf13"
+    },
+    {
+      "source_path": "scouter.server/src/main/scala/scouter/server/util/XmlUtil.scala",
+      "scope": "main",
+      "language": "scala",
+      "lines": 45,
+      "sha256": "baed7d8e1edf060926dddcea03709070361b73d24bb4c8f3ef3bbd368cf15d03"
+    },
+    {
+      "source_path": "scouter.server/src/test/java/scouter/lang/conf/ConfigValueUtilTest.java",
+      "scope": "test",
+      "language": "java",
+      "lines": 30,
+      "sha256": "310237c072149526d2133a05af775f36d7e5ee090d0ddfb9d38aea2cc754c976"
+    },
+    {
+      "source_path": "scouter.server/src/test/java/scouter/server/ConfigureTest.java",
+      "scope": "test",
+      "language": "java",
+      "lines": 73,
+      "sha256": "0b67120ae9304e63c7ee42ec9a6c4697cf1750168ac5628e443029a9b58f3d37"
+    },
+    {
+      "source_path": "scouter.server/src/test/java/scouter/server/CounterManagerTest.java",
+      "scope": "test",
+      "language": "java",
+      "lines": 63,
+      "sha256": "9c7d9be28ad55f9cee3c217c375f48a0e4e670098337e1382c970152b27806f5"
+    },
+    {
+      "source_path": "scouter.server/src/test/java/scouter/server/db/KeyValueStoreRWTest.java",
+      "scope": "test",
+      "language": "java",
+      "lines": 133,
+      "sha256": "938718f522c22865fb45d7ab7b25e543285b855d7467d048e6505c0fff9bc560"
+    },
+    {
+      "source_path": "scouter.server/src/test/java/scouter/server/http/handler/TelegrafInputHandlerTest.java",
+      "scope": "test",
+      "language": "java",
+      "lines": 97,
+      "sha256": "3f6da7ed5e64b07aa11adc41a310d6ade14ecfebc4cec5d7a8fcb506a48fabf7"
+    },
+    {
+      "source_path": "scouter.server/src/test/java/scouter/server/http/model/InfluxSingleLineTest.java",
+      "scope": "test",
+      "language": "java",
+      "lines": 355,
+      "sha256": "f964dcfe76207c025f1d3311e0b97fb87cba34ea3dceedbe4870d9bab26df902"
+    },
+    {
+      "source_path": "scouter.server/src/test/java/scouter/server/netio/service/handle/KeyValueStoreServiceTest.java",
+      "scope": "test",
+      "language": "java",
+      "lines": 168,
+      "sha256": "fefc5723ceee62cdef5000cb75f2c8de9e39fe8b76f779e55395282e39046e58"
+    },
+    {
+      "source_path": "scouter.server/src/test/java/scouter/server/plugin/PluginHelperTest.java",
+      "scope": "test",
+      "language": "java",
+      "lines": 40,
+      "sha256": "a22050a3d5cc1c9ecf3d102e28cf4e227cdc94a38e809d0a872c6dadac1ad42e"
+    },
+    {
+      "source_path": "scouter.server/src/test/java/scouter/test/support/function/Reader.java",
+      "scope": "test",
+      "language": "java",
+      "lines": 32,
+      "sha256": "d1957605284bb25bacba3b7af9e8dd7598553c35533cab0b0e8c8c0353b44888"
+    }
+  ]
+}

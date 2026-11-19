@@ -1,0 +1,1945 @@
+{
+  "schema_version": 1,
+  "source_sha": "dee47fb5f4003cecbb146c5acfff8d2ebeaf07f5",
+  "go_scope_base_sha": "8db808da3a3631d3e60f04a162c39b3b84354030",
+  "scope_note": "조사 시작 시 SupportedCommands 28개를 제외한 201개. 현재 구현 상태를 자동 판정하는 파일이 아니다. CONFIGURE_DESC/VALUE_TYPE의 nonzero Agent branch는 local_read에 포함. 2026-10-16: mutation 45개 모두 구현 등록됐다. KV 6종·계정 4종·counters 3종은 implemented_oracle_verified, 나머지 32종은 implemented_loopback_verified다. 이후 testdata/management golden과의 Go 대조(manage·agentinfo·configure·alert, docs/validation/2026-10-16-management-gaps.md §9)가 의도된 차이 allowlist와 함께 PASS했지만 명령별 status 값은 다시 분류하지 않았다(Agent relay 변경 21종은 loopback 검증만). JVM READ 5종은 Go 의미(descriptor 정적 표·load message·goroutine)로 응답한다. status 없는 항목은 구현 상태를 뜻하지 않는다.",
+  "supported_at_scope_start": [
+    "CHECK_SESSION",
+    "COUNTER_PAST_DATE",
+    "COUNTER_PAST_TIME",
+    "COUNTER_PAST_TIME_ALL",
+    "COUNTER_REAL_TIME",
+    "COUNTER_REAL_TIME_ALL",
+    "COUNTER_REAL_TIME_MULTI",
+    "COUNTER_TODAY",
+    "GET_TEXT",
+    "GET_TEXT_100",
+    "GET_TEXT_ANY_TYPE",
+    "GET_TEXT_PACK",
+    "GET_XML_COUNTER",
+    "LOGIN",
+    "OBJECT_ENV",
+    "OBJECT_INFO",
+    "OBJECT_LIST_LOAD_DATE",
+    "OBJECT_LIST_REAL_TIME",
+    "SERVER_STATUS",
+    "SERVER_TIME",
+    "SERVER_VERSION",
+    "TRANX_LOAD_TIME_GROUP",
+    "TRANX_LOAD_TIME_GROUP_V2",
+    "TRANX_PROFILE",
+    "TRANX_PROFILE_FULL",
+    "TRANX_REAL_TIME_GROUP",
+    "TRANX_REAL_TIME_GROUP_LATEST",
+    "XLOG_READ_BY_TXID"
+  ],
+  "counts": {
+    "local_read": 108,
+    "agent_read_relay": 43,
+    "mutation": 45,
+    "excluded_xlog": 5,
+    "mutation_implemented": 45,
+    "mutation_unimplemented": 0
+  },
+  "commands": [
+    {
+      "command_name": "ACTIVESPEED_GROUP_REAL_TIME",
+      "command_literal": "ACTIVESPEED_GROUP_REAL_TIME",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SpecialCounterService.scala",
+      "source_line": 83,
+      "handler": "SpecialCounterService.getActiveSpeedGroup",
+      "processing_api_summary": "CounterCache ActiveSpeed/TPS/NumberValue/MapValue; live selector 분리"
+    },
+    {
+      "command_name": "ACTIVESPEED_GROUP_REAL_TIME_GROUP",
+      "command_literal": "ACTIVESPEED_GROUP_REAL_TIME_GROUP",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SpecialCounterService.scala",
+      "source_line": 147,
+      "handler": "SpecialCounterService.getGroupActiveSpeed",
+      "processing_api_summary": "CounterCache ActiveSpeed/TPS/NumberValue/MapValue; live selector 분리"
+    },
+    {
+      "command_name": "ACTIVESPEED_REAL_TIME",
+      "command_literal": "ACTIVESPEED_REAL_TIME",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SpecialCounterService.scala",
+      "source_line": 56,
+      "handler": "SpecialCounterService.getActiveSpeedAll",
+      "processing_api_summary": "CounterCache ActiveSpeed/TPS/NumberValue/MapValue; live selector 분리"
+    },
+    {
+      "command_name": "ACTIVESPEED_REAL_TIME_GROUP",
+      "command_literal": "ACTIVESPEED_REAL_TIME_GROUP",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SpecialCounterService.scala",
+      "source_line": 110,
+      "handler": "SpecialCounterService.getActiveSpeed",
+      "processing_api_summary": "CounterCache ActiveSpeed/TPS/NumberValue/MapValue; live selector 분리"
+    },
+    {
+      "command_name": "ACTIVE_QUERY_LIST",
+      "command_literal": "ACTIVE_QUERY_LIST",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "source_line": 41,
+      "handler": "DatabaseService.activeQueryList",
+      "processing_api_summary": "StatusRD query history 또는 Agent DB relay"
+    },
+    {
+      "command_name": "ADD_ACCOUNT",
+      "command_literal": "ADD_ACCOUNT",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AccountService.scala",
+      "source_line": 37,
+      "handler": "AccountService.addAccount",
+      "processing_api_summary": "AccountManager; BlobValue Account custom serialization/MapPack/BooleanValue",
+      "status": "implemented_oracle_verified",
+      "evidence": "internal/account/CONTRACT.md (JDK 8 Xalan oracle; file write is an intended difference)"
+    },
+    {
+      "command_name": "ADD_ACCOUNT_GROUP",
+      "command_literal": "ADD_ACCOUNT_GROUP",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AccountService.scala",
+      "source_line": 127,
+      "handler": "AccountService.addAccountGroup",
+      "processing_api_summary": "AccountManager; BlobValue Account custom serialization/MapPack/BooleanValue",
+      "status": "implemented_oracle_verified",
+      "evidence": "internal/account/CONTRACT.md"
+    },
+    {
+      "command_name": "ALERT_LOAD_TIME",
+      "command_literal": "ALERT_LOAD_TIME",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AlertService.scala",
+      "source_line": 76,
+      "handler": "AlertService.getAlertHistory",
+      "processing_api_summary": "AlertCache/AlertRD/SummaryRD; cursor/AlertPack/title counts"
+    },
+    {
+      "command_name": "ALERT_REAL_TIME",
+      "command_literal": "ALERT_REAL_TIME",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AlertService.scala",
+      "source_line": 47,
+      "handler": "AlertService.getRealtime",
+      "processing_api_summary": "AlertCache/AlertRD/SummaryRD; cursor/AlertPack/title counts"
+    },
+    {
+      "command_name": "ALERT_TITLE_COUNT",
+      "command_literal": "ALERT_TITLE_COUNT",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AlertService.scala",
+      "source_line": 135,
+      "handler": "AlertService.titleAlertCount",
+      "processing_api_summary": "AlertCache/AlertRD/SummaryRD; cursor/AlertPack/title counts"
+    },
+    {
+      "command_name": "BATCH_ACTIVE_STACK",
+      "command_literal": "BATCH_ACTIVE_STACK",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/BatchService.scala",
+      "source_line": 140,
+      "handler": "BatchService.readActiveStack",
+      "processing_api_summary": "BatchDB simple Blob/detail Pack, BatchZipDB Blob stream, Agent relay"
+    },
+    {
+      "command_name": "BATCH_HISTORY_DETAIL",
+      "command_literal": "BATCH_HISTORY_DETAIL",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/BatchService.scala",
+      "source_line": 68,
+      "handler": "BatchService.readDetail",
+      "processing_api_summary": "BatchDB simple Blob/detail Pack, BatchZipDB Blob stream, Agent relay"
+    },
+    {
+      "command_name": "BATCH_HISTORY_LIST",
+      "command_literal": "BATCH_HISTORY_LIST",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/BatchService.scala",
+      "source_line": 44,
+      "handler": "BatchService.read",
+      "processing_api_summary": "BatchDB simple Blob/detail Pack, BatchZipDB Blob stream, Agent relay"
+    },
+    {
+      "command_name": "BATCH_HISTORY_STACK",
+      "command_literal": "BATCH_HISTORY_STACK",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/BatchService.scala",
+      "source_line": 87,
+      "handler": "BatchService.readStack",
+      "processing_api_summary": "BatchDB simple Blob/detail Pack, BatchZipDB Blob stream, Agent relay"
+    },
+    {
+      "command_name": "CHECK_ACCOUNT_ID",
+      "command_literal": "CHECK_ACCOUNT_ID",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AccountService.scala",
+      "source_line": 75,
+      "handler": "AccountService.checkAccountId",
+      "processing_api_summary": "AccountManager; BlobValue Account custom serialization/MapPack/BooleanValue"
+    },
+    {
+      "command_name": "CHECK_JOB",
+      "command_literal": "CHECK_JOB",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/java/scouter/server/netio/service/handle/ManageService.java",
+      "source_line": 113,
+      "handler": "ManageService.checkJob",
+      "processing_api_summary": "DB directory listing/delete 또는 RemoteControlManager queue; CHECK_JOB consumes",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "CHECK_LOGIN",
+      "command_literal": "CHECK_LOGIN",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/LoginService.scala",
+      "source_line": 130,
+      "handler": "LoginService.checkLogin",
+      "processing_api_summary": "LoginManager list 또는 AccountManager authorize-only BooleanValue"
+    },
+    {
+      "command_name": "CONFIGURE_DESC",
+      "command_literal": "CONFIGURE_DESC",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "source_line": 164,
+      "handler": "ConfigureService.getConfigureDesc",
+      "processing_api_summary": "Configure/CounterManager 또는 Agent relay; server objHash=0 selector"
+    },
+    {
+      "command_name": "CONFIGURE_VALUE_TYPE",
+      "command_literal": "CONFIGURE_VALUE_TYPE",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "source_line": 186,
+      "handler": "ConfigureService.getConfigureValueType",
+      "processing_api_summary": "Configure/CounterManager 또는 Agent relay; server objHash=0 selector"
+    },
+    {
+      "command_name": "CONFIGURE_VALUE_TYPE_DESC",
+      "command_literal": "CONFIGURE_VALUE_TYPE_DESC",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "source_line": 208,
+      "handler": "ConfigureService.getConfigureValueTypeDesc",
+      "processing_api_summary": "Configure/CounterManager 또는 Agent relay; server objHash=0 selector"
+    },
+    {
+      "command_name": "COUNTER_MAP_REAL_TIME",
+      "command_literal": "COUNTER_MAP_REAL_TIME",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SpecialCounterService.scala",
+      "source_line": 214,
+      "handler": "SpecialCounterService.counterMapRealtime",
+      "processing_api_summary": "CounterCache ActiveSpeed/TPS/NumberValue/MapValue; live selector 분리"
+    },
+    {
+      "command_name": "COUNTER_PAST_DATE_ALL",
+      "command_literal": "COUNTER_PAST_DATE_ALL",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "source_line": 233,
+      "handler": "DailyCounterService.getPastDateAll",
+      "processing_api_summary": "DailyCounterRD FIVE_MIN + current/dated/periodic objects; 병렬 time/value lists"
+    },
+    {
+      "command_name": "COUNTER_PAST_DATE_GROUP",
+      "command_literal": "COUNTER_PAST_DATE_GROUP",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "source_line": 464,
+      "handler": "DailyCounterService.getPastDateGroup",
+      "processing_api_summary": "DailyCounterRD FIVE_MIN + current/dated/periodic objects; 병렬 time/value lists"
+    },
+    {
+      "command_name": "COUNTER_PAST_DATE_TOT",
+      "command_literal": "COUNTER_PAST_DATE_TOT",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "source_line": 181,
+      "handler": "DailyCounterService.getPastDateTotalCounter",
+      "processing_api_summary": "DailyCounterRD FIVE_MIN + current/dated/periodic objects; 병렬 time/value lists"
+    },
+    {
+      "command_name": "COUNTER_PAST_LONGDATE_ALL",
+      "command_literal": "COUNTER_PAST_LONGDATE_ALL",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "source_line": 269,
+      "handler": "DailyCounterService.getPastLongDateAll",
+      "processing_api_summary": "DailyCounterRD FIVE_MIN + current/dated/periodic objects; 병렬 time/value lists"
+    },
+    {
+      "command_name": "COUNTER_PAST_LONGDATE_GROUP",
+      "command_literal": "COUNTER_PAST_LONGDATE_GROUP",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "source_line": 531,
+      "handler": "DailyCounterService.getPastLongDateGroup",
+      "processing_api_summary": "DailyCounterRD FIVE_MIN + current/dated/periodic objects; 병렬 time/value lists"
+    },
+    {
+      "command_name": "COUNTER_PAST_LONGDATE_TOT",
+      "command_literal": "COUNTER_PAST_LONGDATE_TOT",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "source_line": 322,
+      "handler": "DailyCounterService.getPastLongDateTot",
+      "processing_api_summary": "DailyCounterRD FIVE_MIN + current/dated/periodic objects; 병렬 time/value lists"
+    },
+    {
+      "command_name": "COUNTER_PAST_TIME_GROUP",
+      "command_literal": "COUNTER_PAST_TIME_GROUP",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CounterService.scala",
+      "source_line": 420,
+      "handler": "CounterService.getPastTimeGroupAll",
+      "processing_api_summary": "CounterCache 또는 RealtimeCounterRD; Value/MapPack 명령별 body"
+    },
+    {
+      "command_name": "COUNTER_PAST_TIME_TOT",
+      "command_literal": "COUNTER_PAST_TIME_TOT",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CounterService.scala",
+      "source_line": 353,
+      "handler": "CounterService.getPastTimeTotal",
+      "processing_api_summary": "CounterCache 또는 RealtimeCounterRD; Value/MapPack 명령별 body"
+    },
+    {
+      "command_name": "COUNTER_REAL_TIME_ALL_MULTI",
+      "command_literal": "COUNTER_REAL_TIME_ALL_MULTI",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CounterService.scala",
+      "source_line": 154,
+      "handler": "CounterService.getRealTimeAllMulti",
+      "processing_api_summary": "CounterCache 또는 RealtimeCounterRD; Value/MapPack 명령별 body"
+    },
+    {
+      "command_name": "COUNTER_REAL_TIME_GROUP",
+      "command_literal": "COUNTER_REAL_TIME_GROUP",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CounterService.scala",
+      "source_line": 500,
+      "handler": "CounterService.getRealTimeGroupAll",
+      "processing_api_summary": "CounterCache 또는 RealtimeCounterRD; Value/MapPack 명령별 body"
+    },
+    {
+      "command_name": "COUNTER_REAL_TIME_OBJECT_ALL",
+      "command_literal": "COUNTER_REAL_TIME_OBJECT_ALL",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CounterService.scala",
+      "source_line": 107,
+      "handler": "CounterService.getRealTimeObjectAll",
+      "processing_api_summary": "CounterCache 또는 RealtimeCounterRD; Value/MapPack 명령별 body"
+    },
+    {
+      "command_name": "COUNTER_REAL_TIME_OBJECT_TYPE_ALL",
+      "command_literal": "COUNTER_REAL_TIME_OBJECT_TYPE_ALL",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CounterService.scala",
+      "source_line": 128,
+      "handler": "CounterService.getRealTimeObjectTypeAll",
+      "processing_api_summary": "CounterCache 또는 RealtimeCounterRD; Value/MapPack 명령별 body"
+    },
+    {
+      "command_name": "COUNTER_REAL_TIME_TOT",
+      "command_literal": "COUNTER_REAL_TIME_TOT",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CounterService.scala",
+      "source_line": 193,
+      "handler": "CounterService.getRealTimeTotal",
+      "processing_api_summary": "CounterCache 또는 RealtimeCounterRD; Value/MapPack 명령별 body"
+    },
+    {
+      "command_name": "COUNTER_TODAY_ALL",
+      "command_literal": "COUNTER_TODAY_ALL",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "source_line": 75,
+      "handler": "DailyCounterService.getDailyCounterAll",
+      "processing_api_summary": "DailyCounterRD FIVE_MIN + current/dated/periodic objects; 병렬 time/value lists"
+    },
+    {
+      "command_name": "COUNTER_TODAY_GROUP",
+      "command_literal": "COUNTER_TODAY_GROUP",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "source_line": 492,
+      "handler": "DailyCounterService.getTodayGroup",
+      "processing_api_summary": "DailyCounterRD FIVE_MIN + current/dated/periodic objects; 병렬 time/value lists"
+    },
+    {
+      "command_name": "COUNTER_TODAY_TOT",
+      "command_literal": "COUNTER_TODAY_TOT",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "source_line": 124,
+      "handler": "DailyCounterService.getRealDateTotal",
+      "processing_api_summary": "DailyCounterRD FIVE_MIN + current/dated/periodic objects; 병렬 time/value lists"
+    },
+    {
+      "command_name": "CUBRID_ACTIVE_DB_LIST",
+      "command_literal": "CUBRID_ACTIVE_DB_LIST",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CubridService.scala",
+      "source_line": 106,
+      "handler": "CubridService.realtimeActiveDBList",
+      "processing_api_summary": "CounterCache/DailyCounterRD/StatusRD 또는 Agent alert config"
+    },
+    {
+      "command_name": "CUBRID_DB_LONG_PERIOD_MULTI_DATA",
+      "command_literal": "CUBRID_DB_LONG_PERIOD_MULTI_DATA",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CubridService.scala",
+      "source_line": 264,
+      "handler": "CubridService.getPastLongDateAll",
+      "processing_api_summary": "CounterCache/DailyCounterRD/StatusRD 또는 Agent alert config"
+    },
+    {
+      "command_name": "CUBRID_DB_LONG_TRANSACTION_DATA",
+      "command_literal": "CUBRID_DB_LONG_TRANSACTION_DATA",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CubridService.scala",
+      "source_line": 313,
+      "handler": "CubridService.DbLongTransactionInfo",
+      "processing_api_summary": "CounterCache/DailyCounterRD/StatusRD 또는 Agent alert config"
+    },
+    {
+      "command_name": "CUBRID_DB_PERIOD_MULTI_DATA",
+      "command_literal": "CUBRID_DB_PERIOD_MULTI_DATA",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CubridService.scala",
+      "source_line": 192,
+      "handler": "CubridService.realtimeCouterTest",
+      "processing_api_summary": "CounterCache/DailyCounterRD/StatusRD 또는 Agent alert config"
+    },
+    {
+      "command_name": "CUBRID_DB_REALTIME_DML",
+      "command_literal": "CUBRID_DB_REALTIME_DML",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CubridService.scala",
+      "source_line": 55,
+      "handler": "CubridService.realtimeDML",
+      "processing_api_summary": "CounterCache/DailyCounterRD/StatusRD 또는 Agent alert config"
+    },
+    {
+      "command_name": "CUBRID_DB_REALTIME_MULTI_DATA",
+      "command_literal": "CUBRID_DB_REALTIME_MULTI_DATA",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CubridService.scala",
+      "source_line": 238,
+      "handler": "CubridService.realtimeMultiData",
+      "processing_api_summary": "CounterCache/DailyCounterRD/StatusRD 또는 Agent alert config"
+    },
+    {
+      "command_name": "CUBRID_DB_REALTIME_STATUS",
+      "command_literal": "CUBRID_DB_REALTIME_STATUS",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CubridService.scala",
+      "source_line": 126,
+      "handler": "CubridService.realtimeDMLStatus",
+      "processing_api_summary": "CounterCache/DailyCounterRD/StatusRD 또는 Agent alert config"
+    },
+    {
+      "command_name": "CUBRID_DB_SERVER_INFO",
+      "command_literal": "CUBRID_DB_SERVER_INFO",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CubridService.scala",
+      "source_line": 159,
+      "handler": "CubridService.DbServerInfo",
+      "processing_api_summary": "CounterCache/DailyCounterRD/StatusRD 또는 Agent alert config"
+    },
+    {
+      "command_name": "CUBRID_GET_ALERT_CONFIGURE",
+      "command_literal": "CUBRID_GET_ALERT_CONFIGURE",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CubridService.scala",
+      "source_line": 346,
+      "handler": "CubridService.setConfigureAgent",
+      "processing_api_summary": "CounterCache/DailyCounterRD/StatusRD 또는 Agent alert config"
+    },
+    {
+      "command_name": "CUBRID_SET_ALERT_CONFIGURE",
+      "command_literal": "CUBRID_SET_ALERT_CONFIGURE",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/CubridService.scala",
+      "source_line": 358,
+      "handler": "CubridService.listConfigureWas",
+      "processing_api_summary": "CounterCache/DailyCounterRD/StatusRD 또는 Agent alert config",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "DB_DAILY_ACTIVITY",
+      "command_literal": "DB_DAILY_ACTIVITY",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/MariaService.scala",
+      "source_line": 267,
+      "handler": "MariaService.dailyActivity",
+      "processing_api_summary": "CounterCache/DailyCounterRD/StatusCache/StatusRD 복합 조회"
+    },
+    {
+      "command_name": "DB_DAILY_CONNECTIONS",
+      "command_literal": "DB_DAILY_CONNECTIONS",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/MariaService.scala",
+      "source_line": 212,
+      "handler": "MariaService.dailyConnections",
+      "processing_api_summary": "CounterCache/DailyCounterRD/StatusCache/StatusRD 복합 조회"
+    },
+    {
+      "command_name": "DB_DIGEST_TABLE",
+      "command_literal": "DB_DIGEST_TABLE",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/MariaService.scala",
+      "source_line": 353,
+      "handler": "MariaService.digestTable",
+      "processing_api_summary": "CounterCache/DailyCounterRD/StatusCache/StatusRD 복합 조회"
+    },
+    {
+      "command_name": "DB_EXPLAIN_PLAN",
+      "command_literal": "DB_EXPLAIN_PLAN",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "source_line": 118,
+      "handler": "DatabaseService.explainPlan",
+      "processing_api_summary": "StatusRD query history 또는 Agent DB relay"
+    },
+    {
+      "command_name": "DB_KILL_PROCESS",
+      "command_literal": "DB_KILL_PROCESS",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "source_line": 154,
+      "handler": "DatabaseService.killProcess",
+      "processing_api_summary": "StatusRD query history 또는 Agent DB relay",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "DB_LAST_DIGEST_TABLE",
+      "command_literal": "DB_LAST_DIGEST_TABLE",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/MariaService.scala",
+      "source_line": 436,
+      "handler": "MariaService.lastDigestTable",
+      "processing_api_summary": "CounterCache/DailyCounterRD/StatusCache/StatusRD 복합 조회"
+    },
+    {
+      "command_name": "DB_LOAD_DIGEST_COUNTER",
+      "command_literal": "DB_LOAD_DIGEST_COUNTER",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/MariaService.scala",
+      "source_line": 521,
+      "handler": "MariaService.loadDigestCounter",
+      "processing_api_summary": "CounterCache/DailyCounterRD/StatusCache/StatusRD 복합 조회"
+    },
+    {
+      "command_name": "DB_MAX_TIMER_WAIT_THREAD",
+      "command_literal": "DB_MAX_TIMER_WAIT_THREAD",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/MariaService.scala",
+      "source_line": 467,
+      "handler": "MariaService.maxTimerWaitThread",
+      "processing_api_summary": "CounterCache/DailyCounterRD/StatusCache/StatusRD 복합 조회"
+    },
+    {
+      "command_name": "DB_PROCESS_DETAIL",
+      "command_literal": "DB_PROCESS_DETAIL",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "source_line": 106,
+      "handler": "DatabaseService.processDetail",
+      "processing_api_summary": "StatusRD query history 또는 Agent DB relay"
+    },
+    {
+      "command_name": "DB_PROCESS_LIST",
+      "command_literal": "DB_PROCESS_LIST",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "source_line": 130,
+      "handler": "DatabaseService.processList",
+      "processing_api_summary": "StatusRD query history 또는 Agent DB relay"
+    },
+    {
+      "command_name": "DB_REALTIME_ACTIVITY",
+      "command_literal": "DB_REALTIME_ACTIVITY",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/MariaService.scala",
+      "source_line": 74,
+      "handler": "MariaService.realtimeActivity",
+      "processing_api_summary": "CounterCache/DailyCounterRD/StatusCache/StatusRD 복합 조회"
+    },
+    {
+      "command_name": "DB_REALTIME_CONNECTIONS",
+      "command_literal": "DB_REALTIME_CONNECTIONS",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/MariaService.scala",
+      "source_line": 45,
+      "handler": "MariaService.realtimeConnections",
+      "processing_api_summary": "CounterCache/DailyCounterRD/StatusCache/StatusRD 복합 조회"
+    },
+    {
+      "command_name": "DB_REALTIME_HIT_RATIO",
+      "command_literal": "DB_REALTIME_HIT_RATIO",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/MariaService.scala",
+      "source_line": 160,
+      "handler": "MariaService.realtimeHitRatio",
+      "processing_api_summary": "CounterCache/DailyCounterRD/StatusCache/StatusRD 복합 조회"
+    },
+    {
+      "command_name": "DB_REALTIME_RESPONSE_TIME",
+      "command_literal": "DB_REALTIME_RESPONSE_TIME",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/MariaService.scala",
+      "source_line": 124,
+      "handler": "MariaService.realtimeResponseTime",
+      "processing_api_summary": "CounterCache/DailyCounterRD/StatusCache/StatusRD 복합 조회"
+    },
+    {
+      "command_name": "DB_VARIABLES",
+      "command_literal": "DB_VARIABLES",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "source_line": 142,
+      "handler": "DatabaseService.variables",
+      "processing_api_summary": "StatusRD query history 또는 Agent DB relay"
+    },
+    {
+      "command_name": "DEBUG_AGENT",
+      "command_literal": "DEBUG_AGENT",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ServerDebug.scala",
+      "source_line": 38,
+      "handler": "ServerDebug.debugAgent",
+      "processing_api_summary": "AlertRD today scan 또는 Agent DEBUG relay"
+    },
+    {
+      "command_name": "DEBUG_SERVER",
+      "command_literal": "DEBUG_SERVER",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ServerDebug.scala",
+      "source_line": 52,
+      "handler": "ServerDebug.debugServer",
+      "processing_api_summary": "AlertRD today scan 또는 Agent DEBUG relay"
+    },
+    {
+      "command_name": "DEFINE_OBJECT_TYPE",
+      "command_literal": "DEFINE_OBJECT_TYPE",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "source_line": 148,
+      "handler": "ConfigureService.defineObjectType",
+      "processing_api_summary": "Configure/CounterManager 또는 Agent relay; server objHash=0 selector",
+      "status": "implemented_oracle_verified",
+      "evidence": "internal/counters/CONTRACT.md"
+    },
+    {
+      "command_name": "DUMP_APACHE_STATUS",
+      "command_literal": "DUMP_APACHE_STATUS",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DumpService.scala",
+      "source_line": 141,
+      "handler": "DumpService.dumpApacheStatus",
+      "processing_api_summary": "AgentCall MapPack/Blob stream; trigger/GC state mutation"
+    },
+    {
+      "command_name": "EDIT_ACCOUNT",
+      "command_literal": "EDIT_ACCOUNT",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AccountService.scala",
+      "source_line": 56,
+      "handler": "AccountService.editAccount",
+      "processing_api_summary": "AccountManager; BlobValue Account custom serialization/MapPack/BooleanValue",
+      "status": "implemented_oracle_verified",
+      "evidence": "internal/account/CONTRACT.md"
+    },
+    {
+      "command_name": "EDIT_GROUP_POLICY",
+      "command_literal": "EDIT_GROUP_POLICY",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AccountService.scala",
+      "source_line": 119,
+      "handler": "AccountService.editGroupPolicy",
+      "processing_api_summary": "AccountManager; BlobValue Account custom serialization/MapPack/BooleanValue",
+      "status": "implemented_oracle_verified",
+      "evidence": "internal/account/CONTRACT.md"
+    },
+    {
+      "command_name": "EDIT_OBJECT_TYPE",
+      "command_literal": "EDIT_OBJECT_TYPE",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "source_line": 156,
+      "handler": "ConfigureService.editObjectType",
+      "processing_api_summary": "Configure/CounterManager 또는 Agent relay; server objHash=0 selector",
+      "status": "implemented_oracle_verified",
+      "evidence": "internal/counters/CONTRACT.md (writes the file, unlike the original defect)"
+    },
+    {
+      "command_name": "EXIST_QUERY_LIST",
+      "command_literal": "EXIST_QUERY_LIST",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "source_line": 53,
+      "handler": "DatabaseService.existQueryList",
+      "processing_api_summary": "StatusRD query history 또는 Agent DB relay"
+    },
+    {
+      "command_name": "EXPLAIN_PLAN_FOR_THREAD",
+      "command_literal": "EXPLAIN_PLAN_FOR_THREAD",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "source_line": 238,
+      "handler": "DatabaseService.explainPlanForThread",
+      "processing_api_summary": "StatusRD query history 또는 Agent DB relay"
+    },
+    {
+      "command_name": "EXPORT_OBJECT_REGULAR_COUNTER",
+      "command_literal": "EXPORT_OBJECT_REGULAR_COUNTER",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ExportService.scala",
+      "source_line": 93,
+      "handler": "ExportService.exportObjectDateCounter",
+      "processing_api_summary": "CounterCatalog + realtime stored rows / daily slots; MapPack values rows"
+    },
+    {
+      "command_name": "EXPORT_OBJECT_TIME_COUNTER",
+      "command_literal": "EXPORT_OBJECT_TIME_COUNTER",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ExportService.scala",
+      "source_line": 47,
+      "handler": "ExportService.exportObjectTimeCounter",
+      "processing_api_summary": "CounterCatalog + realtime stored rows / daily slots; MapPack values rows"
+    },
+    {
+      "command_name": "GET_ALERT_REAL_COUNTER_DESC",
+      "command_literal": "GET_ALERT_REAL_COUNTER_DESC",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AlertScriptingService.scala",
+      "source_line": 105,
+      "handler": "AlertScriptingService.getRealCounterDesc",
+      "processing_api_summary": "AlertRuleLoader/AlertScriptLoadMessageCache/Java reflection descriptors"
+    },
+    {
+      "command_name": "GET_ALERT_SCRIPTING_CONFIG_CONTETNS",
+      "command_literal": "GET_ALERT_SCRIPTING_CONFIG_CONTETNS",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AlertScriptingService.scala",
+      "source_line": 49,
+      "handler": "AlertScriptingService.getAlertScriptingConfigContents",
+      "processing_api_summary": "AlertRuleLoader/AlertScriptLoadMessageCache/Java reflection descriptors"
+    },
+    {
+      "command_name": "GET_ALERT_SCRIPTING_CONTETNS",
+      "command_literal": "GET_ALERT_SCRIPTING_CONTETNS",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AlertScriptingService.scala",
+      "source_line": 38,
+      "handler": "AlertScriptingService.getAlertScriptingContents",
+      "processing_api_summary": "AlertRuleLoader/AlertScriptLoadMessageCache/Java reflection descriptors"
+    },
+    {
+      "command_name": "GET_ALERT_SCRIPT_LOAD_MESSAGE",
+      "command_literal": "GET_ALERT_SCRIPT_LOAD_MESSAGE",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AlertScriptingService.scala",
+      "source_line": 82,
+      "handler": "AlertScriptingService.getAlertScriptLoadMessage",
+      "processing_api_summary": "AlertRuleLoader/AlertScriptLoadMessageCache/Java reflection descriptors"
+    },
+    {
+      "command_name": "GET_CONFIGURE_COUNTERS_SITE",
+      "command_literal": "GET_CONFIGURE_COUNTERS_SITE",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "source_line": 247,
+      "handler": "ConfigureService.getConfigureCountersSite",
+      "processing_api_summary": "Configure/CounterManager 또는 Agent relay; server objHash=0 selector"
+    },
+    {
+      "command_name": "GET_CONFIGURE_SERVER",
+      "command_literal": "GET_CONFIGURE_SERVER",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "source_line": 46,
+      "handler": "ConfigureService.getConfigureServer",
+      "processing_api_summary": "Configure/CounterManager 또는 Agent relay; server objHash=0 selector"
+    },
+    {
+      "command_name": "GET_CONFIGURE_TELEGRAF",
+      "command_literal": "GET_CONFIGURE_TELEGRAF",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "source_line": 224,
+      "handler": "ConfigureService.getConfigureTelegraf",
+      "processing_api_summary": "Configure/CounterManager 또는 Agent relay; server objHash=0 selector"
+    },
+    {
+      "command_name": "GET_CONFIGURE_WAS",
+      "command_literal": "GET_CONFIGURE_WAS",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "source_line": 75,
+      "handler": "ConfigureService.getConfigureAgent",
+      "processing_api_summary": "Configure/CounterManager 또는 Agent relay; server objHash=0 selector"
+    },
+    {
+      "command_name": "GET_COUNTER_EXIST_DAYS",
+      "command_literal": "GET_COUNTER_EXIST_DAYS",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DailyCounterService.scala",
+      "source_line": 430,
+      "handler": "DailyCounterService.getCounterExistDays",
+      "processing_api_summary": "DailyCounterRD FIVE_MIN + current/dated/periodic objects; 병렬 time/value lists"
+    },
+    {
+      "command_name": "GET_CUSTOM_KV",
+      "command_literal": "GET_CUSTOM_KV",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/KeyValueStoreService.scala",
+      "source_line": 139,
+      "handler": "KeyValueStoreService.getTextFromCustomStore",
+      "processing_api_summary": "KeyValueStoreRW TTL index; Value 또는 bulk MapPack"
+    },
+    {
+      "command_name": "GET_CUSTOM_KV_BULK",
+      "command_literal": "GET_CUSTOM_KV_BULK",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/KeyValueStoreService.scala",
+      "source_line": 196,
+      "handler": "KeyValueStoreService.getTextBulkFromCustomStore",
+      "processing_api_summary": "KeyValueStoreRW TTL index; Value 또는 bulk MapPack"
+    },
+    {
+      "command_name": "GET_GLOBAL_KV",
+      "command_literal": "GET_GLOBAL_KV",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/KeyValueStoreService.scala",
+      "source_line": 40,
+      "handler": "KeyValueStoreService.getText",
+      "processing_api_summary": "KeyValueStoreRW TTL index; Value 또는 bulk MapPack"
+    },
+    {
+      "command_name": "GET_GLOBAL_KV_BULK",
+      "command_literal": "GET_GLOBAL_KV_BULK",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/KeyValueStoreService.scala",
+      "source_line": 56,
+      "handler": "KeyValueStoreService.getTextBulk",
+      "processing_api_summary": "KeyValueStoreRW TTL index; Value 또는 bulk MapPack"
+    },
+    {
+      "command_name": "GET_GROUP_POLICY_ALL",
+      "command_literal": "GET_GROUP_POLICY_ALL",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AccountService.scala",
+      "source_line": 107,
+      "handler": "AccountService.getGroupPolicyAll",
+      "processing_api_summary": "AccountManager; BlobValue Account custom serialization/MapPack/BooleanValue"
+    },
+    {
+      "command_name": "GET_LOGIN_LIST",
+      "command_literal": "GET_LOGIN_LIST",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/LoginService.scala",
+      "source_line": 89,
+      "handler": "LoginService.getLoginList",
+      "processing_api_summary": "LoginManager list 또는 AccountManager authorize-only BooleanValue"
+    },
+    {
+      "command_name": "GET_PLUGIN_HELPER_DESC",
+      "command_literal": "GET_PLUGIN_HELPER_DESC",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AlertScriptingService.scala",
+      "source_line": 124,
+      "handler": "AlertScriptingService.getPluginHelperDesc",
+      "processing_api_summary": "AlertRuleLoader/AlertScriptLoadMessageCache/Java reflection descriptors"
+    },
+    {
+      "command_name": "GET_QUERY_INTERVAL",
+      "command_literal": "GET_QUERY_INTERVAL",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "source_line": 166,
+      "handler": "DatabaseService.getIntervalStatusTask",
+      "processing_api_summary": "StatusRD query history 또는 Agent DB relay"
+    },
+    {
+      "command_name": "GET_STACK_ANALYZER",
+      "command_literal": "GET_STACK_ANALYZER",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/StackAnalyzerService.scala",
+      "source_line": 32,
+      "handler": "StackAnalyzerService.read",
+      "processing_api_summary": "StackAnalyzerDB stored Pack/raw int64; PSTACK_ON Agent mutation"
+    },
+    {
+      "command_name": "GET_STACK_INDEX",
+      "command_literal": "GET_STACK_INDEX",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/StackAnalyzerService.scala",
+      "source_line": 59,
+      "handler": "StackAnalyzerService.readIndex",
+      "processing_api_summary": "StackAnalyzerDB stored Pack/raw int64; PSTACK_ON Agent mutation"
+    },
+    {
+      "command_name": "HOST_DISK_USAGE",
+      "command_literal": "HOST_DISK_USAGE",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HostService.scala",
+      "source_line": 55,
+      "handler": "HostService.diskUsage",
+      "processing_api_summary": "AgentManager + AgentCall MapPack relay"
+    },
+    {
+      "command_name": "HOST_MEMINFO",
+      "command_literal": "HOST_MEMINFO",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HostService.scala",
+      "source_line": 95,
+      "handler": "HostService.memInfo",
+      "processing_api_summary": "AgentManager + AgentCall MapPack relay"
+    },
+    {
+      "command_name": "HOST_NET_STAT",
+      "command_literal": "HOST_NET_STAT",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HostService.scala",
+      "source_line": 68,
+      "handler": "HostService.netStat",
+      "processing_api_summary": "AgentManager + AgentCall MapPack relay"
+    },
+    {
+      "command_name": "HOST_PROCESS_DETAIL",
+      "command_literal": "HOST_PROCESS_DETAIL",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HostService.scala",
+      "source_line": 42,
+      "handler": "HostService.processDetail",
+      "processing_api_summary": "AgentManager + AgentCall MapPack relay"
+    },
+    {
+      "command_name": "HOST_TOP",
+      "command_literal": "HOST_TOP",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HostService.scala",
+      "source_line": 29,
+      "handler": "HostService.hostTop",
+      "processing_api_summary": "AgentManager + AgentCall MapPack relay"
+    },
+    {
+      "command_name": "HOST_WHO",
+      "command_literal": "HOST_WHO",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HostService.scala",
+      "source_line": 82,
+      "handler": "HostService.who",
+      "processing_api_summary": "AgentManager + AgentCall MapPack relay"
+    },
+    {
+      "command_name": "INNODB_STATUS",
+      "command_literal": "INNODB_STATUS",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "source_line": 214,
+      "handler": "DatabaseService.innodbStatus",
+      "processing_api_summary": "StatusRD query history 또는 Agent DB relay"
+    },
+    {
+      "command_name": "INTR_COUNTER_REAL_TIME_BY_OBJ",
+      "command_literal": "INTR_COUNTER_REAL_TIME_BY_OBJ",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/InteractionCounterService.scala",
+      "source_line": 43,
+      "handler": "InteractionCounterService.getRealTimeByObj",
+      "processing_api_summary": "InteractionCounterCache 10초 TTL; InteractionPerfCounterPack stream"
+    },
+    {
+      "command_name": "LIST_ACCOUNT",
+      "command_literal": "LIST_ACCOUNT",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AccountService.scala",
+      "source_line": 86,
+      "handler": "AccountService.listAccount",
+      "processing_api_summary": "AccountManager; BlobValue Account custom serialization/MapPack/BooleanValue"
+    },
+    {
+      "command_name": "LIST_ACCOUNT_GROUP",
+      "command_literal": "LIST_ACCOUNT_GROUP",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AccountService.scala",
+      "source_line": 95,
+      "handler": "AccountService.listAccountGroup",
+      "processing_api_summary": "AccountManager; BlobValue Account custom serialization/MapPack/BooleanValue"
+    },
+    {
+      "command_name": "LIST_CONFIGURE_SERVER",
+      "command_literal": "LIST_CONFIGURE_SERVER",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "source_line": 111,
+      "handler": "ConfigureService.listConfigureServer",
+      "processing_api_summary": "Configure/CounterManager 또는 Agent relay; server objHash=0 selector"
+    },
+    {
+      "command_name": "LIST_CONFIGURE_WAS",
+      "command_literal": "LIST_CONFIGURE_WAS",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "source_line": 99,
+      "handler": "ConfigureService.listConfigureWas",
+      "processing_api_summary": "Configure/CounterManager 또는 Agent relay; server objHash=0 selector"
+    },
+    {
+      "command_name": "LOAD_ALERT_SUMMARY",
+      "command_literal": "LOAD_ALERT_SUMMARY",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryService.scala",
+      "source_line": 347,
+      "handler": "SummaryService.LOAD_ALERT_SUMMARY",
+      "processing_api_summary": "SummaryRD type index + subtype별 집계 MapPack"
+    },
+    {
+      "command_name": "LOAD_APICALL_SUMMARY",
+      "command_literal": "LOAD_APICALL_SUMMARY",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryService.scala",
+      "source_line": 331,
+      "handler": "SummaryService.LOAD_APICALL_SUMMARY",
+      "processing_api_summary": "SummaryRD type index + subtype별 집계 MapPack"
+    },
+    {
+      "command_name": "LOAD_ENDUSER_AJAX_SUMMARY",
+      "command_literal": "LOAD_ENDUSER_AJAX_SUMMARY",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryEndUserAjax.scala",
+      "source_line": 44,
+      "handler": "SummaryEndUserAjax.LOAD_ENDUSER_AJAX_SUMMARY",
+      "processing_api_summary": "SummaryRD ENDUSER_AJAX_TIME 집계"
+    },
+    {
+      "command_name": "LOAD_ENDUSER_ERROR_SUMMARY",
+      "command_literal": "LOAD_ENDUSER_ERROR_SUMMARY",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryEndUserError.scala",
+      "source_line": 48,
+      "handler": "SummaryEndUserError.LOAD_ENDUSER_ERROR_SUMMARY",
+      "processing_api_summary": "SummaryRD ENDUSER_SCRIPT_ERROR 집계"
+    },
+    {
+      "command_name": "LOAD_ENDUSER_NAV_SUMMARY",
+      "command_literal": "LOAD_ENDUSER_NAV_SUMMARY",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryEndUserNav.scala",
+      "source_line": 61,
+      "handler": "SummaryEndUserNav.LOAD_ENDUSER_NAV_SUMMARY",
+      "processing_api_summary": "SummaryRD ENDUSER_NAVIGATION_TIME 집계"
+    },
+    {
+      "command_name": "LOAD_IP_SUMMARY",
+      "command_literal": "LOAD_IP_SUMMARY",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryService.scala",
+      "source_line": 335,
+      "handler": "SummaryService.LOAD_IP_SUMMARY",
+      "processing_api_summary": "SummaryRD type index + subtype별 집계 MapPack"
+    },
+    {
+      "command_name": "LOAD_QUERY_LIST",
+      "command_literal": "LOAD_QUERY_LIST",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "source_line": 75,
+      "handler": "DatabaseService.loadQueryList",
+      "processing_api_summary": "StatusRD query history 또는 Agent DB relay"
+    },
+    {
+      "command_name": "LOAD_SERVICE_ERROR_SUMMARY",
+      "command_literal": "LOAD_SERVICE_ERROR_SUMMARY",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryService.scala",
+      "source_line": 343,
+      "handler": "SummaryService.LOAD_ERROR_SUMMARY",
+      "processing_api_summary": "SummaryRD type index + subtype별 집계 MapPack"
+    },
+    {
+      "command_name": "LOAD_SERVICE_SUMMARY",
+      "command_literal": "LOAD_SERVICE_SUMMARY",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryService.scala",
+      "source_line": 323,
+      "handler": "SummaryService.LOAD_SERVICE_SUMMARY",
+      "processing_api_summary": "SummaryRD type index + subtype별 집계 MapPack"
+    },
+    {
+      "command_name": "LOAD_SQL_SUMMARY",
+      "command_literal": "LOAD_SQL_SUMMARY",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryService.scala",
+      "source_line": 327,
+      "handler": "SummaryService.LOAD_SQL_SUMMARY",
+      "processing_api_summary": "SummaryRD type index + subtype별 집계 MapPack"
+    },
+    {
+      "command_name": "LOAD_UA_SUMMARY",
+      "command_literal": "LOAD_UA_SUMMARY",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SummaryService.scala",
+      "source_line": 339,
+      "handler": "SummaryService.LOAD_UA_SUMMARY",
+      "processing_api_summary": "SummaryRD type index + subtype별 집계 MapPack"
+    },
+    {
+      "command_name": "LOCK_LIST",
+      "command_literal": "LOCK_LIST",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "source_line": 94,
+      "handler": "DatabaseService.lockList",
+      "processing_api_summary": "StatusRD query history 또는 Agent DB relay"
+    },
+    {
+      "command_name": "OBJECT_ACTIVE_SERVICE_LIST",
+      "command_literal": "OBJECT_ACTIVE_SERVICE_LIST",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ThreadList.scala",
+      "source_line": 88,
+      "handler": "ThreadList.agentActiveServiceList",
+      "processing_api_summary": "JVM ThreadUtil 또는 Agent thread/active-service relay"
+    },
+    {
+      "command_name": "OBJECT_ACTIVE_SERVICE_LIST_GROUP",
+      "command_literal": "OBJECT_ACTIVE_SERVICE_LIST_GROUP",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ThreadList.scala",
+      "source_line": 128,
+      "handler": "ThreadList.agentActiveServiceListGroup",
+      "processing_api_summary": "JVM ThreadUtil 또는 Agent thread/active-service relay"
+    },
+    {
+      "command_name": "OBJECT_BATCH_ACTIVE_LIST",
+      "command_literal": "OBJECT_BATCH_ACTIVE_LIST",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/BatchService.scala",
+      "source_line": 100,
+      "handler": "BatchService.agentActiveServiceList",
+      "processing_api_summary": "BatchDB simple Blob/detail Pack, BatchZipDB Blob stream, Agent relay"
+    },
+    {
+      "command_name": "OBJECT_CALL_BLOCK_PROFILE",
+      "command_literal": "OBJECT_CALL_BLOCK_PROFILE",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HeapDumpService.scala",
+      "source_line": 85,
+      "handler": "HeapDumpService.callBlockProfile",
+      "processing_api_summary": "AgentCall MapPack/Blob stream; dump/profile/delete state mutation",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "OBJECT_CALL_CPU_PROFILE",
+      "command_literal": "OBJECT_CALL_CPU_PROFILE",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HeapDumpService.scala",
+      "source_line": 109,
+      "handler": "HeapDumpService.callCpuProfile",
+      "processing_api_summary": "AgentCall MapPack/Blob stream; dump/profile/delete state mutation",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "OBJECT_CALL_HEAP_DUMP",
+      "command_literal": "OBJECT_CALL_HEAP_DUMP",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HeapDumpService.scala",
+      "source_line": 33,
+      "handler": "HeapDumpService.callHepDump",
+      "processing_api_summary": "AgentCall MapPack/Blob stream; dump/profile/delete state mutation",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "OBJECT_CALL_MUTEX_PROFILE",
+      "command_literal": "OBJECT_CALL_MUTEX_PROFILE",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HeapDumpService.scala",
+      "source_line": 97,
+      "handler": "HeapDumpService.callMutexProfile",
+      "processing_api_summary": "AgentCall MapPack/Blob stream; dump/profile/delete state mutation",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "OBJECT_CHECK_RESOURCE_FILE",
+      "command_literal": "OBJECT_CHECK_RESOURCE_FILE",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "source_line": 275,
+      "handler": "AgentInfo.checkJarFile",
+      "processing_api_summary": "AgentManager + ObjectRD 또는 MapPack Agent relay"
+    },
+    {
+      "command_name": "OBJECT_CLASS_DESC",
+      "command_literal": "OBJECT_CLASS_DESC",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "source_line": 120,
+      "handler": "AgentInfo.getClassDesc",
+      "processing_api_summary": "AgentManager + ObjectRD 또는 MapPack Agent relay"
+    },
+    {
+      "command_name": "OBJECT_CLASS_LIST",
+      "command_literal": "OBJECT_CLASS_LIST",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "source_line": 133,
+      "handler": "AgentInfo.getLoadedClassList",
+      "processing_api_summary": "AgentManager + ObjectRD 또는 MapPack Agent relay"
+    },
+    {
+      "command_name": "OBJECT_DELETE_HEAP_DUMP",
+      "command_literal": "OBJECT_DELETE_HEAP_DUMP",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HeapDumpService.scala",
+      "source_line": 73,
+      "handler": "HeapDumpService.deleteHepDump",
+      "processing_api_summary": "AgentCall MapPack/Blob stream; dump/profile/delete state mutation",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "OBJECT_DOWNLOAD_HEAP_DUMP",
+      "command_literal": "OBJECT_DOWNLOAD_HEAP_DUMP",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HeapDumpService.scala",
+      "source_line": 57,
+      "handler": "HeapDumpService.downloadHepDump",
+      "processing_api_summary": "AgentCall MapPack/Blob stream; dump/profile/delete state mutation"
+    },
+    {
+      "command_name": "OBJECT_DOWNLOAD_JAR",
+      "command_literal": "OBJECT_DOWNLOAD_JAR",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "source_line": 287,
+      "handler": "AgentInfo.downloadJar",
+      "processing_api_summary": "AgentManager + ObjectRD 또는 MapPack Agent relay"
+    },
+    {
+      "command_name": "OBJECT_DUMP_FILE_DETAIL",
+      "command_literal": "OBJECT_DUMP_FILE_DETAIL",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DumpService.scala",
+      "source_line": 118,
+      "handler": "DumpService.getDumpFileDetail",
+      "processing_api_summary": "AgentCall MapPack/Blob stream; trigger/GC state mutation"
+    },
+    {
+      "command_name": "OBJECT_DUMP_FILE_LIST",
+      "command_literal": "OBJECT_DUMP_FILE_LIST",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DumpService.scala",
+      "source_line": 106,
+      "handler": "DumpService.getDumpFileList",
+      "processing_api_summary": "AgentCall MapPack/Blob stream; trigger/GC state mutation"
+    },
+    {
+      "command_name": "OBJECT_FILE_SOCKET",
+      "command_literal": "OBJECT_FILE_SOCKET",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "source_line": 223,
+      "handler": "AgentInfo.agentObjectFileSocket",
+      "processing_api_summary": "AgentManager + ObjectRD 또는 MapPack Agent relay"
+    },
+    {
+      "command_name": "OBJECT_HEAPHISTO",
+      "command_literal": "OBJECT_HEAPHISTO",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "source_line": 209,
+      "handler": "AgentInfo.agentObjectHeapHisto",
+      "processing_api_summary": "AgentManager + ObjectRD 또는 MapPack Agent relay"
+    },
+    {
+      "command_name": "OBJECT_LIST_HEAP_DUMP",
+      "command_literal": "OBJECT_LIST_HEAP_DUMP",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/HeapDumpService.scala",
+      "source_line": 45,
+      "handler": "HeapDumpService.listHepDump",
+      "processing_api_summary": "AgentCall MapPack/Blob stream; dump/profile/delete state mutation"
+    },
+    {
+      "command_name": "OBJECT_LOAD_CLASS_BY_STREAM",
+      "command_literal": "OBJECT_LOAD_CLASS_BY_STREAM",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "source_line": 251,
+      "handler": "AgentInfo.loadClassStream",
+      "processing_api_summary": "AgentManager + ObjectRD 또는 MapPack Agent relay"
+    },
+    {
+      "command_name": "OBJECT_REMOVE",
+      "command_literal": "OBJECT_REMOVE",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "source_line": 158,
+      "handler": "AgentInfo.agentRemove",
+      "processing_api_summary": "AgentManager + ObjectRD 또는 MapPack Agent relay",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "OBJECT_REMOVE_INACTIVE",
+      "command_literal": "OBJECT_REMOVE_INACTIVE",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "source_line": 47,
+      "handler": "AgentInfo.agentRemoveInactive",
+      "processing_api_summary": "AgentManager + ObjectRD 또는 MapPack Agent relay",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "OBJECT_REMOVE_IN_MEMORY",
+      "command_literal": "OBJECT_REMOVE_IN_MEMORY",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "source_line": 196,
+      "handler": "AgentInfo.agentRemoveInMemory",
+      "processing_api_summary": "AgentManager + ObjectRD 또는 MapPack Agent relay",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "OBJECT_RESET_CACHE",
+      "command_literal": "OBJECT_RESET_CACHE",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "source_line": 147,
+      "handler": "AgentInfo.resetAgentCache",
+      "processing_api_summary": "AgentManager + ObjectRD 또는 MapPack Agent relay",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "OBJECT_SOCKET",
+      "command_literal": "SOCKET",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "source_line": 237,
+      "handler": "AgentInfo.agentObjectSocket",
+      "processing_api_summary": "AgentManager + ObjectRD 또는 MapPack Agent relay"
+    },
+    {
+      "command_name": "OBJECT_SYSTEM_GC",
+      "command_literal": "OBJECT_SYSTEM_GC",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DumpService.scala",
+      "source_line": 133,
+      "handler": "DumpService.systemGc",
+      "processing_api_summary": "AgentCall MapPack/Blob stream; trigger/GC state mutation",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "OBJECT_THREAD_CONTROL",
+      "command_literal": "OBJECT_THREAD_CONTROL",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ThreadList.scala",
+      "source_line": 162,
+      "handler": "ThreadList.agentThreadControl",
+      "processing_api_summary": "JVM ThreadUtil 또는 Agent thread/active-service relay",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "OBJECT_THREAD_DETAIL",
+      "command_literal": "OBJECT_THREAD_DETAIL",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ThreadList.scala",
+      "source_line": 60,
+      "handler": "ThreadList.agentThreadDetail",
+      "processing_api_summary": "JVM ThreadUtil 또는 Agent thread/active-service relay"
+    },
+    {
+      "command_name": "OBJECT_THREAD_DUMP",
+      "command_literal": "OBJECT_THREAD_DUMP",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ThreadList.scala",
+      "source_line": 149,
+      "handler": "ThreadList.agentThreadDump",
+      "processing_api_summary": "JVM ThreadUtil 또는 Agent thread/active-service relay"
+    },
+    {
+      "command_name": "OBJECT_THREAD_LIST",
+      "command_literal": "OBJECT_THREAD_LIST",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ThreadList.scala",
+      "source_line": 75,
+      "handler": "ThreadList.agentThreadList",
+      "processing_api_summary": "JVM ThreadUtil 또는 Agent thread/active-service relay"
+    },
+    {
+      "command_name": "OBJECT_TODAY_FULL_LIST",
+      "command_literal": "OBJECT_TODAY_FULL_LIST",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "source_line": 171,
+      "handler": "AgentInfo.getFullAgentList",
+      "processing_api_summary": "AgentManager + ObjectRD 또는 MapPack Agent relay"
+    },
+    {
+      "command_name": "PSTACK_ON",
+      "command_literal": "PSTACK_ON",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/StackAnalyzerService.scala",
+      "source_line": 87,
+      "handler": "StackAnalyzerService.turnOnStack",
+      "processing_api_summary": "StackAnalyzerDB stored Pack/raw int64; PSTACK_ON Agent mutation",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "QUICKSEARCH_XLOG_LIST",
+      "command_literal": "QUICKSEARCH_XLOG_LIST",
+      "category": "excluded_xlog",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/XLogService.scala",
+      "source_line": 529,
+      "handler": "XLogService.quickSearchXlogList",
+      "processing_api_summary": "별도 XLog/Trace 계약(trace-query.md) 범위; 여기서는 상세 조사 제외"
+    },
+    {
+      "command_name": "REALTIME_SERVICE_GROUP",
+      "command_literal": "REALTIME_SERVICE_GROUP",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/GroupService.scala",
+      "source_line": 41,
+      "handler": "GroupService.realTimeServiceGroup",
+      "processing_api_summary": "XLogGroupPerf + TextPermRD.GROUP aggregate"
+    },
+    {
+      "command_name": "REDEFINE_CLASSES",
+      "command_literal": "REDEFINE_CLASSES",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "source_line": 122,
+      "handler": "ConfigureService.applyConfigureAgent",
+      "processing_api_summary": "Configure/CounterManager 또는 Agent relay; server objHash=0 selector",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "REDIS_INFO",
+      "command_literal": "REDIS_INFO",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AgentInfo.scala",
+      "source_line": 263,
+      "handler": "AgentInfo.redisInfo",
+      "processing_api_summary": "AgentManager + ObjectRD 또는 MapPack Agent relay"
+    },
+    {
+      "command_name": "REMOTE_CONTROL",
+      "command_literal": "REMOTE_CONTROL",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/java/scouter/server/netio/service/handle/ManageService.java",
+      "source_line": 75,
+      "handler": "ManageService.remoteControl",
+      "processing_api_summary": "DB directory listing/delete 또는 RemoteControlManager queue; CHECK_JOB consumes",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "REMOTE_CONTROL_ALL",
+      "command_literal": "REMOTE_CONTROL_ALL",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/java/scouter/server/netio/service/handle/ManageService.java",
+      "source_line": 98,
+      "handler": "ManageService.remoteControlAll",
+      "processing_api_summary": "DB directory listing/delete 또는 RemoteControlManager queue; CHECK_JOB consumes",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "SAVE_ALERT_SCRIPTING_CONFIG_CONTETNS",
+      "command_literal": "SAVE_ALERT_SCRIPTING_CONFIG_CONTETNS",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AlertScriptingService.scala",
+      "source_line": 71,
+      "handler": "AlertScriptingService.saveAlertScriptingConfigContents",
+      "processing_api_summary": "AlertRuleLoader/AlertScriptLoadMessageCache/Java reflection descriptors",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "SAVE_ALERT_SCRIPTING_CONTETNS",
+      "command_literal": "SAVE_ALERT_SCRIPTING_CONTETNS",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/AlertScriptingService.scala",
+      "source_line": 60,
+      "handler": "AlertScriptingService.saveAlertScriptingContents",
+      "processing_api_summary": "AlertRuleLoader/AlertScriptLoadMessageCache/Java reflection descriptors",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "SCHEMA_SIZE_STATUS",
+      "command_literal": "SCHEMA_SIZE_STATUS",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "source_line": 190,
+      "handler": "DatabaseService.schemaSizeStatus",
+      "processing_api_summary": "StatusRD query history 또는 Agent DB relay"
+    },
+    {
+      "command_name": "SEARCH_XLOG_LIST",
+      "command_literal": "SEARCH_XLOG_LIST",
+      "category": "excluded_xlog",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/XLogService.scala",
+      "source_line": 566,
+      "handler": "XLogService.searchXlogList",
+      "processing_api_summary": "별도 XLog/Trace 계약(trace-query.md) 범위; 여기서는 상세 조사 제외"
+    },
+    {
+      "command_name": "SERVER_DB_DELETE",
+      "command_literal": "SERVER_DB_DELETE",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/java/scouter/server/netio/service/handle/ManageService.java",
+      "source_line": 57,
+      "handler": "ManageService.deleteDbFiles",
+      "processing_api_summary": "DB directory listing/delete 또는 RemoteControlManager queue; CHECK_JOB consumes",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "SERVER_DB_LIST",
+      "command_literal": "SERVER_DB_LIST",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/java/scouter/server/netio/service/handle/ManageService.java",
+      "source_line": 37,
+      "handler": "ManageService.listDbFiles",
+      "processing_api_summary": "DB directory listing/delete 또는 RemoteControlManager queue; CHECK_JOB consumes"
+    },
+    {
+      "command_name": "SERVER_ENV",
+      "command_literal": "SERVER_ENV",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ServerInfo.scala",
+      "source_line": 64,
+      "handler": "ServerInfo.getAgentEnv",
+      "processing_api_summary": "JVM properties 또는 log files; MapPack/TextValue"
+    },
+    {
+      "command_name": "SERVER_LOG_DETAIL",
+      "command_literal": "SERVER_LOG_DETAIL",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ServerInfo.scala",
+      "source_line": 105,
+      "handler": "ServerInfo.getServerLogDetail",
+      "processing_api_summary": "JVM properties 또는 log files; MapPack/TextValue"
+    },
+    {
+      "command_name": "SERVER_LOG_LIST",
+      "command_literal": "SERVER_LOG_LIST",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ServerInfo.scala",
+      "source_line": 84,
+      "handler": "ServerInfo.getServerLogs",
+      "processing_api_summary": "JVM properties 또는 log files; MapPack/TextValue"
+    },
+    {
+      "command_name": "SERVER_THREAD_DETAIL",
+      "command_literal": "SERVER_THREAD_DETAIL",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ThreadList.scala",
+      "source_line": 39,
+      "handler": "ThreadList.serverThreadDetail",
+      "processing_api_summary": "JVM ThreadUtil 또는 Agent thread/active-service relay"
+    },
+    {
+      "command_name": "SERVER_THREAD_LIST",
+      "command_literal": "SERVER_THREAD_LIST",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ThreadList.scala",
+      "source_line": 50,
+      "handler": "ThreadList.serverThreadList",
+      "processing_api_summary": "JVM ThreadUtil 또는 Agent thread/active-service relay"
+    },
+    {
+      "command_name": "SET_CONFIGURE_COUNTERS_SITE",
+      "command_literal": "SET_CONFIGURE_COUNTERS_SITE",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "source_line": 256,
+      "handler": "ConfigureService.setConfigureCountersSite",
+      "processing_api_summary": "Configure/CounterManager 또는 Agent relay; server objHash=0 selector",
+      "status": "implemented_oracle_verified",
+      "evidence": "internal/counters/CONTRACT.md (JAXB normalize oracle; handler loopback only)"
+    },
+    {
+      "command_name": "SET_CONFIGURE_SERVER",
+      "command_literal": "SET_CONFIGURE_SERVER",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "source_line": 61,
+      "handler": "ConfigureService.setConfigureServer",
+      "processing_api_summary": "Configure/CounterManager 또는 Agent relay; server objHash=0 selector",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "SET_CONFIGURE_TELEGRAF",
+      "command_literal": "SET_CONFIGURE_TELEGRAF",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "source_line": 233,
+      "handler": "ConfigureService.setConfigureTelegraf",
+      "processing_api_summary": "Configure/CounterManager 또는 Agent relay; server objHash=0 selector",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "SET_CONFIGURE_WAS",
+      "command_literal": "SET_CONFIGURE_WAS",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/ConfigureService.scala",
+      "source_line": 87,
+      "handler": "ConfigureService.setConfigureAgent",
+      "processing_api_summary": "Configure/CounterManager 또는 Agent relay; server objHash=0 selector",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "SET_CUSTOM_KV",
+      "command_literal": "SET_CUSTOM_KV",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/KeyValueStoreService.scala",
+      "source_line": 157,
+      "handler": "KeyValueStoreService.setTextToCustomStore",
+      "processing_api_summary": "KeyValueStoreRW TTL index; Value 또는 bulk MapPack",
+      "status": "implemented_oracle_verified",
+      "evidence": "docs/compatibility/local-store-query.md; TestLocalStoreActualJavaWriteHandlersAndDB (scripts/java-storage.py --generate-local-store-writes)"
+    },
+    {
+      "command_name": "SET_CUSTOM_KV_BULK",
+      "command_literal": "SET_CUSTOM_KV_BULK",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/KeyValueStoreService.scala",
+      "source_line": 220,
+      "handler": "KeyValueStoreService.setTextBulkToCustomStore",
+      "processing_api_summary": "KeyValueStoreRW TTL index; Value 또는 bulk MapPack",
+      "status": "implemented_oracle_verified",
+      "evidence": "docs/compatibility/local-store-query.md; TestLocalStoreActualJavaWriteHandlersAndDB (scripts/java-storage.py --generate-local-store-writes)"
+    },
+    {
+      "command_name": "SET_CUSTOM_TTL",
+      "command_literal": "SET_CUSTOM_TTL",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/KeyValueStoreService.scala",
+      "source_line": 177,
+      "handler": "KeyValueStoreService.setTtlToCustomStore",
+      "processing_api_summary": "KeyValueStoreRW TTL index; Value 또는 bulk MapPack",
+      "status": "implemented_oracle_verified",
+      "evidence": "docs/compatibility/local-store-query.md; TestLocalStoreActualJavaWriteHandlersAndDB (scripts/java-storage.py --generate-local-store-writes)"
+    },
+    {
+      "command_name": "SET_GLOBAL_KV",
+      "command_literal": "SET_GLOBAL_KV",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/KeyValueStoreService.scala",
+      "source_line": 79,
+      "handler": "KeyValueStoreService.setText",
+      "processing_api_summary": "KeyValueStoreRW TTL index; Value 또는 bulk MapPack",
+      "status": "implemented_oracle_verified",
+      "evidence": "docs/compatibility/local-store-query.md; TestLocalStoreActualJavaWriteHandlersAndDB (scripts/java-storage.py --generate-local-store-writes)"
+    },
+    {
+      "command_name": "SET_GLOBAL_KV_BULK",
+      "command_literal": "SET_GLOBAL_KV_BULK",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/KeyValueStoreService.scala",
+      "source_line": 116,
+      "handler": "KeyValueStoreService.setTextBulk",
+      "processing_api_summary": "KeyValueStoreRW TTL index; Value 또는 bulk MapPack",
+      "status": "implemented_oracle_verified",
+      "evidence": "docs/compatibility/local-store-query.md; TestLocalStoreActualJavaWriteHandlersAndDB (scripts/java-storage.py --generate-local-store-writes)"
+    },
+    {
+      "command_name": "SET_GLOBAL_TTL",
+      "command_literal": "SET_GLOBAL_TTL",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/KeyValueStoreService.scala",
+      "source_line": 98,
+      "handler": "KeyValueStoreService.setTTL",
+      "processing_api_summary": "KeyValueStoreRW TTL index; Value 또는 bulk MapPack",
+      "status": "implemented_oracle_verified",
+      "evidence": "docs/compatibility/local-store-query.md; TestLocalStoreActualJavaWriteHandlersAndDB (scripts/java-storage.py --generate-local-store-writes)"
+    },
+    {
+      "command_name": "SET_QUERY_INTERVAL",
+      "command_literal": "SET_QUERY_INTERVAL",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "source_line": 178,
+      "handler": "DatabaseService.changeIntervalStatusTask",
+      "processing_api_summary": "StatusRD query history 또는 Agent DB relay",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "SHOW_REAL_TIME_STRING",
+      "command_literal": "SHOW_REAL_TIME_STRING",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/SpecialCounterService.scala",
+      "source_line": 185,
+      "handler": "SpecialCounterService.showRealtimeString",
+      "processing_api_summary": "CounterCache ActiveSpeed/TPS/NumberValue/MapValue; live selector 분리"
+    },
+    {
+      "command_name": "SLAVE_STATUS",
+      "command_literal": "SLAVE_STATUS",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "source_line": 226,
+      "handler": "DatabaseService.slaveStatus",
+      "processing_api_summary": "StatusRD query history 또는 Agent DB relay"
+    },
+    {
+      "command_name": "STATUS_AROUND_VALUE",
+      "command_literal": "STATUS_AROUND_VALUE",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/StatusService.scala",
+      "source_line": 30,
+      "handler": "StatusService.statusAroundValue",
+      "processing_api_summary": "StatusRD forward first matching StatusPack"
+    },
+    {
+      "command_name": "TABLE_SIZE_STATUS",
+      "command_literal": "TABLE_SIZE_STATUS",
+      "category": "agent_read_relay",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "source_line": 202,
+      "handler": "DatabaseService.tableSizeStatus",
+      "processing_api_summary": "StatusRD query history 또는 Agent DB relay"
+    },
+    {
+      "command_name": "TAGCNT_DIV_NAMES",
+      "command_literal": "TAGCNT_DIV_NAMES",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/TagCountService.scala",
+      "source_line": 45,
+      "handler": "TagCountService.getDivNames",
+      "processing_api_summary": "TagCountConfig/First/Next DB; Value/raw short float array/Pack"
+    },
+    {
+      "command_name": "TAGCNT_TAG_ACTUAL_DATA",
+      "command_literal": "TAGCNT_TAG_ACTUAL_DATA",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/TagCountService.scala",
+      "source_line": 131,
+      "handler": "TagCountService.getTagActualData",
+      "processing_api_summary": "TagCountConfig/First/Next DB; Value/raw short float array/Pack"
+    },
+    {
+      "command_name": "TAGCNT_TAG_NAMES",
+      "command_literal": "TAGCNT_TAG_NAMES",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/TagCountService.scala",
+      "source_line": 57,
+      "handler": "TagCountService.getTagNames",
+      "processing_api_summary": "TagCountConfig/First/Next DB; Value/raw short float array/Pack"
+    },
+    {
+      "command_name": "TAGCNT_TAG_VALUES",
+      "command_literal": "TAGCNT_TAG_VALUES",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/TagCountService.scala",
+      "source_line": 70,
+      "handler": "TagCountService.getTagValues",
+      "processing_api_summary": "TagCountConfig/First/Next DB; Value/raw short float array/Pack"
+    },
+    {
+      "command_name": "TAGCNT_TAG_VALUE_DATA",
+      "command_literal": "TAGCNT_TAG_VALUE_DATA",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/TagCountService.scala",
+      "source_line": 106,
+      "handler": "TagCountService.getTagValueCount",
+      "processing_api_summary": "TagCountConfig/First/Next DB; Value/raw short float array/Pack"
+    },
+    {
+      "command_name": "TRIGGER_ACTIVE_SERVICE_LIST",
+      "command_literal": "TRIGGER_ACTIVE_SERVICE_LIST",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DumpService.scala",
+      "source_line": 34,
+      "handler": "DumpService.triggerActiveServiceList",
+      "processing_api_summary": "AgentCall MapPack/Blob stream; trigger/GC state mutation",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "TRIGGER_BLOCK_PROFILE",
+      "command_literal": "TRIGGER_BLOCK_PROFILE",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DumpService.scala",
+      "source_line": 82,
+      "handler": "DumpService.triggerBlockProfile",
+      "processing_api_summary": "AgentCall MapPack/Blob stream; trigger/GC state mutation",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "TRIGGER_HEAPHISTO",
+      "command_literal": "TRIGGER_HEAPHISTO",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DumpService.scala",
+      "source_line": 46,
+      "handler": "DumpService.triggerHeapHisto",
+      "processing_api_summary": "AgentCall MapPack/Blob stream; trigger/GC state mutation",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "TRIGGER_MUTEX_PROFILE",
+      "command_literal": "TRIGGER_MUTEX_PROFILE",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DumpService.scala",
+      "source_line": 94,
+      "handler": "DumpService.triggerMutexrofile",
+      "processing_api_summary": "AgentCall MapPack/Blob stream; trigger/GC state mutation",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "TRIGGER_THREAD_DUMP",
+      "command_literal": "TRIGGER_THREAD_DUMP",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DumpService.scala",
+      "source_line": 58,
+      "handler": "DumpService.triggerThreadDump",
+      "processing_api_summary": "AgentCall MapPack/Blob stream; trigger/GC state mutation",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "TRIGGER_THREAD_LIST",
+      "command_literal": "TRIGGER_THREAD_LIST",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DumpService.scala",
+      "source_line": 70,
+      "handler": "DumpService.triggerThreadList",
+      "processing_api_summary": "AgentCall MapPack/Blob stream; trigger/GC state mutation",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "USE_DATABASE",
+      "command_literal": "USE_DATABASE",
+      "category": "mutation",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/DatabaseService.scala",
+      "source_line": 250,
+      "handler": "DatabaseService.useDatabase",
+      "processing_api_summary": "StatusRD query history 또는 Agent DB relay",
+      "status": "implemented_loopback_verified",
+      "evidence": "docs/compatibility/management-commands.md; docs/validation/2026-10-16-management-gaps.md (Java oracle golden; Go comparison passed with an intended-difference allowlist)"
+    },
+    {
+      "command_name": "VISITOR_LOADDATE",
+      "command_literal": "VISITOR_LOADDATE",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/VisitorService.scala",
+      "source_line": 61,
+      "handler": "VisitorService.visitorLoaddate",
+      "processing_api_summary": "VisitorDB/VisitorHourlyDB HLL union cardinality"
+    },
+    {
+      "command_name": "VISITOR_LOADDATE_GROUP",
+      "command_literal": "VISITOR_LOADDATE_GROUP",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/VisitorService.scala",
+      "source_line": 81,
+      "handler": "VisitorService.visitorLoaddateGroup",
+      "processing_api_summary": "VisitorDB/VisitorHourlyDB HLL union cardinality"
+    },
+    {
+      "command_name": "VISITOR_LOADDATE_TOTAL",
+      "command_literal": "VISITOR_LOADDATE_TOTAL",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/VisitorService.scala",
+      "source_line": 71,
+      "handler": "VisitorService.visitorLoaddateTotal",
+      "processing_api_summary": "VisitorDB/VisitorHourlyDB HLL union cardinality"
+    },
+    {
+      "command_name": "VISITOR_LOADHOUR_GROUP",
+      "command_literal": "VISITOR_LOADHOUR_GROUP",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/VisitorService.scala",
+      "source_line": 101,
+      "handler": "VisitorService.visitorLoadhourGroup",
+      "processing_api_summary": "VisitorDB/VisitorHourlyDB HLL union cardinality"
+    },
+    {
+      "command_name": "VISITOR_REALTIME",
+      "command_literal": "VISITOR_REALTIME",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/VisitorService.scala",
+      "source_line": 34,
+      "handler": "VisitorService.visitorRealtime",
+      "processing_api_summary": "VisitorDB/VisitorHourlyDB HLL union cardinality"
+    },
+    {
+      "command_name": "VISITOR_REALTIME_GROUP",
+      "command_literal": "VISITOR_REALTIME_GROUP",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/VisitorService.scala",
+      "source_line": 52,
+      "handler": "VisitorService.visitorRealtimeGroup",
+      "processing_api_summary": "VisitorDB/VisitorHourlyDB HLL union cardinality"
+    },
+    {
+      "command_name": "VISITOR_REALTIME_TOTAL",
+      "command_literal": "VISITOR_REALTIME_TOTAL",
+      "category": "local_read",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/VisitorService.scala",
+      "source_line": 43,
+      "handler": "VisitorService.visitorRealtimeTotal",
+      "processing_api_summary": "VisitorDB/VisitorHourlyDB HLL union cardinality"
+    },
+    {
+      "command_name": "XLOG_LOAD_BY_GXID",
+      "command_literal": "XLOG_LOAD_BY_GXID",
+      "category": "excluded_xlog",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/XLogService.scala",
+      "source_line": 491,
+      "handler": "XLogService.loadByGxId",
+      "processing_api_summary": "별도 XLog/Trace 계약(trace-query.md) 범위; 여기서는 상세 조사 제외"
+    },
+    {
+      "command_name": "XLOG_LOAD_BY_TXIDS",
+      "command_literal": "XLOG_LOAD_BY_TXIDS",
+      "category": "excluded_xlog",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/XLogService.scala",
+      "source_line": 464,
+      "handler": "XLogService.loadByTxIds",
+      "processing_api_summary": "별도 XLog/Trace 계약(trace-query.md) 범위; 여기서는 상세 조사 제외"
+    },
+    {
+      "command_name": "XLOG_READ_BY_GXID",
+      "command_literal": "XLOG_READ_BY_GXID",
+      "category": "excluded_xlog",
+      "source_path": "scouter.server/src/main/scala/scouter/server/netio/service/handle/XLogService.scala",
+      "source_line": 395,
+      "handler": "XLogService.readByGxId",
+      "processing_api_summary": "별도 XLog/Trace 계약(trace-query.md) 범위; 여기서는 상세 조사 제외"
+    }
+  ]
+}

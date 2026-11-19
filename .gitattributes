@@ -1,0 +1,4 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+internal/protocol/testdata/java/*.bin binary
+internal/geoip/testdata/oracle/*.dat binary

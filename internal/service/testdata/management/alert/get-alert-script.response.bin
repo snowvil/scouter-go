@@ -1,0 +1,4 @@
+
+contents2�// synthetic alert rule
+if ($counter.getFloatValue() > 1.5f) { $counter.warn("synthetic", "합성 " + $counter.getObjName()); }
+

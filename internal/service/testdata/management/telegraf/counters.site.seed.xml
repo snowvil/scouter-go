@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Counters>
+    <Types>
+        <ObjectType disp="Seed" family="seed_family" icon="" name="seed_type" sub-object="false"/>
+    </Types>
+    <Familys>
+        <Family master="seed_counter" name="seed_family">
+            <Counter all="true" disp="Seed" icon="" name="seed_counter" total="true" unit="cnt"/>
+        </Family>
+    </Familys>
+</Counters>

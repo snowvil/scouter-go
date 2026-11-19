@@ -1,0 +1,743 @@
+{
+  "scenario": "login",
+  "cases": [
+    {
+      "name": "login-default",
+      "command": "LOGIN",
+      "request": "login-default.request.bin",
+      "request_bytes": 142,
+      "response": "login-default.response.bin",
+      "response_bytes": 934,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "id": {
+              "t": "text",
+              "v": "admin"
+            },
+            "pass": {
+              "t": "text",
+              "v": "ae3cf413ccbc56ce97c4dd88d14296c31d6ffc81eabbb04437434cc3221ec47c"
+            },
+            "ip": {
+              "t": "text",
+              "v": "192.0.2.10"
+            },
+            "hostname": {
+              "t": "text",
+              "v": "synthetic-client"
+            },
+            "version": {
+              "t": "text",
+              "v": "${project.version} ${build.datetime}"
+            },
+            "session": {
+              "t": "decimal",
+              "v": 405154037761
+            },
+            "time": {
+              "t": "decimal",
+              "v": 0
+            },
+            "server_id": {
+              "t": "text",
+              "v": "<hostname>"
+            },
+            "type": {
+              "t": "text",
+              "v": "admin"
+            },
+            "client_version": {
+              "t": "text",
+              "v": ""
+            },
+            "email": {
+              "t": "text",
+              "v": "admin@scouter.com"
+            },
+            "timezone": {
+              "t": "text",
+              "v": "Korea Standard Time"
+            },
+            "policy": {
+              "t": "map",
+              "v": {
+                "AllowFileDump": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowExportCounter": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowAddAccount": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowSystemGC": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowDefineObjectType": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowExportAppSum": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowExportClass": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowKillTransaction": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowLoginList": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowHeapHistogram": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowDBManager": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowEditGroupPolicy": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowConfigure": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowSqlParameter": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowThreadDump": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowRedefineClass": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowHeapDump": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowEditAccount": {
+                  "t": "boolean",
+                  "v": true
+                }
+              }
+            },
+            "menu": {
+              "t": "map",
+              "v": {
+                "tag_count": {
+                  "t": "boolean",
+                  "v": true
+                }
+              }
+            },
+            "so_time_out": {
+              "t": "decimal",
+              "v": 8000
+            },
+            "ext_link_name": {
+              "t": "text",
+              "v": "scouter-paper"
+            },
+            "ext_link_url_pattern": {
+              "t": "text",
+              "v": "http://my-scouter-paper-ip:6188/index.html#/paper?&address=localhost&port=6188&realtime=false&xlogElapsedTime=8000&instances=$[objHashes]&from=$[from]&to=$[to]&layout=my-layout-template-01"
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": [
+        "Load Account Group File",
+        "Load Account File"
+      ],
+      "applied": {
+        "server_id": "<hostname>",
+        "ext_link_name": "scouter-paper",
+        "ext_link_url_pattern": "http://my-scouter-paper-ip:6188/index.html#/paper?&address=localhost&port=6188&realtime=false&xlogElapsedTime=8000&instances=$[objHashes]&from=$[from]&to=$[to]&layout=my-layout-template-01",
+        "tagcnt_enabled": true,
+        "net_tcp_client_so_timeout_ms": 8000
+      },
+      "redactions": "time in call window -> 0; server_id host name -> <hostname>"
+    },
+    {
+      "name": "login-fail",
+      "command": "LOGIN",
+      "request": "login-fail.request.bin",
+      "request_bytes": 142,
+      "response": "login-fail.response.bin",
+      "response_bytes": 172,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "id": {
+              "t": "text",
+              "v": "admin"
+            },
+            "pass": {
+              "t": "text",
+              "v": "be2084213035fc24e87f9a6f2806a56de69c27f3ba23733e32f3fc6939772aca"
+            },
+            "ip": {
+              "t": "text",
+              "v": "192.0.2.10"
+            },
+            "hostname": {
+              "t": "text",
+              "v": "synthetic-client"
+            },
+            "version": {
+              "t": "text",
+              "v": "2.21.3"
+            },
+            "session": {
+              "t": "decimal",
+              "v": 0
+            },
+            "error": {
+              "t": "text",
+              "v": "login fail"
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "login-changed",
+      "command": "LOGIN",
+      "request": "login-changed.request.bin",
+      "request_bytes": 142,
+      "response": "login-changed.response.bin",
+      "response_bytes": 839,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "id": {
+              "t": "text",
+              "v": "admin"
+            },
+            "pass": {
+              "t": "text",
+              "v": "ae3cf413ccbc56ce97c4dd88d14296c31d6ffc81eabbb04437434cc3221ec47c"
+            },
+            "ip": {
+              "t": "text",
+              "v": "192.0.2.10"
+            },
+            "hostname": {
+              "t": "text",
+              "v": "synthetic-client"
+            },
+            "version": {
+              "t": "text",
+              "v": "${project.version} ${build.datetime}"
+            },
+            "session": {
+              "t": "decimal",
+              "v": 405154037762
+            },
+            "time": {
+              "t": "decimal",
+              "v": 0
+            },
+            "server_id": {
+              "t": "text",
+              "v": "synthetic-server-1"
+            },
+            "type": {
+              "t": "text",
+              "v": "admin"
+            },
+            "client_version": {
+              "t": "text",
+              "v": ""
+            },
+            "email": {
+              "t": "text",
+              "v": "admin@scouter.com"
+            },
+            "timezone": {
+              "t": "text",
+              "v": "Korea Standard Time"
+            },
+            "policy": {
+              "t": "map",
+              "v": {
+                "AllowFileDump": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowExportCounter": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowAddAccount": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowSystemGC": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowDefineObjectType": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowExportAppSum": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowExportClass": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowKillTransaction": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowLoginList": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowHeapHistogram": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowDBManager": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowEditGroupPolicy": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowConfigure": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowSqlParameter": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowThreadDump": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowRedefineClass": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowHeapDump": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowEditAccount": {
+                  "t": "boolean",
+                  "v": true
+                }
+              }
+            },
+            "menu": {
+              "t": "map",
+              "v": {
+                "tag_count": {
+                  "t": "boolean",
+                  "v": false
+                }
+              }
+            },
+            "so_time_out": {
+              "t": "decimal",
+              "v": 5000
+            },
+            "ext_link_name": {
+              "t": "text",
+              "v": "paper-synthetic"
+            },
+            "ext_link_url_pattern": {
+              "t": "text",
+              "v": "http://paper.invalid/index.html#/paper?instances=$[objHashes]&from=$[from]&to=$[to]"
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": [],
+      "applied": {
+        "server_id": "synthetic-server-1",
+        "ext_link_name": "paper-synthetic",
+        "ext_link_url_pattern": "http://paper.invalid/index.html#/paper?instances=$[objHashes]&from=$[from]&to=$[to]",
+        "tagcnt_enabled": false,
+        "net_tcp_client_so_timeout_ms": 5000
+      },
+      "redactions": "time in call window -> 0"
+    },
+    {
+      "name": "login-odd",
+      "command": "LOGIN",
+      "request": "login-odd.request.bin",
+      "request_bytes": 142,
+      "response": "login-odd.response.bin",
+      "response_bytes": 735,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "id": {
+              "t": "text",
+              "v": "admin"
+            },
+            "pass": {
+              "t": "text",
+              "v": "ae3cf413ccbc56ce97c4dd88d14296c31d6ffc81eabbb04437434cc3221ec47c"
+            },
+            "ip": {
+              "t": "text",
+              "v": "192.0.2.10"
+            },
+            "hostname": {
+              "t": "text",
+              "v": "synthetic-client"
+            },
+            "version": {
+              "t": "text",
+              "v": "${project.version} ${build.datetime}"
+            },
+            "session": {
+              "t": "decimal",
+              "v": 405154037763
+            },
+            "time": {
+              "t": "decimal",
+              "v": 0
+            },
+            "server_id": {
+              "t": "text",
+              "v": ""
+            },
+            "type": {
+              "t": "text",
+              "v": "admin"
+            },
+            "client_version": {
+              "t": "text",
+              "v": ""
+            },
+            "email": {
+              "t": "text",
+              "v": "admin@scouter.com"
+            },
+            "timezone": {
+              "t": "text",
+              "v": "Korea Standard Time"
+            },
+            "policy": {
+              "t": "map",
+              "v": {
+                "AllowFileDump": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowExportCounter": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowAddAccount": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowSystemGC": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowDefineObjectType": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowExportAppSum": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowExportClass": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowKillTransaction": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowLoginList": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowHeapHistogram": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowDBManager": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowEditGroupPolicy": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowConfigure": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowSqlParameter": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowThreadDump": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowRedefineClass": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowHeapDump": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowEditAccount": {
+                  "t": "boolean",
+                  "v": true
+                }
+              }
+            },
+            "menu": {
+              "t": "map",
+              "v": {
+                "tag_count": {
+                  "t": "boolean",
+                  "v": false
+                }
+              }
+            },
+            "so_time_out": {
+              "t": "decimal",
+              "v": 8000
+            },
+            "ext_link_name": {
+              "t": "text",
+              "v": "spaced value"
+            },
+            "ext_link_url_pattern": {
+              "t": "text",
+              "v": ""
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": [],
+      "applied": {
+        "server_id": "",
+        "ext_link_name": "spaced value",
+        "ext_link_url_pattern": "",
+        "tagcnt_enabled": false,
+        "net_tcp_client_so_timeout_ms": 8000
+      },
+      "redactions": "time in call window -> 0"
+    },
+    {
+      "name": "login-restored",
+      "command": "LOGIN",
+      "request": "login-restored.request.bin",
+      "request_bytes": 142,
+      "response": "login-restored.response.bin",
+      "response_bytes": 933,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "id": {
+              "t": "text",
+              "v": "admin"
+            },
+            "pass": {
+              "t": "text",
+              "v": "ae3cf413ccbc56ce97c4dd88d14296c31d6ffc81eabbb04437434cc3221ec47c"
+            },
+            "ip": {
+              "t": "text",
+              "v": "192.0.2.10"
+            },
+            "hostname": {
+              "t": "text",
+              "v": "synthetic-client"
+            },
+            "version": {
+              "t": "text",
+              "v": "${project.version} ${build.datetime}"
+            },
+            "session": {
+              "t": "decimal",
+              "v": 405154037764
+            },
+            "time": {
+              "t": "decimal",
+              "v": 0
+            },
+            "server_id": {
+              "t": "text",
+              "v": "<hostname>"
+            },
+            "type": {
+              "t": "text",
+              "v": "admin"
+            },
+            "client_version": {
+              "t": "text",
+              "v": ""
+            },
+            "email": {
+              "t": "text",
+              "v": "admin@scouter.com"
+            },
+            "timezone": {
+              "t": "text",
+              "v": "Korea Standard Time"
+            },
+            "policy": {
+              "t": "map",
+              "v": {
+                "AllowFileDump": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowExportCounter": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowAddAccount": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowSystemGC": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowDefineObjectType": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowExportAppSum": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowExportClass": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowKillTransaction": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowLoginList": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowHeapHistogram": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowDBManager": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowEditGroupPolicy": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowConfigure": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowSqlParameter": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowThreadDump": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowRedefineClass": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowHeapDump": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowEditAccount": {
+                  "t": "boolean",
+                  "v": true
+                }
+              }
+            },
+            "menu": {
+              "t": "map",
+              "v": {
+                "tag_count": {
+                  "t": "boolean",
+                  "v": true
+                }
+              }
+            },
+            "so_time_out": {
+              "t": "decimal",
+              "v": -1
+            },
+            "ext_link_name": {
+              "t": "text",
+              "v": "scouter-paper"
+            },
+            "ext_link_url_pattern": {
+              "t": "text",
+              "v": "http://my-scouter-paper-ip:6188/index.html#/paper?&address=localhost&port=6188&realtime=false&xlogElapsedTime=8000&instances=$[objHashes]&from=$[from]&to=$[to]&layout=my-layout-template-01"
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": [],
+      "applied": {
+        "server_id": "<hostname>",
+        "ext_link_name": "scouter-paper",
+        "ext_link_url_pattern": "http://my-scouter-paper-ip:6188/index.html#/paper?&address=localhost&port=6188&realtime=false&xlogElapsedTime=8000&instances=$[objHashes]&from=$[from]&to=$[to]&layout=my-layout-template-01",
+        "tagcnt_enabled": true,
+        "net_tcp_client_so_timeout_ms": -1
+      },
+      "redactions": "time in call window -> 0; server_id host name -> <hostname>"
+    }
+  ],
+  "facts": {}
+}

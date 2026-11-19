@@ -1,0 +1,55 @@
+{
+  "source": "internal/telegraf/testdata/golden_packs.json (name/offsetMs/remote/body only)",
+  "goldenStart": 1700000000000,
+  "config": "TgConfig.getSampleContents() (Go sampleConfig)",
+  "steps": [
+    {
+      "name": "cpu total two fields, cpu0 filtered, unmapped field ignored",
+      "offsetMs": 0,
+      "remote": "10.0.0.1",
+      "body": "cpu,cpu=cpu-total,host=h1 usage_user=1.5,usage_system=2,usage_idle=96.5 1700000000000000000\ncpu,cpu=cpu0,host=h1 usage_user=9 1700000000000000000\n"
+    },
+    {
+      "name": "cpu normalized average after 2s, X-Forwarded-For style address",
+      "offsetMs": 2000,
+      "remote": "192.168.0.7",
+      "body": "cpu,cpu=cpu-total,host=h1,scouter_obj_type_prefix=web usage_user=2.5 1700000002000000000\n"
+    },
+    {
+      "name": "mem decimal and float fields, host mapping absent, IPv6 peer",
+      "offsetMs": 2000,
+      "remote": "0:0:0:0:0:0:0:1",
+      "body": "mem,host=h2 used_percent=33.3,free=1024i,total=4096i 1700000002000000000\n"
+    },
+    {
+      "name": "redis BOTH first sample has no delta",
+      "offsetMs": 4000,
+      "remote": "10.0.0.2",
+      "body": "redis,host=h3,port=6379 expired_keys=100i,keyspace_hits=7i,used_memory=1.5e6 1700000004000000000\nredis_keyspace,host=h3,port=6379,database=db0 keys=10i,expires=2i 1700000004000000000\n"
+    },
+    {
+      "name": "redis BOTH delta after 10s with default normalization",
+      "offsetMs": 14000,
+      "remote": "10.0.0.2",
+      "body": "redis,host=h3,port=6379 expired_keys=160i,keyspace_hits=9i 1700000014000000000\nredis_keyspace,host=h3,port=6379,database=db0 keys=40i,expires=2i 1700000014000000000\n"
+    },
+    {
+      "name": "nginx DELTA only, duplicate series keeps the last line",
+      "offsetMs": 16000,
+      "remote": "10.0.0.3",
+      "body": "nginx,host=h4,port=80 accepts=1000i,active=3i 1700000015000000000\nnginx,host=h4,port=80 accepts=1010i,active=4i 1700000016000000000\n"
+    },
+    {
+      "name": "nginx DELTA second sample",
+      "offsetMs": 20000,
+      "remote": "10.0.0.3",
+      "body": "nginx,host=h4,port=80 accepts=1050i,active=5i 1700000020000000000\n"
+    },
+    {
+      "name": "dropped lines: no tags, string field, missing timestamp, unknown measurement",
+      "offsetMs": 22000,
+      "remote": "10.0.0.4",
+      "body": "cpu usage_user=1 1700000022000000000\ncpu,cpu=cpu-total,host=h1 usage_user=\"x\" 1700000022000000000\nmem,host=h2 used_percent=1\nswap,host=h2 used=1i 1700000022000000000\n"
+    }
+  ]
+}

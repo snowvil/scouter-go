@@ -1,0 +1,2 @@
+# Line endings are part of the java.util.Properties fixtures (CR, CRLF).
+*.properties -text

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Counters>
+    <Types>
+        <ObjectType disp="nginx" family="X$nginx" icon="nginx" name="nginx" sub-object="false"/>
+        <ObjectType disp="web_HOST_NEW" family="X$HOST_METRIC" icon="linux" name="web_HOST_NEW" sub-object="false"/>
+        <ObjectType disp="HOST_NEW" family="X$HOST_METRIC" icon="linux" name="HOST_NEW" sub-object="false"/>
+        <ObjectType disp="Seed" family="seed_family" icon="" name="seed_type" sub-object="false"/>
+        <ObjectType disp="redis" family="X$redis" icon="redis" name="redis" sub-object="false"/>
+    </Types>
+    <Familys>
+        <Family master="seed_counter" name="seed_family">
+            <Counter all="true" disp="Seed" icon="" name="seed_counter" total="true" unit="cnt"/>
+        </Family>
+        <Family master="cpu_user_cpu-total" name="X$HOST_METRIC">
+            <Counter all="true" disp="cpu_user_cpu-total" icon="" name="cpu_user_cpu-total" total="false" unit="%"/>
+            <Counter all="true" disp="mem_free" icon="" name="mem-free" total="false" unit="byte"/>
+            <Counter all="true" disp="mem_used_percent" icon="" name="mem-used_percent" total="false" unit="%"/>
+            <Counter all="true" disp="mem_total" icon="" name="mem-total" total="false" unit="byte"/>
+            <Counter all="true" disp="cpu_system_cpu-total" icon="" name="cpu_system_cpu-total" total="false" unit="%"/>
+        </Family>
+        <Family master="expired_keys" name="X$redis">
+            <Counter all="true" disp="expired_keys" icon="" name="expired_keys" total="false" unit="ea"/>
+            <Counter all="true" disp="expired_keys_$delta" icon="" name="expired_keys_$delta" total="false" unit="ea/s"/>
+            <Counter all="true" disp="used_memory" icon="" name="used_memory" total="false" unit="bytes"/>
+            <Counter all="true" disp="keyspace_hits" icon="" name="keyspace_hits" total="false" unit="ea"/>
+            <Counter all="true" disp="keys-db0" icon="" name="keys-db0" total="false" unit="ea"/>
+            <Counter all="true" disp="keys-db0_$delta" icon="" name="keys-db0_$delta" total="false" unit="ea/s"/>
+            <Counter all="true" disp="expires-db0" icon="" name="expires-db0" total="false" unit="ea"/>
+            <Counter all="true" disp="expires-db0_$delta" icon="" name="expires-db0_$delta" total="false" unit="ea/s"/>
+        </Family>
+        <Family master="accepts_$delta" name="X$nginx">
+            <Counter all="true" disp="accepted-connections_$delta" icon="" name="accepts_$delta" total="false" unit="/s"/>
+            <Counter all="true" disp="active-connections" icon="" name="active" total="false" unit=""/>
+        </Family>
+    </Familys>
+</Counters>

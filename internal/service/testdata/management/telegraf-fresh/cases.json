@@ -1,0 +1,118 @@
+{
+  "scenario": "telegraf-fresh",
+  "cases": [],
+  "facts": {
+    "steps": [
+      {
+        "name": "fresh-first",
+        "line": "syn,host=raw-host,tier=web,port=6379 gauge=10i 1767193200000000000",
+        "parse": {
+          "parsed": true,
+          "measurement": "syn",
+          "host": "mapped-host",
+          "family": "X$SYN_FAMILY_web",
+          "objType": "SYN_TYPE_web",
+          "objTypeIcon": "redis",
+          "objName": "/mapped-host/X$SYN_NAME_6379",
+          "objHash": -46120967,
+          "receivedTime": 1767193200123,
+          "timestampOrigin": 1767193200000,
+          "tags": {
+            "host": "raw-host",
+            "port": "6379",
+            "tier": "web"
+          },
+          "numberFields": {
+            "syn_gauge_*": {
+              "value": {
+                "t": "decimal",
+                "v": 10
+              },
+              "counters": [
+                {
+                  "name": "syn_gauge_6379",
+                  "disp": "Gauge 6379",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            }
+          }
+        },
+        "parse_stderr_first_line": null,
+        "attempts": [
+          {
+            "attempt": 1,
+            "packs": [],
+            "registration_settled": false,
+            "objectType_after": {
+              "exists": false
+            }
+          }
+        ],
+        "logs": [
+          "[HT-001] Error on register telegraf type java.lang.NullPointerException"
+        ]
+      },
+      {
+        "name": "fresh-retry",
+        "line": "syn,host=raw-host,tier=web,port=6379 gauge=11i 1767193210000000000",
+        "parse": {
+          "parsed": true,
+          "measurement": "syn",
+          "host": "mapped-host",
+          "family": "X$SYN_FAMILY_web",
+          "objType": "SYN_TYPE_web",
+          "objTypeIcon": "redis",
+          "objName": "/mapped-host/X$SYN_NAME_6379",
+          "objHash": -46120967,
+          "receivedTime": 1767193200123,
+          "timestampOrigin": 1767193210000,
+          "tags": {
+            "host": "raw-host",
+            "port": "6379",
+            "tier": "web"
+          },
+          "numberFields": {
+            "syn_gauge_*": {
+              "value": {
+                "t": "decimal",
+                "v": 11
+              },
+              "counters": [
+                {
+                  "name": "syn_gauge_6379",
+                  "disp": "Gauge 6379",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            }
+          }
+        },
+        "parse_stderr_first_line": null,
+        "attempts": [
+          {
+            "attempt": 1,
+            "packs": [],
+            "registration_settled": false,
+            "objectType_after": {
+              "exists": false
+            }
+          }
+        ],
+        "logs": [
+          "[HT-001] Error on register telegraf type java.lang.NullPointerException"
+        ]
+      }
+    ],
+    "site_after_fresh": {
+      "exists": false
+    },
+    "counters.site.after-fresh.xml": "missing"
+  }
+}

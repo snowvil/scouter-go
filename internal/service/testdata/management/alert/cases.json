@@ -1,0 +1,2859 @@
+{
+  "scenario": "alert",
+  "cases": [
+    {
+      "name": "load-message-empty",
+      "command": "GET_ALERT_SCRIPT_LOAD_MESSAGE",
+      "request": "load-message-empty.request.bin",
+      "request_bytes": 18,
+      "response": "load-message-empty.response.bin",
+      "response_bytes": 31,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "loop": {
+              "t": "decimal",
+              "v": 0
+            },
+            "index": {
+              "t": "decimal",
+              "v": 0
+            },
+            "messages": {
+              "t": "list",
+              "v": []
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "load-message-3-from-0",
+      "command": "GET_ALERT_SCRIPT_LOAD_MESSAGE",
+      "request": "load-message-3-from-0.request.bin",
+      "request_bytes": 18,
+      "response": "load-message-3-from-0.response.bin",
+      "response_bytes": 96,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "loop": {
+              "t": "decimal",
+              "v": 0
+            },
+            "index": {
+              "t": "decimal",
+              "v": 3
+            },
+            "messages": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "synthetic message 1"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 2"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 3"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "load-message-3-from-2",
+      "command": "GET_ALERT_SCRIPT_LOAD_MESSAGE",
+      "request": "load-message-3-from-2.request.bin",
+      "request_bytes": 19,
+      "response": "load-message-3-from-2.response.bin",
+      "response_bytes": 54,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "loop": {
+              "t": "decimal",
+              "v": 0
+            },
+            "index": {
+              "t": "decimal",
+              "v": 3
+            },
+            "messages": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "synthetic message 3"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "load-message-3-from-3",
+      "command": "GET_ALERT_SCRIPT_LOAD_MESSAGE",
+      "request": "load-message-3-from-3.request.bin",
+      "request_bytes": 19,
+      "response": "load-message-3-from-3.response.bin",
+      "response_bytes": 32,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "loop": {
+              "t": "decimal",
+              "v": 0
+            },
+            "index": {
+              "t": "decimal",
+              "v": 3
+            },
+            "messages": {
+              "t": "list",
+              "v": []
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "load-message-loop1-from-0-3",
+      "command": "GET_ALERT_SCRIPT_LOAD_MESSAGE",
+      "request": "load-message-loop1-from-0-3.request.bin",
+      "request_bytes": 19,
+      "response": "load-message-loop1-from-0-3.response.bin",
+      "response_bytes": 1106,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "loop": {
+              "t": "decimal",
+              "v": 1
+            },
+            "index": {
+              "t": "decimal",
+              "v": 2
+            },
+            "messages": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "synthetic message 4"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 5"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 6"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 7"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 8"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 9"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 10"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 11"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 12"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 13"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 14"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 15"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 16"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 17"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 18"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 19"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 20"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 21"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 22"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 23"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 24"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 25"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 26"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 27"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 28"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 29"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 30"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 31"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 32"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 33"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 34"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 35"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 36"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 37"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 38"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 39"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 40"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 41"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 42"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 43"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 44"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 45"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 46"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 47"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 48"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 49"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 50"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 51"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 52"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "load-message-loop1-from-0-1",
+      "command": "GET_ALERT_SCRIPT_LOAD_MESSAGE",
+      "request": "load-message-loop1-from-0-1.request.bin",
+      "request_bytes": 19,
+      "response": "load-message-loop1-from-0-1.response.bin",
+      "response_bytes": 1127,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "loop": {
+              "t": "decimal",
+              "v": 1
+            },
+            "index": {
+              "t": "decimal",
+              "v": 2
+            },
+            "messages": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "synthetic message 3"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 4"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 5"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 6"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 7"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 8"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 9"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 10"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 11"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 12"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 13"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 14"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 15"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 16"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 17"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 18"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 19"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 20"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 21"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 22"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 23"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 24"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 25"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 26"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 27"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 28"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 29"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 30"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 31"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 32"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 33"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 34"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 35"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 36"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 37"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 38"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 39"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 40"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 41"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 42"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 43"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 44"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 45"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 46"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 47"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 48"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 49"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 50"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 51"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 52"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "load-message-loop1-current",
+      "command": "GET_ALERT_SCRIPT_LOAD_MESSAGE",
+      "request": "load-message-loop1-current.request.bin",
+      "request_bytes": 20,
+      "response": "load-message-loop1-current.response.bin",
+      "response_bytes": 33,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "loop": {
+              "t": "decimal",
+              "v": 1
+            },
+            "index": {
+              "t": "decimal",
+              "v": 2
+            },
+            "messages": {
+              "t": "list",
+              "v": []
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "load-message-loop1-from-1-0",
+      "command": "GET_ALERT_SCRIPT_LOAD_MESSAGE",
+      "request": "load-message-loop1-from-1-0.request.bin",
+      "request_bytes": 19,
+      "response": "load-message-loop1-from-1-0.response.bin",
+      "response_bytes": 78,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "loop": {
+              "t": "decimal",
+              "v": 1
+            },
+            "index": {
+              "t": "decimal",
+              "v": 2
+            },
+            "messages": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "synthetic message 51"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 52"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "load-message-loop3-stale",
+      "command": "GET_ALERT_SCRIPT_LOAD_MESSAGE",
+      "request": "load-message-loop3-stale.request.bin",
+      "request_bytes": 18,
+      "response": "load-message-loop3-stale.response.bin",
+      "response_bytes": 1184,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "loop": {
+              "t": "decimal",
+              "v": 3
+            },
+            "index": {
+              "t": "decimal",
+              "v": 10
+            },
+            "messages": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "synthetic message 111"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 112"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 113"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 114"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 115"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 116"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 117"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 118"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 119"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 120"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 121"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 122"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 123"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 124"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 125"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 126"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 127"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 128"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 129"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 130"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 131"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 132"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 133"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 134"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 135"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 136"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 137"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 138"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 139"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 140"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 141"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 142"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 143"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 144"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 145"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 146"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 147"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 148"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 149"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 150"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 151"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 152"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 153"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 154"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 155"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 156"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 157"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 158"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 159"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 160"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "load-message-future-loop",
+      "command": "GET_ALERT_SCRIPT_LOAD_MESSAGE",
+      "request": "load-message-future-loop.request.bin",
+      "request_bytes": 19,
+      "response": "load-message-future-loop.response.bin",
+      "response_bytes": 1184,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "loop": {
+              "t": "decimal",
+              "v": 3
+            },
+            "index": {
+              "t": "decimal",
+              "v": 10
+            },
+            "messages": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "synthetic message 111"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 112"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 113"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 114"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 115"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 116"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 117"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 118"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 119"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 120"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 121"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 122"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 123"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 124"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 125"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 126"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 127"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 128"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 129"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 130"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 131"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 132"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 133"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 134"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 135"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 136"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 137"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 138"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 139"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 140"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 141"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 142"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 143"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 144"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 145"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 146"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 147"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 148"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 149"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 150"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 151"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 152"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 153"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 154"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 155"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 156"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 157"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 158"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 159"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 160"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "load-message-text-cursor",
+      "command": "GET_ALERT_SCRIPT_LOAD_MESSAGE",
+      "request": "load-message-text-cursor.request.bin",
+      "request_bytes": 21,
+      "response": "load-message-text-cursor.response.bin",
+      "response_bytes": 1184,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "loop": {
+              "t": "decimal",
+              "v": 3
+            },
+            "index": {
+              "t": "decimal",
+              "v": 10
+            },
+            "messages": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "synthetic message 111"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 112"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 113"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 114"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 115"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 116"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 117"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 118"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 119"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 120"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 121"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 122"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 123"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 124"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 125"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 126"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 127"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 128"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 129"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 130"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 131"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 132"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 133"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 134"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 135"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 136"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 137"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 138"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 139"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 140"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 141"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 142"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 143"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 144"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 145"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 146"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 147"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 148"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 149"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 150"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 151"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 152"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 153"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 154"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 155"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 156"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 157"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 158"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 159"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic message 160"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "load-message-no-body",
+      "command": "GET_ALERT_SCRIPT_LOAD_MESSAGE",
+      "request": "load-message-no-body.request.bin",
+      "request_bytes": 0,
+      "response": "load-message-no-body.response.bin",
+      "response_bytes": 1,
+      "item_kind": "pack",
+      "items": [],
+      "stderr_first_line": "java.io.EOFException",
+      "logs": []
+    },
+    {
+      "name": "real-counter-desc",
+      "command": "GET_ALERT_REAL_COUNTER_DESC",
+      "request": "real-counter-desc.request.bin",
+      "request_bytes": 0,
+      "response": "real-counter-desc.response.bin",
+      "response_bytes": 3502,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "alert on error level."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "error"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "void"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "String title, String message"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "alert on fatal level."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "fatal"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "void"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "String title, String message"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get average value of the counter in the given duration."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getAvg"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "float"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "int fromAgoSec, int durationSec"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get average value of the counter in the given duration as int."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getAvgToInt"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "int"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "int fromAgoSec, int durationSec"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get current counter name."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getCounter"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "java.lang.String"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": []
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get value of current counter as float."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getFloatValue"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "float"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": []
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get the counter's value as float."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getFloatValue"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "float"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "String counter"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get the another objects counter's value as float."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getFloatValue"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "float"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "String objectFullName, String counter"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get how many values (of the current counter) exist in the seconds."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getHistoryCountInSec"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "int"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "int"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get oldest time of the counter's history."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getHistoryOldestTime"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "long"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": []
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get the history size of the counter."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getHistorySize"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "int"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": []
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get value of current counter as int."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getIntValue"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "int"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": []
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get the counter's value as int."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getIntValue"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "int"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "String counter"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get the another objects counter's value as int."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getIntValue"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "int"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "String objectFullName, String counter"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get latest average value of the counter in the given duration."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getLatestAvg"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "float"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "int durationSec"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get latest average value of the counter in the given duration as int."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getLatestAvgToInt"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "int"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "int durationSec"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get current object hash value."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getObjHash"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "int"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": []
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get comma separated object hashes string of the given object type."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getObjHashListString"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "java.lang.String"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "java.lang.String"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get comma separated object hashes string of the given object type."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getObjHashListWithParentsString"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "java.lang.String"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "java.lang.String"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get current object name."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getObjName"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "java.lang.String"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": []
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get current object type name."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getObjType"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "java.lang.String"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": []
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get how many times exceed the given value of the counter."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getOverCount"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "int"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "float value, int sec"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get how many times exceed the given value of the counter."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getOverCount"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "int"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "int value, int sec"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "alert on info level."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "info"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "void"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "String title, String message"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "alert on warn level."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "warn"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "void"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "String title, String message"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": [],
+      "item_order": "canonicalized: sorted by methodName(parameterTypeNames); original order is Class.getDeclaredMethods() order, which varies between JVM runs",
+      "canonical_keys": [
+        "error(String title, String message)",
+        "fatal(String title, String message)",
+        "getAvg(int fromAgoSec, int durationSec)",
+        "getAvgToInt(int fromAgoSec, int durationSec)",
+        "getCounter()",
+        "getFloatValue()",
+        "getFloatValue(String counter)",
+        "getFloatValue(String objectFullName, String counter)",
+        "getHistoryCountInSec(int)",
+        "getHistoryOldestTime()",
+        "getHistorySize()",
+        "getIntValue()",
+        "getIntValue(String counter)",
+        "getIntValue(String objectFullName, String counter)",
+        "getLatestAvg(int durationSec)",
+        "getLatestAvgToInt(int durationSec)",
+        "getObjHash()",
+        "getObjHashListString(java.lang.String)",
+        "getObjHashListWithParentsString(java.lang.String)",
+        "getObjName()",
+        "getObjType()",
+        "getOverCount(float value, int sec)",
+        "getOverCount(int value, int sec)",
+        "info(String title, String message)",
+        "warn(String title, String message)"
+      ]
+    },
+    {
+      "name": "plugin-helper-desc",
+      "command": "GET_PLUGIN_HELPER_DESC",
+      "request": "plugin-helper-desc.request.bin",
+      "request_bytes": 0,
+      "response": "plugin-helper-desc.response.bin",
+      "response_bytes": 3044,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "alert as error level"
+            },
+            "methodName": {
+              "t": "text",
+              "v": "alertError"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "void"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "int objHash, String objType, String title, String message"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "alert as fatal level"
+            },
+            "methodName": {
+              "t": "text",
+              "v": "alertFatal"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "void"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "int objHash, String objType, String title, String message"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "alert as info level"
+            },
+            "methodName": {
+              "t": "text",
+              "v": "alertInfo"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "void"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "int objHash, String objType, String title, String message"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "alert as warn level"
+            },
+            "methodName": {
+              "t": "text",
+              "v": "alertWarn"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "void"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "int objHash, String objType, String title, String message"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "format the number as given fraction"
+            },
+            "methodName": {
+              "t": "text",
+              "v": "formatNumber"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "java.lang.String"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "double v, int fractionDigits"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "format the number as fraction 1"
+            },
+            "methodName": {
+              "t": "text",
+              "v": "formatNumber"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "java.lang.String"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "double"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "format the number as given fraction"
+            },
+            "methodName": {
+              "t": "text",
+              "v": "formatNumber"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "java.lang.String"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "float f, int fractionDigits"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "format the number as fraction 1"
+            },
+            "methodName": {
+              "t": "text",
+              "v": "formatNumber"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "java.lang.String"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "float"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "format the number as given fraction"
+            },
+            "methodName": {
+              "t": "text",
+              "v": "formatNumber"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "java.lang.String"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "int v, int fractionDigits"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "format the number as fraction 1"
+            },
+            "methodName": {
+              "t": "text",
+              "v": "formatNumber"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "java.lang.String"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "int"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "format the number as given fraction"
+            },
+            "methodName": {
+              "t": "text",
+              "v": "formatNumber"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "java.lang.String"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "long v, int fractionDigits"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "format the number as fraction 1"
+            },
+            "methodName": {
+              "t": "text",
+              "v": "formatNumber"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "java.lang.String"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "long"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get NumberFormatter set fraction 1"
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getNumberFormatter"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "java.text.NumberFormat"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": []
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "get NumberFormatter set the fraction"
+            },
+            "methodName": {
+              "t": "text",
+              "v": "getNumberFormatter"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "java.text.NumberFormat"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "int fractionDigits"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "request http get"
+            },
+            "methodName": {
+              "t": "text",
+              "v": "httpGet"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "void"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "String url, Map<String, String> paramMap"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "request http get"
+            },
+            "methodName": {
+              "t": "text",
+              "v": "httpGet"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "void"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "String url, Map<String, String> paramMap, int timeoutMillis"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "logging"
+            },
+            "methodName": {
+              "t": "text",
+              "v": "log"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "void"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "java.lang.Object"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "System.out.println"
+            },
+            "methodName": {
+              "t": "text",
+              "v": "println"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "void"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "java.lang.Object"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "make hashMap easily"
+            },
+            "methodName": {
+              "t": "text",
+              "v": "toMap"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "java.util.HashMap"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "String[] keyValueArray"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "make shorten url."
+            },
+            "methodName": {
+              "t": "text",
+              "v": "toShortenUrl"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "java.lang.String"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "java.lang.String"
+                },
+                {
+                  "t": "text",
+                  "v": "java.lang.String"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "url decoding"
+            },
+            "methodName": {
+              "t": "text",
+              "v": "urlDecode"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "java.lang.String"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "java.lang.String"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "pack": "map",
+          "v": {
+            "desc": {
+              "t": "text",
+              "v": "url encoding"
+            },
+            "methodName": {
+              "t": "text",
+              "v": "urlEncode"
+            },
+            "returnTypeName": {
+              "t": "text",
+              "v": "java.lang.String"
+            },
+            "parameterTypeNames": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "java.lang.String"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": [],
+      "item_order": "canonicalized: sorted by methodName(parameterTypeNames); original order is Class.getDeclaredMethods() order, which varies between JVM runs",
+      "canonical_keys": [
+        "alertError(int objHash, String objType, String title, String message)",
+        "alertFatal(int objHash, String objType, String title, String message)",
+        "alertInfo(int objHash, String objType, String title, String message)",
+        "alertWarn(int objHash, String objType, String title, String message)",
+        "formatNumber(double v, int fractionDigits)",
+        "formatNumber(double)",
+        "formatNumber(float f, int fractionDigits)",
+        "formatNumber(float)",
+        "formatNumber(int v, int fractionDigits)",
+        "formatNumber(int)",
+        "formatNumber(long v, int fractionDigits)",
+        "formatNumber(long)",
+        "getNumberFormatter()",
+        "getNumberFormatter(int fractionDigits)",
+        "httpGet(String url, Map<String, String> paramMap)",
+        "httpGet(String url, Map<String, String> paramMap, int timeoutMillis)",
+        "log(java.lang.Object)",
+        "println(java.lang.Object)",
+        "toMap(String[] keyValueArray)",
+        "toShortenUrl(java.lang.String,java.lang.String)",
+        "urlDecode(java.lang.String)",
+        "urlEncode(java.lang.String)"
+      ]
+    },
+    {
+      "name": "save-alert-script",
+      "command": "SAVE_ALERT_SCRIPTING_CONTETNS",
+      "request": "save-alert-script.request.bin",
+      "request_bytes": 159,
+      "response": "save-alert-script.response.bin",
+      "response_bytes": 15,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "success": {
+              "t": "boolean",
+              "v": true
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "save-alert-config",
+      "command": "SAVE_ALERT_SCRIPTING_CONFIG_CONTETNS",
+      "request": "save-alert-config.request.bin",
+      "request_bytes": 78,
+      "response": "save-alert-config.response.bin",
+      "response_bytes": 15,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "success": {
+              "t": "boolean",
+              "v": true
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "get-alert-script",
+      "command": "GET_ALERT_SCRIPTING_CONTETNS",
+      "request": "get-alert-script.request.bin",
+      "request_bytes": 20,
+      "response": "get-alert-script.response.bin",
+      "response_bytes": 144,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "contents": {
+              "t": "text",
+              "v": "// synthetic alert rule\nif ($counter.getFloatValue() > 1.5f) { $counter.warn(\"synthetic\", \"합성 \" + $counter.getObjName()); }\n"
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "get-alert-config",
+      "command": "GET_ALERT_SCRIPTING_CONFIG_CONTETNS",
+      "request": "get-alert-config.request.bin",
+      "request_bytes": 20,
+      "response": "get-alert-config.response.bin",
+      "response_bytes": 63,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "contents": {
+              "t": "text",
+              "v": "history_size=150\nsilent_time=300\ncheck_term=20\n"
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "get-alert-script-missing",
+      "command": "GET_ALERT_SCRIPTING_CONTETNS",
+      "request": "get-alert-script-missing.request.bin",
+      "request_bytes": 30,
+      "response": "get-alert-script-missing.response.bin",
+      "response_bytes": 16,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "contents": {
+              "t": "text",
+              "v": ""
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "save-alert-script-null-contents",
+      "command": "SAVE_ALERT_SCRIPTING_CONTETNS",
+      "request": "save-alert-script-null-contents.request.bin",
+      "request_bytes": 27,
+      "response": "save-alert-script-null-contents.response.bin",
+      "response_bytes": 15,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "success": {
+              "t": "boolean",
+              "v": false
+            }
+          }
+        }
+      ],
+      "stderr_first_line": "java.lang.NullPointerException",
+      "logs": []
+    },
+    {
+      "name": "save-alert-script-null-name",
+      "command": "SAVE_ALERT_SCRIPTING_CONTETNS",
+      "request": "save-alert-script-null-name.request.bin",
+      "request_bytes": 24,
+      "response": "save-alert-script-null-name.response.bin",
+      "response_bytes": 15,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "success": {
+              "t": "boolean",
+              "v": true
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "save-alert-script-subdir",
+      "command": "SAVE_ALERT_SCRIPTING_CONTETNS",
+      "request": "save-alert-script-subdir.request.bin",
+      "request_bytes": 49,
+      "response": "save-alert-script-subdir.response.bin",
+      "response_bytes": 15,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "success": {
+              "t": "boolean",
+              "v": true
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "save-alert-script-overwrite",
+      "command": "SAVE_ALERT_SCRIPTING_CONTETNS",
+      "request": "save-alert-script-overwrite.request.bin",
+      "request_bytes": 37,
+      "response": "save-alert-script-overwrite.response.bin",
+      "response_bytes": 15,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "success": {
+              "t": "boolean",
+              "v": true
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    }
+  ],
+  "facts": {
+    "real_counter_desc_count": 25,
+    "plugin_helper_desc_count": 22,
+    "plugin_dir_tree": {
+      "ErrorCount.alert": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "TPS.alert": {
+        "bytes": 6,
+        "sha256": "37abb692af336d7730aabc686871ce10fceb2e485717bf0f2fb5b03488a6813d"
+      },
+      "TPS.conf": {
+        "bytes": 47,
+        "sha256": "9e0c4a261b7588d47308d46921153748e78f624f13da0947d58bd740fed339a1"
+      },
+      "null.alert": {
+        "bytes": 10,
+        "sha256": "aceab8b65b0d6fc62319d7a848987d813d885cfe9931f956232ab001e6b596d1"
+      },
+      "sub/Elapsed.alert": {
+        "bytes": 10,
+        "sha256": "943ce283344ec66bb08736f66eb33bf1e03732ce276078e0a7b46cfd397dd671"
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Counters>
+    <Types>
+        <ObjectType disp="d4" family="f" icon="" name="t4" sub-object=""/>
+        <ObjectType disp="d5" family="f" icon="" name="t5" sub-object=""/>
+        <ObjectType disp="d6" family="f" icon="" name="t6" sub-object=""/>
+        <ObjectType disp="d7" family="f" icon="" name="t7" sub-object=""/>
+        <ObjectType disp="d8" family="f" icon="" name="t8" sub-object=""/>
+        <ObjectType disp="d9" family="f" icon="" name="t9" sub-object=""/>
+        <ObjectType disp="d30" family="f" icon="" name="t30" sub-object=""/>
+        <ObjectType disp="d32" family="f" icon="" name="t32" sub-object=""/>
+        <ObjectType disp="d10" family="f" icon="" name="t10" sub-object=""/>
+        <ObjectType disp="d31" family="f" icon="" name="t31" sub-object=""/>
+        <ObjectType disp="d34" family="f" icon="" name="t34" sub-object=""/>
+        <ObjectType disp="d12" family="f" icon="" name="t12" sub-object=""/>
+        <ObjectType disp="d33" family="f" icon="" name="t33" sub-object=""/>
+        <ObjectType disp="d11" family="f" icon="" name="t11" sub-object=""/>
+        <ObjectType disp="d36" family="f" icon="" name="t36" sub-object=""/>
+        <ObjectType disp="d14" family="f" icon="" name="t14" sub-object=""/>
+        <ObjectType disp="d35" family="f" icon="" name="t35" sub-object=""/>
+        <ObjectType disp="d13" family="f" icon="" name="t13" sub-object=""/>
+        <ObjectType disp="d38" family="f" icon="" name="t38" sub-object=""/>
+        <ObjectType disp="d16" family="f" icon="" name="t16" sub-object=""/>
+        <ObjectType disp="d37" family="f" icon="" name="t37" sub-object=""/>
+        <ObjectType disp="d15" family="f" icon="" name="t15" sub-object=""/>
+        <ObjectType disp="d18" family="f" icon="" name="t18" sub-object=""/>
+        <ObjectType disp="d39" family="f" icon="" name="t39" sub-object=""/>
+        <ObjectType disp="d17" family="f" icon="" name="t17" sub-object=""/>
+        <ObjectType disp="d19" family="f" icon="" name="t19" sub-object=""/>
+        <ObjectType disp="d21" family="f" icon="" name="t21" sub-object=""/>
+        <ObjectType disp="d20" family="f" icon="" name="t20" sub-object=""/>
+        <ObjectType disp="d23" family="f" icon="" name="t23" sub-object=""/>
+        <ObjectType disp="d22" family="f" icon="" name="t22" sub-object=""/>
+        <ObjectType disp="d25" family="f" icon="" name="t25" sub-object=""/>
+        <ObjectType disp="d24" family="f" icon="" name="t24" sub-object=""/>
+        <ObjectType disp="d27" family="f" icon="" name="t27" sub-object=""/>
+        <ObjectType disp="d26" family="f" icon="" name="t26" sub-object=""/>
+        <ObjectType disp="d29" family="f" icon="" name="t29" sub-object=""/>
+        <ObjectType disp="d28" family="f" icon="" name="t28" sub-object=""/>
+        <ObjectType disp="d0" family="f" icon="" name="t0" sub-object=""/>
+        <ObjectType disp="d1" family="f" icon="" name="t1" sub-object=""/>
+        <ObjectType disp="d2" family="f" icon="" name="t2" sub-object=""/>
+        <ObjectType disp="d3" family="f" icon="" name="t3" sub-object=""/>
+    </Types>
+    <Familys/>
+</Counters>

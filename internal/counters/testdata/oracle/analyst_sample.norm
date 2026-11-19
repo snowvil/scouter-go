@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Counters>
+    <Types>
+        <ObjectType disp="T1dup" family="myfam" icon="host" name="t1" sub-object="true"/>
+        <ObjectType disp="" family="myfam" icon="" name="t2" sub-object=""/>
+    </Types>
+    <Familys>
+        <Family master="mem" name="myfam"/>
+    </Familys>
+</Counters>

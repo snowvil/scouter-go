@@ -1,0 +1,5 @@
+<TelegrafConfig><enabled>true1</enabled><debugEnabled> 1 </debugEnabled><deltaCounterNormalizeDefault>TRUE</deltaCounterNormalizeDefault><deltaCounterNormalizeDefaultSeconds>1-2</deltaCounterNormalizeDefaultSeconds><objectDeadtimeMs>2147483648</objectDeadtimeMs><measurements>
+<measurement><measurementName>a</measurementName><measurementName>b</measurementName><enabled>tru</enabled><objTypeIcon>  sp  </objTypeIcon><hostTag/><objNameAppendTags><tag>x</tag><tag></tag></objNameAppendTags>
+<counterMappings><counterMapping><deltaType>none</deltaType><normalizeSeconds>+-1</normalizeSeconds></counterMapping><counterMapping><deltaType>DELTA</deltaType><normalizeSeconds>9 9</normalizeSeconds><totalizable>01</totalizable></counterMapping><counterMapping><normalizeSeconds>1.5</normalizeSeconds></counterMapping></counterMappings>
+<tagFilters><tagFilter><match>a</match><tag>t</tag><match>b</match></tagFilter></tagFilters></measurement>
+</measurements></TelegrafConfig>

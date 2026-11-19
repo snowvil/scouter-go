@@ -1,0 +1,26 @@
+{
+  "recorded_at": "2026-10-13",
+  "scouter": {
+    "repository": "https://github.com/snowvil/scouter",
+    "commit": "dee47fb5f4003cecbb146c5acfff8d2ebeaf07f5",
+    "version": "2.21.3",
+    "default_local_path": "../scouter"
+  },
+  "pulse_plugin": {
+    "source": "private",
+    "source_digest": "0ab3512e4d13ba120b755fbf6d4bdab163f808c65a6a50680fbffae19f6bb1c4",
+    "scouter_dependency_version": "2.20.0"
+  },
+  "go_reference": {
+    "repository": "https://github.com/scouter-project/scouter-server-go",
+    "commit": "8a869592f51ee1f8d5e98a61dc3f1486e00b78b0",
+    "role": "design-reference-only"
+  },
+  "requirements": {
+    "compatibility": "existing-agents-client-query-semantics-and-data-migration",
+    "delivery": "incremental",
+    "performance_goal": "more completed transactions per resource than the Java server at the same compatibility; record measurements with their conditions, not deployment sizes",
+    "host_is_dedicated": false,
+    "allocated_resource_budget": null
+  }
+}

@@ -1,0 +1,285 @@
+{
+  "scenario": "counterhttp",
+  "cases": [],
+  "facts": {
+    "steps": [
+      {
+        "name": "two-objects",
+        "body": "[{\"object\":{\"host\":\"VM1\",\"name\":\"redis1\",\"type\":\"redis\",\"address\":\"10.10.10.10\"},\"counters\":[{\"name\":\"aof\",\"value\":55},{\"name\":\"cpu\",\"value\":42.5}]},{\"object\":{\"host\":\"VM2\",\"name\":\"redis2\",\"type\":\"redis\",\"address\":\"10.10.10.11\"},\"counters\":[{\"name\":\"aof\",\"value\":35}]}]",
+        "records": [
+          {
+            "cafe": "0x43414645",
+            "file": "two-objects-0.cafe.bin",
+            "addr": "10.10.10.10",
+            "pack": {
+              "pack": "object",
+              "objType": "redis",
+              "objHash": 605039671,
+              "objName": "/VM1/redis1",
+              "address": "10.10.10.10",
+              "version": "",
+              "alive": true,
+              "wakeup": 0,
+              "tags": {
+                "t": "map",
+                "v": {}
+              }
+            }
+          },
+          {
+            "cafe": "0x43414645",
+            "time_in_call_window": true,
+            "time_normalized_to": 0,
+            "file": "two-objects-1.cafe.bin",
+            "addr": "10.10.10.10",
+            "pack": {
+              "pack": "perf_counter",
+              "time": 0,
+              "objName": "/VM1/redis1",
+              "timetype": 1,
+              "data": {
+                "t": "map",
+                "v": {
+                  "aof": {
+                    "t": "float",
+                    "v": "55.0"
+                  },
+                  "cpu": {
+                    "t": "float",
+                    "v": "42.5"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "cafe": "0x43414645",
+            "file": "two-objects-2.cafe.bin",
+            "addr": "10.10.10.11",
+            "pack": {
+              "pack": "object",
+              "objType": "redis",
+              "objHash": 865499758,
+              "objName": "/VM2/redis2",
+              "address": "10.10.10.11",
+              "version": "",
+              "alive": true,
+              "wakeup": 0,
+              "tags": {
+                "t": "map",
+                "v": {}
+              }
+            }
+          },
+          {
+            "cafe": "0x43414645",
+            "time_in_call_window": true,
+            "time_normalized_to": 0,
+            "file": "two-objects-3.cafe.bin",
+            "addr": "10.10.10.11",
+            "pack": {
+              "pack": "perf_counter",
+              "time": 0,
+              "objName": "/VM2/redis2",
+              "timetype": 1,
+              "data": {
+                "t": "map",
+                "v": {
+                  "aof": {
+                    "t": "float",
+                    "v": "35.0"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "logs": []
+      },
+      {
+        "name": "single-no-name-no-counters",
+        "body": "{\"object\":{\"host\":\"VM3\",\"type\":\"redis\",\"address\":\"10.10.10.12\"}}",
+        "records": [
+          {
+            "cafe": "0x43414645",
+            "file": "single-no-name-no-counters-0.cafe.bin",
+            "addr": "10.10.10.12",
+            "pack": {
+              "pack": "object",
+              "objType": "redis",
+              "objHash": 1260610088,
+              "objName": "/VM3",
+              "address": "10.10.10.12",
+              "version": "",
+              "alive": true,
+              "wakeup": 0,
+              "tags": {
+                "t": "map",
+                "v": {}
+              }
+            }
+          }
+        ],
+        "logs": []
+      },
+      {
+        "name": "array-with-non-objects",
+        "body": "[1,\"x\",{\"object\":{\"host\":\"VM4\",\"name\":\"\",\"type\":\"redis\",\"address\":\"10.10.10.13\"},\"counters\":[]}]",
+        "records": [
+          {
+            "cafe": "0x43414645",
+            "file": "array-with-non-objects-0.cafe.bin",
+            "addr": "10.10.10.13",
+            "pack": {
+              "pack": "object",
+              "objType": "redis",
+              "objHash": -716703861,
+              "objName": "/VM4",
+              "address": "10.10.10.13",
+              "version": "",
+              "alive": true,
+              "wakeup": 0,
+              "tags": {
+                "t": "map",
+                "v": {}
+              }
+            }
+          },
+          {
+            "cafe": "0x43414645",
+            "time_in_call_window": true,
+            "time_normalized_to": 0,
+            "file": "array-with-non-objects-1.cafe.bin",
+            "addr": "10.10.10.13",
+            "pack": {
+              "pack": "perf_counter",
+              "time": 0,
+              "objName": "/VM4",
+              "timetype": 1,
+              "data": {
+                "t": "map",
+                "v": {}
+              }
+            }
+          }
+        ],
+        "logs": []
+      },
+      {
+        "name": "no-object-key",
+        "body": "{\"counters\":[{\"name\":\"aof\",\"value\":1}]}",
+        "records": [],
+        "logs": []
+      },
+      {
+        "name": "number-root",
+        "body": "42",
+        "records": [],
+        "logs": [
+          "[SC-8001] Incorrect body"
+        ]
+      },
+      {
+        "name": "invalid-json",
+        "body": "{\"object\":",
+        "records": [],
+        "logs": [
+          "[SC-8000] Http body parsing error Unexpected token END OF FILE at position 10."
+        ]
+      },
+      {
+        "name": "missing-address",
+        "body": "[{\"object\":{\"host\":\"VM5\",\"name\":\"a\",\"type\":\"redis\"}},{\"object\":{\"host\":\"VM6\",\"name\":\"b\",\"type\":\"redis\",\"address\":\"10.10.10.14\"}}]",
+        "records": [
+          {
+            "cafe": "0x43414645",
+            "file": "missing-address-0.cafe.bin",
+            "addr": "0.0.0.0",
+            "pack": {
+              "pack": "object",
+              "objType": "redis",
+              "objHash": -1826823661,
+              "objName": "/VM5/a",
+              "address": "",
+              "version": "",
+              "alive": true,
+              "wakeup": 0,
+              "tags": {
+                "t": "map",
+                "v": {}
+              }
+            }
+          },
+          {
+            "cafe": "0x43414645",
+            "file": "missing-address-1.cafe.bin",
+            "addr": "10.10.10.14",
+            "pack": {
+              "pack": "object",
+              "objType": "redis",
+              "objHash": 139660784,
+              "objName": "/VM6/b",
+              "address": "10.10.10.14",
+              "version": "",
+              "alive": true,
+              "wakeup": 0,
+              "tags": {
+                "t": "map",
+                "v": {}
+              }
+            }
+          }
+        ],
+        "logs": []
+      },
+      {
+        "name": "unicode-name",
+        "body": "{\"object\":{\"host\":\"호스트\",\"name\":\"이름\",\"type\":\"redis\",\"address\":\"10.10.10.15\"},\"counters\":[{\"name\":\"카운터\",\"value\":1}]}",
+        "records": [
+          {
+            "cafe": "0x43414645",
+            "file": "unicode-name-0.cafe.bin",
+            "addr": "10.10.10.15",
+            "pack": {
+              "pack": "object",
+              "objType": "redis",
+              "objHash": 207734439,
+              "objName": "/호스트/이름",
+              "address": "10.10.10.15",
+              "version": "",
+              "alive": true,
+              "wakeup": 0,
+              "tags": {
+                "t": "map",
+                "v": {}
+              }
+            }
+          },
+          {
+            "cafe": "0x43414645",
+            "time_in_call_window": true,
+            "time_normalized_to": 0,
+            "file": "unicode-name-1.cafe.bin",
+            "addr": "10.10.10.15",
+            "pack": {
+              "pack": "perf_counter",
+              "time": 0,
+              "objName": "/호스트/이름",
+              "timetype": 1,
+              "data": {
+                "t": "map",
+                "v": {
+                  "카운터": {
+                    "t": "float",
+                    "v": "1.0"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "logs": []
+      }
+    ]
+  }
+}

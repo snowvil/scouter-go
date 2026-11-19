@@ -1,0 +1,374 @@
+{
+  "java_specification_version": "18",
+  "RealCounter": {
+    "count": 25,
+    "order": "sorted by methodName(parameterTypeNames)",
+    "items": [
+      {
+        "methodName": "error",
+        "returnTypeName": "void",
+        "parameterTypeNames": [
+          "String title, String message"
+        ],
+        "desc": "alert on error level."
+      },
+      {
+        "methodName": "fatal",
+        "returnTypeName": "void",
+        "parameterTypeNames": [
+          "String title, String message"
+        ],
+        "desc": "alert on fatal level."
+      },
+      {
+        "methodName": "getAvg",
+        "returnTypeName": "float",
+        "parameterTypeNames": [
+          "int fromAgoSec, int durationSec"
+        ],
+        "desc": "get average value of the counter in the given duration."
+      },
+      {
+        "methodName": "getAvgToInt",
+        "returnTypeName": "int",
+        "parameterTypeNames": [
+          "int fromAgoSec, int durationSec"
+        ],
+        "desc": "get average value of the counter in the given duration as int."
+      },
+      {
+        "methodName": "getCounter",
+        "returnTypeName": "java.lang.String",
+        "parameterTypeNames": [],
+        "desc": "get current counter name."
+      },
+      {
+        "methodName": "getFloatValue",
+        "returnTypeName": "float",
+        "parameterTypeNames": [],
+        "desc": "get value of current counter as float."
+      },
+      {
+        "methodName": "getFloatValue",
+        "returnTypeName": "float",
+        "parameterTypeNames": [
+          "String counter"
+        ],
+        "desc": "get the counter's value as float."
+      },
+      {
+        "methodName": "getFloatValue",
+        "returnTypeName": "float",
+        "parameterTypeNames": [
+          "String objectFullName, String counter"
+        ],
+        "desc": "get the another objects counter's value as float."
+      },
+      {
+        "methodName": "getHistoryCountInSec",
+        "returnTypeName": "int",
+        "parameterTypeNames": [
+          "int"
+        ],
+        "desc": "get how many values (of the current counter) exist in the seconds."
+      },
+      {
+        "methodName": "getHistoryOldestTime",
+        "returnTypeName": "long",
+        "parameterTypeNames": [],
+        "desc": "get oldest time of the counter's history."
+      },
+      {
+        "methodName": "getHistorySize",
+        "returnTypeName": "int",
+        "parameterTypeNames": [],
+        "desc": "get the history size of the counter."
+      },
+      {
+        "methodName": "getIntValue",
+        "returnTypeName": "int",
+        "parameterTypeNames": [],
+        "desc": "get value of current counter as int."
+      },
+      {
+        "methodName": "getIntValue",
+        "returnTypeName": "int",
+        "parameterTypeNames": [
+          "String counter"
+        ],
+        "desc": "get the counter's value as int."
+      },
+      {
+        "methodName": "getIntValue",
+        "returnTypeName": "int",
+        "parameterTypeNames": [
+          "String objectFullName, String counter"
+        ],
+        "desc": "get the another objects counter's value as int."
+      },
+      {
+        "methodName": "getLatestAvg",
+        "returnTypeName": "float",
+        "parameterTypeNames": [
+          "int durationSec"
+        ],
+        "desc": "get latest average value of the counter in the given duration."
+      },
+      {
+        "methodName": "getLatestAvgToInt",
+        "returnTypeName": "int",
+        "parameterTypeNames": [
+          "int durationSec"
+        ],
+        "desc": "get latest average value of the counter in the given duration as int."
+      },
+      {
+        "methodName": "getObjHash",
+        "returnTypeName": "int",
+        "parameterTypeNames": [],
+        "desc": "get current object hash value."
+      },
+      {
+        "methodName": "getObjHashListString",
+        "returnTypeName": "java.lang.String",
+        "parameterTypeNames": [
+          "java.lang.String"
+        ],
+        "desc": "get comma separated object hashes string of the given object type."
+      },
+      {
+        "methodName": "getObjHashListWithParentsString",
+        "returnTypeName": "java.lang.String",
+        "parameterTypeNames": [
+          "java.lang.String"
+        ],
+        "desc": "get comma separated object hashes string of the given object type."
+      },
+      {
+        "methodName": "getObjName",
+        "returnTypeName": "java.lang.String",
+        "parameterTypeNames": [],
+        "desc": "get current object name."
+      },
+      {
+        "methodName": "getObjType",
+        "returnTypeName": "java.lang.String",
+        "parameterTypeNames": [],
+        "desc": "get current object type name."
+      },
+      {
+        "methodName": "getOverCount",
+        "returnTypeName": "int",
+        "parameterTypeNames": [
+          "float value, int sec"
+        ],
+        "desc": "get how many times exceed the given value of the counter."
+      },
+      {
+        "methodName": "getOverCount",
+        "returnTypeName": "int",
+        "parameterTypeNames": [
+          "int value, int sec"
+        ],
+        "desc": "get how many times exceed the given value of the counter."
+      },
+      {
+        "methodName": "info",
+        "returnTypeName": "void",
+        "parameterTypeNames": [
+          "String title, String message"
+        ],
+        "desc": "alert on info level."
+      },
+      {
+        "methodName": "warn",
+        "returnTypeName": "void",
+        "parameterTypeNames": [
+          "String title, String message"
+        ],
+        "desc": "alert on warn level."
+      }
+    ]
+  },
+  "PluginHelper": {
+    "count": 22,
+    "order": "sorted by methodName(parameterTypeNames)",
+    "items": [
+      {
+        "methodName": "alertError",
+        "returnTypeName": "void",
+        "parameterTypeNames": [
+          "int objHash, String objType, String title, String message"
+        ],
+        "desc": "alert as error level"
+      },
+      {
+        "methodName": "alertFatal",
+        "returnTypeName": "void",
+        "parameterTypeNames": [
+          "int objHash, String objType, String title, String message"
+        ],
+        "desc": "alert as fatal level"
+      },
+      {
+        "methodName": "alertInfo",
+        "returnTypeName": "void",
+        "parameterTypeNames": [
+          "int objHash, String objType, String title, String message"
+        ],
+        "desc": "alert as info level"
+      },
+      {
+        "methodName": "alertWarn",
+        "returnTypeName": "void",
+        "parameterTypeNames": [
+          "int objHash, String objType, String title, String message"
+        ],
+        "desc": "alert as warn level"
+      },
+      {
+        "methodName": "formatNumber",
+        "returnTypeName": "java.lang.String",
+        "parameterTypeNames": [
+          "double v, int fractionDigits"
+        ],
+        "desc": "format the number as given fraction"
+      },
+      {
+        "methodName": "formatNumber",
+        "returnTypeName": "java.lang.String",
+        "parameterTypeNames": [
+          "double"
+        ],
+        "desc": "format the number as fraction 1"
+      },
+      {
+        "methodName": "formatNumber",
+        "returnTypeName": "java.lang.String",
+        "parameterTypeNames": [
+          "float f, int fractionDigits"
+        ],
+        "desc": "format the number as given fraction"
+      },
+      {
+        "methodName": "formatNumber",
+        "returnTypeName": "java.lang.String",
+        "parameterTypeNames": [
+          "float"
+        ],
+        "desc": "format the number as fraction 1"
+      },
+      {
+        "methodName": "formatNumber",
+        "returnTypeName": "java.lang.String",
+        "parameterTypeNames": [
+          "int v, int fractionDigits"
+        ],
+        "desc": "format the number as given fraction"
+      },
+      {
+        "methodName": "formatNumber",
+        "returnTypeName": "java.lang.String",
+        "parameterTypeNames": [
+          "int"
+        ],
+        "desc": "format the number as fraction 1"
+      },
+      {
+        "methodName": "formatNumber",
+        "returnTypeName": "java.lang.String",
+        "parameterTypeNames": [
+          "long v, int fractionDigits"
+        ],
+        "desc": "format the number as given fraction"
+      },
+      {
+        "methodName": "formatNumber",
+        "returnTypeName": "java.lang.String",
+        "parameterTypeNames": [
+          "long"
+        ],
+        "desc": "format the number as fraction 1"
+      },
+      {
+        "methodName": "getNumberFormatter",
+        "returnTypeName": "java.text.NumberFormat",
+        "parameterTypeNames": [],
+        "desc": "get NumberFormatter set fraction 1"
+      },
+      {
+        "methodName": "getNumberFormatter",
+        "returnTypeName": "java.text.NumberFormat",
+        "parameterTypeNames": [
+          "int fractionDigits"
+        ],
+        "desc": "get NumberFormatter set the fraction"
+      },
+      {
+        "methodName": "httpGet",
+        "returnTypeName": "void",
+        "parameterTypeNames": [
+          "String url, Map<String, String> paramMap"
+        ],
+        "desc": "request http get"
+      },
+      {
+        "methodName": "httpGet",
+        "returnTypeName": "void",
+        "parameterTypeNames": [
+          "String url, Map<String, String> paramMap, int timeoutMillis"
+        ],
+        "desc": "request http get"
+      },
+      {
+        "methodName": "log",
+        "returnTypeName": "void",
+        "parameterTypeNames": [
+          "java.lang.Object"
+        ],
+        "desc": "logging"
+      },
+      {
+        "methodName": "println",
+        "returnTypeName": "void",
+        "parameterTypeNames": [
+          "java.lang.Object"
+        ],
+        "desc": "System.out.println"
+      },
+      {
+        "methodName": "toMap",
+        "returnTypeName": "java.util.HashMap",
+        "parameterTypeNames": [
+          "String[] keyValueArray"
+        ],
+        "desc": "make hashMap easily"
+      },
+      {
+        "methodName": "toShortenUrl",
+        "returnTypeName": "java.lang.String",
+        "parameterTypeNames": [
+          "java.lang.String",
+          "java.lang.String"
+        ],
+        "desc": "make shorten url."
+      },
+      {
+        "methodName": "urlDecode",
+        "returnTypeName": "java.lang.String",
+        "parameterTypeNames": [
+          "java.lang.String"
+        ],
+        "desc": "url decoding"
+      },
+      {
+        "methodName": "urlEncode",
+        "returnTypeName": "java.lang.String",
+        "parameterTypeNames": [
+          "java.lang.String"
+        ],
+        "desc": "url encoding"
+      }
+    ]
+  }
+}

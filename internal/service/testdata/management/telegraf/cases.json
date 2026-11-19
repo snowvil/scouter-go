@@ -1,0 +1,1154 @@
+{
+  "scenario": "telegraf",
+  "cases": [
+    {
+      "name": "check-job-after-telegraf",
+      "command": "CHECK_JOB",
+      "request": "check-job-after-telegraf.request.bin",
+      "request_bytes": 15,
+      "response": "check-job-after-telegraf.response.bin",
+      "response_bytes": 31,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "text",
+          "xtype": "",
+          "hash": 0,
+          "text": "REFETCH_COUNTER_XML"
+        },
+        {
+          "pack": "map",
+          "v": {}
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    }
+  ],
+  "facts": {
+    "config": {
+      "input_telegraf_enabled": true,
+      "net_http_server_enabled": true,
+      "telegraf_object_deadtime_ms": 45000,
+      "measurements": [
+        "nofamily",
+        "off",
+        "syn"
+      ]
+    },
+    "line_string_keys": {
+      "syn,host=raw-host,tier=web gauge=1i,norm=2 1767193200000000000": "syn,host=raw-host,tier=web gauge",
+      "syn,host=raw-host,tier=web norm=2,gauge=1i 1767193200000000000": "syn,host=raw-host,tier=web norm",
+      "syn\\,x,tag\\ a=b\\=c f\\ 1=1,f2=2": "syn,x,tag a=b=c f 1",
+      "cpu usage=1": "cpu usage",
+      "plain": "plain"
+    },
+    "steps": [
+      {
+        "name": "first-registers-type",
+        "line": "syn,host=raw-host,tier=web,port=6379,scouter_obj_type_prefix=PRE gauge=10i,norm=2.5,bytes=1000i,reqs=5i,ignored=1,flag=true,msg=\"a b,c=d\" 1767193200000000000",
+        "parse": {
+          "parsed": true,
+          "measurement": "syn",
+          "host": "mapped-host",
+          "family": "X$SYN_FAMILY_web",
+          "objType": "PRE_SYN_TYPE_web",
+          "objTypeIcon": "redis",
+          "objName": "/mapped-host/X$SYN_NAME_6379",
+          "objHash": -46120967,
+          "receivedTime": 1767193200123,
+          "timestampOrigin": 1767193200000,
+          "tags": {
+            "host": "raw-host",
+            "port": "6379",
+            "scouter_obj_type_prefix": "PRE",
+            "tier": "web"
+          },
+          "numberFields": {
+            "syn_bytes": {
+              "value": {
+                "t": "decimal",
+                "v": 1000
+              },
+              "counters": [
+                {
+                  "name": "syn_bytes_$delta",
+                  "disp": "Bytes_$delta",
+                  "unit": "b/s",
+                  "icon": "",
+                  "total": false,
+                  "all": true
+                }
+              ]
+            },
+            "syn_gauge_*": {
+              "value": {
+                "t": "decimal",
+                "v": 10
+              },
+              "counters": [
+                {
+                  "name": "syn_gauge_6379",
+                  "disp": "Gauge 6379",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            },
+            "syn_norm": {
+              "value": {
+                "t": "float",
+                "v": "2.5"
+              },
+              "counters": [
+                {
+                  "name": "syn_norm",
+                  "disp": "Norm",
+                  "unit": "ms",
+                  "icon": "",
+                  "total": false,
+                  "all": true
+                }
+              ]
+            },
+            "syn_reqs": {
+              "value": {
+                "t": "decimal",
+                "v": 5
+              },
+              "counters": [
+                {
+                  "name": "syn_reqs",
+                  "disp": "Reqs",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                },
+                {
+                  "name": "syn_reqs_$delta",
+                  "disp": "Reqs_$delta",
+                  "unit": "cnt/s",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            }
+          }
+        },
+        "parse_stderr_first_line": null,
+        "attempts": [
+          {
+            "attempt": 1,
+            "packs": [],
+            "registration_settled": true,
+            "objectType_after": {
+              "exists": true,
+              "disp": "PRE_SYN_TYPE_web",
+              "icon": "redis",
+              "family": "X$SYN_FAMILY_web",
+              "master": "syn_norm",
+              "familyCounters": [
+                {
+                  "name": "syn_norm",
+                  "disp": "Norm",
+                  "unit": "ms",
+                  "icon": "",
+                  "total": false,
+                  "all": true
+                },
+                {
+                  "name": "syn_gauge_6379",
+                  "disp": "Gauge 6379",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                },
+                {
+                  "name": "syn_bytes_$delta",
+                  "disp": "Bytes_$delta",
+                  "unit": "b/s",
+                  "icon": "",
+                  "total": false,
+                  "all": true
+                },
+                {
+                  "name": "syn_reqs",
+                  "disp": "Reqs",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                },
+                {
+                  "name": "syn_reqs_$delta",
+                  "disp": "Reqs_$delta",
+                  "unit": "cnt/s",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            }
+          },
+          {
+            "attempt": 2,
+            "packs": [
+              {
+                "pack": "object",
+                "objType": "PRE_SYN_TYPE_web",
+                "objHash": -46120967,
+                "objName": "/mapped-host/X$SYN_NAME_6379",
+                "address": "10.0.0.7",
+                "version": null,
+                "alive": true,
+                "wakeup": 0,
+                "tags": {
+                  "t": "map",
+                  "v": {
+                    "deadTime": {
+                      "t": "decimal",
+                      "v": 45000
+                    }
+                  }
+                },
+                "file": "first-registers-type-2-0.pack.bin",
+                "addr": "10.0.0.7"
+              },
+              {
+                "pack": "perf_counter",
+                "time": 1767193200123,
+                "objName": "/mapped-host/X$SYN_NAME_6379",
+                "timetype": 1,
+                "data": {
+                  "t": "map",
+                  "v": {
+                    "syn_reqs": {
+                      "t": "decimal",
+                      "v": 5
+                    },
+                    "syn_gauge_6379": {
+                      "t": "decimal",
+                      "v": 10
+                    },
+                    "syn_norm": {
+                      "t": "double",
+                      "v": "2.5"
+                    }
+                  }
+                },
+                "file": "first-registers-type-2-1.pack.bin",
+                "addr": "10.0.0.7"
+              }
+            ]
+          }
+        ],
+        "logs": []
+      },
+      {
+        "name": "second-delta-baseline",
+        "line": "syn,host=raw-host,tier=web,port=6379,scouter_obj_type_prefix=PRE gauge=12i,norm=3.5,bytes=1600i,reqs=8i 1767193210000000000",
+        "parse": {
+          "parsed": true,
+          "measurement": "syn",
+          "host": "mapped-host",
+          "family": "X$SYN_FAMILY_web",
+          "objType": "PRE_SYN_TYPE_web",
+          "objTypeIcon": "redis",
+          "objName": "/mapped-host/X$SYN_NAME_6379",
+          "objHash": -46120967,
+          "receivedTime": 1767193200123,
+          "timestampOrigin": 1767193210000,
+          "tags": {
+            "host": "raw-host",
+            "port": "6379",
+            "scouter_obj_type_prefix": "PRE",
+            "tier": "web"
+          },
+          "numberFields": {
+            "syn_bytes": {
+              "value": {
+                "t": "decimal",
+                "v": 1600
+              },
+              "counters": [
+                {
+                  "name": "syn_bytes_$delta",
+                  "disp": "Bytes_$delta",
+                  "unit": "b/s",
+                  "icon": "",
+                  "total": false,
+                  "all": true
+                }
+              ]
+            },
+            "syn_gauge_*": {
+              "value": {
+                "t": "decimal",
+                "v": 12
+              },
+              "counters": [
+                {
+                  "name": "syn_gauge_6379",
+                  "disp": "Gauge 6379",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            },
+            "syn_norm": {
+              "value": {
+                "t": "float",
+                "v": "3.5"
+              },
+              "counters": [
+                {
+                  "name": "syn_norm",
+                  "disp": "Norm",
+                  "unit": "ms",
+                  "icon": "",
+                  "total": false,
+                  "all": true
+                }
+              ]
+            },
+            "syn_reqs": {
+              "value": {
+                "t": "decimal",
+                "v": 8
+              },
+              "counters": [
+                {
+                  "name": "syn_reqs",
+                  "disp": "Reqs",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                },
+                {
+                  "name": "syn_reqs_$delta",
+                  "disp": "Reqs_$delta",
+                  "unit": "cnt/s",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            }
+          }
+        },
+        "parse_stderr_first_line": null,
+        "attempts": [
+          {
+            "attempt": 1,
+            "packs": [
+              {
+                "pack": "object",
+                "objType": "PRE_SYN_TYPE_web",
+                "objHash": -46120967,
+                "objName": "/mapped-host/X$SYN_NAME_6379",
+                "address": "10.0.0.7",
+                "version": null,
+                "alive": true,
+                "wakeup": 0,
+                "tags": {
+                  "t": "map",
+                  "v": {
+                    "deadTime": {
+                      "t": "decimal",
+                      "v": 45000
+                    }
+                  }
+                },
+                "file": "second-delta-baseline-1-0.pack.bin",
+                "addr": "10.0.0.7"
+              },
+              {
+                "pack": "perf_counter",
+                "time": 1767193200123,
+                "objName": "/mapped-host/X$SYN_NAME_6379",
+                "timetype": 1,
+                "data": {
+                  "t": "map",
+                  "v": {
+                    "syn_bytes_$delta": {
+                      "t": "float",
+                      "v": "60.0"
+                    },
+                    "syn_reqs_$delta": {
+                      "t": "float",
+                      "v": "0.3"
+                    },
+                    "syn_reqs": {
+                      "t": "decimal",
+                      "v": 8
+                    },
+                    "syn_gauge_6379": {
+                      "t": "decimal",
+                      "v": 12
+                    },
+                    "syn_norm": {
+                      "t": "double",
+                      "v": "3.0"
+                    }
+                  }
+                },
+                "file": "second-delta-baseline-1-1.pack.bin",
+                "addr": "10.0.0.7"
+              }
+            ]
+          }
+        ],
+        "logs": []
+      },
+      {
+        "name": "third-delta-float",
+        "line": "syn,host=raw-host,tier=web,port=6379,scouter_obj_type_prefix=PRE gauge=13,norm=4,bytes=2200.5,reqs=9.5 1767193220000000000",
+        "parse": {
+          "parsed": true,
+          "measurement": "syn",
+          "host": "mapped-host",
+          "family": "X$SYN_FAMILY_web",
+          "objType": "PRE_SYN_TYPE_web",
+          "objTypeIcon": "redis",
+          "objName": "/mapped-host/X$SYN_NAME_6379",
+          "objHash": -46120967,
+          "receivedTime": 1767193200123,
+          "timestampOrigin": 1767193220000,
+          "tags": {
+            "host": "raw-host",
+            "port": "6379",
+            "scouter_obj_type_prefix": "PRE",
+            "tier": "web"
+          },
+          "numberFields": {
+            "syn_bytes": {
+              "value": {
+                "t": "float",
+                "v": "2200.5"
+              },
+              "counters": [
+                {
+                  "name": "syn_bytes_$delta",
+                  "disp": "Bytes_$delta",
+                  "unit": "b/s",
+                  "icon": "",
+                  "total": false,
+                  "all": true
+                }
+              ]
+            },
+            "syn_gauge_*": {
+              "value": {
+                "t": "float",
+                "v": "13.0"
+              },
+              "counters": [
+                {
+                  "name": "syn_gauge_6379",
+                  "disp": "Gauge 6379",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            },
+            "syn_norm": {
+              "value": {
+                "t": "float",
+                "v": "4.0"
+              },
+              "counters": [
+                {
+                  "name": "syn_norm",
+                  "disp": "Norm",
+                  "unit": "ms",
+                  "icon": "",
+                  "total": false,
+                  "all": true
+                }
+              ]
+            },
+            "syn_reqs": {
+              "value": {
+                "t": "float",
+                "v": "9.5"
+              },
+              "counters": [
+                {
+                  "name": "syn_reqs",
+                  "disp": "Reqs",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                },
+                {
+                  "name": "syn_reqs_$delta",
+                  "disp": "Reqs_$delta",
+                  "unit": "cnt/s",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            }
+          }
+        },
+        "parse_stderr_first_line": null,
+        "attempts": [
+          {
+            "attempt": 1,
+            "packs": [
+              {
+                "pack": "object",
+                "objType": "PRE_SYN_TYPE_web",
+                "objHash": -46120967,
+                "objName": "/mapped-host/X$SYN_NAME_6379",
+                "address": "10.0.0.7",
+                "version": null,
+                "alive": true,
+                "wakeup": 0,
+                "tags": {
+                  "t": "map",
+                  "v": {
+                    "deadTime": {
+                      "t": "decimal",
+                      "v": 45000
+                    }
+                  }
+                },
+                "file": "third-delta-float-1-0.pack.bin",
+                "addr": "10.0.0.7"
+              },
+              {
+                "pack": "perf_counter",
+                "time": 1767193200123,
+                "objName": "/mapped-host/X$SYN_NAME_6379",
+                "timetype": 1,
+                "data": {
+                  "t": "map",
+                  "v": {
+                    "syn_bytes_$delta": {
+                      "t": "float",
+                      "v": "60.025"
+                    },
+                    "syn_reqs_$delta": {
+                      "t": "float",
+                      "v": "0.22500001"
+                    },
+                    "syn_reqs": {
+                      "t": "float",
+                      "v": "9.5"
+                    },
+                    "syn_gauge_6379": {
+                      "t": "float",
+                      "v": "13.0"
+                    },
+                    "syn_norm": {
+                      "t": "double",
+                      "v": "3.3333333333333335"
+                    }
+                  }
+                },
+                "file": "third-delta-float-1-1.pack.bin",
+                "addr": "10.0.0.7"
+              }
+            ]
+          }
+        ],
+        "logs": []
+      },
+      {
+        "name": "new-port-adds-counter",
+        "line": "syn,host=raw-host,tier=web,port=6380,scouter_obj_type_prefix=PRE gauge=7i 1767193230000000000",
+        "parse": {
+          "parsed": true,
+          "measurement": "syn",
+          "host": "mapped-host",
+          "family": "X$SYN_FAMILY_web",
+          "objType": "PRE_SYN_TYPE_web",
+          "objTypeIcon": "redis",
+          "objName": "/mapped-host/X$SYN_NAME_6380",
+          "objHash": 50633618,
+          "receivedTime": 1767193200123,
+          "timestampOrigin": 1767193230000,
+          "tags": {
+            "host": "raw-host",
+            "port": "6380",
+            "scouter_obj_type_prefix": "PRE",
+            "tier": "web"
+          },
+          "numberFields": {
+            "syn_gauge_*": {
+              "value": {
+                "t": "decimal",
+                "v": 7
+              },
+              "counters": [
+                {
+                  "name": "syn_gauge_6380",
+                  "disp": "Gauge 6380",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            }
+          }
+        },
+        "parse_stderr_first_line": null,
+        "attempts": [
+          {
+            "attempt": 1,
+            "packs": [],
+            "registration_settled": true,
+            "objectType_after": {
+              "exists": true,
+              "disp": "PRE_SYN_TYPE_web",
+              "icon": "redis",
+              "family": "X$SYN_FAMILY_web",
+              "master": "syn_norm",
+              "familyCounters": [
+                {
+                  "name": "syn_norm",
+                  "disp": "Norm",
+                  "unit": "ms",
+                  "icon": "",
+                  "total": false,
+                  "all": true
+                },
+                {
+                  "name": "syn_gauge_6379",
+                  "disp": "Gauge 6379",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                },
+                {
+                  "name": "syn_bytes_$delta",
+                  "disp": "Bytes_$delta",
+                  "unit": "b/s",
+                  "icon": "",
+                  "total": false,
+                  "all": true
+                },
+                {
+                  "name": "syn_reqs",
+                  "disp": "Reqs",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                },
+                {
+                  "name": "syn_reqs_$delta",
+                  "disp": "Reqs_$delta",
+                  "unit": "cnt/s",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                },
+                {
+                  "name": "syn_gauge_6380",
+                  "disp": "Gauge 6380",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            }
+          },
+          {
+            "attempt": 2,
+            "packs": [
+              {
+                "pack": "object",
+                "objType": "PRE_SYN_TYPE_web",
+                "objHash": 50633618,
+                "objName": "/mapped-host/X$SYN_NAME_6380",
+                "address": "10.0.0.7",
+                "version": null,
+                "alive": true,
+                "wakeup": 0,
+                "tags": {
+                  "t": "map",
+                  "v": {
+                    "deadTime": {
+                      "t": "decimal",
+                      "v": 45000
+                    }
+                  }
+                },
+                "file": "new-port-adds-counter-2-0.pack.bin",
+                "addr": "10.0.0.7"
+              },
+              {
+                "pack": "perf_counter",
+                "time": 1767193200123,
+                "objName": "/mapped-host/X$SYN_NAME_6380",
+                "timetype": 1,
+                "data": {
+                  "t": "map",
+                  "v": {
+                    "syn_gauge_6380": {
+                      "t": "decimal",
+                      "v": 7
+                    }
+                  }
+                },
+                "file": "new-port-adds-counter-2-1.pack.bin",
+                "addr": "10.0.0.7"
+              }
+            ]
+          }
+        ],
+        "logs": [
+          "New Telegraf Counter : syn_gauge_6380",
+          "[counter+]Trying to add new counter : X$SYN_FAMILY_web - syn_gauge_6380"
+        ]
+      },
+      {
+        "name": "tier-api-negated-filter",
+        "line": "syn,host=other-host,tier=api,port=1 gauge=-5i 1767193200000000000",
+        "parse": {
+          "parsed": true,
+          "measurement": "syn",
+          "host": "other-host",
+          "family": "X$SYN_FAMILY_api",
+          "objType": "SYN_TYPE_api",
+          "objTypeIcon": "redis",
+          "objName": "/other-host/X$SYN_NAME_1",
+          "objHash": -2136789218,
+          "receivedTime": 1767193200123,
+          "timestampOrigin": 1767193200000,
+          "tags": {
+            "host": "other-host",
+            "port": "1",
+            "tier": "api"
+          },
+          "numberFields": {
+            "syn_gauge_*": {
+              "value": {
+                "t": "decimal",
+                "v": -5
+              },
+              "counters": [
+                {
+                  "name": "syn_gauge_1",
+                  "disp": "Gauge 1",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            }
+          }
+        },
+        "parse_stderr_first_line": null,
+        "attempts": [
+          {
+            "attempt": 1,
+            "packs": [],
+            "registration_settled": true,
+            "objectType_after": {
+              "exists": true,
+              "disp": "SYN_TYPE_api",
+              "icon": "redis",
+              "family": "X$SYN_FAMILY_api",
+              "master": "syn_gauge_1",
+              "familyCounters": [
+                {
+                  "name": "syn_gauge_1",
+                  "disp": "Gauge 1",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            }
+          },
+          {
+            "attempt": 2,
+            "packs": [
+              {
+                "pack": "object",
+                "objType": "SYN_TYPE_api",
+                "objHash": -2136789218,
+                "objName": "/other-host/X$SYN_NAME_1",
+                "address": "10.0.0.7",
+                "version": null,
+                "alive": true,
+                "wakeup": 0,
+                "tags": {
+                  "t": "map",
+                  "v": {
+                    "deadTime": {
+                      "t": "decimal",
+                      "v": 45000
+                    }
+                  }
+                },
+                "file": "tier-api-negated-filter-2-0.pack.bin",
+                "addr": "10.0.0.7"
+              },
+              {
+                "pack": "perf_counter",
+                "time": 1767193200123,
+                "objName": "/other-host/X$SYN_NAME_1",
+                "timetype": 1,
+                "data": {
+                  "t": "map",
+                  "v": {
+                    "syn_gauge_1": {
+                      "t": "decimal",
+                      "v": -5
+                    }
+                  }
+                },
+                "file": "tier-api-negated-filter-2-1.pack.bin",
+                "addr": "10.0.0.7"
+              }
+            ]
+          }
+        ],
+        "logs": []
+      },
+      {
+        "name": "filtered-out",
+        "line": "syn,host=raw-host,tier=skip,port=1 gauge=1i 1767193200000000000",
+        "parse": {
+          "parsed": false
+        },
+        "parse_stderr_first_line": null,
+        "attempts": [],
+        "logs": []
+      },
+      {
+        "name": "disabled-measurement",
+        "line": "off,host=h v=1 1767193200000000000",
+        "parse": {
+          "parsed": false
+        },
+        "parse_stderr_first_line": null,
+        "attempts": [],
+        "logs": []
+      },
+      {
+        "name": "invalid-config-measurement",
+        "line": "nofamily,host=h v=1 1767193200000000000",
+        "parse": {
+          "parsed": false
+        },
+        "parse_stderr_first_line": null,
+        "attempts": [],
+        "logs": []
+      },
+      {
+        "name": "unknown-measurement",
+        "line": "nosuch,host=h v=1 1767193200000000000",
+        "parse": {
+          "parsed": false
+        },
+        "parse_stderr_first_line": null,
+        "attempts": [],
+        "logs": []
+      },
+      {
+        "name": "missing-timestamp",
+        "line": "syn,host=raw-host,tier=web,port=1 gauge=1i",
+        "parse": {
+          "parsed": false
+        },
+        "parse_stderr_first_line": "java.lang.NumberFormatException: For input string: \"\"",
+        "attempts": [],
+        "logs": []
+      },
+      {
+        "name": "bad-long-value",
+        "line": "syn,host=raw-host,tier=web,port=1 gauge=1.5i 1767193200000000000",
+        "parse": {
+          "parsed": false
+        },
+        "parse_stderr_first_line": "java.lang.NumberFormatException: For input string: \"1.5\"",
+        "attempts": [],
+        "logs": []
+      },
+      {
+        "name": "escaped-host-no-prefix",
+        "line": "syn,host=raw\\ host,tier=web,port=2 gauge=3i,norm=1e3 1767193200000000000",
+        "parse": {
+          "parsed": true,
+          "measurement": "syn",
+          "host": "raw host",
+          "family": "X$SYN_FAMILY_web",
+          "objType": "SYN_TYPE_web",
+          "objTypeIcon": "redis",
+          "objName": "/raw host/X$SYN_NAME_2",
+          "objHash": -1808633890,
+          "receivedTime": 1767193200123,
+          "timestampOrigin": 1767193200000,
+          "tags": {
+            "host": "raw host",
+            "port": "2",
+            "tier": "web"
+          },
+          "numberFields": {
+            "syn_gauge_*": {
+              "value": {
+                "t": "decimal",
+                "v": 3
+              },
+              "counters": [
+                {
+                  "name": "syn_gauge_2",
+                  "disp": "Gauge 2",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            },
+            "syn_norm": {
+              "value": {
+                "t": "float",
+                "v": "1000.0"
+              },
+              "counters": [
+                {
+                  "name": "syn_norm",
+                  "disp": "Norm",
+                  "unit": "ms",
+                  "icon": "",
+                  "total": false,
+                  "all": true
+                }
+              ]
+            }
+          }
+        },
+        "parse_stderr_first_line": null,
+        "attempts": [
+          {
+            "attempt": 1,
+            "packs": [],
+            "registration_settled": true,
+            "objectType_after": {
+              "exists": true,
+              "disp": "SYN_TYPE_web",
+              "icon": "redis",
+              "family": "X$SYN_FAMILY_web",
+              "master": "syn_norm",
+              "familyCounters": [
+                {
+                  "name": "syn_norm",
+                  "disp": "Norm",
+                  "unit": "ms",
+                  "icon": "",
+                  "total": false,
+                  "all": true
+                },
+                {
+                  "name": "syn_gauge_2",
+                  "disp": "Gauge 2",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            }
+          },
+          {
+            "attempt": 2,
+            "packs": [
+              {
+                "pack": "object",
+                "objType": "SYN_TYPE_web",
+                "objHash": -1808633890,
+                "objName": "/raw host/X$SYN_NAME_2",
+                "address": "10.0.0.7",
+                "version": null,
+                "alive": true,
+                "wakeup": 0,
+                "tags": {
+                  "t": "map",
+                  "v": {
+                    "deadTime": {
+                      "t": "decimal",
+                      "v": 45000
+                    }
+                  }
+                },
+                "file": "escaped-host-no-prefix-2-0.pack.bin",
+                "addr": "10.0.0.7"
+              },
+              {
+                "pack": "perf_counter",
+                "time": 1767193200123,
+                "objName": "/raw host/X$SYN_NAME_2",
+                "timetype": 1,
+                "data": {
+                  "t": "map",
+                  "v": {
+                    "syn_gauge_2": {
+                      "t": "decimal",
+                      "v": 3
+                    },
+                    "syn_norm": {
+                      "t": "double",
+                      "v": "1000.0"
+                    }
+                  }
+                },
+                "file": "escaped-host-no-prefix-2-1.pack.bin",
+                "addr": "10.0.0.7"
+              }
+            ]
+          }
+        ],
+        "logs": []
+      },
+      {
+        "name": "no-host-tag",
+        "line": "syn,tier=web,port=3 gauge=4i 1767193200000000000",
+        "parse": {
+          "parsed": true,
+          "measurement": "syn",
+          "host": "unknown",
+          "family": "X$SYN_FAMILY_web",
+          "objType": "SYN_TYPE_web",
+          "objTypeIcon": "redis",
+          "objName": "/unknown/X$SYN_NAME_3",
+          "objHash": -193682985,
+          "receivedTime": 1767193200123,
+          "timestampOrigin": 1767193200000,
+          "tags": {
+            "port": "3",
+            "tier": "web"
+          },
+          "numberFields": {
+            "syn_gauge_*": {
+              "value": {
+                "t": "decimal",
+                "v": 4
+              },
+              "counters": [
+                {
+                  "name": "syn_gauge_3",
+                  "disp": "Gauge 3",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            }
+          }
+        },
+        "parse_stderr_first_line": null,
+        "attempts": [
+          {
+            "attempt": 1,
+            "packs": [],
+            "registration_settled": true,
+            "objectType_after": {
+              "exists": true,
+              "disp": "SYN_TYPE_web",
+              "icon": "redis",
+              "family": "X$SYN_FAMILY_web",
+              "master": "syn_norm",
+              "familyCounters": [
+                {
+                  "name": "syn_norm",
+                  "disp": "Norm",
+                  "unit": "ms",
+                  "icon": "",
+                  "total": false,
+                  "all": true
+                },
+                {
+                  "name": "syn_gauge_2",
+                  "disp": "Gauge 2",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                },
+                {
+                  "name": "syn_gauge_3",
+                  "disp": "Gauge 3",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            }
+          },
+          {
+            "attempt": 2,
+            "packs": [
+              {
+                "pack": "object",
+                "objType": "SYN_TYPE_web",
+                "objHash": -193682985,
+                "objName": "/unknown/X$SYN_NAME_3",
+                "address": "10.0.0.7",
+                "version": null,
+                "alive": true,
+                "wakeup": 0,
+                "tags": {
+                  "t": "map",
+                  "v": {
+                    "deadTime": {
+                      "t": "decimal",
+                      "v": 45000
+                    }
+                  }
+                },
+                "file": "no-host-tag-2-0.pack.bin",
+                "addr": "10.0.0.7"
+              },
+              {
+                "pack": "perf_counter",
+                "time": 1767193200123,
+                "objName": "/unknown/X$SYN_NAME_3",
+                "timetype": 1,
+                "data": {
+                  "t": "map",
+                  "v": {
+                    "syn_gauge_3": {
+                      "t": "decimal",
+                      "v": 4
+                    }
+                  }
+                },
+                "file": "no-host-tag-2-1.pack.bin",
+                "addr": "10.0.0.7"
+              }
+            ]
+          }
+        ],
+        "logs": [
+          "New Telegraf Counter : syn_gauge_3",
+          "[counter+]Trying to add new counter : X$SYN_FAMILY_web - syn_gauge_3"
+        ]
+      }
+    ]
+  }
+}

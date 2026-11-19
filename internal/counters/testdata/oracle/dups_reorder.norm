@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Counters>
+    <Types>
+        <ObjectType disp="2" family="" icon="" name="a" sub-object=""/>
+        <ObjectType disp="" family="" icon="" name="b" sub-object=""/>
+        <ObjectType disp="" family="" icon="" name="c" sub-object=""/>
+    </Types>
+    <Familys/>
+</Counters>

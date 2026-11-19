@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Counters>
+    <Types>
+        <ObjectType disp="SYN_TYPE_api" family="X$SYN_FAMILY_api" icon="redis" name="SYN_TYPE_api" sub-object="false"/>
+        <ObjectType disp="Seed" family="seed_family" icon="" name="seed_type" sub-object="false"/>
+        <ObjectType disp="SYN_TYPE_web" family="X$SYN_FAMILY_web" icon="redis" name="SYN_TYPE_web" sub-object="false"/>
+        <ObjectType disp="PRE_SYN_TYPE_web" family="X$SYN_FAMILY_web" icon="redis" name="PRE_SYN_TYPE_web" sub-object="false"/>
+    </Types>
+    <Familys>
+        <Family master="syn_norm" name="X$SYN_FAMILY_web">
+            <Counter all="true" disp="Norm" icon="" name="syn_norm" total="false" unit="ms"/>
+            <Counter all="true" disp="Gauge 2" icon="" name="syn_gauge_2" total="true" unit="cnt"/>
+            <Counter all="true" disp="Gauge 3" icon="" name="syn_gauge_3" total="true" unit="cnt"/>
+        </Family>
+        <Family master="seed_counter" name="seed_family">
+            <Counter all="true" disp="Seed" icon="" name="seed_counter" total="true" unit="cnt"/>
+        </Family>
+        <Family master="syn_gauge_1" name="X$SYN_FAMILY_api">
+            <Counter all="true" disp="Gauge 1" icon="" name="syn_gauge_1" total="true" unit="cnt"/>
+        </Family>
+    </Familys>
+</Counters>

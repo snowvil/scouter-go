@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Counters>
+    <Types>
+        <ObjectType disp="Seed" family="seed_family" icon="" name="seed_type" sub-object="false"/>
+        <ObjectType disp="LEG_TYPE_web" family="X$LEG_FAMILY" icon="linux" name="LEG_TYPE_web" sub-object="false"/>
+    </Types>
+    <Familys>
+        <Family master="seed_counter" name="seed_family">
+            <Counter all="true" disp="Seed" icon="" name="seed_counter" total="true" unit="cnt"/>
+        </Family>
+        <Family master="leg_bytes_$delta" name="X$LEG_FAMILY">
+            <Counter all="true" disp="leg_bytes_$delta" icon="" name="leg_bytes_$delta" total="true" unit="b/s"/>
+            <Counter all="true" disp="Gauge 7000" icon="" name="leg_gauge_7000" total="true" unit="cnt"/>
+            <Counter all="true" disp="leg_short" icon="" name="leg_short" total="true" unit=""/>
+            <Counter all="true" disp="Reqs" icon="" name="leg_reqs" total="true" unit="cnt"/>
+            <Counter all="true" disp="Reqs_$delta" icon="" name="leg_reqs_$delta" total="true" unit="cnt/s"/>
+        </Family>
+    </Familys>
+</Counters>

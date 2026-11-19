@@ -1,0 +1,79 @@
+{
+  "scenario": "register",
+  "cases": [
+    {
+      "name": "check-job-after-register",
+      "command": "CHECK_JOB",
+      "request": "check-job-after-register.request.bin",
+      "request_bytes": 15,
+      "response": "check-job-after-register.response.bin",
+      "response_bytes": 31,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "text",
+          "xtype": "",
+          "hash": 0,
+          "text": "REFETCH_COUNTER_XML"
+        },
+        {
+          "pack": "map",
+          "v": {}
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    }
+  ],
+  "facts": {
+    "counters.site.after-register-new.xml": "missing",
+    "counters.site.after-register-edit.xml": "missing",
+    "steps": [
+      {
+        "name": "new-type",
+        "body": "{\"object\":{\"type\":\"reg_redis\",\"display\":\"Reg Redis\"},\"counters\":[{\"name\":\"aof\",\"unit\":\"cnt\",\"display\":\"AOF\",\"total\":true,\"all\":true},{\"name\":\"clients\",\"unit\":\"cnt\"},{\"name\":\"cpu\",\"unit\":\"%\",\"display\":\"CPU\",\"total\":false}]}",
+        "result": true,
+        "objectType_after": {
+          "exists": false
+        },
+        "logs": []
+      },
+      {
+        "name": "existing-type-add-counter",
+        "body": "{\"object\":{\"type\":\"reg_redis\"},\"counters\":[{\"name\":\"aof\",\"unit\":\"cnt\"},{\"name\":\"mem\",\"unit\":\"MB\",\"display\":\"Mem\",\"all\":false}]}",
+        "result": true,
+        "objectType_after": {
+          "exists": false
+        },
+        "logs": []
+      },
+      {
+        "name": "invalid-json",
+        "body": "{\"object\":",
+        "result": false,
+        "logs": [
+          "[SC-8001] Http body parsing error Unexpected token END OF FILE at position 10."
+        ]
+      },
+      {
+        "name": "missing-object",
+        "body": "{\"counters\":[]}",
+        "result": false,
+        "logs": [
+          "[SC-8001] Http body parsing error java.lang.NullPointerException"
+        ]
+      },
+      {
+        "name": "total-not-boolean",
+        "body": "{\"object\":{\"type\":\"reg_bad\"},\"counters\":[{\"name\":\"x\",\"total\":\"yes\"}]}",
+        "result": false,
+        "objectType_after": {
+          "exists": false
+        },
+        "logs": [
+          "[SC-8001] Http body parsing error java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Boolean"
+        ]
+      }
+    ]
+  }
+}

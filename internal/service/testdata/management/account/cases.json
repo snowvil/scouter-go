@@ -1,0 +1,1299 @@
+{
+  "scenario": "account",
+  "cases": [
+    {
+      "name": "list-account-initial",
+      "command": "LIST_ACCOUNT",
+      "request": "list-account-initial.request.bin",
+      "request_bytes": 0,
+      "response": "list-account-initial.response.bin",
+      "response_bytes": 197,
+      "item_kind": "value",
+      "items": [
+        {
+          "t": "blob",
+          "len": 95,
+          "hex": "0561646d696e40616533636634313363636263353663653937633464643838643134323936633331643666666338316561626262303434333734333463633332323165633437631161646d696e4073636f757465722e636f6d0561646d696e"
+        },
+        {
+          "t": "blob",
+          "len": 95,
+          "hex": "05677565737440643463326465663330393336663664616161383662336661616364626665323633393738316330613831343537333137653834346432373461366562323139631167756573744073636f757465722e636f6d056775657374"
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": [
+        "Load Account Group File",
+        "Load Account File"
+      ],
+      "accounts": [
+        {
+          "id": "admin",
+          "pass": "ae3cf413ccbc56ce97c4dd88d14296c31d6ffc81eabbb04437434cc3221ec47c",
+          "email": "admin@scouter.com",
+          "group": "admin"
+        },
+        {
+          "id": "guest",
+          "pass": "d4c2def30936f6daaa86b3faacdbfe2639781c0a81457317e844d274a6eb219c",
+          "email": "guest@scouter.com",
+          "group": "guest"
+        }
+      ]
+    },
+    {
+      "name": "list-account-group-initial",
+      "command": "LIST_ACCOUNT_GROUP",
+      "request": "list-account-group-initial.request.bin",
+      "request_bytes": 0,
+      "response": "list-account-group-initial.response.bin",
+      "response_bytes": 33,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "group_list": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "admin"
+                },
+                {
+                  "t": "text",
+                  "v": "guest"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "group-policy-all-initial",
+      "command": "GET_GROUP_POLICY_ALL",
+      "request": "group-policy-all-initial.request.bin",
+      "request_bytes": 0,
+      "response": "group-policy-all-initial.response.bin",
+      "response_bytes": 715,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "admin": {
+              "t": "map",
+              "v": {
+                "AllowFileDump": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowExportCounter": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowAddAccount": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowSystemGC": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowDefineObjectType": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowExportAppSum": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowExportClass": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowKillTransaction": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowLoginList": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowHeapHistogram": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowDBManager": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowEditGroupPolicy": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowConfigure": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowSqlParameter": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowThreadDump": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowRedefineClass": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowEditAccount": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowHeapDump": {
+                  "t": "boolean",
+                  "v": true
+                }
+              }
+            },
+            "guest": {
+              "t": "map",
+              "v": {
+                "AllowFileDump": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowExportCounter": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowAddAccount": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowSystemGC": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowDefineObjectType": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowExportAppSum": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowExportClass": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowKillTransaction": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowLoginList": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowHeapHistogram": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowDBManager": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowEditGroupPolicy": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowConfigure": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowSqlParameter": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowThreadDump": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowRedefineClass": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowEditAccount": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowHeapDump": {
+                  "t": "boolean",
+                  "v": false
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "check-account-id-admin",
+      "command": "CHECK_ACCOUNT_ID",
+      "request": "check-account-id-admin.request.bin",
+      "request_bytes": 13,
+      "response": "check-account-id-admin.response.bin",
+      "response_bytes": 14,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "result": {
+              "t": "boolean",
+              "v": false
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "check-account-id-free",
+      "command": "CHECK_ACCOUNT_ID",
+      "request": "check-account-id-free.request.bin",
+      "request_bytes": 10,
+      "response": "check-account-id-free.response.bin",
+      "response_bytes": 14,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "result": {
+              "t": "boolean",
+              "v": true
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "add-account-u1",
+      "command": "ADD_ACCOUNT",
+      "request": "add-account-u1.request.bin",
+      "request_bytes": 120,
+      "response": "add-account-u1.response.bin",
+      "response_bytes": 14,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "result": {
+              "t": "boolean",
+              "v": true
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "add-account-duplicate",
+      "command": "ADD_ACCOUNT",
+      "request": "add-account-duplicate.request.bin",
+      "request_bytes": 121,
+      "response": "add-account-duplicate.response.bin",
+      "response_bytes": 14,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "result": {
+              "t": "boolean",
+              "v": false
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "add-account-unicode",
+      "command": "ADD_ACCOUNT",
+      "request": "add-account-unicode.request.bin",
+      "request_bytes": 137,
+      "response": "add-account-unicode.response.bin",
+      "response_bytes": 14,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "result": {
+              "t": "boolean",
+              "v": true
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "add-account-no-id",
+      "command": "ADD_ACCOUNT",
+      "request": "add-account-no-id.request.bin",
+      "request_bytes": 112,
+      "response": "add-account-no-id.response.bin",
+      "response_bytes": 14,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "result": {
+              "t": "boolean",
+              "v": true
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "add-account-not-mappack",
+      "command": "ADD_ACCOUNT",
+      "request": "add-account-not-mappack.request.bin",
+      "request_bytes": 4,
+      "response": "add-account-not-mappack.response.bin",
+      "response_bytes": 1,
+      "item_kind": "pack",
+      "items": [],
+      "stderr_first_line": "java.io.EOFException",
+      "logs": []
+    },
+    {
+      "name": "edit-account-u1",
+      "command": "EDIT_ACCOUNT",
+      "request": "edit-account-u1.request.bin",
+      "request_bytes": 125,
+      "response": "edit-account-u1.response.bin",
+      "response_bytes": 14,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "result": {
+              "t": "boolean",
+              "v": false
+            }
+          }
+        }
+      ],
+      "stderr_first_line": "java.lang.Exception: Cannot find account id : u1",
+      "logs": []
+    },
+    {
+      "name": "edit-account-missing",
+      "command": "EDIT_ACCOUNT",
+      "request": "edit-account-missing.request.bin",
+      "request_bytes": 123,
+      "response": "edit-account-missing.response.bin",
+      "response_bytes": 14,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "result": {
+              "t": "boolean",
+              "v": false
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "list-account-after-edit",
+      "command": "LIST_ACCOUNT",
+      "request": "list-account-after-edit.request.bin",
+      "request_bytes": 0,
+      "response": "list-account-after-edit.response.bin",
+      "response_bytes": 406,
+      "item_kind": "value",
+      "items": [
+        {
+          "t": "blob",
+          "len": 95,
+          "hex": "0561646d696e40616533636634313363636263353663653937633464643838643134323936633331643666666338316561626262303434333734333463633332323165633437631161646d696e4073636f757465722e636f6d0561646d696e"
+        },
+        {
+          "t": "blob",
+          "len": 95,
+          "hex": "05677565737440643463326465663330393336663664616161383662336661616364626665323633393738316330613831343537333137653834346432373461366562323139631167756573744073636f757465722e636f6d056775657374"
+        },
+        {
+          "t": "blob",
+          "len": 93,
+          "hex": "0275314034303836383131303462333063326164303263393238613832366530623931376533313366393235643533633330646238363162616538663432653134323135127531406578616d706c652e696e76616c6964056775657374"
+        },
+        {
+          "t": "blob",
+          "len": 110,
+          "hex": "09ec82acec9aa9ec9e9040353838643363393938336632303637663530316538333131333663366433373632353631646534306337316433656439343062623632386232336430646465391cec9ca0eb8b88ecbd94eb939c406578616d706c652e696e76616c6964056775657374"
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": [],
+      "accounts": [
+        {
+          "id": "admin",
+          "pass": "ae3cf413ccbc56ce97c4dd88d14296c31d6ffc81eabbb04437434cc3221ec47c",
+          "email": "admin@scouter.com",
+          "group": "admin"
+        },
+        {
+          "id": "guest",
+          "pass": "d4c2def30936f6daaa86b3faacdbfe2639781c0a81457317e844d274a6eb219c",
+          "email": "guest@scouter.com",
+          "group": "guest"
+        },
+        {
+          "id": "u1",
+          "pass": "408681104b30c2ad02c928a826e0b917e313f925d53c30db861bae8f42e14215",
+          "email": "u1@example.invalid",
+          "group": "guest"
+        },
+        {
+          "id": "사용자",
+          "pass": "588d3c9983f2067f501e831136c6d3762561de40c71d3ed940bb628b23d0dde9",
+          "email": "유니코드@example.invalid",
+          "group": "guest"
+        }
+      ]
+    },
+    {
+      "name": "add-group",
+      "command": "ADD_ACCOUNT_GROUP",
+      "request": "add-group.request.bin",
+      "request_bytes": 94,
+      "response": "add-group.response.bin",
+      "response_bytes": 4,
+      "item_kind": "value",
+      "items": [
+        {
+          "t": "boolean",
+          "v": true
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "add-group-no-name",
+      "command": "ADD_ACCOUNT_GROUP",
+      "request": "add-group-no-name.request.bin",
+      "request_bytes": 29,
+      "response": "add-group-no-name.response.bin",
+      "response_bytes": 4,
+      "item_kind": "value",
+      "items": [
+        {
+          "t": "boolean",
+          "v": false
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "add-group-no-policy",
+      "command": "ADD_ACCOUNT_GROUP",
+      "request": "add-group-no-policy.request.bin",
+      "request_bytes": 12,
+      "response": "add-group-no-policy.response.bin",
+      "response_bytes": 4,
+      "item_kind": "value",
+      "items": [
+        {
+          "t": "boolean",
+          "v": false
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "add-group-policy-not-map",
+      "command": "ADD_ACCOUNT_GROUP",
+      "request": "add-group-policy-not-map.request.bin",
+      "request_bytes": 34,
+      "response": "add-group-policy-not-map.response.bin",
+      "response_bytes": 1,
+      "item_kind": "value",
+      "items": [],
+      "stderr_first_line": "java.lang.ClassCastException: scouter.lang.value.TextValue cannot be cast to scouter.lang.value.MapValue",
+      "logs": []
+    },
+    {
+      "name": "list-account-group-after-add",
+      "command": "LIST_ACCOUNT_GROUP",
+      "request": "list-account-group-after-add.request.bin",
+      "request_bytes": 0,
+      "response": "list-account-group-after-add.response.bin",
+      "response_bytes": 50,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "group_list": {
+              "t": "list",
+              "v": [
+                {
+                  "t": "text",
+                  "v": "admin"
+                },
+                {
+                  "t": "text",
+                  "v": "guest"
+                },
+                {
+                  "t": "text",
+                  "v": "synthetic-group"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "group-policy-all-after-add",
+      "command": "GET_GROUP_POLICY_ALL",
+      "request": "group-policy-all-after-add.request.bin",
+      "request_bytes": 0,
+      "response": "group-policy-all-after-add.response.bin",
+      "response_bytes": 793,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "admin": {
+              "t": "map",
+              "v": {
+                "AllowFileDump": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowExportCounter": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowAddAccount": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowSystemGC": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowDefineObjectType": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowExportAppSum": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowExportClass": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowKillTransaction": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowLoginList": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowHeapHistogram": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowDBManager": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowEditGroupPolicy": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowConfigure": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowSqlParameter": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowThreadDump": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowRedefineClass": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowEditAccount": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowHeapDump": {
+                  "t": "boolean",
+                  "v": true
+                }
+              }
+            },
+            "guest": {
+              "t": "map",
+              "v": {
+                "AllowFileDump": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowExportCounter": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowAddAccount": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowSystemGC": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowDefineObjectType": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowExportAppSum": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowExportClass": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowKillTransaction": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowLoginList": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowHeapHistogram": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowDBManager": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowEditGroupPolicy": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowConfigure": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowSqlParameter": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowThreadDump": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowRedefineClass": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowEditAccount": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowHeapDump": {
+                  "t": "boolean",
+                  "v": false
+                }
+              }
+            },
+            "synthetic-group": {
+              "t": "map",
+              "v": {
+                "AllowHeapDump": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowExportCounter": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "CustomTextPolicy": {
+                  "t": "text",
+                  "v": "yes"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "edit-group-policy-guest",
+      "command": "EDIT_GROUP_POLICY",
+      "request": "edit-group-policy-guest.request.bin",
+      "request_bytes": 45,
+      "response": "edit-group-policy-guest.response.bin",
+      "response_bytes": 4,
+      "item_kind": "value",
+      "items": [
+        {
+          "t": "boolean",
+          "v": true
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": [
+        "Load Account Group File"
+      ]
+    },
+    {
+      "name": "group-policy-all-after-edit",
+      "command": "GET_GROUP_POLICY_ALL",
+      "request": "group-policy-all-after-edit.request.bin",
+      "request_bytes": 0,
+      "response": "group-policy-all-after-edit.response.bin",
+      "response_bytes": 715,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "admin": {
+              "t": "map",
+              "v": {
+                "AllowFileDump": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowExportCounter": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowAddAccount": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowSystemGC": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowDefineObjectType": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowExportAppSum": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowExportClass": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowKillTransaction": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowLoginList": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowHeapHistogram": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowDBManager": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowEditGroupPolicy": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowConfigure": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowSqlParameter": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowThreadDump": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowRedefineClass": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowEditAccount": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowHeapDump": {
+                  "t": "boolean",
+                  "v": true
+                }
+              }
+            },
+            "guest": {
+              "t": "map",
+              "v": {
+                "AllowFileDump": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowExportCounter": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowAddAccount": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowSystemGC": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowDefineObjectType": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowExportAppSum": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowExportClass": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowKillTransaction": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowLoginList": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowHeapHistogram": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowDBManager": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowEditGroupPolicy": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowConfigure": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowSqlParameter": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowThreadDump": {
+                  "t": "boolean",
+                  "v": true
+                },
+                "AllowRedefineClass": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowEditAccount": {
+                  "t": "boolean",
+                  "v": false
+                },
+                "AllowHeapDump": {
+                  "t": "boolean",
+                  "v": false
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "edit-group-policy-unknown-group",
+      "command": "EDIT_GROUP_POLICY",
+      "request": "edit-group-policy-unknown-group.request.bin",
+      "request_bytes": 36,
+      "response": "edit-group-policy-unknown-group.response.bin",
+      "response_bytes": 4,
+      "item_kind": "value",
+      "items": [
+        {
+          "t": "boolean",
+          "v": true
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": [
+        "Load Account Group File"
+      ]
+    },
+    {
+      "name": "edit-group-policy-not-map",
+      "command": "EDIT_GROUP_POLICY",
+      "request": "edit-group-policy-not-map.request.bin",
+      "request_bytes": 24,
+      "response": "edit-group-policy-not-map.response.bin",
+      "response_bytes": 4,
+      "item_kind": "value",
+      "items": [
+        {
+          "t": "boolean",
+          "v": false
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": [
+        "scouter.lang.value.TextValue cannot be cast to scouter.lang.value.MapValue"
+      ]
+    },
+    {
+      "name": "add-account-no-email",
+      "command": "ADD_ACCOUNT",
+      "request": "add-account-no-email.request.bin",
+      "request_bytes": 102,
+      "response": "add-account-no-email.response.bin",
+      "response_bytes": 14,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {
+            "result": {
+              "t": "boolean",
+              "v": true
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "list-account-after-null-email",
+      "command": "LIST_ACCOUNT",
+      "request": "list-account-after-null-email.request.bin",
+      "request_bytes": 0,
+      "response": "list-account-after-null-email.response.bin",
+      "response_bytes": 407,
+      "item_kind": "value",
+      "items": [
+        {
+          "t": "blob",
+          "len": 95,
+          "hex": "0561646d696e40616533636634313363636263353663653937633464643838643134323936633331643666666338316561626262303434333734333463633332323165633437631161646d696e4073636f757465722e636f6d0561646d696e"
+        },
+        {
+          "t": "blob",
+          "len": 95,
+          "hex": "05677565737440643463326465663330393336663664616161383662336661616364626665323633393738316330613831343537333137653834346432373461366562323139631167756573744073636f757465722e636f6d056775657374"
+        },
+        {
+          "t": "blob",
+          "len": 93,
+          "hex": "0275314034303836383131303462333063326164303263393238613832366530623931376533313366393235643533633330646238363162616538663432653134323135127531406578616d706c652e696e76616c6964056775657374"
+        },
+        {
+          "t": "blob",
+          "len": 110,
+          "hex": "09ec82acec9aa9ec9e9040353838643363393938336632303637663530316538333131333663366433373632353631646534306337316433656439343062623632386232336430646465391cec9ca0eb8b88ecbd94eb939c406578616d706c652e696e76616c6964056775657374"
+        },
+        {
+          "undecodable_after_HasNEXT": "java.lang.RuntimeException: unknown value type=4"
+        }
+      ],
+      "stderr_first_line": "java.lang.NullPointerException",
+      "logs": [],
+      "accounts": [
+        {
+          "id": "admin",
+          "pass": "ae3cf413ccbc56ce97c4dd88d14296c31d6ffc81eabbb04437434cc3221ec47c",
+          "email": "admin@scouter.com",
+          "group": "admin"
+        },
+        {
+          "id": "guest",
+          "pass": "d4c2def30936f6daaa86b3faacdbfe2639781c0a81457317e844d274a6eb219c",
+          "email": "guest@scouter.com",
+          "group": "guest"
+        },
+        {
+          "id": "u1",
+          "pass": "408681104b30c2ad02c928a826e0b917e313f925d53c30db861bae8f42e14215",
+          "email": "u1@example.invalid",
+          "group": "guest"
+        },
+        {
+          "id": "사용자",
+          "pass": "588d3c9983f2067f501e831136c6d3762561de40c71d3ed940bb628b23d0dde9",
+          "email": "유니코드@example.invalid",
+          "group": "guest"
+        },
+        null
+      ]
+    }
+  ],
+  "facts": {
+    "synthetic_password_digest_1": "408681104b30c2ad02c928a826e0b917e313f925d53c30db861bae8f42e14215",
+    "synthetic_password_digest_2": "588d3c9983f2067f501e831136c6d3762561de40c71d3ed940bb628b23d0dde9",
+    "account_xml_unchanged_after_add_edit": true,
+    "account_group_xml_unchanged": true,
+    "account_xml_unchanged": true,
+    "account_tobytes": [
+      {
+        "name": "account-tobytes-basic",
+        "file": "account-tobytes-basic.bin",
+        "bytes": 93,
+        "roundtrip_equal": true
+      },
+      {
+        "name": "account-tobytes-unicode",
+        "file": "account-tobytes-unicode.bin",
+        "bytes": 111,
+        "roundtrip_equal": true
+      },
+      {
+        "name": "account-tobytes-empty",
+        "file": "account-tobytes-empty.bin",
+        "bytes": 4,
+        "roundtrip_equal": true
+      },
+      {
+        "name": "account-tobytes-260",
+        "file": "account-tobytes-260.bin",
+        "bytes": 350,
+        "roundtrip_equal": false
+      }
+    ],
+    "parsed_default_accounts": [
+      {
+        "id": "admin",
+        "pass": "ae3cf413ccbc56ce97c4dd88d14296c31d6ffc81eabbb04437434cc3221ec47c",
+        "email": "admin@scouter.com",
+        "group": "admin"
+      },
+      {
+        "id": "guest",
+        "pass": "d4c2def30936f6daaa86b3faacdbfe2639781c0a81457317e844d274a6eb219c",
+        "email": "guest@scouter.com",
+        "group": "guest"
+      }
+    ],
+    "parsed_default_groups": {
+      "admin": {
+        "t": "map",
+        "v": {
+          "AllowFileDump": {
+            "t": "boolean",
+            "v": true
+          },
+          "AllowExportCounter": {
+            "t": "boolean",
+            "v": true
+          },
+          "AllowAddAccount": {
+            "t": "boolean",
+            "v": true
+          },
+          "AllowSystemGC": {
+            "t": "boolean",
+            "v": true
+          },
+          "AllowDefineObjectType": {
+            "t": "boolean",
+            "v": true
+          },
+          "AllowExportAppSum": {
+            "t": "boolean",
+            "v": true
+          },
+          "AllowExportClass": {
+            "t": "boolean",
+            "v": true
+          },
+          "AllowKillTransaction": {
+            "t": "boolean",
+            "v": true
+          },
+          "AllowLoginList": {
+            "t": "boolean",
+            "v": true
+          },
+          "AllowHeapHistogram": {
+            "t": "boolean",
+            "v": true
+          },
+          "AllowDBManager": {
+            "t": "boolean",
+            "v": true
+          },
+          "AllowEditGroupPolicy": {
+            "t": "boolean",
+            "v": true
+          },
+          "AllowConfigure": {
+            "t": "boolean",
+            "v": true
+          },
+          "AllowSqlParameter": {
+            "t": "boolean",
+            "v": true
+          },
+          "AllowThreadDump": {
+            "t": "boolean",
+            "v": true
+          },
+          "AllowRedefineClass": {
+            "t": "boolean",
+            "v": true
+          },
+          "AllowHeapDump": {
+            "t": "boolean",
+            "v": true
+          },
+          "AllowEditAccount": {
+            "t": "boolean",
+            "v": true
+          }
+        }
+      },
+      "guest": {
+        "t": "map",
+        "v": {
+          "AllowFileDump": {
+            "t": "boolean",
+            "v": false
+          },
+          "AllowExportCounter": {
+            "t": "boolean",
+            "v": false
+          },
+          "AllowAddAccount": {
+            "t": "boolean",
+            "v": false
+          },
+          "AllowSystemGC": {
+            "t": "boolean",
+            "v": true
+          },
+          "AllowDefineObjectType": {
+            "t": "boolean",
+            "v": false
+          },
+          "AllowExportAppSum": {
+            "t": "boolean",
+            "v": false
+          },
+          "AllowExportClass": {
+            "t": "boolean",
+            "v": false
+          },
+          "AllowKillTransaction": {
+            "t": "boolean",
+            "v": false
+          },
+          "AllowLoginList": {
+            "t": "boolean",
+            "v": false
+          },
+          "AllowHeapHistogram": {
+            "t": "boolean",
+            "v": false
+          },
+          "AllowDBManager": {
+            "t": "boolean",
+            "v": false
+          },
+          "AllowEditGroupPolicy": {
+            "t": "boolean",
+            "v": false
+          },
+          "AllowConfigure": {
+            "t": "boolean",
+            "v": false
+          },
+          "AllowSqlParameter": {
+            "t": "boolean",
+            "v": false
+          },
+          "AllowThreadDump": {
+            "t": "boolean",
+            "v": true
+          },
+          "AllowRedefineClass": {
+            "t": "boolean",
+            "v": false
+          },
+          "AllowHeapDump": {
+            "t": "boolean",
+            "v": false
+          },
+          "AllowEditAccount": {
+            "t": "boolean",
+            "v": false
+          }
+        }
+      }
+    }
+  }
+}

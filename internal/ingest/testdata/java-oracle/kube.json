@@ -1,0 +1,2618 @@
+{
+  "scenario": "kube",
+  "steps": [
+    {
+      "op": "active",
+      "t": 0,
+      "objName": "/h1",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "h1"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "decimal",
+            "v": -1
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": false,
+        "pushSeq": true,
+        "podSeq": 0,
+        "podName": "app",
+        "hostName": "h1",
+        "calls": [
+          {
+            "objHash": 816462170,
+            "cmd": "OBJECT_SET_KUBE_SEQ",
+            "param": "0a0101037365711400"
+          }
+        ],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0]
+            ],
+            "seqHost": [
+              [0, "h1"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h1",
+            "podName": "app",
+            "podSeq": 0,
+            "t": 0
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 5000,
+      "objName": "/h1",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "h1"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "decimal",
+            "v": -1
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": false,
+        "pushSeq": true,
+        "podSeq": 0,
+        "podName": "app",
+        "hostName": "h1",
+        "calls": [
+          {
+            "objHash": 816462170,
+            "cmd": "OBJECT_SET_KUBE_SEQ",
+            "param": "0a0101037365711400"
+          }
+        ],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0]
+            ],
+            "seqHost": [
+              [0, "h1"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h1",
+            "podName": "app",
+            "podSeq": 0,
+            "t": 0
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 5000,
+      "objName": "/h2",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "h2"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "decimal",
+            "v": -1
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": false,
+        "pushSeq": true,
+        "podSeq": 1,
+        "podName": "app",
+        "hostName": "h2",
+        "calls": [
+          {
+            "objHash": -1448908576,
+            "cmd": "OBJECT_SET_KUBE_SEQ",
+            "param": "0a010103736571140101"
+          }
+        ],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h2", 1]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h2"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h1",
+            "podName": "app",
+            "podSeq": 0,
+            "t": 0
+          },
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 6000,
+      "objName": "/h1",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "h1"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "decimal",
+            "v": 0
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": true,
+        "pushSeq": false,
+        "podSeq": 0,
+        "podName": "app",
+        "hostName": "h1",
+        "calls": [],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h2", 1]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h2"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 6000,
+      "objName": "/h3",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "h3"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "decimal",
+            "v": 1
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": false,
+        "pushSeq": true,
+        "podSeq": 2,
+        "podName": "app",
+        "hostName": "h3",
+        "calls": [
+          {
+            "objHash": -559654794,
+            "cmd": "OBJECT_SET_KUBE_SEQ",
+            "param": "0a010103736571140102"
+          }
+        ],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h2", 1],
+              ["h3", 2]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h2"],
+              [2, "h3"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h3",
+            "podName": "app",
+            "podSeq": 2,
+            "t": 6000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 20000,
+      "objName": "/h2",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "h2"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "decimal",
+            "v": -1
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": true,
+        "pushSeq": false,
+        "podSeq": 1,
+        "podName": "app",
+        "hostName": "h2",
+        "calls": [],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [2, "h3"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h3",
+            "podName": "app",
+            "podSeq": 2,
+            "t": 6000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 20000,
+      "objName": "/h3",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "h3"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "decimal",
+            "v": -1
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": false,
+        "pushSeq": true,
+        "podSeq": 2,
+        "podName": "app",
+        "hostName": "h3",
+        "calls": [
+          {
+            "objHash": -559654794,
+            "cmd": "OBJECT_SET_KUBE_SEQ",
+            "param": "0a010103736571140102"
+          }
+        ],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [2, "h3"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h3",
+            "podName": "app",
+            "podSeq": 2,
+            "t": 6000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 21000,
+      "objName": "/h4",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "h4"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "decimal",
+            "v": 7
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": true,
+        "pushSeq": false,
+        "podSeq": 7,
+        "podName": "app",
+        "hostName": "h4",
+        "calls": [],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h4", 7]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [2, "h3"],
+              [7, "h4"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h3",
+            "podName": "app",
+            "podSeq": 2,
+            "t": 6000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 21000,
+      "objName": "/h4",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "h4"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "decimal",
+            "v": 9
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": true,
+        "pushSeq": false,
+        "podSeq": 9,
+        "podName": "app",
+        "hostName": "h4",
+        "calls": [],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h4", 9]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [2, "h3"],
+              [7, "h4"],
+              [9, "h4"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h3",
+            "podName": "app",
+            "podSeq": 2,
+            "t": 6000
+          }
+        ]
+      }
+    },
+    {
+      "op": "inactive",
+      "t": 22000,
+      "podName": "app",
+      "hostName": "h4",
+      "out": {
+        "calls": [],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [2, "h3"],
+              [7, "h4"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h3",
+            "podName": "app",
+            "podSeq": 2,
+            "t": 6000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 22000,
+      "objName": "/h5",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "h5"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "decimal",
+            "v": -1
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": false,
+        "pushSeq": true,
+        "podSeq": 1,
+        "podName": "app",
+        "hostName": "h5",
+        "calls": [
+          {
+            "objHash": 935853379,
+            "cmd": "OBJECT_SET_KUBE_SEQ",
+            "param": "0a010103736571140101"
+          }
+        ],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h5", 1]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h5"],
+              [2, "h3"],
+              [7, "h4"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h3",
+            "podName": "app",
+            "podSeq": 2,
+            "t": 6000
+          },
+          {
+            "host": "h5",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 22000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 22000,
+      "objName": "/h6",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "h6"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": false,
+        "pushSeq": true,
+        "podSeq": 3,
+        "podName": "app",
+        "hostName": "h6",
+        "calls": [
+          {
+            "objHash": -1362187015,
+            "cmd": "OBJECT_SET_KUBE_SEQ",
+            "param": "0a010103736571140103"
+          }
+        ],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h5", 1],
+              ["h6", 3]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h5"],
+              [2, "h3"],
+              [3, "h6"],
+              [7, "h4"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h3",
+            "podName": "app",
+            "podSeq": 2,
+            "t": 6000
+          },
+          {
+            "host": "h5",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 22000
+          },
+          {
+            "host": "h6",
+            "podName": "app",
+            "podSeq": 3,
+            "t": 22000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 22000,
+      "objName": "/h3",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "h3"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "float",
+            "v": 2.5
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": true,
+        "pushSeq": false,
+        "podSeq": 2,
+        "podName": "app",
+        "hostName": "h3",
+        "calls": [],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h5", 1],
+              ["h6", 3]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h5"],
+              [2, "h3"],
+              [3, "h6"],
+              [7, "h4"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h5",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 22000
+          },
+          {
+            "host": "h6",
+            "podName": "app",
+            "podSeq": 3,
+            "t": 22000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 22000,
+      "objName": "/nohost",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "decimal",
+            "v": -1
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": true,
+        "pushSeq": false,
+        "podSeq": -1,
+        "podName": "app",
+        "hostName": null,
+        "calls": [],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h5", 1],
+              ["h6", 3]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h5"],
+              [2, "h3"],
+              [3, "h6"],
+              [7, "h4"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h5",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 22000
+          },
+          {
+            "host": "h6",
+            "podName": "app",
+            "podSeq": 3,
+            "t": 22000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 22000,
+      "objName": "/emptyhost",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": ""
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "decimal",
+            "v": -1
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": true,
+        "pushSeq": false,
+        "podSeq": -1,
+        "podName": "app",
+        "hostName": "",
+        "calls": [],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h5", 1],
+              ["h6", 3]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h5"],
+              [2, "h3"],
+              [3, "h6"],
+              [7, "h4"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h5",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 22000
+          },
+          {
+            "host": "h6",
+            "podName": "app",
+            "podSeq": 3,
+            "t": 22000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 22000,
+      "objName": "/off",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "x"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": false
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": true,
+        "pushSeq": false,
+        "podSeq": 0,
+        "podName": null,
+        "hostName": null,
+        "calls": [],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h5", 1],
+              ["h6", 3]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h5"],
+              [2, "h3"],
+              [3, "h6"],
+              [7, "h4"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h5",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 22000
+          },
+          {
+            "host": "h6",
+            "podName": "app",
+            "podSeq": 3,
+            "t": 22000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 22000,
+      "objName": "/textflag",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "x"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "text",
+            "v": "true"
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": true,
+        "pushSeq": false,
+        "podSeq": 0,
+        "podName": null,
+        "hostName": null,
+        "calls": [],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h5", 1],
+              ["h6", 3]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h5"],
+              [2, "h3"],
+              [3, "h6"],
+              [7, "h4"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h5",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 22000
+          },
+          {
+            "host": "h6",
+            "podName": "app",
+            "podSeq": 3,
+            "t": 22000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 22000,
+      "objName": "/emptypod",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": ""
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "x"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "decimal",
+            "v": -1
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": true,
+        "pushSeq": false,
+        "podSeq": 0,
+        "podName": null,
+        "hostName": null,
+        "calls": [],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h5", 1],
+              ["h6", 3]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h5"],
+              [2, "h3"],
+              [3, "h6"],
+              [7, "h4"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h5",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 22000
+          },
+          {
+            "host": "h6",
+            "podName": "app",
+            "podSeq": 3,
+            "t": 22000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 22000,
+      "objName": "/d",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "hd"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "double",
+            "v": -1.5
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": false,
+        "pushSeq": true,
+        "podSeq": 4,
+        "podName": "app",
+        "hostName": "hd",
+        "calls": [
+          {
+            "objHash": 421171155,
+            "cmd": "OBJECT_SET_KUBE_SEQ",
+            "param": "0a010103736571140104"
+          }
+        ],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h5", 1],
+              ["h6", 3],
+              ["hd", 4]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h5"],
+              [2, "h3"],
+              [3, "h6"],
+              [4, "hd"],
+              [7, "h4"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h5",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 22000
+          },
+          {
+            "host": "h6",
+            "podName": "app",
+            "podSeq": 3,
+            "t": 22000
+          },
+          {
+            "host": "hd",
+            "podName": "app",
+            "podSeq": 4,
+            "t": 22000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 22000,
+      "objName": "/t",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "ht"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "text",
+            "v": "-1"
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": false,
+        "pushSeq": true,
+        "podSeq": 5,
+        "podName": "app",
+        "hostName": "ht",
+        "calls": [
+          {
+            "objHash": 78487479,
+            "cmd": "OBJECT_SET_KUBE_SEQ",
+            "param": "0a010103736571140105"
+          }
+        ],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h5", 1],
+              ["h6", 3],
+              ["hd", 4],
+              ["ht", 5]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h5"],
+              [2, "h3"],
+              [3, "h6"],
+              [4, "hd"],
+              [5, "ht"],
+              [7, "h4"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h5",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 22000
+          },
+          {
+            "host": "h6",
+            "podName": "app",
+            "podSeq": 3,
+            "t": 22000
+          },
+          {
+            "host": "hd",
+            "podName": "app",
+            "podSeq": 4,
+            "t": 22000
+          },
+          {
+            "host": "ht",
+            "podName": "app",
+            "podSeq": 5,
+            "t": 22000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 30000,
+      "objName": "/h7",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "p1"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "h7"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "decimal",
+            "v": -1
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": false,
+        "pushSeq": true,
+        "podSeq": 0,
+        "podName": "p1",
+        "hostName": "h7",
+        "calls": [
+          {
+            "objHash": -641098641,
+            "cmd": "OBJECT_SET_KUBE_SEQ",
+            "param": "0a0101037365711400"
+          }
+        ],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h5", 1],
+              ["h6", 3],
+              ["hd", 4],
+              ["ht", 5]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h5"],
+              [2, "h3"],
+              [3, "h6"],
+              [4, "hd"],
+              [5, "ht"],
+              [7, "h4"]
+            ]
+          },
+          {
+            "pod": "p1",
+            "hostSeq": [
+              ["h7", 0]
+            ],
+            "seqHost": [
+              [0, "h7"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h5",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 22000
+          },
+          {
+            "host": "h6",
+            "podName": "app",
+            "podSeq": 3,
+            "t": 22000
+          },
+          {
+            "host": "h7",
+            "podName": "p1",
+            "podSeq": 0,
+            "t": 30000
+          },
+          {
+            "host": "hd",
+            "podName": "app",
+            "podSeq": 4,
+            "t": 22000
+          },
+          {
+            "host": "ht",
+            "podName": "app",
+            "podSeq": 5,
+            "t": 22000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 45000,
+      "objName": "/h7",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "p2"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "h7"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "decimal",
+            "v": -1
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": true,
+        "pushSeq": false,
+        "podSeq": 0,
+        "podName": "p1",
+        "hostName": "h7",
+        "calls": [],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h5", 1],
+              ["h6", 3],
+              ["hd", 4],
+              ["ht", 5]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h5"],
+              [2, "h3"],
+              [3, "h6"],
+              [4, "hd"],
+              [5, "ht"],
+              [7, "h4"]
+            ]
+          },
+          {
+            "pod": "p1",
+            "hostSeq": [
+              ["h7", 0]
+            ],
+            "seqHost": [
+              [0, "h7"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h5",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 22000
+          },
+          {
+            "host": "h6",
+            "podName": "app",
+            "podSeq": 3,
+            "t": 22000
+          },
+          {
+            "host": "h7",
+            "podName": "p1",
+            "podSeq": 0,
+            "t": 30000
+          },
+          {
+            "host": "hd",
+            "podName": "app",
+            "podSeq": 4,
+            "t": 22000
+          },
+          {
+            "host": "ht",
+            "podName": "app",
+            "podSeq": 5,
+            "t": 22000
+          }
+        ]
+      }
+    },
+    {
+      "op": "inactive",
+      "t": 46000,
+      "podName": "p1",
+      "hostName": "h7",
+      "out": {
+        "calls": [],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h5", 1],
+              ["h6", 3],
+              ["hd", 4],
+              ["ht", 5]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h5"],
+              [2, "h3"],
+              [3, "h6"],
+              [4, "hd"],
+              [5, "ht"],
+              [7, "h4"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h5",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 22000
+          },
+          {
+            "host": "h6",
+            "podName": "app",
+            "podSeq": 3,
+            "t": 22000
+          },
+          {
+            "host": "hd",
+            "podName": "app",
+            "podSeq": 4,
+            "t": 22000
+          },
+          {
+            "host": "ht",
+            "podName": "app",
+            "podSeq": 5,
+            "t": 22000
+          }
+        ]
+      }
+    },
+    {
+      "op": "inactive",
+      "t": 46000,
+      "podName": "app",
+      "hostName": null,
+      "out": {
+        "calls": [],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h5", 1],
+              ["h6", 3],
+              ["hd", 4],
+              ["ht", 5]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h5"],
+              [2, "h3"],
+              [3, "h6"],
+              [4, "hd"],
+              [5, "ht"],
+              [7, "h4"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h5",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 22000
+          },
+          {
+            "host": "h6",
+            "podName": "app",
+            "podSeq": 3,
+            "t": 22000
+          },
+          {
+            "host": "hd",
+            "podName": "app",
+            "podSeq": 4,
+            "t": 22000
+          },
+          {
+            "host": "ht",
+            "podName": "app",
+            "podSeq": 5,
+            "t": 22000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 50000,
+      "objName": "/h8",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "h8"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "decimal",
+            "v": 50
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": true,
+        "pushSeq": false,
+        "podSeq": 50,
+        "podName": "app",
+        "hostName": "h8",
+        "calls": [],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h5", 1],
+              ["h6", 3],
+              ["h8", 50],
+              ["hd", 4],
+              ["ht", 5]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h5"],
+              [2, "h3"],
+              [3, "h6"],
+              [4, "hd"],
+              [5, "ht"],
+              [7, "h4"],
+              [50, "h8"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h5",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 22000
+          },
+          {
+            "host": "h6",
+            "podName": "app",
+            "podSeq": 3,
+            "t": 22000
+          },
+          {
+            "host": "hd",
+            "podName": "app",
+            "podSeq": 4,
+            "t": 22000
+          },
+          {
+            "host": "ht",
+            "podName": "app",
+            "podSeq": 5,
+            "t": 22000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 50000,
+      "objName": "/h8",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "h8"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "decimal",
+            "v": -1
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": false,
+        "pushSeq": true,
+        "podSeq": 50,
+        "podName": "app",
+        "hostName": "h8",
+        "calls": [
+          {
+            "objHash": 1232503294,
+            "cmd": "OBJECT_SET_KUBE_SEQ",
+            "param": "0a010103736571140132"
+          }
+        ],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h5", 1],
+              ["h6", 3],
+              ["h8", 50],
+              ["hd", 4],
+              ["ht", 5]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h5"],
+              [2, "h3"],
+              [3, "h6"],
+              [4, "hd"],
+              [5, "ht"],
+              [7, "h4"],
+              [50, "h8"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h5",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 22000
+          },
+          {
+            "host": "h6",
+            "podName": "app",
+            "podSeq": 3,
+            "t": 22000
+          },
+          {
+            "host": "h8",
+            "podName": "app",
+            "podSeq": 50,
+            "t": 50000
+          },
+          {
+            "host": "hd",
+            "podName": "app",
+            "podSeq": 4,
+            "t": 22000
+          },
+          {
+            "host": "ht",
+            "podName": "app",
+            "podSeq": 5,
+            "t": 22000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 50000,
+      "objName": "/h9",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "h9"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "decimal",
+            "v": 50
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": false,
+        "pushSeq": true,
+        "podSeq": 6,
+        "podName": "app",
+        "hostName": "h9",
+        "calls": [
+          {
+            "objHash": 1047638376,
+            "cmd": "OBJECT_SET_KUBE_SEQ",
+            "param": "0a010103736571140106"
+          }
+        ],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h5", 1],
+              ["h6", 3],
+              ["h8", 50],
+              ["h9", 6],
+              ["hd", 4],
+              ["ht", 5]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h5"],
+              [2, "h3"],
+              [3, "h6"],
+              [4, "hd"],
+              [5, "ht"],
+              [6, "h9"],
+              [7, "h4"],
+              [50, "h8"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h5",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 22000
+          },
+          {
+            "host": "h6",
+            "podName": "app",
+            "podSeq": 3,
+            "t": 22000
+          },
+          {
+            "host": "h8",
+            "podName": "app",
+            "podSeq": 50,
+            "t": 50000
+          },
+          {
+            "host": "h9",
+            "podName": "app",
+            "podSeq": 6,
+            "t": 50000
+          },
+          {
+            "host": "hd",
+            "podName": "app",
+            "podSeq": 4,
+            "t": 22000
+          },
+          {
+            "host": "ht",
+            "podName": "app",
+            "podSeq": 5,
+            "t": 22000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 70000,
+      "objName": "/h9",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "h9"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "decimal",
+            "v": -1
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": true,
+        "pushSeq": false,
+        "podSeq": 6,
+        "podName": "app",
+        "hostName": "h9",
+        "calls": [],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h5", 1],
+              ["h6", 3],
+              ["h8", 50],
+              ["hd", 4],
+              ["ht", 5]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h5"],
+              [2, "h3"],
+              [3, "h6"],
+              [4, "hd"],
+              [5, "ht"],
+              [7, "h4"],
+              [50, "h8"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h5",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 22000
+          },
+          {
+            "host": "h6",
+            "podName": "app",
+            "podSeq": 3,
+            "t": 22000
+          },
+          {
+            "host": "h8",
+            "podName": "app",
+            "podSeq": 50,
+            "t": 50000
+          },
+          {
+            "host": "h9",
+            "podName": "app",
+            "podSeq": 6,
+            "t": 50000
+          },
+          {
+            "host": "hd",
+            "podName": "app",
+            "podSeq": 4,
+            "t": 22000
+          },
+          {
+            "host": "ht",
+            "podName": "app",
+            "podSeq": 5,
+            "t": 22000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 70000,
+      "objName": "/h9",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "h9"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "decimal",
+            "v": -1
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": true,
+        "pushSeq": false,
+        "podSeq": 6,
+        "podName": "app",
+        "hostName": "h9",
+        "calls": [],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h5", 1],
+              ["h6", 3],
+              ["h8", 50],
+              ["hd", 4],
+              ["ht", 5]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h5"],
+              [2, "h3"],
+              [3, "h6"],
+              [4, "hd"],
+              [5, "ht"],
+              [7, "h4"],
+              [50, "h8"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h5",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 22000
+          },
+          {
+            "host": "h6",
+            "podName": "app",
+            "podSeq": 3,
+            "t": 22000
+          },
+          {
+            "host": "h8",
+            "podName": "app",
+            "podSeq": 50,
+            "t": 50000
+          },
+          {
+            "host": "h9",
+            "podName": "app",
+            "podSeq": 6,
+            "t": 50000
+          },
+          {
+            "host": "hd",
+            "podName": "app",
+            "podSeq": 4,
+            "t": 22000
+          },
+          {
+            "host": "ht",
+            "podName": "app",
+            "podSeq": 5,
+            "t": 22000
+          }
+        ]
+      }
+    },
+    {
+      "op": "inactive",
+      "t": 71000,
+      "podName": "app",
+      "hostName": "h9",
+      "out": {
+        "calls": [],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h5", 1],
+              ["h6", 3],
+              ["h8", 50],
+              ["hd", 4],
+              ["ht", 5]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h5"],
+              [2, "h3"],
+              [3, "h6"],
+              [4, "hd"],
+              [5, "ht"],
+              [7, "h4"],
+              [50, "h8"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h5",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 22000
+          },
+          {
+            "host": "h6",
+            "podName": "app",
+            "podSeq": 3,
+            "t": 22000
+          },
+          {
+            "host": "h8",
+            "podName": "app",
+            "podSeq": 50,
+            "t": 50000
+          },
+          {
+            "host": "hd",
+            "podName": "app",
+            "podSeq": 4,
+            "t": 22000
+          },
+          {
+            "host": "ht",
+            "podName": "app",
+            "podSeq": 5,
+            "t": 22000
+          }
+        ]
+      }
+    },
+    {
+      "op": "active",
+      "t": 71000,
+      "objName": "/h9",
+      "tags": [
+        [
+          "podName",
+          {
+            "t": "text",
+            "v": "app"
+          }
+        ],
+        [
+          "hostName",
+          {
+            "t": "text",
+            "v": "h9"
+          }
+        ],
+        [
+          "useKubeSeq",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "kubeSeq",
+          {
+            "t": "decimal",
+            "v": -1
+          }
+        ]
+      ],
+      "out": {
+        "allowProceed": false,
+        "pushSeq": true,
+        "podSeq": 6,
+        "podName": "app",
+        "hostName": "h9",
+        "calls": [
+          {
+            "objHash": 1047638376,
+            "cmd": "OBJECT_SET_KUBE_SEQ",
+            "param": "0a010103736571140106"
+          }
+        ],
+        "managers": [
+          {
+            "pod": "app",
+            "hostSeq": [
+              ["h1", 0],
+              ["h3", 2],
+              ["h5", 1],
+              ["h6", 3],
+              ["h8", 50],
+              ["h9", 6],
+              ["hd", 4],
+              ["ht", 5]
+            ],
+            "seqHost": [
+              [0, "h1"],
+              [1, "h5"],
+              [2, "h3"],
+              [3, "h6"],
+              [4, "hd"],
+              [5, "ht"],
+              [6, "h9"],
+              [7, "h4"],
+              [50, "h8"]
+            ]
+          }
+        ],
+        "initial": [
+          {
+            "host": "h2",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 5000
+          },
+          {
+            "host": "h5",
+            "podName": "app",
+            "podSeq": 1,
+            "t": 22000
+          },
+          {
+            "host": "h6",
+            "podName": "app",
+            "podSeq": 3,
+            "t": 22000
+          },
+          {
+            "host": "h8",
+            "podName": "app",
+            "podSeq": 50,
+            "t": 50000
+          },
+          {
+            "host": "h9",
+            "podName": "app",
+            "podSeq": 6,
+            "t": 71000
+          },
+          {
+            "host": "hd",
+            "podName": "app",
+            "podSeq": 4,
+            "t": 22000
+          },
+          {
+            "host": "ht",
+            "podName": "app",
+            "podSeq": 5,
+            "t": 22000
+          }
+        ]
+      }
+    }
+  ]
+}

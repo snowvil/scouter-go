@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Counters>
+ <Familys>
+  <Family name="myfam" master="cpu">
+   <Counter name="cpu" disp="CPU" unit="%" icon="cpu" all="true" total="false"/>
+   <Counter name="mem" disp="Mem" unit="MB"/>
+  </Family>
+  <Family name="zws-metric.x" master="a"><Counter name="a"/></Family>
+  <Family name="myfam" master="mem"/>
+ </Familys>
+ <Types>
+  <ObjectType name="t1" disp="T1" family="myfam" icon="java" sub-object="false">
+   <Counter name="extra" disp="Extra" unit=""/>
+  </ObjectType>
+  <ObjectType name="t2" family="myfam"/>
+  <ObjectType name="t1" disp="T1dup" family="myfam" icon="host" sub-object="true"/>
+ </Types>
+</Counters>

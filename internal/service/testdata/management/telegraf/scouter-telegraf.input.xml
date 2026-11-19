@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TelegrafConfig>
+    <enabled>true</enabled>
+    <debugEnabled>false</debugEnabled>
+    <deltaCounterNormalizeDefault>true</deltaCounterNormalizeDefault>
+    <deltaCounterNormalizeDefaultSeconds>30</deltaCounterNormalizeDefaultSeconds>
+    <objectDeadtimeMs>45000</objectDeadtimeMs>
+    <measurements>
+        <measurement>
+            <measurementName>syn</measurementName>
+            <enabled>true</enabled>
+            <debugEnabled>false</debugEnabled>
+            <objFamilyBase>SYN_FAMILY</objFamilyBase>
+            <objFamilyAppendTags><tag>tier</tag></objFamilyAppendTags>
+            <objTypeBase>SYN_TYPE</objTypeBase>
+            <objTypePrependTags><tag>scouter_obj_type_prefix</tag></objTypePrependTags>
+            <objTypeAppendTags><tag>tier</tag></objTypeAppendTags>
+            <objTypeIcon>redis</objTypeIcon>
+            <objNameBase>SYN_NAME</objNameBase>
+            <objNameAppendTags><tag>port</tag></objNameAppendTags>
+            <hostTag>host</hostTag>
+            <hostMappings><hostMapping><telegraf>raw-host</telegraf><scouter>mapped-host</scouter></hostMapping></hostMappings>
+            <tagFilters><tagFilter><tag>tier</tag><match>web</match><match>!skip</match></tagFilter></tagFilters>
+            <counterMappings>
+                <counterMapping><tgFieldName>gauge</tgFieldName><counterName>syn_gauge_$port$</counterName><displayName>Gauge $port$</displayName><unit>cnt</unit><totalizable>true</totalizable><normalizeSeconds>0</normalizeSeconds><deltaType>NONE</deltaType></counterMapping>
+                <counterMapping><tgFieldName>norm</tgFieldName><counterName>syn_norm</counterName><displayName>Norm</displayName><unit>ms</unit><totalizable>false</totalizable><normalizeSeconds>30</normalizeSeconds><deltaType>NONE</deltaType></counterMapping>
+                <counterMapping><tgFieldName>bytes</tgFieldName><counterName>syn_bytes</counterName><displayName>Bytes</displayName><unit>b</unit><totalizable>false</totalizable><normalizeSeconds>0</normalizeSeconds><deltaType>DELTA</deltaType></counterMapping>
+                <counterMapping><tgFieldName>reqs</tgFieldName><counterName>syn_reqs</counterName><displayName>Reqs</displayName><unit>cnt</unit><totalizable>true</totalizable><normalizeSeconds>0</normalizeSeconds><deltaType>BOTH</deltaType></counterMapping>
+            </counterMappings>
+        </measurement>
+        <measurement>
+            <measurementName>off</measurementName>
+            <enabled>false</enabled>
+            <objFamilyBase>OFF_FAMILY</objFamilyBase>
+            <objTypeBase>OFF_TYPE</objTypeBase>
+            <objNameBase>OFF_NAME</objNameBase>
+            <counterMappings><counterMapping><tgFieldName>v</tgFieldName><counterName>off_v</counterName></counterMapping></counterMappings>
+        </measurement>
+        <measurement>
+            <measurementName>nofamily</measurementName>
+            <objTypeBase>NF_TYPE</objTypeBase>
+            <counterMappings><counterMapping><tgFieldName>v</tgFieldName><counterName>nf_v</counterName></counterMapping></counterMappings>
+        </measurement>
+    </measurements>
+</TelegrafConfig>

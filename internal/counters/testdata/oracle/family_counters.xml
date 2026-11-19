@@ -1,0 +1,1 @@
+<Counters><Familys><Family name="f" master="c" extra="1"><Counter name="c"/><Counter name="d" all="false" total="true" unit="ms" icon="i" disp="D" foo="bar"/><Group><Counter name="nested"/></Group></Family><Family name="zps-metric.q"/><Family name="g"><!-- c --></Family></Familys><Types><ObjectType name="t" family="f"><Counter name="own"/></ObjectType></Types></Counters>

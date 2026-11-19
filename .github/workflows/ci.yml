@@ -1,0 +1,60 @@
+name: compatibility-foundation
+
+on:
+  pull_request:
+  push:
+    branches: [master, 'codex/**']
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      GOMAXPROCS: '2'
+      GOTOOLCHAIN: local
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+        with:
+          go-version-file: go.mod
+          cache: false
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
+        with:
+          distribution: temurin
+          java-version: '8'
+      - name: Keep Java 8 runtime for pinned Scala compiler
+        run: echo "SCOUTER_SCALA_JAVA=$JAVA_HOME/bin/java" >> "$GITHUB_ENV"
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Check out pinned Java oracle source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          repository: snowvil/scouter
+          ref: dee47fb5f4003cecbb146c5acfff8d2ebeaf07f5
+          path: .tools/scouter-source
+          persist-credentials: false
+      - name: Check, race, bounded fuzz and actual Java integration
+        env:
+          SCOUTER_SOURCE: ${{ github.workspace }}/.tools/scouter-source
+        run: |
+          make check
+          make race
+          make fuzz FUZZTIME=5s
+          make storage-check
+          make java-integration
+      - name: Regenerate and compare source evidence
+        env:
+          SCOUTER_SOURCE: ${{ github.workspace }}/.tools/scouter-source
+        run: |
+          java -version
+          javac -version
+          python3 --version
+          make inventory-check
+          make fixtures-check

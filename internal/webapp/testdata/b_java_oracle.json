@@ -1,0 +1,329 @@
+{
+  "timezone" : "Asia/Seoul",
+  "steps" : [ {
+    "hex" : "010001010203e90133010b010c010d",
+    "json" : "{\"parent\":\"0\",\"index\":\"1\",\"start_time\":\"1001\",\"start_cpu\":\"51\",\"spanPack\":null,\"hash\":\"11\",\"elapsed\":\"12\",\"cputime\":\"13\",\"stepType\":\"1\",\"order\":\"1\",\"stepTypeName\":\"METHOD\"}"
+  }, {
+    "hex" : "0a010101020203ea013401f5010c010d010e",
+    "json" : "{\"parent\":\"1\",\"index\":\"2\",\"start_time\":\"1002\",\"start_cpu\":\"52\",\"spanPack\":null,\"hash\":\"-11\",\"elapsed\":\"12\",\"cputime\":\"13\",\"error\":\"14\",\"stepType\":\"10\",\"order\":\"2\",\"stepTypeName\":\"METHOD2\"}"
+  }, {
+    "hex" : "02010201030203eb013501150116011703612c620118",
+    "json" : "{\"parent\":\"2\",\"index\":\"3\",\"start_time\":\"1003\",\"start_cpu\":\"53\",\"spanPack\":null,\"hash\":\"21\",\"elapsed\":\"22\",\"cputime\":\"23\",\"param\":\"a,b\",\"error\":\"24\",\"stepType\":\"2\",\"order\":\"3\",\"stepTypeName\":\"SQL\"}"
+  }, {
+    "hex" : "08010301040203ec01360115000001700001",
+    "json" : "{\"parent\":\"3\",\"index\":\"4\",\"start_time\":\"1004\",\"start_cpu\":\"54\",\"spanPack\":null,\"hash\":\"21\",\"elapsed\":\"0\",\"cputime\":\"0\",\"param\":\"p\",\"error\":\"0\",\"xtype\":\"1\",\"stepType\":\"8\",\"xtypePrefix\":\"PRE> \",\"order\":\"4\",\"stepTypeName\":\"SQL2\"}"
+  }, {
+    "hex" : "10010401050203ed01370115000000001201ff",
+    "json" : "{\"parent\":\"4\",\"index\":\"5\",\"start_time\":\"1005\",\"start_cpu\":\"55\",\"spanPack\":null,\"hash\":\"21\",\"elapsed\":\"0\",\"cputime\":\"0\",\"param\":\"\",\"error\":\"0\",\"xtype\":\"18\",\"updated\":\"-1\",\"stepType\":\"16\",\"xtypePrefix\":\"DYN> \",\"order\":\"5\",\"stepTypeName\":\"SQL3\"}"
+  }, {
+    "hex" : "03010501060203ee01380e68656c6c6f2022776f726c64220a",
+    "json" : "{\"parent\":\"5\",\"index\":\"6\",\"start_time\":\"1006\",\"start_cpu\":\"56\",\"spanPack\":null,\"message\":\"hello \\\"world\\\"\\n\",\"stepType\":\"3\",\"order\":\"6\",\"stepTypeName\":\"MESSAGE\"}"
+  }, {
+    "hex" : "09010601070203ef0139011f01200121",
+    "json" : "{\"parent\":\"6\",\"index\":\"7\",\"start_time\":\"1007\",\"start_cpu\":\"57\",\"spanPack\":null,\"hash\":\"31\",\"time\":\"32\",\"value\":\"33\",\"stepType\":\"9\",\"order\":\"7\",\"stepTypeName\":\"HASHED_MESSAGE\"}"
+  }, {
+    "hex" : "11010701080203f0013a0129012a01020478037903",
+    "json" : "{\"parent\":\"7\",\"index\":\"8\",\"start_time\":\"1008\",\"start_cpu\":\"58\",\"spanPack\":null,\"hash\":\"41\",\"elapsed\":\"42\",\"level\":\"WARN\",\"stepType\":\"17\",\"order\":\"8\",\"stepTypeName\":\"PARAMETERIZED_MESSAGE\"}"
+  }, {
+    "hex" : "05010801090203f1013b047f0000010217d401330134",
+    "json" : "{\"parent\":\"8\",\"index\":\"9\",\"start_time\":\"1009\",\"start_cpu\":\"59\",\"spanPack\":null,\"ipaddr\":\"fwAAAQ==\",\"port\":\"6100\",\"elapsed\":\"51\",\"error\":\"52\",\"stepType\":\"5\",\"socketId\":\"7286647450591303636\",\"order\":\"9\",\"stepTypeName\":\"SOCKET\"}"
+  }, {
+    "hex" : "060109010a0203f2013c050218711a00013d013e013f01400108687474703a2f2f61",
+    "json" : "{\"parent\":\"9\",\"index\":\"10\",\"start_time\":\"1010\",\"start_cpu\":\"60\",\"spanPack\":null,\"txid\":\"9000000000\",\"hash\":\"61\",\"elapsed\":\"62\",\"cputime\":\"63\",\"error\":\"64\",\"opt\":\"1\",\"address\":\"http://a\",\"stepType\":\"6\",\"order\":\"10\",\"stepTypeName\":\"APICALL\"}"
+  }, {
+    "hex" : "0f010a010b0203f3013d01fb013d0000000001",
+    "json" : "{\"parent\":\"10\",\"index\":\"11\",\"start_time\":\"1011\",\"start_cpu\":\"61\",\"spanPack\":null,\"txid\":\"-5\",\"hash\":\"61\",\"elapsed\":\"0\",\"cputime\":\"0\",\"error\":\"0\",\"opt\":\"0\",\"address\":null,\"start\":\"0\",\"async\":\"1\",\"stepType\":\"15\",\"order\":\"11\",\"stepTypeName\":\"APICALL2\"}"
+  }, {
+    "hex" : "07010b010c0203f4013e0107014701480149014a",
+    "json" : "{\"parent\":\"11\",\"index\":\"12\",\"start_time\":\"1012\",\"start_cpu\":\"62\",\"spanPack\":null,\"txid\":\"7\",\"hash\":\"71\",\"elapsed\":\"72\",\"cputime\":\"73\",\"error\":\"74\",\"stepType\":\"7\",\"order\":\"12\",\"stepTypeName\":\"THREAD_SUBMIT\"}"
+  }, {
+    "hex" : "0c010c010d0203f5013f000200000051ffffffae0000000000000053046d61696e0852554e4e41424c45ffffffffffffffff00016f",
+    "json" : "{\"parent\":\"12\",\"index\":\"13\",\"start_time\":\"1013\",\"start_cpu\":\"63\",\"spanPack\":null,\"stacks\":[\"81\",\"-82\"],\"threadId\":\"83\",\"threadName\":\"main\",\"threadState\":\"RUNNABLE\",\"lockOwnerId\":\"-1\",\"lockName\":\"\",\"lockOwnerName\":\"o\",\"stepType\":\"12\",\"order\":\"13\",\"stepTypeName\":\"DUMP\"}"
+  }, {
+    "hex" : "0d010d010e0203f601400108015b00000002",
+    "json" : "{\"parent\":\"13\",\"index\":\"14\",\"start_time\":\"1014\",\"start_cpu\":\"64\",\"spanPack\":null,\"txid\":\"8\",\"hash\":\"91\",\"elapsed\":\"0\",\"cputime\":\"0\",\"error\":\"0\",\"opt\":\"2\",\"address\":null,\"stepType\":\"13\",\"order\":\"14\",\"stepTypeName\":\"DISPATCH\"}"
+  }, {
+    "hex" : "0e010e010f0203f7014101090165016601",
+    "json" : "{\"parent\":\"14\",\"index\":\"15\",\"start_time\":\"1015\",\"start_cpu\":\"65\",\"spanPack\":null,\"txid\":\"9\",\"hash\":\"101\",\"elapsed\":\"102\",\"threaded\":\"1\",\"nameTemp\":null,\"isIgnoreIfNoThreaded\":false,\"stepType\":\"14\",\"order\":\"15\",\"stepTypeName\":\"THREAD_CALL_POSSIBLE\"}"
+  }, {
+    "hex" : "0b016f017001710172",
+    "json" : "{\"hash\":\"111\",\"count\":\"112\",\"elapsed\":\"113\",\"cputime\":\"114\",\"stepType\":\"11\",\"order\":\"2147483647\",\"stepTypeName\":\"METHOD_SUM\"}"
+  }, {
+    "hex" : "150179017a017b017c017d0170027065",
+    "json" : "{\"hash\":\"121\",\"count\":\"122\",\"elapsed\":\"123\",\"cputime\":\"124\",\"error\":\"125\",\"param\":\"p\",\"param_error\":\"pe\",\"stepType\":\"21\",\"paramError\":\"pe\",\"order\":\"2147483647\",\"stepTypeName\":\"SQL_SUM\"}"
+  }, {
+    "hex" : "2b02008302008402008502008602008700",
+    "json" : "{\"hash\":\"131\",\"count\":\"132\",\"elapsed\":\"133\",\"cputime\":\"134\",\"error\":\"135\",\"opt\":\"0\",\"stepType\":\"43\",\"order\":\"2147483647\",\"stepTypeName\":\"APICALL_SUM\"}"
+  }, {
+    "hex" : "2a040102030402008d02008e02008f020090",
+    "json" : "{\"ipaddr\":\"AQIDBA==\",\"port\":\"141\",\"count\":\"142\",\"elapsed\":\"143\",\"error\":\"144\",\"stepType\":\"42\",\"order\":\"2147483647\",\"stepTypeName\":\"SOCKET_SUM\"}"
+  }, {
+    "hex" : "1f016d020097",
+    "json" : "{\"message\":\"m\",\"count\":\"151\",\"stepType\":\"31\",\"order\":\"2147483647\",\"stepTypeName\":\"MESSAGE_SUM\"}"
+  }, {
+    "hex" : "6319202a2a2050726f66696c65205472756e6361746564202a2a200200a1",
+    "json" : "{\"message\":\" ** Profile Truncated ** \",\"code\":\"161\",\"stepType\":\"99\",\"order\":\"2147483647\",\"stepTypeName\":\"CONTROL\"}"
+  }, {
+    "hex" : "33010f01100203f8014203ed2979014d0103080000018bcfe5687b02016f040a0000011f900004c0a80102fffe010046010214080000018bcfe5680114080000018bcfe5680246010232026373320263725001040162320178016132017910687474702e7374617475735f636f6465140200c80b687474702e6d6574686f643203474554",
+    "json" : "{\"parent\":\"15\",\"index\":\"16\",\"start_time\":\"1016\",\"start_cpu\":\"66\",\"spanPack\":null,\"nameDebug\":null,\"hash\":\"-1234567\",\"elapsed\":\"77\",\"error\":\"3\",\"timestamp\":\"1700000000123\",\"spanType\":\"2\",\"localEndpointServiceName\":\"111\",\"localEndpointIp\":\"CgAAAQ==\",\"localEndpointPort\":\"8080\",\"remoteEndpointServiceName\":\"0\",\"remoteEndpointIp\":\"wKgBAg==\",\"remoteEndpointPort\":\"-2\",\"debug\":true,\"shared\":false,\"annotationTimestamps\":{\"valueType\":\"70\"},\"annotationValues\":{\"valueType\":\"70\"},\"tags\":{\"valueType\":\"80\",\"empty\":false},\"stepType\":\"51\",\"order\":\"16\",\"stepTypeName\":\"SPAN\"}",
+    "sspan" : "{\"parent\":\"15\",\"index\":\"16\",\"start_time\":\"1016\",\"start_cpu\":\"0\",\"spanPack\":null,\"hash\":\"-1234567\",\"elapsed\":\"77\",\"error\":\"3\",\"timestamp\":\"1700000000123\",\"spanType\":\"2\",\"localEndpoint\":{\"hash\":\"111\",\"serviceName\":\"object#111\",\"ip\":\"10.0.0.1\",\"port\":\"8080\"},\"remoteEndpoint\":{\"hash\":\"0\",\"serviceName\":\"\",\"ip\":\"192.168.1.2\",\"port\":\"-2\"},\"debug\":true,\"shared\":false,\"annotations\":[{\"timestamp\":\"1700000000001\",\"value\":\"cs\"},{\"timestamp\":\"1700000000002\",\"value\":\"cr\"}],\"tags\":{\"a\":\"y\",\"http.status_code\":\"200\",\"b\":\"x\",\"http.method\":\"GET\"},\"stepType\":\"51\",\"order\":\"16\",\"stepTypeName\":\"SPAN\"}"
+  }, {
+    "hex" : "34011001110203f9014303ed2979014d0103080000018bcfe5687b02016f040a0000011f900004c0a80102fffe010046010214080000018bcfe5680114080000018bcfe5680246010232026373320263725001040162320178016132017910687474702e7374617475735f636f6465140200c80b687474702e6d6574686f6432034745540200ab01046164647201",
+    "json" : "{\"parent\":\"16\",\"index\":\"17\",\"start_time\":\"1017\",\"start_cpu\":\"67\",\"spanPack\":null,\"nameDebug\":null,\"hash\":\"-1234567\",\"elapsed\":\"77\",\"error\":\"3\",\"timestamp\":\"1700000000123\",\"spanType\":\"2\",\"localEndpointServiceName\":\"111\",\"localEndpointIp\":\"CgAAAQ==\",\"localEndpointPort\":\"8080\",\"remoteEndpointServiceName\":\"0\",\"remoteEndpointIp\":\"wKgBAg==\",\"remoteEndpointPort\":\"-2\",\"debug\":true,\"shared\":false,\"annotationTimestamps\":{\"valueType\":\"70\"},\"annotationValues\":{\"valueType\":\"70\"},\"tags\":{\"valueType\":\"80\",\"empty\":false},\"txid\":\"171\",\"address\":\"addr\",\"async\":\"1\",\"stepType\":\"52\",\"order\":\"17\",\"stepTypeName\":\"SPANCALL\"}",
+    "sspan" : "{\"parent\":\"16\",\"index\":\"17\",\"start_time\":\"1017\",\"start_cpu\":\"0\",\"spanPack\":null,\"hash\":\"-1234567\",\"elapsed\":\"77\",\"error\":\"3\",\"timestamp\":\"1700000000123\",\"spanType\":\"2\",\"localEndpoint\":{\"hash\":\"111\",\"serviceName\":\"object#111\",\"ip\":\"10.0.0.1\",\"port\":\"8080\"},\"remoteEndpoint\":{\"hash\":\"0\",\"serviceName\":\"\",\"ip\":\"192.168.1.2\",\"port\":\"-2\"},\"debug\":true,\"shared\":false,\"annotations\":[{\"timestamp\":\"1700000000001\",\"value\":\"cs\"},{\"timestamp\":\"1700000000002\",\"value\":\"cr\"}],\"tags\":{\"a\":\"y\",\"http.status_code\":\"200\",\"b\":\"x\",\"http.method\":\"GET\"},\"txid\":\"171\",\"opt\":\"0\",\"address\":\"addr\",\"async\":\"1\",\"stepType\":\"52\",\"order\":\"17\",\"stepTypeName\":\"SPANCALL\"}"
+  } ],
+  "xlog" : {
+    "hex" : "1574080000018bcfe56be7019b0200cafffffffffffffed1000000000000019400000000000001f902025e0202c30203280109010a04ac100009010b010c01f3010e010f011001110112024b52011303011400011501160101170274310001180119011a011b027433027434027435011c00011d0000",
+    "sxlog" : "{\"endTime\":\"1700000000999\",\"objHash\":\"-101\",\"service\":\"202\",\"txid\":\"-303\",\"threadNameHash\":\"23\",\"caller\":\"404\",\"gxid\":\"505\",\"elapsed\":\"606\",\"error\":\"707\",\"cpu\":\"808\",\"sqlCount\":\"9\",\"sqlTime\":\"10\",\"ipaddr\":\"172.16.0.9\",\"kbytes\":\"11\",\"userid\":\"-13\",\"userAgent\":\"14\",\"referrer\":\"15\",\"group\":\"16\",\"apicallCount\":\"17\",\"apicallTime\":\"18\",\"countryCode\":\"KR\",\"city\":\"19\",\"login\":\"20\",\"desc\":\"0\",\"hasDump\":\"1\",\"text1\":\"t1\",\"text2\":\"\",\"text3\":\"t3\",\"text4\":\"t4\",\"text5\":\"t5\",\"queuingHostHash\":\"24\",\"queuingTime\":\"25\",\"queuing2ndHostHash\":\"26\",\"queuing2ndTime\":\"27\",\"profileCount\":\"28\",\"profileSize\":\"29\",\"xtype\":\"3\"}",
+    "xlogData" : "{\"endTime\":\"1700000000999\",\"objHash\":\"-101\",\"service\":\"service#202\",\"txid\":\"-303\",\"threadName\":\"hmsg#23\",\"caller\":\"404\",\"gxid\":\"505\",\"elapsed\":\"606\",\"error\":\"error#707\",\"cpu\":\"808\",\"sqlCount\":\"9\",\"sqlTime\":\"10\",\"ipAddr\":\"172.16.0.9\",\"allocatedMemory\":\"11\",\"internalId\":\"-13\",\"userAgent\":\"ua#14\",\"referrer\":\"referer#15\",\"group\":\"group#16\",\"apicallCount\":\"17\",\"apicallTime\":\"18\",\"countryCode\":\"KR\",\"city\":\"city#19\",\"login\":\"login#20\",\"desc\":\"\",\"hasDump\":\"1\",\"text1\":\"t1\",\"text2\":\"\",\"text3\":\"t3\",\"text4\":\"t4\",\"text5\":\"t5\",\"queuingHost\":\"hmsg#24\",\"queuingTime\":\"25\",\"queuing2ndHost\":\"hmsg#26\",\"queuing2ndTime\":\"27\",\"xlogType\":\"ASYNCSERVLET_DISPATCHED_SERVICE\"}"
+  },
+  "doubles" : [ {
+    "bits" : "0",
+    "double" : "0.0",
+    "decimalValue" : "0.0"
+  }, {
+    "bits" : "-9223372036854775808",
+    "double" : "-0.0",
+    "decimalValue" : "-0.0"
+  }, {
+    "bits" : "4607182418800017408",
+    "double" : "1.0",
+    "decimalValue" : "1.0"
+  }, {
+    "bits" : "4591870180066957722",
+    "double" : "0.1",
+    "decimalValue" : "0.1"
+  }, {
+    "bits" : "4564560351926583034",
+    "double" : "0.0015",
+    "decimalValue" : "0.0015"
+  }, {
+    "bits" : "4562249897231350913",
+    "double" : "9.99E-4",
+    "decimalValue" : "0.000999"
+  }, {
+    "bits" : "4698053236609777664",
+    "double" : "1234567.0",
+    "decimalValue" : "1234567.0"
+  }, {
+    "bits" : "4711630319722168320",
+    "double" : "1.0E7",
+    "decimalValue" : "10000000.0"
+  }, {
+    "bits" : "4712889646492470477",
+    "double" : "1.23456789E7",
+    "decimalValue" : "12345678.9"
+  }, {
+    "bits" : "4457293557087583675",
+    "double" : "1.0E-10",
+    "decimalValue" : "0.0000000001"
+  }, {
+    "bits" : "-4296169272556792430",
+    "double" : "-2.5E21",
+    "decimalValue" : "-2500000000000000000000.0"
+  }, {
+    "bits" : "9218868437227405311",
+    "double" : "1.7976931348623157E308",
+    "decimalValue" : "179769313486231570000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0"
+  }, {
+    "bits" : "1",
+    "double" : "4.9E-324",
+    "decimalValue" : "0.0"
+  }, {
+    "bits" : "4629888066921343659",
+    "double" : "33.333333333333336",
+    "decimalValue" : "33.333333333333336"
+  } ],
+  "floats" : [ {
+    "bits" : "0",
+    "float" : "0.0"
+  }, {
+    "bits" : "1065353216",
+    "float" : "1.0"
+  }, {
+    "bits" : "1036831949",
+    "float" : "0.1"
+  }, {
+    "bits" : "2139095039",
+    "float" : "3.4028235E38"
+  }, {
+    "bits" : "1259902592",
+    "float" : "1.0E7"
+  }, {
+    "bits" : "1259902591",
+    "float" : "9999999.0"
+  }, {
+    "bits" : "981668463",
+    "float" : "0.001"
+  }, {
+    "bits" : "981582563",
+    "float" : "9.9E-4"
+  }, {
+    "bits" : "1",
+    "float" : "1.4E-45"
+  }, {
+    "bits" : "1107645781",
+    "float" : "33.333332"
+  } ],
+  "intSets" : [ {
+    "in" : [ 100, 1, 17, 33 ],
+    "order" : [ 1, 17, 33, 100 ]
+  }, {
+    "in" : [ 65536, 1, 16, 0, -1, 2147483647 ],
+    "order" : [ 16, 0, -1, 2147483647, 65536, 1 ]
+  }, {
+    "in" : [ 5, 4, 3, 2, 1, 0, 31, 47, 63, 79, 95, 111, 127, 143, 159 ],
+    "order" : [ 0, 1, 2, 3, 4, 5, 47, 79, 111, 143, 31, 63, 95, 127, 159 ]
+  } ],
+  "stringSets" : [ {
+    "in" : [ "service", "sql", "error", "apicall", "object", "ua", "hmsg" ],
+    "order" : [ "service", "apicall", "hmsg", "error", "ua", "sql", "object" ]
+  }, {
+    "in" : [ "http.method", "http.status_code", "b", "a" ],
+    "order" : [ "http.status_code", "a", "b", "http.method" ]
+  }, {
+    "in" : [ "k1", "k2", "k10", "한글", "]u:k" ],
+    "order" : [ "]u:k", "k1", "k2", "k10", "한글" ]
+  } ],
+  "formats" : [ {
+    "format" : "user %s login %s",
+    "args" : [ "a", "b" ],
+    "result" : "user a login b"
+  }, {
+    "format" : "%2$s-%1$s",
+    "args" : [ "a", "b" ],
+    "result" : "b-a"
+  }, {
+    "format" : "%s %<s %S",
+    "args" : [ "ab", "cd" ],
+    "result" : "ab ab CD"
+  }, {
+    "format" : "%-5s|%5s|%.1s",
+    "args" : [ "a", "b", "xyz" ],
+    "result" : "a    |    b|x"
+  }, {
+    "format" : "%d",
+    "args" : [ "1" ],
+    "result" : "%d"
+  }, {
+    "format" : "%s %s %s",
+    "args" : [ "a", "b" ],
+    "result" : "%s %s %s"
+  }, {
+    "format" : "100%% %s%n",
+    "args" : [ "z" ],
+    "result" : "100% z\n"
+  }, {
+    "format" : "%b %h",
+    "args" : [ "x", "abc" ],
+    "result" : "true 17862"
+  }, {
+    "format" : "no params",
+    "args" : [ "a" ],
+    "result" : "no params"
+  }, {
+    "format" : "%q",
+    "args" : [ "a" ],
+    "result" : "%q"
+  } ],
+  "simpleDate" : [ {
+    "in" : "20240101123456",
+    "millis" : "1704080096000"
+  }, {
+    "in" : "20240101250000",
+    "millis" : "1704124800000"
+  }, {
+    "in" : "20241301000000",
+    "millis" : "1735657200000"
+  }, {
+    "in" : "2024010112345678",
+    "millis" : "1704085718000"
+  }, {
+    "in" : "20240101123456xyz",
+    "millis" : "1704080096000"
+  }, {
+    "in" : "2024010112345",
+    "millis" : "1704080045000"
+  }, {
+    "in" : "2024010112ab56",
+    "error" : "ParseException"
+  }, {
+    "in" : "20240310023000",
+    "millis" : "1710005400000"
+  }, {
+    "in" : "",
+    "error" : "ParseException"
+  } ],
+  "localDateTime" : [ {
+    "pattern" : "yyyyMMddHHmm",
+    "in" : "202401011234",
+    "millis" : "1704080040000"
+  }, {
+    "pattern" : "yyyyMMddHHmm",
+    "in" : "202402301200",
+    "millis" : "1709175600000"
+  }, {
+    "pattern" : "yyyyMMddHHmm",
+    "in" : "202402321200",
+    "error" : "DateTimeParseException"
+  }, {
+    "pattern" : "yyyyMMddHHmm",
+    "in" : "202401012400",
+    "millis" : "1704121200000"
+  }, {
+    "pattern" : "yyyyMMddHHmm",
+    "in" : "202401012401",
+    "error" : "DateTimeParseException"
+  }, {
+    "pattern" : "yyyyMMddHHmm",
+    "in" : "20240101123",
+    "error" : "DateTimeParseException"
+  }, {
+    "pattern" : "yyyyMMddHH",
+    "in" : "2024010112",
+    "millis" : "1704078000000"
+  }, {
+    "pattern" : "yyyyMMddHH",
+    "in" : "2024013124",
+    "millis" : "1706713200000"
+  }, {
+    "pattern" : "yyyyMMddHH",
+    "in" : "2024133112",
+    "error" : "DateTimeParseException"
+  } ],
+  "shortener" : [ {
+    "url" : "http://localhost:6180/index.html?a=1",
+    "hash" : 986760441,
+    "hexa32" : "xtd1h7p"
+  }, {
+    "url" : "",
+    "hash" : 0,
+    "hexa32" : "0"
+  }, {
+    "url" : "한글",
+    "hash" : -1866879643,
+    "hexa32" : "z1nkckkr"
+  } ],
+  "hexa32" : [ {
+    "n" : "0",
+    "s" : "0"
+  }, {
+    "n" : "9",
+    "s" : "9"
+  }, {
+    "n" : "10",
+    "s" : "xa"
+  }, {
+    "n" : "-1",
+    "s" : "z1"
+  }, {
+    "n" : "-9223372036854775808",
+    "s" : "z8000000000000"
+  }, {
+    "n" : "9223372036854775807",
+    "s" : "x7vvvvvvvvvvvv"
+  }, {
+    "n" : "792539709424970410",
+    "s" : "xlvtalalalala"
+  } ]
+}

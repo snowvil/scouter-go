@@ -1,0 +1,476 @@
+{
+  "source": "scouter dee47fb5f4003cecbb146c5acfff8d2ebeaf07f5",
+  "order": "source declaration order (Java getDeclaredMethods order is unspecified)",
+  "GET_ALERT_REAL_COUNTER_DESC": [
+    {
+      "desc": "get current counter name.",
+      "methodName": "getCounter",
+      "returnTypeName": "java.lang.String",
+      "parameterTypeNames": []
+    },
+    {
+      "desc": "get current object hash value.",
+      "methodName": "getObjHash",
+      "returnTypeName": "int",
+      "parameterTypeNames": []
+    },
+    {
+      "desc": "get current object name.",
+      "methodName": "getObjName",
+      "returnTypeName": "java.lang.String",
+      "parameterTypeNames": []
+    },
+    {
+      "desc": "get current object type name.",
+      "methodName": "getObjType",
+      "returnTypeName": "java.lang.String",
+      "parameterTypeNames": []
+    },
+    {
+      "desc": "get comma separated object hashes string of the given object type.",
+      "methodName": "getObjHashListString",
+      "returnTypeName": "java.lang.String",
+      "parameterTypeNames": [
+        "java.lang.String"
+      ]
+    },
+    {
+      "desc": "get comma separated object hashes string of the given object type.",
+      "methodName": "getObjHashListWithParentsString",
+      "returnTypeName": "java.lang.String",
+      "parameterTypeNames": [
+        "java.lang.String"
+      ]
+    },
+    {
+      "desc": "get value of current counter as int.",
+      "methodName": "getIntValue",
+      "returnTypeName": "int",
+      "parameterTypeNames": []
+    },
+    {
+      "desc": "get value of current counter as float.",
+      "methodName": "getFloatValue",
+      "returnTypeName": "float",
+      "parameterTypeNames": []
+    },
+    {
+      "desc": "get the history size of the counter.",
+      "methodName": "getHistorySize",
+      "returnTypeName": "int",
+      "parameterTypeNames": []
+    },
+    {
+      "desc": "get how many times exceed the given value of the counter.",
+      "methodName": "getOverCount",
+      "returnTypeName": "int",
+      "parameterTypeNames": [
+        "int value, int sec"
+      ]
+    },
+    {
+      "desc": "get how many times exceed the given value of the counter.",
+      "methodName": "getOverCount",
+      "returnTypeName": "int",
+      "parameterTypeNames": [
+        "float value, int sec"
+      ]
+    },
+    {
+      "desc": "get average value of the counter in the given duration as int.",
+      "methodName": "getAvgToInt",
+      "returnTypeName": "int",
+      "parameterTypeNames": [
+        "int fromAgoSec, int durationSec"
+      ]
+    },
+    {
+      "desc": "get latest average value of the counter in the given duration.",
+      "methodName": "getLatestAvg",
+      "returnTypeName": "float",
+      "parameterTypeNames": [
+        "int durationSec"
+      ]
+    },
+    {
+      "desc": "get latest average value of the counter in the given duration as int.",
+      "methodName": "getLatestAvgToInt",
+      "returnTypeName": "int",
+      "parameterTypeNames": [
+        "int durationSec"
+      ]
+    },
+    {
+      "desc": "get average value of the counter in the given duration.",
+      "methodName": "getAvg",
+      "returnTypeName": "float",
+      "parameterTypeNames": [
+        "int fromAgoSec, int durationSec"
+      ]
+    },
+    {
+      "desc": "get oldest time of the counter's history.",
+      "methodName": "getHistoryOldestTime",
+      "returnTypeName": "long",
+      "parameterTypeNames": []
+    },
+    {
+      "desc": "get how many values (of the current counter) exist in the seconds.",
+      "methodName": "getHistoryCountInSec",
+      "returnTypeName": "int",
+      "parameterTypeNames": [
+        "int"
+      ]
+    },
+    {
+      "desc": "get the counter's value as float.",
+      "methodName": "getFloatValue",
+      "returnTypeName": "float",
+      "parameterTypeNames": [
+        "String counter"
+      ]
+    },
+    {
+      "desc": "get the another objects counter's value as float.",
+      "methodName": "getFloatValue",
+      "returnTypeName": "float",
+      "parameterTypeNames": [
+        "String objectFullName, String counter"
+      ]
+    },
+    {
+      "desc": "get the counter's value as int.",
+      "methodName": "getIntValue",
+      "returnTypeName": "int",
+      "parameterTypeNames": [
+        "String counter"
+      ]
+    },
+    {
+      "desc": "get the another objects counter's value as int.",
+      "methodName": "getIntValue",
+      "returnTypeName": "int",
+      "parameterTypeNames": [
+        "String objectFullName, String counter"
+      ]
+    },
+    {
+      "desc": "alert on info level.",
+      "methodName": "info",
+      "returnTypeName": "void",
+      "parameterTypeNames": [
+        "String title, String message"
+      ]
+    },
+    {
+      "desc": "alert on warn level.",
+      "methodName": "warn",
+      "returnTypeName": "void",
+      "parameterTypeNames": [
+        "String title, String message"
+      ]
+    },
+    {
+      "desc": "alert on error level.",
+      "methodName": "error",
+      "returnTypeName": "void",
+      "parameterTypeNames": [
+        "String title, String message"
+      ]
+    },
+    {
+      "desc": "alert on fatal level.",
+      "methodName": "fatal",
+      "returnTypeName": "void",
+      "parameterTypeNames": [
+        "String title, String message"
+      ]
+    }
+  ],
+  "GET_PLUGIN_HELPER_DESC": [
+    {
+      "desc": "logging",
+      "methodName": "log",
+      "returnTypeName": "void",
+      "parameterTypeNames": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "desc": "System.out.println",
+      "methodName": "println",
+      "returnTypeName": "void",
+      "parameterTypeNames": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "desc": "url encoding",
+      "methodName": "urlEncode",
+      "returnTypeName": "java.lang.String",
+      "parameterTypeNames": [
+        "java.lang.String"
+      ]
+    },
+    {
+      "desc": "url decoding",
+      "methodName": "urlDecode",
+      "returnTypeName": "java.lang.String",
+      "parameterTypeNames": [
+        "java.lang.String"
+      ]
+    },
+    {
+      "desc": "make shorten url.",
+      "methodName": "toShortenUrl",
+      "returnTypeName": "java.lang.String",
+      "parameterTypeNames": [
+        "java.lang.String",
+        "java.lang.String"
+      ]
+    },
+    {
+      "desc": "get NumberFormatter set fraction 1",
+      "methodName": "getNumberFormatter",
+      "returnTypeName": "java.text.NumberFormat",
+      "parameterTypeNames": []
+    },
+    {
+      "desc": "get NumberFormatter set the fraction",
+      "methodName": "getNumberFormatter",
+      "returnTypeName": "java.text.NumberFormat",
+      "parameterTypeNames": [
+        "int fractionDigits"
+      ]
+    },
+    {
+      "desc": "format the number as fraction 1",
+      "methodName": "formatNumber",
+      "returnTypeName": "java.lang.String",
+      "parameterTypeNames": [
+        "float"
+      ]
+    },
+    {
+      "desc": "format the number as given fraction",
+      "methodName": "formatNumber",
+      "returnTypeName": "java.lang.String",
+      "parameterTypeNames": [
+        "float f, int fractionDigits"
+      ]
+    },
+    {
+      "desc": "format the number as fraction 1",
+      "methodName": "formatNumber",
+      "returnTypeName": "java.lang.String",
+      "parameterTypeNames": [
+        "double"
+      ]
+    },
+    {
+      "desc": "format the number as given fraction",
+      "methodName": "formatNumber",
+      "returnTypeName": "java.lang.String",
+      "parameterTypeNames": [
+        "double v, int fractionDigits"
+      ]
+    },
+    {
+      "desc": "format the number as fraction 1",
+      "methodName": "formatNumber",
+      "returnTypeName": "java.lang.String",
+      "parameterTypeNames": [
+        "int"
+      ]
+    },
+    {
+      "desc": "format the number as given fraction",
+      "methodName": "formatNumber",
+      "returnTypeName": "java.lang.String",
+      "parameterTypeNames": [
+        "int v, int fractionDigits"
+      ]
+    },
+    {
+      "desc": "format the number as fraction 1",
+      "methodName": "formatNumber",
+      "returnTypeName": "java.lang.String",
+      "parameterTypeNames": [
+        "long"
+      ]
+    },
+    {
+      "desc": "format the number as given fraction",
+      "methodName": "formatNumber",
+      "returnTypeName": "java.lang.String",
+      "parameterTypeNames": [
+        "long v, int fractionDigits"
+      ]
+    },
+    {
+      "desc": "alert as info level",
+      "methodName": "alertInfo",
+      "returnTypeName": "void",
+      "parameterTypeNames": [
+        "int objHash, String objType, String title, String message"
+      ]
+    },
+    {
+      "desc": "alert as warn level",
+      "methodName": "alertWarn",
+      "returnTypeName": "void",
+      "parameterTypeNames": [
+        "int objHash, String objType, String title, String message"
+      ]
+    },
+    {
+      "desc": "alert as error level",
+      "methodName": "alertError",
+      "returnTypeName": "void",
+      "parameterTypeNames": [
+        "int objHash, String objType, String title, String message"
+      ]
+    },
+    {
+      "desc": "alert as fatal level",
+      "methodName": "alertFatal",
+      "returnTypeName": "void",
+      "parameterTypeNames": [
+        "int objHash, String objType, String title, String message"
+      ]
+    },
+    {
+      "desc": "make hashMap easily",
+      "methodName": "toMap",
+      "returnTypeName": "java.util.HashMap",
+      "parameterTypeNames": [
+        "String[] keyValueArray"
+      ]
+    },
+    {
+      "desc": "request http get",
+      "methodName": "httpGet",
+      "returnTypeName": "void",
+      "parameterTypeNames": [
+        "String url, Map<String, String> paramMap"
+      ]
+    },
+    {
+      "desc": "request http get",
+      "methodName": "httpGet",
+      "returnTypeName": "void",
+      "parameterTypeNames": [
+        "String url, Map<String, String> paramMap, int timeoutMillis"
+      ]
+    }
+  ],
+  "observed_getDeclaredMethods_order": {
+    "note": "management-commands.md §5.1: same jar/class file, item order of the Java response per JDK. Labels are method names with an abbreviated parameter hint; not byte fixtures. Go uses the source declaration order above.",
+    "GET_ALERT_REAL_COUNTER_DESC": {
+      "zulu8": [
+        "error",
+        "getCounter",
+        "getObjHash",
+        "getObjName",
+        "getObjType",
+        "getObjHashListString",
+        "getObjHashListWithParentsString",
+        "getIntValue(String,String)",
+        "getIntValue(String)",
+        "getIntValue()",
+        "getFloatValue(String)",
+        "getFloatValue(String,String)",
+        "getFloatValue()",
+        "getHistorySize",
+        "getOverCount(int)",
+        "getOverCount(float)",
+        "getAvgToInt",
+        "getLatestAvg",
+        "getLatestAvgToInt",
+        "getAvg",
+        "getHistoryOldestTime",
+        "getHistoryCountInSec",
+        "info",
+        "warn",
+        "fatal"
+      ],
+      "zulu18": [
+        "getObjHash",
+        "getObjName",
+        "getObjType",
+        "getObjHashListString",
+        "getObjHashListWithParentsString",
+        "getIntValue()",
+        "getIntValue(String,String)",
+        "getIntValue(String)",
+        "getFloatValue()",
+        "getFloatValue(String)",
+        "getFloatValue(String,String)",
+        "getHistorySize",
+        "getOverCount(int)",
+        "getOverCount(float)",
+        "getAvgToInt",
+        "getLatestAvg",
+        "getLatestAvgToInt",
+        "getAvg",
+        "getHistoryOldestTime",
+        "getHistoryCountInSec",
+        "fatal",
+        "info",
+        "error",
+        "warn",
+        "getCounter"
+      ]
+    },
+    "GET_PLUGIN_HELPER_DESC": {
+      "zulu8": [
+        "println",
+        "log",
+        "toMap",
+        "urlEncode",
+        "urlDecode",
+        "toShortenUrl",
+        "getNumberFormatter()",
+        "getNumberFormatter(int)",
+        "formatNumber(float)",
+        "formatNumber(double)",
+        "formatNumber(double,int)",
+        "formatNumber(int)",
+        "formatNumber(int,int)",
+        "formatNumber(long)",
+        "formatNumber(float,int)",
+        "formatNumber(long,int)",
+        "alertInfo",
+        "alertWarn",
+        "alertError",
+        "alertFatal",
+        "httpGet(3)",
+        "httpGet(2)"
+      ],
+      "zulu18": [
+        "urlEncode",
+        "urlDecode",
+        "toShortenUrl",
+        "getNumberFormatter()",
+        "getNumberFormatter(int)",
+        "formatNumber(float,int)",
+        "formatNumber(double)",
+        "formatNumber(double,int)",
+        "formatNumber(int,int)",
+        "formatNumber(int)",
+        "formatNumber(long,int)",
+        "formatNumber(long)",
+        "formatNumber(float)",
+        "alertInfo",
+        "alertWarn",
+        "alertError",
+        "alertFatal",
+        "httpGet(2)",
+        "httpGet(3)",
+        "println",
+        "log",
+        "toMap"
+      ]
+    }
+  }
+}

@@ -1,0 +1,2 @@
+xlog_realtime_lower_bound_ms=499
+xlog_pasttime_lower_bound_ms=499

@@ -1,0 +1,15 @@
+{
+  "note": "element sets of RealCounter/PluginHelper descriptors per JDK; raw item order is Class.getDeclaredMethods() order and differs by JDK and between runs",
+  "RealCounter_same_set": true,
+  "PluginHelper_same_set": true,
+  "counts": {
+    "java8": [
+      25,
+      22
+    ],
+    "java18": [
+      25,
+      22
+    ]
+  }
+}

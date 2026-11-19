@@ -1,0 +1,48 @@
+{
+  "source_commit": "dee47fb5f4003cecbb146c5acfff8d2ebeaf07f5",
+  "source_version": "2.21.3",
+  "synthetic_only": true,
+  "jdk": "openjdk version \"1.8.0_345\"",
+  "command": "python3 tools/java-logger/run_oracle.py --generate",
+  "compiled_original": {
+    "scouter.server/src/main/scala/scouter/server/Logger.scala": "10ae706791db0c3158d94b6af42c9fc74c2dfed46fb008336e4f2fbe195d0791",
+    "scouter.server/src/main/scala/scouter/server/ConfObserver.scala": "3135cd6df31d570e127864c853a21a7b34030e2987542c587646cde9aac4a6c5",
+    "scouter.server/src/main/scala/scouter/server/LoginUser.scala": "665427086e46bd4154203c05948de1fea5a82dd1e83b647361ef77fea9be50f2",
+    "scouter.server/src/main/scala/scouter/server/util/ThreadScala.scala": "90cedcc6d8fad10c25b6d4aeaebe37845d4dcf8e2803dc02587a35497e9c3fb4",
+    "scouter.server/src/main/scala/scouter/server/util/EnumerScala.scala": "dfda1cb1a4a1f18258a09d2ae04263d1010460eb1ac857096f7edfc7ecc01a22",
+    "scouter.server/src/main/java/scouter/server/logs/RequestLogger.java": "99b82b235e0f08b15c35b6bf8d1fe68f71b655621a9b6bf25293ed5ed071dfd7"
+  },
+  "oracle_sources": {
+    "tools/java-logger/LoggerOracle.java": "677fe5bbc6b171804c6be4d53710f7686e8e3427452d7af20a98b6cca288b65f",
+    "tools/java-logger/PackStringOracle.java": "e3db979b4b069800b5de57c8cb91a086d0b2cbdf1e5cb93cdeacef9cf8b759ba",
+    "tools/java-logger/seams/scouter/server/Configure.java": "505b6c5126bae22c4262ca60c8f1d9f97bccf5b81c7b0eb10063c20fb6352e79",
+    "tools/java-logger/seams/scouter/server/LoginManager.java": "e60a3bac6d53dbfeed74649235c1ba44421e6f92327f3d1b2fa46b466a26247f"
+  },
+  "files": [
+    {
+      "name": "logger.json",
+      "bytes": 3489,
+      "sha256": "481ad1cfb30f46b13ee89e2a2c428ec48948c4f6416798003e20682f2103b986"
+    },
+    {
+      "name": "numbers.json",
+      "bytes": 97194,
+      "sha256": "40d3dfbccc0dadd28b5df4507a057d15ece5b2cf4fad050d77d2229ac7698688"
+    },
+    {
+      "name": "packstring.json",
+      "bytes": 30910,
+      "sha256": "a697d74fd6efa68204d4c349768138f33e0fcab88df7281cd97f07ee3bad6afc"
+    },
+    {
+      "name": "time-America_New_York.json",
+      "bytes": 58930,
+      "sha256": "5b8e6cc9147f42748c537b40f6461f32fb2b232ac373ff6d240a5e34fe8f5b03"
+    },
+    {
+      "name": "time-Asia_Seoul.json",
+      "bytes": 58924,
+      "sha256": "556ea222930de17efdb39c382908d4987d2652b20d66f81c656838befe7b5e81"
+    }
+  ]
+}

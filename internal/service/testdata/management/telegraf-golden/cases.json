@@ -1,0 +1,7 @@
+{
+  "scenario": "telegraf-golden",
+  "cases": [],
+  "facts": {
+    "steps": 8
+  }
+}

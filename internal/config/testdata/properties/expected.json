@@ -1,0 +1,10 @@
+{
+  "basic.properties": {"error": null, "entries": {"a": "1", "b": "2", "c": "3", "d": "4", "e": "5  ", "f": "", "g": "", "h": "x=y"}},
+  "comments.properties": {"error": null, "entries": {"k": "v", "not_comment": "yes"}},
+  "continuation.properties": {"error": null, "entries": {"end": "", "even": "b\\next", "multi": "one two three", "odd": "a\\"}},
+  "dup.properties": {"error": null, "entries": {"": "colon", " ": "space_key", "dup": "second", "empty_sep": ""}},
+  "eof_backslash.properties": {"error": null, "entries": {"last": "no newline "}},
+  "escapes.properties": {"error": null, "entries": {"esc": "\u0009\u000a\u000d\u000cx\\", "k": "unicode_key", "k ey3": "3", "k:ey2": "2", "k=ey": "1", "uni": "A\u00e9\ud55c"}},
+  "malformed.properties": {"error": "Malformed \\uxxxx encoding.", "entries": {"ok": "1"}},
+  "newlines.properties": {"error": null, "entries": {"cr": "2", "crlf": "1", "lf": "3", "mixed": "a b"}}
+}

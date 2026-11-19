@@ -1,0 +1,29 @@
+{
+  "source_commit": "dee47fb5f4003cecbb146c5acfff8d2ebeaf07f5",
+  "source_version": "2.21.3",
+  "synthetic_only": true,
+  "generator": "python3 tools/java-ingest/run.py --generate internal/ingest/testdata/java-oracle",
+  "check": "python3 tools/java-ingest/run.py --check",
+  "readme": "tools/java-ingest/README.md",
+  "runtime_jdk": [
+    "openjdk version \"1.8.0_345\"",
+    "OpenJDK Runtime Environment (Zulu 8.64.0.19-CA-macos-aarch64) (build 1.8.0_345-b01)",
+    "OpenJDK 64-Bit Server VM (Zulu 8.64.0.19-CA-macos-aarch64) (build 25.345-b01, mixed mode)"
+  ],
+  "original_classes": [
+    "scouter.server/src/main/java/scouter/server/kube/PodSeqManager.java",
+    "scouter.server/src/main/scala/scouter/server/core/app/ObjectCpuChecker.scala",
+    "scouter.server/src/main/scala/scouter/server/geoip/GeoIpUtil.scala",
+    "scouter.server/src/main/scala/scouter/server/util/ThreadScala.scala",
+    "scouter.server/src/main/scala/scouter/server/core/AgentManager.scala",
+    "scouter.server/src/main/scala/scouter/server/core/ObjectMap.scala",
+    "scouter.common (all)",
+    "scouter.deploy/lib/maxmind.geoip.jar"
+  ],
+  "scenarios": [
+    "kube",
+    "cpu",
+    "geoip",
+    "alerts"
+  ]
+}

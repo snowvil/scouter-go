@@ -1,0 +1,18 @@
+{
+"formats_files": ["server-<today>.log"],
+"formats_lines": ["<datetime> plain message", "<datetime> [S100] id message", "<datetime> [S101] rate first", "<datetime> [S102] sec zero first", "<datetime> [S102] sec zero second", "<datetime> [S103] with throwable", "java.lang.IllegalStateException: synthetic failure", "<datetime> [TRACE] trace while _trace=true", "<datetime> [S104] copied to stdout while _trace=true", "<datetime> multi", "line message", "<datetime> "],
+"formats_stdout": ["<datetime> [TRACE] trace while _trace=true", "<datetime> [S104] copied to stdout while _trace=true"],
+"rate_limit_after_1001_ids": ["<datetime> [R0] second R0 after eviction", "<datetime> [R1] second R1 still limited"],
+"rotation_off_files": ["server.log"],
+"rotation_off_first_open": ["<datetime> rotation off first open"],
+"rotation_off_after_reopen": ["<datetime> rotation off second open"],
+"dir_change_files": ["server-<today>.log"],
+"clear_keep3_remaining": ["other-<today-30>.log", "request-<today+1>.log", "request-<today-3>.log", "server-1.log", "server-20261340.log", "server-21000101.log", "server-<today-30>", "server-<today-30>.gz.log", "server-<today-30>.log.1", "server-<today-30>.log.d/", "server-<today-3>.log", "server-<today>.log", "server-abcdefgh.log"],
+"clear_keep3_log_lines": ["<datetime> [scouter] delete log file : <log_dir>/request-<today-30>.txt", "<datetime> [scouter] delete log file : <log_dir>/request-<today-4>.log", "<datetime> [scouter] delete log file : <log_dir>/server-+0201015.log", "<datetime> [scouter] delete log file : <log_dir>/server-19991231.log", "<datetime> [scouter] delete log file : <log_dir>/server-<today-30>.log", "<datetime> [scouter] delete log file : <log_dir>/server-<today-4>.log"],
+"clear_keep0_remaining": ["other-<today-30>.log", "request-<today+1>.log", "request-<today-30>.txt", "request-<today-3>.log", "request-<today-4>.log", "server-+0201015.log", "server-1.log", "server-19991231.log", "server-20261340.log", "server-21000101.log", "server-<today-30>", "server-<today-30>.gz.log", "server-<today-30>.log", "server-<today-30>.log.1", "server-<today-3>.log", "server-<today-4>.log", "server-<today>.log", "server-abcdefgh.log"],
+"clear_rotation_off_remaining": ["other-<today-30>.log", "request-<today+1>.log", "request-<today-30>.txt", "request-<today-3>.log", "request-<today-4>.log", "server-+0201015.log", "server-1.log", "server-19991231.log", "server-20261340.log", "server-21000101.log", "server-<today-30>", "server-<today-30>.gz.log", "server-<today-30>.log", "server-<today-30>.log.1", "server-<today-3>.log", "server-<today-4>.log", "server-<today>.log", "server-abcdefgh.log"],
+"request_add_results": ["SERVER_DB_DELETE known=true", "REMOTE_CONTROL unknown=false", "REMOTE_CONTROL_ALL known=true", "TRANX_LOAD_TIME_GROUP known=true", "TRANX_LOAD_TIME_GROUP_V2 known=false", "OBJECT_LIST_REAL_TIME known=false", "OBJECT_RESET_CACHE known=true", "ACTIVE_QUERY_LIST known=false", "SERVER_DB_DELETE after log_dir change known=true"],
+"request_files": ["request-<today>.log"],
+"request_lines": ["<timestamp> synthetic-user(192.0.2.10) SERVER_DB_DELETE", "<timestamp> unknown999() REMOTE_CONTROL", "<timestamp> synthetic-user(192.0.2.10) REMOTE_CONTROL_ALL", "<timestamp> synthetic-user(192.0.2.10) TRANX_LOAD_TIME_GROUP", "<timestamp> unknown(register) OBJECT_RESET_CACHE", "<timestamp> synthetic-user(192.0.2.10) OBJECT_RESET_CACHE", "<timestamp> synthetic-user(192.0.2.10) SERVER_DB_DELETE"],
+"request_files_new_dir": []
+}

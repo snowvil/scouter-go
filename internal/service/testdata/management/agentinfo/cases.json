@@ -1,0 +1,475 @@
+{
+  "scenario": "agentinfo",
+  "cases": [
+    {
+      "name": "today-full-list-initial",
+      "command": "OBJECT_TODAY_FULL_LIST",
+      "request": "today-full-list-initial.request.bin",
+      "request_bytes": 0,
+      "response": "today-full-list-initial.response.bin",
+      "response_bytes": 269,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "object",
+          "objType": "tomcat",
+          "objHash": 1001,
+          "objName": "/synthetic/a",
+          "address": "10.0.0.1",
+          "version": "synthetic",
+          "alive": true,
+          "wakeup": 1767193200000,
+          "tags": {
+            "t": "map",
+            "v": {
+              "status": {
+                "t": "text",
+                "v": "active"
+              },
+              "region": {
+                "t": "text",
+                "v": "synthetic"
+              }
+            }
+          }
+        },
+        {
+          "pack": "object",
+          "objType": "tomcat",
+          "objHash": 1002,
+          "objName": "/synthetic/b",
+          "address": "10.0.0.2",
+          "version": "synthetic",
+          "alive": false,
+          "wakeup": 1767193200000,
+          "tags": {
+            "t": "map",
+            "v": {
+              "status": {
+                "t": "text",
+                "v": "inactive"
+              },
+              "region": {
+                "t": "text",
+                "v": "synthetic"
+              }
+            }
+          }
+        },
+        {
+          "pack": "object",
+          "objType": "host",
+          "objHash": 1003,
+          "objName": "/synthetic/c",
+          "address": "10.0.0.3",
+          "version": "synthetic",
+          "alive": false,
+          "wakeup": 1767193200000,
+          "tags": {
+            "t": "map",
+            "v": {
+              "status": {
+                "t": "text",
+                "v": "dead"
+              },
+              "region": {
+                "t": "text",
+                "v": "synthetic"
+              }
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "remove-inactive",
+      "command": "OBJECT_REMOVE_INACTIVE",
+      "request": "remove-inactive.request.bin",
+      "request_bytes": 0,
+      "response": "remove-inactive.response.bin",
+      "response_bytes": 1,
+      "item_kind": "pack",
+      "items": [],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "today-full-list-after-remove-inactive",
+      "command": "OBJECT_TODAY_FULL_LIST",
+      "request": "today-full-list-after-remove-inactive.request.bin",
+      "request_bytes": 0,
+      "response": "today-full-list-after-remove-inactive.response.bin",
+      "response_bytes": 265,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "object",
+          "objType": "tomcat",
+          "objHash": 1001,
+          "objName": "/synthetic/a",
+          "address": "10.0.0.1",
+          "version": "synthetic",
+          "alive": true,
+          "wakeup": 1767193200000,
+          "tags": {
+            "t": "map",
+            "v": {
+              "status": {
+                "t": "text",
+                "v": "active"
+              },
+              "region": {
+                "t": "text",
+                "v": "synthetic"
+              }
+            }
+          }
+        },
+        {
+          "pack": "object",
+          "objType": "tomcat",
+          "objHash": 1002,
+          "objName": "/synthetic/b",
+          "address": "10.0.0.2",
+          "version": "synthetic",
+          "alive": false,
+          "wakeup": 1767193200000,
+          "tags": {
+            "t": "map",
+            "v": {
+              "status": {
+                "t": "text",
+                "v": "dead"
+              },
+              "region": {
+                "t": "text",
+                "v": "synthetic"
+              }
+            }
+          }
+        },
+        {
+          "pack": "object",
+          "objType": "host",
+          "objHash": 1003,
+          "objName": "/synthetic/c",
+          "address": "10.0.0.3",
+          "version": "synthetic",
+          "alive": false,
+          "wakeup": 1767193200000,
+          "tags": {
+            "t": "map",
+            "v": {
+              "status": {
+                "t": "text",
+                "v": "dead"
+              },
+              "region": {
+                "t": "text",
+                "v": "synthetic"
+              }
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "remove-in-memory",
+      "command": "OBJECT_REMOVE_IN_MEMORY",
+      "request": "remove-in-memory.request.bin",
+      "request_bytes": 7,
+      "response": "remove-in-memory.response.bin",
+      "response_bytes": 267,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "object",
+          "objType": "tomcat",
+          "objHash": 1001,
+          "objName": "/synthetic/a",
+          "address": "10.0.0.1",
+          "version": "synthetic",
+          "alive": false,
+          "wakeup": 1767193200000,
+          "tags": {
+            "t": "map",
+            "v": {
+              "status": {
+                "t": "text",
+                "v": "dead"
+              },
+              "region": {
+                "t": "text",
+                "v": "synthetic"
+              }
+            }
+          }
+        },
+        {
+          "pack": "object",
+          "objType": "tomcat",
+          "objHash": 1002,
+          "objName": "/synthetic/b",
+          "address": "10.0.0.2",
+          "version": "synthetic",
+          "alive": false,
+          "wakeup": 1767193200000,
+          "tags": {
+            "t": "map",
+            "v": {
+              "status": {
+                "t": "text",
+                "v": "inactive"
+              },
+              "region": {
+                "t": "text",
+                "v": "synthetic"
+              }
+            }
+          }
+        },
+        {
+          "pack": "object",
+          "objType": "host",
+          "objHash": 1003,
+          "objName": "/synthetic/c",
+          "address": "10.0.0.3",
+          "version": "synthetic",
+          "alive": false,
+          "wakeup": 1767193200000,
+          "tags": {
+            "t": "map",
+            "v": {
+              "status": {
+                "t": "text",
+                "v": "dead"
+              },
+              "region": {
+                "t": "text",
+                "v": "synthetic"
+              }
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "remove-permanent-mixed",
+      "command": "OBJECT_REMOVE",
+      "request": "remove-permanent-mixed.request.bin",
+      "request_bytes": 25,
+      "response": "remove-permanent-mixed.response.bin",
+      "response_bytes": 267,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "object",
+          "objType": "tomcat",
+          "objHash": 1001,
+          "objName": "/synthetic/a",
+          "address": "10.0.0.1",
+          "version": "synthetic",
+          "alive": false,
+          "wakeup": 1767193200000,
+          "tags": {
+            "t": "map",
+            "v": {
+              "status": {
+                "t": "text",
+                "v": "dead"
+              },
+              "region": {
+                "t": "text",
+                "v": "synthetic"
+              }
+            }
+          }
+        },
+        {
+          "pack": "object",
+          "objType": "tomcat",
+          "objHash": 1002,
+          "objName": "/synthetic/b",
+          "address": "10.0.0.2",
+          "version": "synthetic",
+          "alive": false,
+          "wakeup": 1767193200000,
+          "tags": {
+            "t": "map",
+            "v": {
+              "status": {
+                "t": "text",
+                "v": "inactive"
+              },
+              "region": {
+                "t": "text",
+                "v": "synthetic"
+              }
+            }
+          }
+        },
+        {
+          "pack": "object",
+          "objType": "host",
+          "objHash": 1003,
+          "objName": "/synthetic/c",
+          "address": "10.0.0.3",
+          "version": "synthetic",
+          "alive": false,
+          "wakeup": 1767193200000,
+          "tags": {
+            "t": "map",
+            "v": {
+              "status": {
+                "t": "text",
+                "v": "dead"
+              },
+              "region": {
+                "t": "text",
+                "v": "synthetic"
+              }
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "remove-empty-list",
+      "command": "OBJECT_REMOVE",
+      "request": "remove-empty-list.request.bin",
+      "request_bytes": 2,
+      "response": "remove-empty-list.response.bin",
+      "response_bytes": 269,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "object",
+          "objType": "tomcat",
+          "objHash": 1001,
+          "objName": "/synthetic/a",
+          "address": "10.0.0.1",
+          "version": "synthetic",
+          "alive": true,
+          "wakeup": 1767193200000,
+          "tags": {
+            "t": "map",
+            "v": {
+              "status": {
+                "t": "text",
+                "v": "active"
+              },
+              "region": {
+                "t": "text",
+                "v": "synthetic"
+              }
+            }
+          }
+        },
+        {
+          "pack": "object",
+          "objType": "tomcat",
+          "objHash": 1002,
+          "objName": "/synthetic/b",
+          "address": "10.0.0.2",
+          "version": "synthetic",
+          "alive": false,
+          "wakeup": 1767193200000,
+          "tags": {
+            "t": "map",
+            "v": {
+              "status": {
+                "t": "text",
+                "v": "inactive"
+              },
+              "region": {
+                "t": "text",
+                "v": "synthetic"
+              }
+            }
+          }
+        },
+        {
+          "pack": "object",
+          "objType": "host",
+          "objHash": 1003,
+          "objName": "/synthetic/c",
+          "address": "10.0.0.3",
+          "version": "synthetic",
+          "alive": false,
+          "wakeup": 1767193200000,
+          "tags": {
+            "t": "map",
+            "v": {
+              "status": {
+                "t": "text",
+                "v": "dead"
+              },
+              "region": {
+                "t": "text",
+                "v": "synthetic"
+              }
+            }
+          }
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "remove-mappack-body",
+      "command": "OBJECT_REMOVE",
+      "request": "remove-mappack-body.request.bin",
+      "request_bytes": 15,
+      "response": "remove-mappack-body.response.bin",
+      "response_bytes": 1,
+      "item_kind": "pack",
+      "items": [],
+      "stderr_first_line": "java.lang.ClassCastException: scouter.lang.value.BooleanValue cannot be cast to scouter.lang.value.ListValue",
+      "logs": []
+    },
+    {
+      "name": "remove-text-body",
+      "command": "OBJECT_REMOVE",
+      "request": "remove-text-body.request.bin",
+      "request_bytes": 6,
+      "response": "remove-text-body.response.bin",
+      "response_bytes": 1,
+      "item_kind": "pack",
+      "items": [],
+      "stderr_first_line": "java.lang.ClassCastException: scouter.lang.value.TextValue cannot be cast to scouter.lang.value.ListValue",
+      "logs": []
+    }
+  ],
+  "facts": {
+    "disk_effect": "not executed: ObjectWR seam records ObjectWR.remove(objHash) calls only; original writer NPE means no delete marker (management-commands.md 6.3, 9-6)",
+    "memory_after_remove_inactive": [
+      1001
+    ],
+    "memory_after_remove_in_memory": [
+      1002
+    ],
+    "objectwr_seam_remove_calls_after_in_memory": [],
+    "memory_after_remove": [
+      1002
+    ],
+    "objectwr_seam_remove_calls_after_remove": [
+      1001,
+      0,
+      1003,
+      1001
+    ],
+    "memory_after_mappack_body": [
+      1001,
+      1002
+    ],
+    "objectwr_seam_remove_calls_after_text_body": []
+  }
+}

@@ -1,0 +1,20 @@
+scouter> objtype
+	[32mlinux[0m
+	[32morphan[0m
+	[32mredis[0m
+	[32mtomcat[0m
+scouter> counter linux
+	[32mCpu[0m
+	[32mMem[0m
+scouter> realtime tomcat TPS
+09:05:07.042 [34m/host1/tomcat1[0m 12
+09:05:07.042 [34m/host2/tomcat2[0m 8
+09:05:07.042 [34m/host3/tomcat3[0m null
+scouter> xlog tomcat
+09:05:01.005 [32m#____________________________E_____________________________#[0m 10sec 4
+scouter> dashboard tomcat
+              INST   ACT   TPS RTIME GCCNT
+09:05:07.042     2     5    20   200     1
+scouter> q
+bye bye!!
+prompt=[32mscouter> [0m

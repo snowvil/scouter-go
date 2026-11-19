@@ -1,0 +1,1523 @@
+{
+  "source": "list-configure-server-initial.response.bin",
+  "note": "default = field initializer of new Configure(true) (ConfigValueUtil.getConfigDefault), not the applyConfig fallback",
+  "rows": [
+    {
+      "key": "telegrafInputConfigMapDeprecated",
+      "value": {
+        "t": "text",
+        "v": "{}"
+      },
+      "default": {
+        "t": "text",
+        "v": "{}"
+      }
+    },
+    {
+      "key": "telegrafOriginalConfig",
+      "value": {
+        "t": "text",
+        "v": "scouter.server.support.telegraf.TgConfig@<identity>"
+      },
+      "default": {
+        "t": "text",
+        "v": "scouter.server.support.telegraf.TgConfig@<identity>"
+      }
+    },
+    {
+      "key": "server_id",
+      "value": {
+        "t": "text",
+        "v": "synthetic-server"
+      },
+      "default": {
+        "t": "text",
+        "v": "<hostname>"
+      }
+    },
+    {
+      "key": "log_test_rate",
+      "value": {
+        "t": "decimal",
+        "v": 0
+      },
+      "default": {
+        "t": "decimal",
+        "v": 0
+      }
+    },
+    {
+      "key": "log_tcp_action_enabled",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "log_udp_multipacket",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "log_expired_multipacket",
+      "value": {
+        "t": "boolean",
+        "v": true
+      },
+      "default": {
+        "t": "boolean",
+        "v": true
+      }
+    },
+    {
+      "key": "log_udp_packet",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "log_udp_counter",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "log_udp_interaction_counter",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "log_udp_xlog",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "log_udp_profile",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "log_udp_text",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "log_udp_alert",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "log_udp_object",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "log_udp_some_object",
+      "value": {
+        "t": "text",
+        "v": ""
+      },
+      "default": {
+        "t": "text",
+        "v": ""
+      }
+    },
+    {
+      "key": "log_udp_status",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "log_udp_stack",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "log_udp_summary",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "log_udp_batch",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "log_service_handler_list",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "log_udp_span",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "log_index_traversal_warning_count",
+      "value": {
+        "t": "decimal",
+        "v": 100
+      },
+      "default": {
+        "t": "decimal",
+        "v": 100
+      }
+    },
+    {
+      "key": "log_rotation_enabled",
+      "value": {
+        "t": "boolean",
+        "v": true
+      },
+      "default": {
+        "t": "boolean",
+        "v": true
+      }
+    },
+    {
+      "key": "log_keep_days",
+      "value": {
+        "t": "decimal",
+        "v": 31
+      },
+      "default": {
+        "t": "decimal",
+        "v": 31
+      }
+    },
+    {
+      "key": "log_sql_parsing_fail_enabled",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "_trace",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "net_udp_listen_ip",
+      "value": {
+        "t": "text",
+        "v": "0.0.0.0"
+      },
+      "default": {
+        "t": "text",
+        "v": "0.0.0.0"
+      }
+    },
+    {
+      "key": "net_udp_listen_port",
+      "value": {
+        "t": "decimal",
+        "v": 6100
+      },
+      "default": {
+        "t": "decimal",
+        "v": 6100
+      }
+    },
+    {
+      "key": "net_tcp_listen_ip",
+      "value": {
+        "t": "text",
+        "v": "0.0.0.0"
+      },
+      "default": {
+        "t": "text",
+        "v": "0.0.0.0"
+      }
+    },
+    {
+      "key": "net_tcp_listen_port",
+      "value": {
+        "t": "decimal",
+        "v": 6100
+      },
+      "default": {
+        "t": "decimal",
+        "v": 6100
+      }
+    },
+    {
+      "key": "net_tcp_client_so_timeout_ms",
+      "value": {
+        "t": "decimal",
+        "v": 8000
+      },
+      "default": {
+        "t": "decimal",
+        "v": 8000
+      }
+    },
+    {
+      "key": "net_tcp_agent_so_timeout_ms",
+      "value": {
+        "t": "decimal",
+        "v": 60000
+      },
+      "default": {
+        "t": "decimal",
+        "v": 60000
+      }
+    },
+    {
+      "key": "net_tcp_agent_keepalive_interval_ms",
+      "value": {
+        "t": "decimal",
+        "v": 5000
+      },
+      "default": {
+        "t": "decimal",
+        "v": 5000
+      }
+    },
+    {
+      "key": "net_tcp_get_agent_connection_wait_ms",
+      "value": {
+        "t": "decimal",
+        "v": 1000
+      },
+      "default": {
+        "t": "decimal",
+        "v": 1000
+      }
+    },
+    {
+      "key": "net_udp_packet_buffer_size",
+      "value": {
+        "t": "decimal",
+        "v": 65535
+      },
+      "default": {
+        "t": "decimal",
+        "v": 65535
+      }
+    },
+    {
+      "key": "net_udp_so_rcvbuf_size",
+      "value": {
+        "t": "decimal",
+        "v": 4194304
+      },
+      "default": {
+        "t": "decimal",
+        "v": 4194304
+      }
+    },
+    {
+      "key": "_net_udp_worker_thread_count",
+      "value": {
+        "t": "decimal",
+        "v": 3
+      },
+      "default": {
+        "t": "decimal",
+        "v": 3
+      }
+    },
+    {
+      "key": "net_tcp_service_pool_size",
+      "value": {
+        "t": "decimal",
+        "v": 100
+      },
+      "default": {
+        "t": "decimal",
+        "v": 100
+      }
+    },
+    {
+      "key": "net_http_server_enabled",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "net_http_port",
+      "value": {
+        "t": "decimal",
+        "v": 6181
+      },
+      "default": {
+        "t": "decimal",
+        "v": 6180
+      }
+    },
+    {
+      "key": "net_http_extweb_dir",
+      "value": {
+        "t": "text",
+        "v": "./extweb"
+      },
+      "default": {
+        "t": "text",
+        "v": "./extweb"
+      }
+    },
+    {
+      "key": "net_http_api_enabled",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "net_http_api_swagger_enabled",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "net_http_api_swagger_host_ip",
+      "value": {
+        "t": "text",
+        "v": ""
+      },
+      "default": {
+        "t": "text",
+        "v": ""
+      }
+    },
+    {
+      "key": "net_http_api_cors_allow_origin",
+      "value": {
+        "t": "text",
+        "v": "*"
+      },
+      "default": {
+        "t": "text",
+        "v": "*"
+      }
+    },
+    {
+      "key": "net_http_api_cors_allow_credentials",
+      "value": {
+        "t": "text",
+        "v": "true"
+      },
+      "default": {
+        "t": "text",
+        "v": "true"
+      }
+    },
+    {
+      "key": "net_webapp_tcp_client_pool_size",
+      "value": {
+        "t": "decimal",
+        "v": 12
+      },
+      "default": {
+        "t": "decimal",
+        "v": 30
+      }
+    },
+    {
+      "key": "net_webapp_tcp_client_pool_timeout",
+      "value": {
+        "t": "decimal",
+        "v": 8000
+      },
+      "default": {
+        "t": "decimal",
+        "v": 60000
+      }
+    },
+    {
+      "key": "net_webapp_tcp_client_so_timeout",
+      "value": {
+        "t": "decimal",
+        "v": 30000
+      },
+      "default": {
+        "t": "decimal",
+        "v": 30000
+      }
+    },
+    {
+      "key": "net_http_api_auth_ip_enabled",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "net_http_api_auth_ip_header_key",
+      "value": {
+        "t": "text",
+        "v": ""
+      },
+      "default": {
+        "t": "null"
+      }
+    },
+    {
+      "key": "net_http_api_auth_session_enabled",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "net_http_api_session_timeout",
+      "value": {
+        "t": "decimal",
+        "v": 86400
+      },
+      "default": {
+        "t": "decimal",
+        "v": 86400
+      }
+    },
+    {
+      "key": "net_http_api_auth_bearer_token_enabled",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "net_http_api_gzip_enabled",
+      "value": {
+        "t": "boolean",
+        "v": true
+      },
+      "default": {
+        "t": "boolean",
+        "v": true
+      }
+    },
+    {
+      "key": "net_http_api_allow_ips",
+      "value": {
+        "t": "text",
+        "v": "localhost,127.0.0.1,0:0:0:0:0:0:0:1,::1"
+      },
+      "default": {
+        "t": "text",
+        "v": "localhost,127.0.0.1,0:0:0:0:0:0:0:1,::1"
+      }
+    },
+    {
+      "key": "db_dir",
+      "value": {
+        "t": "text",
+        "v": "./database"
+      },
+      "default": {
+        "t": "text",
+        "v": "./database"
+      }
+    },
+    {
+      "key": "log_dir",
+      "value": {
+        "t": "text",
+        "v": "./logs"
+      },
+      "default": {
+        "t": "text",
+        "v": "./logs"
+      }
+    },
+    {
+      "key": "plugin_dir",
+      "value": {
+        "t": "text",
+        "v": "./plugin"
+      },
+      "default": {
+        "t": "text",
+        "v": "./plugin"
+      }
+    },
+    {
+      "key": "plugin_enabled",
+      "value": {
+        "t": "boolean",
+        "v": true
+      },
+      "default": {
+        "t": "boolean",
+        "v": true
+      }
+    },
+    {
+      "key": "client_dir",
+      "value": {
+        "t": "text",
+        "v": "./client"
+      },
+      "default": {
+        "t": "text",
+        "v": "./client"
+      }
+    },
+    {
+      "key": "temp_dir",
+      "value": {
+        "t": "text",
+        "v": "./tempdata"
+      },
+      "default": {
+        "t": "text",
+        "v": "./tempdata"
+      }
+    },
+    {
+      "key": "object_deadtime_ms",
+      "value": {
+        "t": "decimal",
+        "v": 8000
+      },
+      "default": {
+        "t": "decimal",
+        "v": 8000
+      }
+    },
+    {
+      "key": "object_inactive_alert_level",
+      "value": {
+        "t": "decimal",
+        "v": 0
+      },
+      "default": {
+        "t": "decimal",
+        "v": 0
+      }
+    },
+    {
+      "key": "object_zipkin_deadtime_ms",
+      "value": {
+        "t": "decimal",
+        "v": 300000
+      },
+      "default": {
+        "t": "decimal",
+        "v": 180000
+      }
+    },
+    {
+      "key": "compress_xlog_enabled",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "compress_profile_enabled",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "_compress_write_buffer_block_count",
+      "value": {
+        "t": "decimal",
+        "v": 3
+      },
+      "default": {
+        "t": "decimal",
+        "v": 3
+      }
+    },
+    {
+      "key": "_compress_read_cache_block_count",
+      "value": {
+        "t": "decimal",
+        "v": 3
+      },
+      "default": {
+        "t": "decimal",
+        "v": 3
+      }
+    },
+    {
+      "key": "_compress_read_cache_expired_ms",
+      "value": {
+        "t": "decimal",
+        "v": 60000
+      },
+      "default": {
+        "t": "decimal",
+        "v": 60000
+      }
+    },
+    {
+      "key": "_compress_dailycount_header_cache_size",
+      "value": {
+        "t": "decimal",
+        "v": 3
+      },
+      "default": {
+        "t": "decimal",
+        "v": 3
+      }
+    },
+    {
+      "key": "_compress_write_thread",
+      "value": {
+        "t": "decimal",
+        "v": 2
+      },
+      "default": {
+        "t": "decimal",
+        "v": 2
+      }
+    },
+    {
+      "key": "_auto_5m_sampling",
+      "value": {
+        "t": "boolean",
+        "v": true
+      },
+      "default": {
+        "t": "boolean",
+        "v": true
+      }
+    },
+    {
+      "key": "mgr_purge_enabled",
+      "value": {
+        "t": "boolean",
+        "v": true
+      },
+      "default": {
+        "t": "boolean",
+        "v": true
+      }
+    },
+    {
+      "key": "mgr_purge_disk_usage_pct",
+      "value": {
+        "t": "decimal",
+        "v": 80
+      },
+      "default": {
+        "t": "decimal",
+        "v": 80
+      }
+    },
+    {
+      "key": "mgr_purge_profile_keep_days",
+      "value": {
+        "t": "decimal",
+        "v": 10
+      },
+      "default": {
+        "t": "decimal",
+        "v": 10
+      }
+    },
+    {
+      "key": "mgr_purge_keep_days",
+      "value": {
+        "t": "decimal",
+        "v": 10
+      },
+      "default": {
+        "t": "decimal",
+        "v": 10
+      }
+    },
+    {
+      "key": "mgr_purge_xlog_keep_days",
+      "value": {
+        "t": "decimal",
+        "v": 30
+      },
+      "default": {
+        "t": "decimal",
+        "v": 30
+      }
+    },
+    {
+      "key": "mgr_purge_xlog_without_profile_keep_days",
+      "value": {
+        "t": "decimal",
+        "v": 30
+      },
+      "default": {
+        "t": "decimal",
+        "v": 30
+      }
+    },
+    {
+      "key": "mgr_purge_counter_keep_days",
+      "value": {
+        "t": "decimal",
+        "v": 70
+      },
+      "default": {
+        "t": "decimal",
+        "v": 70
+      }
+    },
+    {
+      "key": "mgr_purge_realtime_counter_keep_days",
+      "value": {
+        "t": "decimal",
+        "v": 70
+      },
+      "default": {
+        "t": "decimal",
+        "v": 70
+      }
+    },
+    {
+      "key": "mgr_purge_tag_counter_keep_days",
+      "value": {
+        "t": "decimal",
+        "v": 70
+      },
+      "default": {
+        "t": "decimal",
+        "v": 70
+      }
+    },
+    {
+      "key": "mgr_purge_visitor_counter_keep_days",
+      "value": {
+        "t": "decimal",
+        "v": 70
+      },
+      "default": {
+        "t": "decimal",
+        "v": 70
+      }
+    },
+    {
+      "key": "mgr_purge_daily_text_days",
+      "value": {
+        "t": "decimal",
+        "v": 140
+      },
+      "default": {
+        "t": "decimal",
+        "v": 140
+      }
+    },
+    {
+      "key": "mgr_purge_sum_data_days",
+      "value": {
+        "t": "decimal",
+        "v": 60
+      },
+      "default": {
+        "t": "decimal",
+        "v": 60
+      }
+    },
+    {
+      "key": "mgr_log_ignore_ids",
+      "value": {
+        "t": "text",
+        "v": "{}"
+      },
+      "default": {
+        "t": "text",
+        "v": "{}"
+      }
+    },
+    {
+      "key": "mgr_text_db_daily_service_enabled",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "mgr_text_db_daily_api_enabled",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "mgr_text_db_daily_ua_enabled",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "_mgr_text_db_index_default_mb",
+      "value": {
+        "t": "decimal",
+        "v": 1
+      },
+      "default": {
+        "t": "decimal",
+        "v": 1
+      }
+    },
+    {
+      "key": "_mgr_text_db_index_service_mb",
+      "value": {
+        "t": "decimal",
+        "v": 1
+      },
+      "default": {
+        "t": "decimal",
+        "v": 1
+      }
+    },
+    {
+      "key": "_mgr_text_db_index_api_mb",
+      "value": {
+        "t": "decimal",
+        "v": 1
+      },
+      "default": {
+        "t": "decimal",
+        "v": 1
+      }
+    },
+    {
+      "key": "_mgr_text_db_index_ua_mb",
+      "value": {
+        "t": "decimal",
+        "v": 1
+      },
+      "default": {
+        "t": "decimal",
+        "v": 1
+      }
+    },
+    {
+      "key": "_mgr_text_db_index_login_mb",
+      "value": {
+        "t": "decimal",
+        "v": 1
+      },
+      "default": {
+        "t": "decimal",
+        "v": 1
+      }
+    },
+    {
+      "key": "_mgr_text_db_index_desc_mb",
+      "value": {
+        "t": "decimal",
+        "v": 1
+      },
+      "default": {
+        "t": "decimal",
+        "v": 1
+      }
+    },
+    {
+      "key": "_mgr_text_db_index_hmsg_mb",
+      "value": {
+        "t": "decimal",
+        "v": 1
+      },
+      "default": {
+        "t": "decimal",
+        "v": 1
+      }
+    },
+    {
+      "key": "_mgr_text_db_daily_index_mb",
+      "value": {
+        "t": "decimal",
+        "v": 1
+      },
+      "default": {
+        "t": "decimal",
+        "v": 1
+      }
+    },
+    {
+      "key": "_mgr_kv_store_index_default_mb",
+      "value": {
+        "t": "decimal",
+        "v": 8
+      },
+      "default": {
+        "t": "decimal",
+        "v": 8
+      }
+    },
+    {
+      "key": "_mgr_xlog_id_index_mb",
+      "value": {
+        "t": "decimal",
+        "v": 1
+      },
+      "default": {
+        "t": "decimal",
+        "v": 1
+      }
+    },
+    {
+      "key": "ext_link_name",
+      "value": {
+        "t": "text",
+        "v": "scouter-paper"
+      },
+      "default": {
+        "t": "text",
+        "v": "scouter-paper"
+      }
+    },
+    {
+      "key": "ext_link_url_pattern",
+      "value": {
+        "t": "text",
+        "v": "http://my-scouter-paper-ip:6188/index.html#/paper?&address=localhost&port=6188&realtime=false&xlogElapsedTime=8000&instances=$[objHashes]&from=$[from]&to=$[to]&layout=my-layout-template-01"
+      },
+      "default": {
+        "t": "text",
+        "v": "http://my-scouter-paper-ip:6188/index.html#/paper?&address=localhost&port=6188&realtime=false&xlogElapsedTime=8000&instances=$[objHashes]&from=$[from]&to=$[to]&layout=my-layout-template-01"
+      }
+    },
+    {
+      "key": "span_queue_size",
+      "value": {
+        "t": "decimal",
+        "v": 1000
+      },
+      "default": {
+        "t": "decimal",
+        "v": 1000
+      }
+    },
+    {
+      "key": "xlog_queue_size",
+      "value": {
+        "t": "decimal",
+        "v": 10000
+      },
+      "default": {
+        "t": "decimal",
+        "v": 10000
+      }
+    },
+    {
+      "key": "xlog_realtime_lower_bound_ms",
+      "value": {
+        "t": "decimal",
+        "v": 0
+      },
+      "default": {
+        "t": "decimal",
+        "v": 0
+      }
+    },
+    {
+      "key": "xlog_pasttime_lower_bound_ms",
+      "value": {
+        "t": "decimal",
+        "v": 0
+      },
+      "default": {
+        "t": "decimal",
+        "v": 0
+      }
+    },
+    {
+      "key": "profile_queue_size",
+      "value": {
+        "t": "decimal",
+        "v": 1000
+      },
+      "default": {
+        "t": "decimal",
+        "v": 1000
+      }
+    },
+    {
+      "key": "xlog_sampling_matcher_gxid_keep_memory_count",
+      "value": {
+        "t": "decimal",
+        "v": 500000
+      },
+      "default": {
+        "t": "decimal",
+        "v": 500000
+      }
+    },
+    {
+      "key": "xlog_sampling_matcher_xlog_keep_memory_count",
+      "value": {
+        "t": "decimal",
+        "v": 100000
+      },
+      "default": {
+        "t": "decimal",
+        "v": 100000
+      }
+    },
+    {
+      "key": "xlog_sampling_matcher_xlog_keep_memory_millis",
+      "value": {
+        "t": "decimal",
+        "v": 5000
+      },
+      "default": {
+        "t": "decimal",
+        "v": 5000
+      }
+    },
+    {
+      "key": "xlog_sampling_matcher_profile_keep_memory_count",
+      "value": {
+        "t": "decimal",
+        "v": 5000
+      },
+      "default": {
+        "t": "decimal",
+        "v": 5000
+      }
+    },
+    {
+      "key": "xlog_sampling_matcher_profile_keep_memory_secs",
+      "value": {
+        "t": "decimal",
+        "v": 5
+      },
+      "default": {
+        "t": "decimal",
+        "v": 5
+      }
+    },
+    {
+      "key": "geoip_enabled",
+      "value": {
+        "t": "boolean",
+        "v": true
+      },
+      "default": {
+        "t": "boolean",
+        "v": true
+      }
+    },
+    {
+      "key": "geoip_data_city_file",
+      "value": {
+        "t": "text",
+        "v": "./conf/GeoLiteCity.dat"
+      },
+      "default": {
+        "t": "text",
+        "v": "./conf/GeoLiteCity.dat"
+      }
+    },
+    {
+      "key": "sql_table_parsing_enabled",
+      "value": {
+        "t": "boolean",
+        "v": true
+      },
+      "default": {
+        "t": "boolean",
+        "v": true
+      }
+    },
+    {
+      "key": "tagcnt_enabled",
+      "value": {
+        "t": "boolean",
+        "v": true
+      },
+      "default": {
+        "t": "boolean",
+        "v": true
+      }
+    },
+    {
+      "key": "req_search_xlog_max_count",
+      "value": {
+        "t": "decimal",
+        "v": 500
+      },
+      "default": {
+        "t": "decimal",
+        "v": 500
+      }
+    },
+    {
+      "key": "input_telegraf_config_file",
+      "value": {
+        "t": "text",
+        "v": "./conf/scouter-telegraf.xml"
+      },
+      "default": {
+        "t": "text",
+        "v": "./conf/scouter-telegraf.xml"
+      }
+    },
+    {
+      "key": "input_telegraf_enabled",
+      "value": {
+        "t": "boolean",
+        "v": true
+      },
+      "default": {
+        "t": "boolean",
+        "v": true
+      }
+    },
+    {
+      "key": "input_telegraf_debug_enabled",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "input_telegraf_delta_counter_normalize_default",
+      "value": {
+        "t": "boolean",
+        "v": true
+      },
+      "default": {
+        "t": "boolean",
+        "v": true
+      }
+    },
+    {
+      "key": "input_telegraf_delta_counter_normalize_default_seconds",
+      "value": {
+        "t": "decimal",
+        "v": 30
+      },
+      "default": {
+        "t": "decimal",
+        "v": 30
+      }
+    },
+    {
+      "key": "telegraf_object_deadtime_ms",
+      "value": {
+        "t": "decimal",
+        "v": 35000
+      },
+      "default": {
+        "t": "decimal",
+        "v": 35000
+      }
+    },
+    {
+      "key": "input_telegraf_$measurement$_enabled",
+      "value": {
+        "t": "boolean",
+        "v": true
+      },
+      "default": {
+        "t": "boolean",
+        "v": true
+      }
+    },
+    {
+      "key": "input_telegraf_$measurement$_debug_enabled",
+      "value": {
+        "t": "boolean",
+        "v": false
+      },
+      "default": {
+        "t": "boolean",
+        "v": false
+      }
+    },
+    {
+      "key": "input_telegraf_$measurement$_tag_filter",
+      "value": {
+        "t": "text",
+        "v": ""
+      },
+      "default": {
+        "t": "text",
+        "v": ""
+      }
+    },
+    {
+      "key": "input_telegraf_$measurement$_counter_mappings",
+      "value": {
+        "t": "text",
+        "v": ""
+      },
+      "default": {
+        "t": "text",
+        "v": ""
+      }
+    },
+    {
+      "key": "input_telegraf_$measurement$_objFamily_base",
+      "value": {
+        "t": "text",
+        "v": ""
+      },
+      "default": {
+        "t": "text",
+        "v": ""
+      }
+    },
+    {
+      "key": "input_telegraf_$measurement$_objFamily_append_tags",
+      "value": {
+        "t": "text",
+        "v": ""
+      },
+      "default": {
+        "t": "text",
+        "v": ""
+      }
+    },
+    {
+      "key": "input_telegraf_$measurement$_objType_base",
+      "value": {
+        "t": "text",
+        "v": ""
+      },
+      "default": {
+        "t": "text",
+        "v": ""
+      }
+    },
+    {
+      "key": "input_telegraf_$measurement$_objType_prepend_tags",
+      "value": {
+        "t": "text",
+        "v": "scouter_obj_type_prefix"
+      },
+      "default": {
+        "t": "text",
+        "v": "scouter_obj_type_prefix"
+      }
+    },
+    {
+      "key": "input_telegraf_$measurement$_objType_append_tags",
+      "value": {
+        "t": "text",
+        "v": ""
+      },
+      "default": {
+        "t": "text",
+        "v": ""
+      }
+    },
+    {
+      "key": "input_telegraf_$measurement$_objType_icon",
+      "value": {
+        "t": "text",
+        "v": ""
+      },
+      "default": {
+        "t": "text",
+        "v": ""
+      }
+    },
+    {
+      "key": "input_telegraf_$measurement$_objName_base",
+      "value": {
+        "t": "text",
+        "v": ""
+      },
+      "default": {
+        "t": "text",
+        "v": ""
+      }
+    },
+    {
+      "key": "input_telegraf_$measurement$_objName_append_tags",
+      "value": {
+        "t": "text",
+        "v": ""
+      },
+      "default": {
+        "t": "text",
+        "v": ""
+      }
+    },
+    {
+      "key": "input_telegraf_$measurement$_host_tag",
+      "value": {
+        "t": "text",
+        "v": "host"
+      },
+      "default": {
+        "t": "text",
+        "v": "host"
+      }
+    },
+    {
+      "key": "input_telegraf_$measurement$_host_mappings",
+      "value": {
+        "t": "text",
+        "v": ""
+      },
+      "default": {
+        "t": "text",
+        "v": ""
+      }
+    },
+    {
+      "key": "visitor_hourly_count_enabled",
+      "value": {
+        "t": "boolean",
+        "v": true
+      },
+      "default": {
+        "t": "boolean",
+        "v": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,433 @@
+{
+  "scenario": "telegraf-legacy",
+  "cases": [],
+  "facts": {
+    "config": {
+      "input_telegraf_enabled": true,
+      "measurements": [
+        "leg",
+        "legoff"
+      ],
+      "leg_counter_mappings": {
+        "bytes": {
+          "name": "leg_bytes",
+          "displayName": "leg_bytes",
+          "unit": "b",
+          "total": true,
+          "deltaType": "DELTA",
+          "normalizeSec": 0
+        },
+        "gauge": {
+          "name": "leg_gauge_*",
+          "displayName": "Gauge *",
+          "unit": "cnt",
+          "total": true,
+          "deltaType": "NONE",
+          "normalizeSec": 0
+        },
+        "reqs": {
+          "name": "leg_reqs",
+          "displayName": "Reqs",
+          "unit": "cnt",
+          "total": true,
+          "deltaType": "BOTH",
+          "normalizeSec": 30
+        },
+        "short": {
+          "name": "leg_short",
+          "displayName": "leg_short",
+          "unit": "",
+          "total": true,
+          "deltaType": "NONE",
+          "normalizeSec": 0
+        }
+      },
+      "leg_host_mapping": {
+        "raw-host": "mapped-host"
+      },
+      "leg_tag_filter": {
+        "tier": [
+          "web",
+          "!skip"
+        ]
+      },
+      "leg_objType_prepend_tags": [
+        "scouter_obj_type_prefix"
+      ]
+    },
+    "steps": [
+      {
+        "name": "legacy-first",
+        "line": "leg,hostname=raw-host,tier=web,port=7000 gauge=1i,bytes=100i,reqs=10i,short=0.5 1767193200000000000",
+        "parse": {
+          "parsed": true,
+          "measurement": "leg",
+          "host": "mapped-host",
+          "family": "X$LEG_FAMILY",
+          "objType": "LEG_TYPE_web",
+          "objTypeIcon": "linux",
+          "objName": "/mapped-host/X$LEG_NAME_7000",
+          "objHash": -1878055503,
+          "receivedTime": 1767193200123,
+          "timestampOrigin": 1767193200000,
+          "tags": {
+            "hostname": "raw-host",
+            "port": "7000",
+            "tier": "web"
+          },
+          "numberFields": {
+            "leg_bytes": {
+              "value": {
+                "t": "decimal",
+                "v": 100
+              },
+              "counters": [
+                {
+                  "name": "leg_bytes_$delta",
+                  "disp": "leg_bytes_$delta",
+                  "unit": "b/s",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            },
+            "leg_gauge_*": {
+              "value": {
+                "t": "decimal",
+                "v": 1
+              },
+              "counters": [
+                {
+                  "name": "leg_gauge_7000",
+                  "disp": "Gauge 7000",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            },
+            "leg_reqs": {
+              "value": {
+                "t": "decimal",
+                "v": 10
+              },
+              "counters": [
+                {
+                  "name": "leg_reqs",
+                  "disp": "Reqs",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                },
+                {
+                  "name": "leg_reqs_$delta",
+                  "disp": "Reqs_$delta",
+                  "unit": "cnt/s",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            },
+            "leg_short": {
+              "value": {
+                "t": "float",
+                "v": "0.5"
+              },
+              "counters": [
+                {
+                  "name": "leg_short",
+                  "disp": "leg_short",
+                  "unit": "",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            }
+          }
+        },
+        "parse_stderr_first_line": null,
+        "attempts": [
+          {
+            "attempt": 1,
+            "packs": [],
+            "registration_settled": true,
+            "objectType_after": {
+              "exists": true,
+              "disp": "LEG_TYPE_web",
+              "icon": "linux",
+              "family": "X$LEG_FAMILY",
+              "master": "leg_bytes_$delta",
+              "familyCounters": [
+                {
+                  "name": "leg_bytes_$delta",
+                  "disp": "leg_bytes_$delta",
+                  "unit": "b/s",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                },
+                {
+                  "name": "leg_gauge_7000",
+                  "disp": "Gauge 7000",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                },
+                {
+                  "name": "leg_short",
+                  "disp": "leg_short",
+                  "unit": "",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                },
+                {
+                  "name": "leg_reqs",
+                  "disp": "Reqs",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                },
+                {
+                  "name": "leg_reqs_$delta",
+                  "disp": "Reqs_$delta",
+                  "unit": "cnt/s",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            }
+          },
+          {
+            "attempt": 2,
+            "packs": [
+              {
+                "pack": "object",
+                "objType": "LEG_TYPE_web",
+                "objHash": -1878055503,
+                "objName": "/mapped-host/X$LEG_NAME_7000",
+                "address": "10.0.0.7",
+                "version": null,
+                "alive": true,
+                "wakeup": 0,
+                "tags": {
+                  "t": "map",
+                  "v": {
+                    "deadTime": {
+                      "t": "decimal",
+                      "v": 35000
+                    }
+                  }
+                },
+                "file": "legacy-first-2-0.pack.bin",
+                "addr": "10.0.0.7"
+              },
+              {
+                "pack": "perf_counter",
+                "time": 1767193200123,
+                "objName": "/mapped-host/X$LEG_NAME_7000",
+                "timetype": 1,
+                "data": {
+                  "t": "map",
+                  "v": {
+                    "leg_reqs": {
+                      "t": "decimal",
+                      "v": 10
+                    },
+                    "leg_gauge_7000": {
+                      "t": "decimal",
+                      "v": 1
+                    },
+                    "leg_short": {
+                      "t": "float",
+                      "v": "0.5"
+                    }
+                  }
+                },
+                "file": "legacy-first-2-1.pack.bin",
+                "addr": "10.0.0.7"
+              }
+            ]
+          }
+        ],
+        "logs": []
+      },
+      {
+        "name": "legacy-second",
+        "line": "leg,hostname=raw-host,tier=web,port=7000 gauge=2i,bytes=400i,reqs=16i,short=0.25 1767193205000000000",
+        "parse": {
+          "parsed": true,
+          "measurement": "leg",
+          "host": "mapped-host",
+          "family": "X$LEG_FAMILY",
+          "objType": "LEG_TYPE_web",
+          "objTypeIcon": "linux",
+          "objName": "/mapped-host/X$LEG_NAME_7000",
+          "objHash": -1878055503,
+          "receivedTime": 1767193200123,
+          "timestampOrigin": 1767193205000,
+          "tags": {
+            "hostname": "raw-host",
+            "port": "7000",
+            "tier": "web"
+          },
+          "numberFields": {
+            "leg_bytes": {
+              "value": {
+                "t": "decimal",
+                "v": 400
+              },
+              "counters": [
+                {
+                  "name": "leg_bytes_$delta",
+                  "disp": "leg_bytes_$delta",
+                  "unit": "b/s",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            },
+            "leg_gauge_*": {
+              "value": {
+                "t": "decimal",
+                "v": 2
+              },
+              "counters": [
+                {
+                  "name": "leg_gauge_7000",
+                  "disp": "Gauge 7000",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            },
+            "leg_reqs": {
+              "value": {
+                "t": "decimal",
+                "v": 16
+              },
+              "counters": [
+                {
+                  "name": "leg_reqs",
+                  "disp": "Reqs",
+                  "unit": "cnt",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                },
+                {
+                  "name": "leg_reqs_$delta",
+                  "disp": "Reqs_$delta",
+                  "unit": "cnt/s",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            },
+            "leg_short": {
+              "value": {
+                "t": "float",
+                "v": "0.25"
+              },
+              "counters": [
+                {
+                  "name": "leg_short",
+                  "disp": "leg_short",
+                  "unit": "",
+                  "icon": "",
+                  "total": true,
+                  "all": true
+                }
+              ]
+            }
+          }
+        },
+        "parse_stderr_first_line": null,
+        "attempts": [
+          {
+            "attempt": 1,
+            "packs": [
+              {
+                "pack": "object",
+                "objType": "LEG_TYPE_web",
+                "objHash": -1878055503,
+                "objName": "/mapped-host/X$LEG_NAME_7000",
+                "address": "10.0.0.7",
+                "version": null,
+                "alive": true,
+                "wakeup": 0,
+                "tags": {
+                  "t": "map",
+                  "v": {
+                    "deadTime": {
+                      "t": "decimal",
+                      "v": 35000
+                    }
+                  }
+                },
+                "file": "legacy-second-1-0.pack.bin",
+                "addr": "10.0.0.7"
+              },
+              {
+                "pack": "perf_counter",
+                "time": 1767193200123,
+                "objName": "/mapped-host/X$LEG_NAME_7000",
+                "timetype": 1,
+                "data": {
+                  "t": "map",
+                  "v": {
+                    "leg_reqs": {
+                      "t": "decimal",
+                      "v": 16
+                    },
+                    "leg_bytes_$delta": {
+                      "t": "float",
+                      "v": "60.0"
+                    },
+                    "leg_reqs_$delta": {
+                      "t": "float",
+                      "v": "1.2"
+                    },
+                    "leg_gauge_7000": {
+                      "t": "decimal",
+                      "v": 2
+                    },
+                    "leg_short": {
+                      "t": "float",
+                      "v": "0.25"
+                    }
+                  }
+                },
+                "file": "legacy-second-1-1.pack.bin",
+                "addr": "10.0.0.7"
+              }
+            ]
+          }
+        ],
+        "logs": []
+      },
+      {
+        "name": "legacy-disabled",
+        "line": "legoff,hostname=h v=1 1767193200000000000",
+        "parse": {
+          "parsed": false
+        },
+        "parse_stderr_first_line": null,
+        "attempts": [],
+        "logs": []
+      }
+    ]
+  }
+}

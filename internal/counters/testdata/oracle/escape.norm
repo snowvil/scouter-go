@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Counters>
+    <Types>
+        <ObjectType disp="a&lt;b&gt;c&quot;d'e" family="raw tab nl" icon="tab	x nl&#10;y cr&#13;z" name="e&amp;1" sub-object=""/>
+        <ObjectType disp="😀" family="" icon="" name="한글✓😀" sub-object=""/>
+    </Types>
+    <Familys/>
+</Counters>

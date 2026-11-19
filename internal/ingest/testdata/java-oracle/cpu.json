@@ -1,0 +1,621 @@
+{
+  "scenario": "cpu",
+  "steps": [
+    {
+      "op": "agent",
+      "objName": "/was",
+      "objType": "tomcat",
+      "tags": [
+        [
+          "ADC",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "ADC_TH",
+          {
+            "t": "decimal",
+            "v": 50
+          }
+        ],
+        [
+          "ADC_D",
+          {
+            "t": "decimal",
+            "v": 10000
+          }
+        ]
+      ]
+    },
+    {
+      "op": "counter",
+      "objName": "/was",
+      "time": 1760000000000,
+      "timetype": 1,
+      "data": [
+        [
+          "ProcCpu",
+          {
+            "t": "float",
+            "v": 60.0
+          }
+        ]
+      ],
+      "out": {
+        "first": 1760000000000,
+        "calls": []
+      }
+    },
+    {
+      "op": "counter",
+      "objName": "/was",
+      "time": 1760000005000,
+      "timetype": 1,
+      "data": [
+        [
+          "ProcCpu",
+          {
+            "t": "float",
+            "v": 60.0
+          }
+        ]
+      ],
+      "out": {
+        "first": 1760000000000,
+        "calls": []
+      }
+    },
+    {
+      "op": "counter",
+      "objName": "/was",
+      "time": 1760000010000,
+      "timetype": 1,
+      "data": [
+        [
+          "ProcCpu",
+          {
+            "t": "float",
+            "v": 60.0
+          }
+        ]
+      ],
+      "out": {
+        "first": 1760000000000,
+        "calls": []
+      }
+    },
+    {
+      "op": "counter",
+      "objName": "/was",
+      "time": 1760000010001,
+      "timetype": 1,
+      "data": [
+        [
+          "ProcCpu",
+          {
+            "t": "float",
+            "v": 60.0
+          }
+        ]
+      ],
+      "out": {
+        "first": 0,
+        "calls": [
+          {
+            "objHash": 1027695809,
+            "cmd": "TRIGGER_THREAD_DUMPS_FROM_CONDITIONS",
+            "param": "0a0102076f626a4861736814043d4164c113545249474745525f44554d505f524541534f4e3225545249474745525f44554d505f524541534f4e5f545950455f4350555f4558434545444544"
+          }
+        ]
+      }
+    },
+    {
+      "op": "counter",
+      "objName": "/was",
+      "time": 1760000020000,
+      "timetype": 1,
+      "data": [
+        [
+          "ProcCpu",
+          {
+            "t": "float",
+            "v": 60.0
+          }
+        ]
+      ],
+      "out": {
+        "first": 1760000020000,
+        "calls": []
+      }
+    },
+    {
+      "op": "counter",
+      "objName": "/was",
+      "time": 1760000021000,
+      "timetype": 1,
+      "data": [
+        [
+          "ProcCpu",
+          {
+            "t": "float",
+            "v": 50.0
+          }
+        ]
+      ],
+      "out": {
+        "first": 0,
+        "calls": []
+      }
+    },
+    {
+      "op": "counter",
+      "objName": "/was",
+      "time": 1760000022000,
+      "timetype": 1,
+      "data": [
+        [
+          "ProcCpu",
+          {
+            "t": "decimal",
+            "v": 51
+          }
+        ]
+      ],
+      "out": {
+        "first": 1760000022000,
+        "calls": []
+      }
+    },
+    {
+      "op": "counter",
+      "objName": "/was",
+      "time": 1760000023000,
+      "timetype": 1,
+      "data": [
+        [
+          "Other",
+          {
+            "t": "decimal",
+            "v": 1
+          }
+        ]
+      ],
+      "out": {
+        "first": 1760000022000,
+        "calls": []
+      }
+    },
+    {
+      "op": "counter",
+      "objName": "/was",
+      "time": 1760000042001,
+      "timetype": 1,
+      "data": [
+        [
+          "ProcCpu",
+          {
+            "t": "float",
+            "v": 60.0
+          }
+        ]
+      ],
+      "out": {
+        "first": 0,
+        "calls": []
+      }
+    },
+    {
+      "op": "counter",
+      "objName": "/was",
+      "time": 1760000043000,
+      "timetype": 3,
+      "data": [
+        [
+          "ProcCpu",
+          {
+            "t": "float",
+            "v": 60.0
+          }
+        ]
+      ],
+      "out": {
+        "first": 0,
+        "calls": []
+      }
+    },
+    {
+      "op": "counter",
+      "objName": "/was",
+      "time": 1760000044000,
+      "timetype": 1,
+      "data": [
+        [
+          "ProcCpu",
+          {
+            "t": "double",
+            "v": "NaN"
+          }
+        ]
+      ],
+      "out": {
+        "first": 0,
+        "calls": []
+      }
+    },
+    {
+      "op": "counter",
+      "objName": "/was",
+      "time": 1760000045000,
+      "timetype": 1,
+      "data": [
+        [
+          "ProcCpu",
+          {
+            "t": "text",
+            "v": "99"
+          }
+        ]
+      ],
+      "out": {
+        "first": 0,
+        "calls": []
+      }
+    },
+    {
+      "op": "agent",
+      "objName": "/was",
+      "objType": "tomcat",
+      "tags": [
+        [
+          "ADC",
+          {
+            "t": "bool",
+            "v": false
+          }
+        ],
+        [
+          "ADC_TH",
+          {
+            "t": "decimal",
+            "v": 50
+          }
+        ],
+        [
+          "ADC_D",
+          {
+            "t": "decimal",
+            "v": 10000
+          }
+        ]
+      ]
+    },
+    {
+      "op": "counter",
+      "objName": "/was",
+      "time": 1760000046000,
+      "timetype": 1,
+      "data": [
+        [
+          "ProcCpu",
+          {
+            "t": "float",
+            "v": 60.0
+          }
+        ]
+      ],
+      "out": {
+        "first": 0,
+        "calls": []
+      }
+    },
+    {
+      "op": "agent",
+      "objName": "/host",
+      "objType": "linux",
+      "tags": [
+        [
+          "ADC",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "ADC_TH",
+          {
+            "t": "decimal",
+            "v": 0
+          }
+        ],
+        [
+          "ADC_D",
+          {
+            "t": "decimal",
+            "v": -1
+          }
+        ]
+      ]
+    },
+    {
+      "op": "counter",
+      "objName": "/host",
+      "time": 1760000000000,
+      "timetype": 1,
+      "data": [
+        [
+          "ProcCpu",
+          {
+            "t": "float",
+            "v": 60.0
+          }
+        ]
+      ],
+      "out": {
+        "first": null,
+        "calls": []
+      }
+    },
+    {
+      "op": "agent",
+      "objName": "/odd",
+      "objType": "nosuchtype",
+      "tags": [
+        [
+          "ADC",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "ADC_TH",
+          {
+            "t": "decimal",
+            "v": 0
+          }
+        ],
+        [
+          "ADC_D",
+          {
+            "t": "decimal",
+            "v": -1
+          }
+        ]
+      ]
+    },
+    {
+      "op": "counter",
+      "objName": "/odd",
+      "time": 1760000000000,
+      "timetype": 1,
+      "data": [
+        [
+          "ProcCpu",
+          {
+            "t": "float",
+            "v": 60.0
+          }
+        ]
+      ],
+      "out": {
+        "first": null,
+        "calls": []
+      }
+    },
+    {
+      "op": "counter",
+      "objName": "/absent",
+      "time": 1760000000000,
+      "timetype": 1,
+      "data": [
+        [
+          "ProcCpu",
+          {
+            "t": "float",
+            "v": 60.0
+          }
+        ]
+      ],
+      "out": {
+        "first": null,
+        "calls": []
+      }
+    },
+    {
+      "op": "agent",
+      "objName": "/neg",
+      "objType": "java",
+      "tags": [
+        [
+          "ADC",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "ADC_TH",
+          {
+            "t": "decimal",
+            "v": 0
+          }
+        ],
+        [
+          "ADC_D",
+          {
+            "t": "decimal",
+            "v": -1
+          }
+        ]
+      ]
+    },
+    {
+      "op": "counter",
+      "objName": "/neg",
+      "time": 1760000000000,
+      "timetype": 1,
+      "data": [
+        [
+          "ProcCpu",
+          {
+            "t": "decimal",
+            "v": 1
+          }
+        ]
+      ],
+      "out": {
+        "first": 0,
+        "calls": [
+          {
+            "objHash": 1342238023,
+            "cmd": "TRIGGER_THREAD_DUMPS_FROM_CONDITIONS",
+            "param": "0a0102076f626a4861736814045000ed4713545249474745525f44554d505f524541534f4e3225545249474745525f44554d505f524541534f4e5f545950455f4350555f4558434545444544"
+          }
+        ]
+      }
+    },
+    {
+      "op": "agent",
+      "objName": "/wrap",
+      "objType": "jboss",
+      "tags": [
+        [
+          "ADC",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "ADC_TH",
+          {
+            "t": "double",
+            "v": 1.0E12
+          }
+        ],
+        [
+          "ADC_D",
+          {
+            "t": "decimal",
+            "v": 1073741824
+          }
+        ]
+      ]
+    },
+    {
+      "op": "counter",
+      "objName": "/wrap",
+      "time": 1760000000000,
+      "timetype": 1,
+      "data": [
+        [
+          "ProcCpu",
+          {
+            "t": "double",
+            "v": 2.16895848448E9
+          }
+        ]
+      ],
+      "out": {
+        "first": 1760000000000,
+        "calls": []
+      }
+    },
+    {
+      "op": "counter",
+      "objName": "/wrap",
+      "time": 1760000000001,
+      "timetype": 1,
+      "data": [
+        [
+          "ProcCpu",
+          {
+            "t": "double",
+            "v": 2.16895848448E9
+          }
+        ]
+      ],
+      "out": {
+        "first": 0,
+        "calls": []
+      }
+    },
+    {
+      "op": "agent",
+      "objName": "/fth",
+      "objType": "tomcat",
+      "tags": [
+        [
+          "ADC",
+          {
+            "t": "bool",
+            "v": true
+          }
+        ],
+        [
+          "ADC_TH",
+          {
+            "t": "float",
+            "v": 10.9
+          }
+        ],
+        [
+          "ADC_D",
+          {
+            "t": "float",
+            "v": -0.5
+          }
+        ]
+      ]
+    },
+    {
+      "op": "counter",
+      "objName": "/fth",
+      "time": 1760000000000,
+      "timetype": 1,
+      "data": [
+        [
+          "ProcCpu",
+          {
+            "t": "float",
+            "v": 10.5
+          }
+        ]
+      ],
+      "out": {
+        "first": 1760000000000,
+        "calls": []
+      }
+    },
+    {
+      "op": "counter",
+      "objName": "/fth",
+      "time": 1760000000001,
+      "timetype": 1,
+      "data": [
+        [
+          "ProcCpu",
+          {
+            "t": "float",
+            "v": 10.5
+          }
+        ]
+      ],
+      "out": {
+        "first": 0,
+        "calls": []
+      }
+    },
+    {
+      "op": "saturate",
+      "objName": "/sat",
+      "triggers": 105,
+      "out": {
+        "queuedWhileBlocked": 100,
+        "called": 101
+      }
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "scenario": "threadlist",
+  "cases": [
+    {
+      "name": "thread-detail-zero",
+      "command": "SERVER_THREAD_DETAIL",
+      "request": "thread-detail-zero.request.bin",
+      "request_bytes": 8,
+      "response": "thread-detail-zero.response.bin",
+      "response_bytes": 4,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {}
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "thread-detail-missing-id",
+      "command": "SERVER_THREAD_DETAIL",
+      "request": "thread-detail-missing-id.request.bin",
+      "request_bytes": 2,
+      "response": "thread-detail-missing-id.response.bin",
+      "response_bytes": 4,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {}
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "thread-detail-unknown",
+      "command": "SERVER_THREAD_DETAIL",
+      "request": "thread-detail-unknown.request.bin",
+      "request_bytes": 16,
+      "response": "thread-detail-unknown.response.bin",
+      "response_bytes": 4,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {}
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    },
+    {
+      "name": "thread-detail-text-id",
+      "command": "SERVER_THREAD_DETAIL",
+      "request": "thread-detail-text-id.request.bin",
+      "request_bytes": 9,
+      "response": "thread-detail-text-id.response.bin",
+      "response_bytes": 4,
+      "item_kind": "pack",
+      "items": [
+        {
+          "pack": "map",
+          "v": {}
+        }
+      ],
+      "stderr_first_line": null,
+      "logs": []
+    }
+  ],
+  "facts": {
+    "thread_list_shape": {
+      "command": "SERVER_THREAD_LIST",
+      "request_hex": "",
+      "items": [
+        {
+          "pack": 10,
+          "keys": {
+            "id": "list<decimal>",
+            "name": "list<text>",
+            "stat": "list<text>",
+            "cpu": "list<decimal>"
+          }
+        }
+      ]
+    },
+    "thread_detail_shape": {
+      "command": "SERVER_THREAD_DETAIL",
+      "request_hex": "0a0101026964140101",
+      "items": [
+        {
+          "pack": 10,
+          "keys": {
+            "Thread Id": "decimal",
+            "Thread Cpu Time": "decimal",
+            "Thread User Time": "decimal",
+            "Blocked Count": "decimal",
+            "Blocked Time": "decimal",
+            "Waited Count": "decimal",
+            "Waited Time": "decimal",
+            "Lock Owner Id": "decimal",
+            "Lock Name": "text",
+            "Lock Owner Name": "text",
+            "Thread Name": "text",
+            "Stack Trace": "text",
+            "State": "text"
+          }
+        }
+      ]
+    }
+  }
+}

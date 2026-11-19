@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Counters>
+    <Types>
+        <ObjectType disp="" family="" icon="" name="n0" sub-object=""/>
+        <ObjectType disp="" family="" icon="" name="n1" sub-object=""/>
+        <ObjectType disp="" family="" icon="" name="n2" sub-object=""/>
+        <ObjectType disp="" family="" icon="" name="n3" sub-object=""/>
+        <ObjectType disp="" family="" icon="" name="n4" sub-object=""/>
+        <ObjectType disp="" family="" icon="" name="n5" sub-object=""/>
+        <ObjectType disp="" family="" icon="" name="n6" sub-object=""/>
+        <ObjectType disp="" family="" icon="" name="n7" sub-object=""/>
+        <ObjectType disp="" family="" icon="" name="n8" sub-object=""/>
+        <ObjectType disp="" family="" icon="" name="n9" sub-object=""/>
+        <ObjectType disp="" family="" icon="" name="n10" sub-object=""/>
+        <ObjectType disp="" family="" icon="" name="n12" sub-object=""/>
+        <ObjectType disp="" family="" icon="" name="n11" sub-object=""/>
+    </Types>
+    <Familys/>
+</Counters>

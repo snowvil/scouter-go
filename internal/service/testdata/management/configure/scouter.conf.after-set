@@ -1,0 +1,12 @@
+server_id=synthetic-server-2
+xlog_queue_size=777
+object_deadtime_ms = 9000 
+net_http_api_auth_ip_header_key=${scouter.oracle.sysprop}
+ext_link_name=prefix-${scouter.oracle.sysprop}-suffix
+ext_link_url_pattern=open-${
+mgr_purge_keep_days=7
+log_keep_days=x-not-a-number
+net_http_api_enabled=TRUE
+unicode_comment_key=한글
+escaped_key=line1\
+    continued

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Counters>
+    <Types>
+        <ObjectType disp="crlf lit cr" family="" icon="&amp;#10;" name="h	x&#10;y&#13;z	w" sub-object=""/>
+    </Types>
+    <Familys>
+        <Family master="&gt;" name="f&#10;">
+            <Counter all="" disp="" icon="" name="&#13;" total="t" unit=""/>
+        </Family>
+    </Familys>
+</Counters>

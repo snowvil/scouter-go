@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Counters>
+    <Types>
+        <ObjectType disp="TB2" family="myfam" icon="" name="t_b" sub-object=""/>
+        <ObjectType disp="" family="afam" icon="" name="t_a" sub-object="true"/>
+        <ObjectType disp="한" family="afam" icon="" name="한글" sub-object=""/>
+    </Types>
+    <Familys>
+        <Family master="a1" name="afam">
+            <Counter all="true" disp="" icon="" name="a1" total="" unit=""/>
+        </Family>
+        <Family master="c3" name="myfam">
+            <Counter all="true" disp="C3" icon="" name="c3" total="" unit=""/>
+        </Family>
+    </Familys>
+</Counters>
