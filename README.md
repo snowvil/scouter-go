@@ -56,15 +56,17 @@ Scouter Server(Java/Scala)를 단일 Go 실행 파일로 대체하는 프로젝�
 |---|---|---|
 | retention | `mgr_purge_enabled` 키가 없으면 on | 키나 `--purge`가 없으면 **off**(기동 시 WARNING). 원본처럼 지우려면 `mgr_purge_enabled=true`를 명시합니다 |
 | listener 주소 | 키가 없으면 `0.0.0.0` | flag 기본 `127.0.0.1:6100`. conf에 `net_*_listen_port`만 있고 `_ip`가 없으면 `127.0.0.1`을 유지합니다. `scripts/scouter-go.sh`는 `0.0.0.0:6100`을 flag로 넘깁니다(아래 [Linux 서버 배포](#linux-서버-배포)) |
-| Pulse 애플리케이션 이름 필터(`ext_plugin_pulse_exclude_applications`·`_rebase_transaction_applications`·`_non_spring_based_applications`) | 키가 없으면 plugin의 배포 고유 기본값 | 키가 없으면 빈 값(제외·rebase 없음)이고 키마다 기동 WARNING(non-Spring 키는 Spring URI filter가 켜졌을 때만). 운영 Java conf에 키가 없으면 plugin 기본값을 비공개 conf로 옮깁니다 |
+| Pulse 애플리케이션 이름 필터 3종(키는 표 아래) | 키가 없으면 plugin의 배포 고유 기본값 | 키가 없으면 빈 값(제외·rebase 없음)이고 키마다 기동 WARNING(non-Spring 키는 Spring URI filter가 켜졌을 때만). 운영 Java conf에 키가 없으면 plugin 기본값을 비공개 conf로 옮깁니다 |
 | JVM plugin·script | `.alert` 규칙, `.plug`, plugin JAR, 확장 handler chain 실행 | 실행하지 않습니다(아래 [명시적 미지원](#명시적-미지원)) |
 | 연결·메모리 상한 | Agent·Client 연결 수, Client 응답·relay 메모리, HTTP 동시 요청에 상한 없음 | 상한이 있고 넘으면 사유별 로그와 `/health` 계수를 남깁니다. TCP 상한에 걸린 Agent는 1초 뒤 재접속하며 애플리케이션 thread에는 영향이 없습니다. HTTP는 3초 대기 뒤 `503`+`Retry-After`([sizing](docs/operations/sizing.md)) |
 | Client 응답 예산 초과 | 메모리가 허락하는 만큼 응답 | 64KiB 이상 item의 전역 예산을 넘으면 그 명령만 실패합니다. Java Client에는 결과가 비거나 잘려 보입니다 |
-| `SERVER_STATUS`·`SERVER_THREAD_*`·`SERVER_ENV` | JVM 값 | Go runtime 값 |
+| `SERVER_STATUS`, `SERVER_THREAD_*`, `SERVER_ENV` | JVM 값 | Go runtime 값 |
 | Pulse 전송 | `sent`는 producer callback 성공. Kafka 압축 gzip·snappy·lz4·zstd | `sent`는 producer queue 수락(broker 영속 증거 아님). 압축은 lz4·none만 받고 나머지는 Pulse 설정 오류 |
 | 설정·계정 파일 | `scouter.conf`를 ISO-8859-1로 읽음. 계정 파일 parse 실패 시 빈 계정으로 기동 | `scouter.conf`를 UTF-8로 읽음. 계정 파일 parse 실패 시 기동하지 않고 파일을 덮어쓰지 않음 |
 | 로그 | SQL·login 원문 출력. rotation off이면 open마다 server.log를 비움 | SQL·login 원문을 마스킹. rotation off에서도 append |
 | `/health` 감시 key | — | 11단계에서 `DelayedRejected`가 3개 key로 나뉘었습니다. 외부 감시 규칙은 [monitoring](docs/operations/monitoring.md)을 따릅니다 |
+
+Pulse 애플리케이션 이름 필터 3종의 키는 `ext_plugin_pulse_exclude_applications`, `ext_plugin_pulse_rebase_transaction_applications`, `ext_plugin_pulse_non_spring_based_applications`입니다.
 
 ### 개선
 
