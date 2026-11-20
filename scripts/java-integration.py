@@ -141,7 +141,9 @@ def stop_server(process):
 
 def server_statistics(temp, sequence, extra_datagrams=0):
     text = (temp / f"server-{sequence}.log").read_text()
-    matches = re.findall(r"ingest=\{([^}]*)\} udp=\{([^}]*)\} tcp=\{([^}]*)\}", text)
+    # A value can hold "}" (the Linux KernelCountersError text does), so each
+    # body is delimited by the next field name instead of the first brace.
+    matches = re.findall(r"ingest=\{(.*?)\} udp=\{(.*?)\} tcp=\{(.*?)\} tagcount=", text)
     if not matches:
         raise RuntimeError("Go server final ingest/UDP/TCP statistics are missing")
     statistics = {name: {key: int(value) for key, value in re.findall(r"(\w+):(\d+)", body)}
