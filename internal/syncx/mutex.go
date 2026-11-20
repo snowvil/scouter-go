@@ -60,6 +60,20 @@ func (m *Mutex) Lock() {
 	t.took(start)
 }
 
+// TryLock takes the Mutex when it is free and reports whether it did.
+func (m *Mutex) TryLock() bool {
+	m.init()
+	select {
+	case m.gate <- struct{}{}:
+		if t := m.track.Load(); t != nil {
+			t.took(now())
+		}
+		return true
+	default:
+		return false
+	}
+}
+
 func (m *Mutex) Unlock() {
 	if t := m.track.Load(); t != nil {
 		if since := t.since.Swap(0); since != 0 {

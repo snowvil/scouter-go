@@ -909,6 +909,9 @@ func (r *Runtime) purge(ctx context.Context, retention *storage.Retention) {
 			r.purged.Add(1)
 			log.Printf("purge %s %s (%s)", a.Date, a.Mode, a.Reason)
 		}
+		if a.Gates != "" {
+			log.Printf("purge %s %s gates: %s", a.Date, a.Mode, a.Gates)
+		}
 	}
 	if err != nil && !errors.Is(err, context.Canceled) {
 		r.maintenanceErrors.Add(1)

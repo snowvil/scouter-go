@@ -159,6 +159,10 @@ type PurgeAction struct {
 	Mode   PurgeMode `json:"mode"`
 	Reason string    `json:"reason"`
 	Err    string    `json:"error,omitempty"`
+	// Gates is set when the purge waited for or held its gates for
+	// detachSlow or longer: which gate was busy, for how long, and how long
+	// the gates were then held (the time ingest could not take them).
+	Gates string `json:"gates,omitempty"`
 }
 
 // RunOnce applies one AutoDeleteScheduler cycle at now. Unlike Java, deletion
@@ -185,7 +189,8 @@ func (r *Retention) RunOnce(ctx context.Context, now time.Time) ([]PurgeAction, 
 	}
 	run := func(date string, mode PurgeMode, reason string) {
 		a := PurgeAction{Date: date, Mode: mode, Reason: reason}
-		removed, err := r.purge(ctx, date, today, mode)
+		removed, gates, err := r.purgeTimed(ctx, date, today, mode)
+		a.Gates = gates
 		if err != nil {
 			a.Err = err.Error()
 			errs = append(errs, err)
@@ -496,18 +501,19 @@ func (s *Store) settleDoomedLocked(c *Counters, closes *doomedCloses, moved, sta
 	return closes.settle(moved, stayed)
 }
 
-// purge removes one mode of one date. It reports removed=false when no target
-// exists, so an already purged date is not re-reported every cycle.
-func (r *Retention) purge(ctx context.Context, date, today string, mode PurgeMode) (bool, error) {
+// purgeTimed removes one mode of one date. It reports removed=false when no
+// target exists, so an already purged date is not re-reported every cycle,
+// and the gate timing when it was slow (detachTiming.String).
+func (r *Retention) purgeTimed(ctx context.Context, date, today string, mode PurgeMode) (removed bool, gates string, err error) {
 	if err := validDate(date); err != nil {
-		return false, err
+		return false, "", err
 	}
 	if date >= today || strings.Contains(date, "0000") {
-		return false, fmt.Errorf("refuse to purge current or reserved date %s: %w", date, ErrInvalid)
+		return false, "", fmt.Errorf("refuse to purge current or reserved date %s: %w", date, ErrInvalid)
 	}
 	targets, err := purgeTargets(mode)
 	if err != nil {
-		return false, err
+		return false, "", err
 	}
 	s := r.Store
 	dayRoot := filepath.Join(s.config.Directory, date)
@@ -517,16 +523,17 @@ func (r *Retention) purge(ctx context.Context, date, today string, mode PurgeMod
 		if _, err := os.Lstat(p); err == nil {
 			paths = append(paths, p)
 		} else if !os.IsNotExist(err) {
-			return false, err
+			return false, "", err
 		}
 	}
 	if len(paths) == 0 {
-		return false, ctx.Err()
+		return false, "", ctx.Err()
 	}
 	trash := filepath.Join(s.config.Directory, purgeTrash)
 	trashErr := os.MkdirAll(trash, 0700) // outside the gates
 	var closes doomedCloses
-	moved, attempted, err := r.detach(ctx, date, mode, paths, trash, trashErr, &closes)
+	var timing detachTiming
+	moved, attempted, err := r.detach(ctx, date, mode, paths, trash, trashErr, &closes, &timing)
 	errs := []error{err}
 	// Outside the gates: close the doomed handles, then unlink.
 	if err := closes.run(); err != nil {
@@ -537,7 +544,7 @@ func (r *Retention) purge(ctx context.Context, date, today string, mode PurgeMod
 			errs = append(errs, fmt.Errorf("purge %s %s: trash cleanup: %w", mode, p, err))
 		}
 	}
-	return attempted, errors.Join(errs...)
+	return attempted, timing.String(), errors.Join(errs...)
 }
 
 // detach releases handles and in-memory state below paths and moves them out of
@@ -550,29 +557,21 @@ func (r *Retention) purge(ctx context.Context, date, today string, mode PurgeMod
 // Java would delete it in place, Go retries it next cycle instead of
 // unlinking a large tree under the gates. The doomed handles are settled
 // here (doomedCloses); the caller closes the moved ones after the gates.
-func (r *Retention) detach(ctx context.Context, date string, mode PurgeMode, paths []string, trash string, trashErr error, closes *doomedCloses) (moved []string, attempted bool, err error) {
+func (r *Retention) detach(ctx context.Context, date string, mode PurgeMode, paths []string, trash string, trashErr error, closes *doomedCloses, timing *detachTiming) (moved []string, attempted bool, err error) {
 	s := r.Store
-	if err := s.mu.LockContext(ctx); err != nil {
+	// The tag gate stays held until the paths are renamed away, so no tag
+	// drain, flush or query reopens a doomed tag file in between; visitorMu
+	// and visitorIO keep a visit or an in-flight snapshot write from
+	// recreating the purged date.
+	unlock, err := s.lockDetachGates(ctx, r.Counters, timing)
+	if err != nil {
 		return nil, false, err
 	}
-	defer s.mu.Unlock()
-	if s.closed {
-		return nil, false, ErrClosed
-	}
-	// An in-flight visitor snapshot write must not recreate the purged date.
-	s.visitorMu.Lock() // no visit saves an evicted snapshot into a doomed date
-	defer s.visitorMu.Unlock()
-	s.visitorIO.Lock()
-	defer s.visitorIO.Unlock()
-	if r.Counters != nil {
-		if err := r.Counters.mu.LockContext(ctx); err != nil {
-			return nil, false, err
-		}
-		defer r.Counters.mu.Unlock()
-	}
-	// The tag gate stays held until the paths are renamed away, so no tag
-	// drain, flush or query reopens a doomed tag file in between.
-	defer s.lockTagsForDetach()()
+	held := time.Now()
+	defer func() {
+		unlock()
+		timing.held = time.Since(held)
+	}()
 	// Pending aggregation of the purged date is discarded, not flushed: a
 	// flush could recreate the files, and an unrelated flush failure (for
 	// example ENOSPC) must not block reclaiming space.
@@ -602,6 +601,146 @@ func (r *Retention) detach(ctx context.Context, date string, mode PurgeMode, pat
 	}
 	notes = append(notes, s.settleDoomedLocked(r.Counters, closes, gone, stayed))
 	return moved, true, errors.Join(notes...)
+}
+
+// detachGateRounds bounds how often lockDetachGates starts over before it
+// waits for a busy gate in place.
+const detachGateRounds = 64
+
+// detachSlow is the gate wait or hold from which a purge reports its timing.
+const detachSlow = 100 * time.Millisecond
+
+// detachTiming is how long lockDetachGates waited for each gate that was busy
+// (with nothing held, except in the last round), in how many rounds, and how
+// long the caller then held the gates.
+type detachTiming struct {
+	visitorMu, visitorIO, counters, tags time.Duration
+	rounds                               int
+	inPlace                              bool
+	held                                 time.Duration
+}
+
+func (t *detachTiming) wait(d *time.Duration, lock func() error) error {
+	if t == nil {
+		return lock()
+	}
+	start := time.Now()
+	err := lock()
+	*d += time.Since(start)
+	return err
+}
+
+// String is empty below detachSlow.
+func (t *detachTiming) String() string {
+	if t == nil || (t.visitorMu+t.visitorIO+t.counters+t.tags < detachSlow && t.held < detachSlow) {
+		return ""
+	}
+	r := time.Millisecond
+	s := fmt.Sprintf("waited visitorMu %v visitorIO %v counters %v tags %v in %d rounds, held %v",
+		t.visitorMu.Round(r), t.visitorIO.Round(r), t.counters.Round(r), t.tags.Round(r), t.rounds, t.held.Round(r))
+	if t.inPlace {
+		s += ", last wait with the ingest gates held"
+	}
+	return s
+}
+
+// lockDetachGates takes the gates a purge or DB delete holds together, in
+// their order: the Store gate, visitorMu, visitorIO, the Counters gate (c
+// may be nil) and the tag gate. Ingest takes the Store gate for every record
+// and visitorMu for every visit, so neither is held while waiting for a later
+// gate: when one is busy (a visit writing its snapshot under visitorMu, a
+// visitor snapshot write, a counter write, a tag pass writing its top100)
+// everything is released, the busy gate is waited for alone, and the sequence
+// starts over. A gate still busy after detachGateRounds rounds is waited for
+// in place, so the purge is never postponed without bound. timing, when not
+// nil, receives the waits. It fails with ErrClosed when the Store is closed.
+func (s *Store) lockDetachGates(ctx context.Context, c *Counters, timing *detachTiming) (unlock func(), err error) {
+	var none detachTiming
+	t := timing
+	if t == nil {
+		t = &none
+	}
+	all := func() {
+		s.tags.mu.Unlock()
+		if c != nil {
+			c.mu.Unlock()
+		}
+		s.visitorIO.Unlock()
+		s.visitorMu.Unlock()
+		s.mu.Unlock()
+	}
+	lockVisitorMu := func() error { s.visitorMu.Lock(); return nil }
+	lockVisitorIO := func() error { s.visitorIO.Lock(); return nil }
+	lockCounters := func() error { return c.mu.LockContext(ctx) }
+	lockTags := func() error { return s.tags.mu.LockContext(ctx) }
+	for round := 0; ; round++ {
+		t.rounds = round + 1
+		if err := s.mu.LockContext(ctx); err != nil {
+			return nil, err
+		}
+		if s.closed {
+			s.mu.Unlock()
+			return nil, ErrClosed
+		}
+		if round >= detachGateRounds {
+			t.inPlace = true
+			_ = t.wait(&t.visitorMu, lockVisitorMu)
+			_ = t.wait(&t.visitorIO, lockVisitorIO)
+			if c != nil {
+				if err := t.wait(&t.counters, lockCounters); err != nil {
+					s.visitorIO.Unlock()
+					s.visitorMu.Unlock()
+					s.mu.Unlock()
+					return nil, err
+				}
+			}
+			if err := t.wait(&t.tags, lockTags); err != nil {
+				if c != nil {
+					c.mu.Unlock()
+				}
+				s.visitorIO.Unlock()
+				s.visitorMu.Unlock()
+				s.mu.Unlock()
+				return nil, err
+			}
+			return all, nil
+		}
+		if !s.visitorMu.TryLock() {
+			s.mu.Unlock()
+			_ = t.wait(&t.visitorMu, lockVisitorMu)
+			s.visitorMu.Unlock()
+			continue
+		}
+		ingest := func() { s.visitorMu.Unlock(); s.mu.Unlock() }
+		if !s.visitorIO.TryLock() {
+			ingest()
+			_ = t.wait(&t.visitorIO, lockVisitorIO)
+			s.visitorIO.Unlock()
+			continue
+		}
+		if c != nil && !c.mu.TryLock() {
+			s.visitorIO.Unlock()
+			ingest()
+			if err := t.wait(&t.counters, lockCounters); err != nil {
+				return nil, err
+			}
+			c.mu.Unlock()
+			continue
+		}
+		if !s.tags.mu.TryLock() {
+			if c != nil {
+				c.mu.Unlock()
+			}
+			s.visitorIO.Unlock()
+			ingest()
+			if err := t.wait(&t.tags, lockTags); err != nil {
+				return nil, err
+			}
+			s.tags.mu.Unlock()
+			continue
+		}
+		return all, nil
+	}
 }
 
 // cleanTrash retries removal left by an earlier failed cycle, outside the
@@ -670,7 +809,7 @@ func (s *Store) discardAggregationLocked(date string, mode PurgeMode, paths []st
 	}
 	s.discardTextsLocked(paths)
 	s.discardPacksLocked(paths)
-	s.tagDiscardLocked(paths) // the caller holds the tag gate (lockTagsForDetach)
+	s.tagDiscardLocked(paths) // the caller holds the tag gate (lockDetachGates)
 }
 
 func under(path string, roots []string) bool {

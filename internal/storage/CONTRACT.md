@@ -312,6 +312,16 @@ Java `XLogRD`/`SummaryRD`/`AlertRD`/`StatusRD`의 `readByTime*`는 handler에 �
       이후 약 2.9µs·931B·9 allocs(비압축), 압축 4.7µs·12 allocs → 4.8µs·14 allocs.
 - **purge·DB 삭제의 gate 범위**(retention.go `detach`, delete.go `detach`): gate 안에서는 집계 버리기,
   handle을 cache에서 빼기, 대상 rename만 한다. 물리 삭제(`RemoveAll`)는 언제나 gate 밖이다.
+  - gate를 잡는 순서는 Store gate → `visitorMu` → `visitorIO` → Counters gate → tag gate다(`lockDetachGates`).
+    수집은 레코드마다 Store gate를, visit마다 `visitorMu`를 잡으므로, 뒤쪽 gate(`visitorMu`·`visitorIO`·
+    Counters·tag)가 바쁘면 앞쪽을 쥔 채 기다리지 않는다. 전부 놓고 바쁜 gate 하나만 기다린 뒤 처음부터 다시
+    잡는다. 이전에는 Store gate와 `visitorMu`를 쥔 채 기다려서, visit의 snapshot 쓰기·visitor snapshot 쓰기·
+    counter 쓰기·tag pass의 top100 쓰기가 걸려 있는 동안 수집이 함께 멈췄다. 64회(`detachGateRounds`) 다시
+    잡고도 바쁘면 이전처럼 쥔 채 기다려 purge가 끝없이 밀리지 않게 한다
+    (`TestDetachDoesNotHoldIngestGatesWhileWaiting`).
+  - purge는 gate를 기다린 시간의 합이나 쥔 시간이 100ms(`detachSlow`) 이상이면 `PurgeAction.Gates`에 gate별
+    대기 시간·round 수·쥔 시간을 적고, runtime이 `purge {date} {mode} gates: …` 한 줄로 남긴다. 쥔 채 기다린
+    마지막 round였으면 그 사실도 적는다.
   - 대상은 `.purge-trash`로 rename한다. trash를 만들 수 없거나(ENOSPC, 파일이 막음 — trash `MkdirAll`도
     gate 밖) rename이 실패하면(EXDEV 등) 대상과 같은 디렉터리의 숨은 이름 `.purge-quarantine-…`으로 rename한다
     (`moveAway`, metadata만). 이 이름은 날짜가 아니라 Store 경로·retention 날짜·DB 삭제 이름으로 닿지 않는다.
@@ -439,7 +449,7 @@ marker는 정상 종료 뒤에만 쓸모가 있다. crash(SIGKILL, OOM, 종료 h
   - hold 사이에 purge나 DB 삭제가 일어나면 조용히 멈추고 지워진 디렉터리를 다시 만들지 않는다. 다른 날짜 purge로 멈춘 path는 파일이 남아 있으면 다음 cycle에 다시 한다.
   - Client `MakeTagTop100Context`도 같은 hold 방식이다.
 - **조회**(`TagValuesContext`, `TagValueSeriesContext`, `MakeTagTop100Context`): tag gate 안에서 먼저 inbox를 반영한다. 이 반영은 요청 ctx로 끊지 않으며, batch 나머지와 inbox(최대 약 2×16384 entry) 분량이다. 그 뒤 파일 scan은 flush처럼 hold로 나누어 읽는다(`tagScanInHolds`, `tagMakeCacheHolds`). 그래서 긴 조회가 tag gate를 오래 잡아 maintenance 반영과 purge를 막지 않는다. 기록 하나는 한 hold 안에서 읽는다. scan 도중 끝에 붙은 기록은 보지 않고, 제자리 갱신된 기록은 갱신 전이나 후 값으로 읽는다. 원본 reader도 writer thread와 동시에 읽는다. hold 사이에 purge가 일어나면 빈 결과다. 원본처럼 파일에 쓰이기 전의 count는 보이지 않는다. 화면에 보이는 시점은 5초 flush와 5분 rebuild 주기를 따르고, tag goroutine 지연만큼 늦어질 수 있다. `TagActualContext`는 XLog data를 읽으므로 Store gate를 hold로 나누어 쓴다(§6).
-- **purge·DB 삭제**(`discardAggregationLocked`): Store gate와 tag gate를 잡고 대상 path 아래의 pending table, top100 표시, inbox와 진행 중 batch의 entry를 버린다. tag handle은 fsync 없이 닫는다. tag gate는 대상의 rename·삭제가 끝날 때까지 놓지 않는다(`lockTagsForDetach`). 그 사이 반영·flush·조회가 지워질 tag 파일을 다시 열면 안 되기 때문이다. 지워진 날짜를 flush가 다시 만들지 않는다.
+- **purge·DB 삭제**(`discardAggregationLocked`): Store gate와 tag gate를 잡고 대상 path 아래의 pending table, top100 표시, inbox와 진행 중 batch의 entry를 버린다. tag handle은 fsync 없이 닫는다. tag gate는 대상의 rename·삭제가 끝날 때까지 놓지 않는다(`lockDetachGates`). 그 사이 반영·flush·조회가 지워질 tag 파일을 다시 열면 안 되기 때문이다. 지워진 날짜를 flush가 다시 만들지 않는다.
 - **SyncData**: tag record를 쓰지 않는다. 열린 tag handle은 gate 밖에서 fsync한다(닫힌 handle은 무시). 원본은 tag 파일을 fsync하지 않는다.
 - **Sync·Close**:
   - `Store.Sync`(명시 호출)는 visitor flush, inbox 반영과 flush, SyncData를 이 순서로 한다.

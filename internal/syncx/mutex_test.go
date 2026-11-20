@@ -80,3 +80,22 @@ func TestMutexTrackSumsHeldAndWaited(t *testing.T) {
 		t.Fatalf("%+v", s)
 	}
 }
+
+func TestTryLock(t *testing.T) {
+	var m Mutex
+	m.Track()
+	if !m.TryLock() {
+		t.Fatal("free Mutex not taken")
+	}
+	if m.TryLock() {
+		t.Fatal("held Mutex taken twice")
+	}
+	m.Unlock()
+	if !m.TryLock() {
+		t.Fatal("released Mutex not taken")
+	}
+	m.Unlock()
+	if st := m.Stats(); st.Acquired != 2 {
+		t.Fatalf("acquired %d, want 2", st.Acquired)
+	}
+}

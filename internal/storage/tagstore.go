@@ -419,13 +419,6 @@ func (s *Store) tagDrain(ctx context.Context) error {
 	}
 }
 
-// lockTagsForDetach takes the tag gate for a purge or database delete (the
-// caller holds the Store gate) and returns its release.
-func (s *Store) lockTagsForDetach() func() {
-	s.tags.mu.Lock()
-	return s.tags.mu.Unlock
-}
-
 // tagSafePath rejects a tag file path as walkSafePath does, except that a
 // cached tag handle was validated when it was opened (re-walking every
 // component per tag record I/O was a measured replay hot spot).

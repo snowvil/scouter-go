@@ -218,29 +218,18 @@ func (s *Store) deleteTarget(rel string) (deleteTarget, error) {
 // under the gates; a target that cannot be moved stays and is an error.
 func (d *DatabaseDeleter) detach(ctx context.Context, targets []deleteTarget, trash string, trashErr error, closes *doomedCloses) (moved []string, deleted int, err error) {
 	s := d.Store
-	if err := s.mu.LockContext(ctx); err != nil {
+	// visitorMu and visitorIO: no visit and no in-flight snapshot write
+	// recreates a deleted date. The tag gate stays held until the targets are
+	// renamed away, so no tag drain, flush or query reopens a doomed tag file
+	// in between.
+	unlock, err := s.lockDetachGates(ctx, d.Counters, nil)
+	if err != nil {
 		return nil, 0, err
 	}
-	defer s.mu.Unlock()
-	if s.closed {
+	defer unlock()
+	if d.Counters != nil && d.Counters.closed {
 		return nil, 0, ErrClosed
 	}
-	s.visitorMu.Lock() // no visit saves an evicted snapshot into a deleted date
-	defer s.visitorMu.Unlock()
-	s.visitorIO.Lock() // an in-flight snapshot write must not recreate a deleted date
-	defer s.visitorIO.Unlock()
-	if d.Counters != nil {
-		if err := d.Counters.mu.LockContext(ctx); err != nil {
-			return nil, 0, err
-		}
-		defer d.Counters.mu.Unlock()
-		if d.Counters.closed {
-			return nil, 0, ErrClosed
-		}
-	}
-	// The tag gate stays held until the targets are renamed away, so no tag
-	// drain, flush or query reopens a doomed tag file in between.
-	defer s.lockTagsForDetach()()
 	if d.Counters == nil {
 		// Checked under the Store gate before anything is removed.
 		for _, t := range targets {
